@@ -38,11 +38,22 @@ window.onload = function () {
     document.querySelectorAll('[role="button"][aria-label="Share site to socials"]')
       ?.forEach((el) => (el.style.display = 'none'))
 
-    // b. Hide Get Notion Free button (by text, case-insensitive, anywhere)
+    // b. Hide Get Notion Free button (by text, case-insensitive, anywhere),
+    // but never hide .notranslate (e.g. Feed)
     document.querySelectorAll('[role="button"]')
       ?.forEach((el) => {
         if (el.innerText && el.innerText.trim().toLowerCase() === 'get notion free') {
-          el.style.display = 'none'
+          const notranslate = el.querySelector('.notranslate');
+          if (notranslate) {
+            // Sembunyikan semua child selain .notranslate
+            Array.from(el.children).forEach(child => {
+              if (!child.classList.contains('notranslate')) {
+                child.style.display = 'none';
+              }
+            });
+          } else {
+            el.style.display = 'none';
+          }
         }
       })
 
