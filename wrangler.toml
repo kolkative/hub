@@ -1,0 +1,9 @@
+name = "hub"
+main = "src/index.ts"
+compatibility_date = "2024-01-08"
+workers_dev = true
+
+routes = [
+	{ pattern = "hub.kolkative.my.id", custom_domain = true },
+	{ pattern = "www.hub.kolkative.my.id", custom_domain = true }
+]
