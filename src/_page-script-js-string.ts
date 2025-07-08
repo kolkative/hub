@@ -32,14 +32,13 @@ window.onload = function () {
     document.querySelectorAll('.notion-topbar-mobile [role="button"][aria-label="Share site to socials"]')
       ?.forEach((el) => (el.style.display = 'none'))
 
-    // Hide Get Notion Free button in notion-topbar-mobile, never hide .notranslate
+    // Gabungkan: Hide 'Get Notion Free' dan button dengan svg.notionDarkMode, kecuali tampilkan .notranslate
     document.querySelectorAll('.notion-topbar-mobile [role="button"]')
       ?.forEach((el) => {
-        if (
-          el.innerText &&
-          el.innerText.trim().toLowerCase() === 'get notion free'
-        ) {
-          const notranslate = el.querySelector('.notranslate');
+        const isGetNotionFree = el.innerText && el.innerText.trim().toLowerCase() === 'get notion free';
+        const hasDarkModeIcon = !!el.querySelector('svg.notionDarkMode');
+        const notranslate = el.querySelector('.notranslate');
+        if ((isGetNotionFree || hasDarkModeIcon)) {
           if (notranslate) {
             Array.from(el.children).forEach(child => {
               if (!child.classList.contains('notranslate')) {
@@ -50,7 +49,7 @@ window.onload = function () {
             el.style.display = 'none';
           }
         }
-      })
+      });
 
     // Hide More actions button in notion-topbar-mobile
     document.querySelectorAll('.notion-topbar-mobile [role="button"][aria-label="More actions"]')
