@@ -75,7 +75,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     
   
   
-  
   `,
   customHeadJS: googleTag(GOOGLE_TAG_ID),
   customBodyJS: PAGE_SCRIPT_JS_STRING,

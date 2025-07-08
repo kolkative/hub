@@ -34,18 +34,19 @@ window.onload = function () {
     }
 
     // 3. Hide specific topbar right elements only (not all popup-origin-wrapper)
-    // a. Hide Share site to socials button
-    document.querySelectorAll('[role="button"][aria-label="Share site to socials"]')
+    // a. Hide Share site to socials button in notion-topbar-mobile
+    document.querySelectorAll('.notion-topbar-mobile [role="button"][aria-label="Share site to socials"]')
       ?.forEach((el) => (el.style.display = 'none'))
 
-    // b. Hide Get Notion Free button (by text, case-insensitive, anywhere),
-    // but never hide .notranslate (e.g. Feed)
-    document.querySelectorAll('[role="button"]')
+    // b. Hide Get Notion Free button in notion-topbar-mobile, never hide .notranslate
+    document.querySelectorAll('.notion-topbar-mobile [role="button"]')
       ?.forEach((el) => {
-        if (el.innerText && el.innerText.trim().toLowerCase() === 'get notion free') {
+        if (
+          el.innerText &&
+          el.innerText.trim().toLowerCase() === 'get notion free'
+        ) {
           const notranslate = el.querySelector('.notranslate');
           if (notranslate) {
-            // Sembunyikan semua child selain .notranslate
             Array.from(el.children).forEach(child => {
               if (!child.classList.contains('notranslate')) {
                 child.style.display = 'none';
@@ -57,8 +58,8 @@ window.onload = function () {
         }
       })
 
-    // c. Hide More actions button
-    document.querySelectorAll('[role="button"][aria-label="More actions"]')
+    // c. Hide More actions button in notion-topbar-mobile
+    document.querySelectorAll('.notion-topbar-mobile [role="button"][aria-label="More actions"]')
       ?.forEach((el) => (el.style.display = 'none'))
   }, 1000)
 }
