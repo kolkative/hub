@@ -10,22 +10,51 @@ window.onload = function () {
     // Remove all Notion tooltips on images (desktop)
     document
       .querySelectorAll('div[style*="position: absolute; top: 4px;"]')
-      ?.forEach((el) => (el.style.display = 'none'));
+      ?.forEach((el) => (el.style.display = 'none'))
 
     // Remove hidden properties dropdown (desktop)
-    const propertiesDropdown = document.querySelector('div[aria-label="Page properties"]')?.nextElementSibling;
+    const propertiesDropdown = document.querySelector('div[aria-label="Page properties"]')?.nextElementSibling
     if (propertiesDropdown) {
-      propertiesDropdown.style.display = 'none';
+      propertiesDropdown.style.display = 'none'
     }
 
     // === MOBILE ===
-    // Hanya tampilkan .notranslate di .notion-topbar-mobile, sembunyikan div lain (bloatware kanan)
-    document.querySelectorAll('.notion-topbar-mobile > div')
+    // Hide mobile properties dropdown (if exists)
+    // Try to find a dropdown or menu that appears after a properties button in mobile
+    const mobilePropertiesBtn = document.querySelector('.notion-mobile [aria-label="Page properties"]')
+    const mobilePropertiesDropdown = mobilePropertiesBtn?.nextElementSibling
+    if (mobilePropertiesDropdown) {
+      mobilePropertiesDropdown.style.display = 'none'
+    }
+
+    // Hide specific topbar right elements only (not all popup-origin-wrapper)
+    // Hide Share site to socials button in notion-topbar-mobile
+    document.querySelectorAll('.notion-topbar-mobile [role="button"][aria-label="Share site to socials"]')
+      ?.forEach((el) => (el.style.display = 'none'))
+
+    // Hide Get Notion Free button in notion-topbar-mobile, never hide .notranslate
+    document.querySelectorAll('.notion-topbar-mobile [role="button"]')
       ?.forEach((el) => {
-        if (!el.classList.contains('notranslate')) {
-          el.style.display = 'none';
+        if (
+          el.innerText &&
+          el.innerText.trim().toLowerCase() === 'get notion free'
+        ) {
+          const notranslate = el.querySelector('.notranslate');
+          if (notranslate) {
+            Array.from(el.children).forEach(child => {
+              if (!child.classList.contains('notranslate')) {
+                child.style.display = 'none';
+              }
+            });
+          } else {
+            el.style.display = 'none';
+          }
         }
-      });
-  }, 1000);
+      })
+
+    // Hide More actions button in notion-topbar-mobile
+    document.querySelectorAll('.notion-topbar-mobile [role="button"][aria-label="More actions"]')
+      ?.forEach((el) => (el.style.display = 'none'))
+  }, 1000)
 }
 </script>`
