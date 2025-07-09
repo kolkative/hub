@@ -27,57 +27,55 @@ window.onload = function () {
     if (mobilePropertiesDropdown) {
       mobilePropertiesDropdown.style.display = 'none'
     }
+
+    // Array of stylesheets to inject in order
+    const stylesheets = [
+      "https://unpkg.com/open-props",
+      "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css",
+      "https://cdn.jsdelivr.net/npm/@hugeicons/font/css/hugeicons.min.css",
+    ];
+
+    stylesheets.forEach((href) => {
+      // Check if the stylesheet is already on the page
+      if (!document.querySelector('link[href="' + href + '"]')) {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = href;
+        document.head.appendChild(link);
+      }
+    });
+
+    if (document.getElementById('light-mode-toggle')) return;
+
+    const btn = document.createElement('button');
+    btn.id = 'light-mode-toggle';
+    btn.setAttribute('aria-label', 'Toggle Light Mode');
+    btn.innerHTML = '<i class="hugeicons-sun-01-rounded-stroke" style="font-size:24px;"></i>';
+    btn.type = 'button';
+
+    btn.addEventListener('click', function() {
+      const app = document.querySelector('.notion-app-inner');
+      if (!app) return;
+      if (app.classList.contains('notion-light-theme')) {
+        app.classList.remove('notion-light-theme');
+        localStorage.setItem('lightMode', '0');
+      } else {
+        app.classList.add('notion-light-theme');
+        localStorage.setItem('lightMode', '1');
+      }
+    });
+
+    // Load preferensi
+    window.addEventListener('DOMContentLoaded', function() {
+      const app = document.querySelector('.notion-app-inner');
+      if (!app) return;
+      if (localStorage.getItem('lightMode') === '1') {
+        app.classList.add('notion-light-theme');
+      }
+    });
+
+    document.body.appendChild(btn);
+    
   }, 1000)
 }
-
-// Tambah tombol light mode toggle
-(function() {
-  if (document.getElementById('light-mode-toggle')) return;
-
-  const btn = document.createElement('button');
-  btn.id = 'light-mode-toggle';
-  btn.setAttribute('aria-label', 'Toggle Light Mode');
-  btn.innerHTML = '<i class="hugeicons-sun-01-rounded-stroke" style="font-size:24px;"></i>';
-  btn.type = 'button';
-
-  btn.addEventListener('click', function() {
-    const app = document.querySelector('.notion-app-inner');
-    if (!app) return;
-    if (app.classList.contains('notion-light-theme')) {
-      app.classList.remove('notion-light-theme');
-      localStorage.setItem('lightMode', '0');
-    } else {
-      app.classList.add('notion-light-theme');
-      localStorage.setItem('lightMode', '1');
-    }
-  });
-
-  // Load preferensi
-  window.addEventListener('DOMContentLoaded', function() {
-    const app = document.querySelector('.notion-app-inner');
-    if (!app) return;
-    if (localStorage.getItem('lightMode') === '1') {
-      app.classList.add('notion-light-theme');
-    }
-  });
-
-  document.body.appendChild(btn);
-})();
-
-(function () {
-  // Array of stylesheets to inject in order
-  const stylesheets = [
-    "https://unpkg.com/open-props",
-    "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css",
-    "https://cdn.jsdelivr.net/npm/@hugeicons/font/css/hugeicons.min.css",
-  ];
-
-  stylesheets.forEach((href) => {
-    // Check if the stylesheet is already on the page
-    if (!document.querySelector('link[href="' + href + '"]')) {
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = href;
-      document.head.appendChild(link);
-    }
-  });</script>`
+</script>`
