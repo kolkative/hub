@@ -107,9 +107,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       color: var(--text-main) !important;
     }
       
-    .notion-frame {
+    /* .notion-frame {
       padding-left: 250px !important;
-    }
+    } */
 
     h1 {
       font-size: 18px !important;
