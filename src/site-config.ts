@@ -156,14 +156,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   .toggle-mode,
   .notion-page-controls,
   .notion-topbar,
-  .notion-topbar-mobile,
   header.notion-topbar-mobile,
-  header.notion-topbar-mobile[style] {
+  div[style*="min-height: 44px"] {
     display: none !important;
-    height: 0 !important;
-    min-height: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
   }
 
   /* ==================

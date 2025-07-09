@@ -141,16 +141,12 @@ function injectSidebar() {
   sidebar.innerHTML = html;
   document.body.appendChild(sidebar);
 
-  // Logic: hanya satu menu utama yang active
+  // Logic: highlight menu sesuai URL saat load
   var mainMenuLinks = sidebar.querySelectorAll(".x-sidebar-menu-main a");
   mainMenuLinks.forEach(function (link) {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      mainMenuLinks.forEach(function (l) {
-        l.classList.remove("active");
-      });
-      this.classList.add("active");
-    });
+    if (window.location.pathname === new URL(link.href).pathname) {
+      link.classList.add("active");
+    }
   });
 }
 
