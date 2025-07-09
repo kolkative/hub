@@ -136,6 +136,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     box-sizing: border-box !important;
   }
 
+  .layout-content {
+    margin-top: 60px;  
+  }
+
   .notion-page-content {
     margin-top: 34px; 
   }
@@ -205,7 +209,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   #x-sidebar .x-sidebar-inner {
     flex: 1;
     overflow-y: auto;
-    padding: 24px 12px 24px 12px;
+    padding: 70px 12px 24px 12px;
     display: flex;
     flex-direction: column;
     gap: 8px;
