@@ -45,35 +45,26 @@ window.onload = function () {
       }
     });
 
-    if (document.getElementById('light-mode-toggle')) return;
-
+    // Create x-toggle sun/moon button
     const btn = document.createElement('button');
-    btn.id = 'light-mode-toggle';
-    btn.setAttribute('aria-label', 'Toggle Light Mode');
-    btn.innerHTML = '<i class="hugeicons-sun-01-rounded-stroke" style="font-size:24px;"></i>';
-    btn.type = 'button';
-
+    btn.className = 'x-toggle-theme';
+    btn.setAttribute('aria-label', 'Toggle light/dark mode');
+    btn.innerHTML = `
+      <i class="hugeicons-sun-2"></i>
+      <i class="hugeicons-moon"></i>
+    `;
+    // Toggle logic: toggle 'notion-dark-theme' on .notion-app-inner
     btn.addEventListener('click', function() {
       const app = document.querySelector('.notion-app-inner');
       if (!app) return;
-      if (app.classList.contains('notion-light-theme')) {
-        app.classList.remove('notion-light-theme');
-        localStorage.setItem('lightMode', '0');
-      } else {
-        app.classList.add('notion-light-theme');
+      if (app.classList.contains('notion-dark-theme')) {
+        app.classList.remove('notion-dark-theme');
         localStorage.setItem('lightMode', '1');
+      } else {
+        app.classList.add('notion-dark-theme');
+        localStorage.setItem('lightMode', '0');
       }
     });
-
-    // Load preferensi
-    window.addEventListener('DOMContentLoaded', function() {
-      const app = document.querySelector('.notion-app-inner');
-      if (!app) return;
-      if (localStorage.getItem('lightMode') === '1') {
-        app.classList.add('notion-light-theme');
-      }
-    });
-
     document.body.appendChild(btn);
     
   }, 1000)
