@@ -141,10 +141,12 @@ function injectSidebar() {
   sidebar.innerHTML = html;
   document.body.appendChild(sidebar);
 
-  // Logic: highlight menu sesuai URL saat load
+  // Logic: highlight menu sesuai URL saat load (bandingkan pathname saja, tanpa trailing slash)
   var mainMenuLinks = sidebar.querySelectorAll(".x-sidebar-menu-main a");
+  var currentPath = window.location.pathname.replace(/\/$/, ''); // hapus trailing slash
   mainMenuLinks.forEach(function (link) {
-    if (window.location.pathname === new URL(link.href).pathname) {
+    var linkPath = new URL(link.href).pathname.replace(/\/$/, '');
+    if (currentPath === linkPath) {
       link.classList.add("active");
     }
   });
