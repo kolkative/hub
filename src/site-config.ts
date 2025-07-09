@@ -107,12 +107,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     color: var(--text-main) !important;
   }
 
-  .notion-layout {
+  /* .notion-layout {
     margin-top: 0px !important;
     margin-left: 0px !important;
     margin-bottom: 0px !important;
     margin-right: 0px !important;
-  }
+  } */
     
   .notion-frame {
     background: var(--bg-main) !important;
@@ -135,16 +135,16 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     padding: 24px 0 24px 24px !important;
     border-bottom: 1px solid var(--border-main) !important;
     box-sizing: border-box !important;
-    font-weight: 400;
+    font-weight: 500 !important;
   }
 
   /* .layout-content {
     padding-top: 60px;  
   } */
 
-  /* .notion-page-content {
-    margin-top: 34px; 
-  } */
+  .notion-page-content {
+    margin-top: 75px; 
+  }
 
   /* =====================
     HIDE & REMOVED
@@ -221,7 +221,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   #x-sidebar .x-sidebar-section-title {
     margin: 18px 0 4px 8px;
     font-size: 0.98em;
-    font-weight: 400;
+    font-weight: 500;
     opacity: 0.7;
     letter-spacing: 0.01em;
   }
@@ -251,7 +251,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     text-decoration: none;
     border-radius: 6px;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     transition: background .15s, color .15s;
     opacity: 0.95;
   }
@@ -397,7 +397,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--bg-sidebar);
+    background: var(--bg-main);
+    border-bottom: 1px solid var(--bg-border);
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     position: fixed;
     top: 0;
