@@ -116,23 +116,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     padding-left: 250px !important;
   }
   
-  .notion-topbar,
-  .notion-topbar-mobile {
-    background: var(--bg-sidebar: #23272f);
-    height: 60px !important;
-    min-height: 60px !important;
-    max-height: 60px !important;
-    padding-left: 250px !important;
-  }
-    
-  .notion-topbar .notranslate.shadow-cursor-breadcrumb {
-    display: flex !important;
-    justify-content: flex-start !important;
-    padding-left: 24px !important;
-    padding-top: 24px !important
-    box-sizing: border-box;
-  }
-
   h1 {
     position: fixed !important;
     top: 0 !important;
@@ -156,6 +139,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   
   #x-burger,
   .toggle-mode,
+  .notion-topbar,
+  .notion-topbar-mobile,
   .notion-page-controls {
     display: none !important;
   }
@@ -398,14 +383,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       width: 44px !important;
       height: 44px !important;
       padding: 0 !important;
-    }
-
-    .notion-topbar .notranslate.shadow-cursor-breadcrumb {
-      display: flex !important;
-      justify-content: flex-start !important;
-      padding-left: 0px !important;
-      padding-top: 24px !important
-      box-sizing: border-box;
     }
     
   }

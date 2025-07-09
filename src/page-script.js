@@ -29,31 +29,31 @@ window.onload = function () {
 
     // Hide specific topbar right elements only (not all popup-origin-wrapper)
     // Hide Share site to socials button in notion-topbar-mobile
-    document.querySelectorAll('.notion-topbar-mobile [role="button"][aria-label="Share site to socials"]')
-      ?.forEach((el) => (el.style.display = 'none'))
+    // document.querySelectorAll('.notion-topbar-mobile [role="button"][aria-label="Share site to socials"]')
+    //  ?.forEach((el) => (el.style.display = 'none'))
 
     // Gabungkan: Hide 'Get Notion Free' dan button dengan svg.notionDarkMode, kecuali tampilkan .notranslate
-    document.querySelectorAll('.notion-topbar-mobile [role="button"]')
-      ?.forEach((el) => {
-        const isGetNotionFree = el.innerText && el.innerText.trim().toLowerCase() === 'get notion free';
-        const hasDarkModeIcon = !!el.querySelector('svg.notionDarkMode');
-        const notranslate = el.querySelector('.notranslate');
-        if ((isGetNotionFree || hasDarkModeIcon)) {
-          if (notranslate) {
-            Array.from(el.children).forEach(child => {
-              if (!child.classList.contains('notranslate')) {
-                child.style.display = 'none';
-              }
-            });
-          } else {
-            el.style.display = 'none';
-          }
-        }
-      });
+    // document.querySelectorAll('.notion-topbar-mobile [role="button"]')
+    //  ?.forEach((el) => {
+    //    const isGetNotionFree = el.innerText && el.innerText.trim().toLowerCase() === 'get notion free';
+    //    const hasDarkModeIcon = !!el.querySelector('svg.notionDarkMode');
+    //    const notranslate = el.querySelector('.notranslate');
+    //    if ((isGetNotionFree || hasDarkModeIcon)) {
+    //      if (notranslate) {
+    //        Array.from(el.children).forEach(child => {
+    //          if (!child.classList.contains('notranslate')) {
+    //            child.style.display = 'none';
+    //          }
+    //        });
+    //      } else {
+    //        el.style.display = 'none';
+    //      }
+    //    }
+    //  });
 
     // Hide More actions button in notion-topbar-mobile
-    document.querySelectorAll('.notion-topbar-mobile [role="button"][aria-label="More actions"]')
-      ?.forEach((el) => (el.style.display = 'none'))
+    // document.querySelectorAll('.notion-topbar-mobile [role="button"][aria-label="More actions"]')
+    //  ?.forEach((el) => (el.style.display = 'none'))
   }, 1000)
 }
 
