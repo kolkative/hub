@@ -7,3 +7,7 @@ routes = [
 	{ pattern = "hub.kolkative.my.id", custom_domain = true },
 	{ pattern = "www.hub.kolkative.my.id", custom_domain = true }
 ]
+
+# wrangler.toml (wrangler v3.88.0^)
+[observability.logs]
+enabled = true
