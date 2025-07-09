@@ -121,6 +121,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   }
   
   h1 {
+    font-size: 16px !important;
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
@@ -137,7 +138,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   }
 
   .layout-content {
-    margin-top: 60px;  
+    padding-top: 60px;  
   }
 
   .notion-page-content {
@@ -173,7 +174,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 4000 !important;
+    z-index: 2500 !important;
   }
  
   #x-toggle svg {
@@ -375,7 +376,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     position: fixed;
     top: 16px;
     left: 28px;
-    z-index: 2000 !important;
+    z-index: 2500 !important;
     align-items: center;
     justify-content: center;
     background: none;
@@ -395,12 +396,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--bg-main);
+    background: var(--bg-sidebar);
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2000;
+    z-index: 2100;
     padding: 0 24px;
   }
 
