@@ -84,12 +84,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   body.dark,
   .notion-body.dark,
   html.dark-mode {
-    --bg-main: #06061a;
-    --bg-sidebar: #23272f;
+    --bg-main: #191b1e;
+    --bg-sidebar: #010101;
     --text-main: #f7f7f8;
-    --border-main: #2e2e38;
+    --border-main: #454952;
     --link: var(--indigo-4);
-    --surface-hover: #2e2e38;
+    --surface-hover:#454952;
   }
 
   /* =========================
@@ -180,7 +180,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   ========================= */
 
   #x-sidebar {
-    position: flex !important;
+    position: fixed;
     top: 0; left: 0; bottom: 0;
     width: 250px;
     background: var(--bg-sidebar, #23272f);
@@ -195,7 +195,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     transition: background .2s, color .2s;
   }
   
-  #x-sidebar .x-sidebar-inner {
+    #x-sidebar .x-sidebar-inner {
     flex: 1;
     overflow-y: auto;
     padding: 0 12px 24px 12px;
@@ -204,7 +204,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     gap: 8px;
   }
   
-  #x-sidebar .x-sidebar-logo {
+    #x-sidebar .x-sidebar-logo {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -216,15 +216,15 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     color: var(--text-main, #f7f7f8);
   }
   
-  #x-sidebar .x-sidebar-logo img {
+    #x-sidebar .x-sidebar-logo img {
     width: 20px;
     height: 20px;
     object-fit: contain;
     vertical-align: middle;
     margin-right: 4px;
   }
-
-  #x-sidebar .x-sidebar-section-title {
+  
+    #x-sidebar .x-sidebar-section-title {
     margin: 18px 0 4px 8px;
     font-size: 0.98em;
     font-weight: 600;
@@ -232,7 +232,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     letter-spacing: 0.01em;
   }
   
-  #x-sidebar .x-sidebar-menu {
+    #x-sidebar .x-sidebar-menu {
     list-style: none;
     margin: 0; padding: 0;
     display: flex;
@@ -240,15 +240,15 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     gap: 2px;
   }
   
-  #x-sidebar .x-sidebar-menu-main {
+    #x-sidebar .x-sidebar-menu-main {
     margin-bottom: 8px;
   }
   
-  #x-sidebar .x-sidebar-menu li {
+    #x-sidebar .x-sidebar-menu li {
     margin: 0; padding: 0;
   }
   
-  #x-sidebar .x-sidebar-menu a {
+    #x-sidebar .x-sidebar-menu a {
     display: flex;
     align-items: center;
     gap: 0;
@@ -262,13 +262,97 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     opacity: 0.95;
   }
   
+    #x-sidebar .x-sidebar-menu a:hover,
+  #x-sidebar .x-sidebar-menu a.active {
+    background: var(--surface-hover, #2e2e38);
+    color: var(--accent, #64ffda);
+    opacity: 1;
+    border-radius: 6px;
+  }
+  
+  #x-sidebar .x-sidebar-menu a svg,
+  #x-sidebar .x-sidebar-menu a img[alt="Kolkative Academy"] {
+    margin-right: 4px !important;
+    min-width: 20px;
+    min-height: 20px;
+    max-width: 20px;
+    max-height: 20px;
+    vertical-align: middle;
+    display: inline-block;
+  }
+  
+  #x-sidebar .x-sidebar-menu a.active svg {
+    color: #3b82f6;
+    stroke: #3b82f6;
+  }
+  
+  html.light-mode #x-sidebar {
+    background: var(--bg-sidebar, #f7f7f8);
+    color: var(--text-main, #23272f);
+    border-right: 1px solid var(--border-main, #e5e5e7);
+  }
+  
+  html.light-mode #x-sidebar .x-sidebar-logo {
+    color: var(--text-main, #23272f);
+  }
+  
+  html.light-mode #x-sidebar .x-sidebar-menu a:hover,
+  html.light-mode #x-sidebar .x-sidebar-menu a.active {
+    background: var(--surface-hover, #e5e5e7);
+    color: var(--accent, #3b82f6);
+  }
+  
+  html.light-mode #x-sidebar .x-sidebar-menu a.active svg {
+    color: #3b82f6;
+    stroke: #3b82f6;
+  }
+  
+    /* Hugeicons fix for sidebar */
+  #x-sidebar .hgi {
+    font-family: 'Hugeicons', 'Arial', sans-serif !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    font-size: 18px;
+    display: inline-block;
+    vertical-align: middle;
+    speak: never;
+    margin-right: 8px;
+    color: inherit;
+    width: 1.2em;
+    height: 1.2em;
+    overflow: visible;
+  }
+  
+    #x-sidebar .x-sidebar-menu a.active .hgi {
+    color: #3b82f6;
+  }
+  
+  html.light-mode #x-sidebar .x-sidebar-menu a.active .hgi {
+    color: #3b82f6;
+  }
+
+  #x-sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2px);
+    z-index: unset;
+    display: none;
+    pointer-events: auto;
+    }
+
   /* =====================
     RESPONSIVE: MOBILE VIEW
   ===================== */
   
   @media (max-width: 900px) {
-    .notion-topbar,
-    .notion-topbar-mobile,  
+
     .notion-frame {
       padding-left: 0 !important;
       transition: margin-left 0.3s cubic-bezier(0.4,0,0.2,1);
@@ -283,7 +367,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
     
     body.sidebar-open .notion-frame {
-      padding-left: 250px !important;
+      margin-left: 250px !important;
     }
     
     #x-burger {
@@ -308,7 +392,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   }
 
   /* =========================
-    X-HEADER CUSTOM
+    X-HEADER
   ========================= */
   #x-header {
     width: 100vw;
@@ -321,7 +405,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 5000;
+    z-index: 2000;
     padding: 0 24px;
   }
   #x-header-inner {
@@ -333,14 +417,14 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     justify-content: center;
   }
   #x-header-logo {
-    width: 32px;
-    height: 32px;
+    width: 16px;
+    height: 16px;
     object-fit: contain;
     margin-right: 12px;
   }
   #x-header-title {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 400;
     color: var(--text-main, #f7f7f8);
     letter-spacing: -1px;
   }
