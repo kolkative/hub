@@ -5,7 +5,7 @@
 
 // This script is injected into the Notion page and runs on every page load.
 window.onload = function () {
-  // === TOGGLE DARK/LIGHT MODE ===
+  // === TOGGLE LIGHT MODE CUSTOM ===
   function createToggleButton() {
     // Check if toggle already exists
     if (document.getElementById('x-toggle')) {
@@ -21,27 +21,19 @@ window.onload = function () {
     toggle.addEventListener('click', function() {
       const body = document.body
       const html = document.documentElement
-      const notionApp = document.querySelector('.notion-app-inner')
-      
-      // Toggle dark mode
-      if (body.classList.contains('dark') || html.classList.contains('dark-mode')) {
-        // Switch to light mode
-        body.classList.remove('dark')
-        html.classList.remove('dark-mode')
-        if (notionApp) {
-          notionApp.classList.remove('notion-dark-theme')
-        }
+      const isLight = body.classList.contains('notion-light-theme') || html.classList.contains('notion-light-theme')
+      if (isLight) {
+        // Kembali ke default (dark bawaan Notion)
+        body.classList.remove('notion-light-theme')
+        html.classList.remove('notion-light-theme')
         toggle.querySelector('.toggle-text').textContent = 'Light'
-        localStorage.setItem('theme', 'light')
-      } else {
-        // Switch to dark mode
-        body.classList.add('dark')
-        html.classList.add('dark-mode')
-        if (notionApp) {
-          notionApp.classList.add('notion-dark-theme')
-        }
-        toggle.querySelector('.toggle-text').textContent = 'Dark'
         localStorage.setItem('theme', 'dark')
+      } else {
+        // Aktifkan light mode custom
+        body.classList.add('notion-light-theme')
+        html.classList.add('notion-light-theme')
+        toggle.querySelector('.toggle-text').textContent = 'Dark'
+        localStorage.setItem('theme', 'light')
       }
     })
     
@@ -54,14 +46,9 @@ window.onload = function () {
     const savedTheme = localStorage.getItem('theme')
     const body = document.body
     const html = document.documentElement
-    const notionApp = document.querySelector('.notion-app-inner')
-    
-    if (savedTheme === 'dark') {
-      body.classList.add('dark')
-      html.classList.add('dark-mode')
-      if (notionApp) {
-        notionApp.classList.add('notion-dark-theme')
-      }
+    if (savedTheme === 'light') {
+      body.classList.add('notion-light-theme')
+      html.classList.add('notion-light-theme')
     }
   }
   

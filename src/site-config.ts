@@ -67,16 +67,15 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   // Custom JS for head and body of a Notion page
   customHeadCSS: `
     /* ==========================
-      LIGHT MODE OVERRIDE
+      LIGHT MODE CUSTOM ONLY
     ========================== */
-    body:not(.dark) .notion-app-inner,
-    html:not(.dark-mode) .notion-app-inner,
-    .notion-app-inner:not(.notion-dark-theme) {
+    body.notion-light-theme .notion-app-inner,
+    html.notion-light-theme .notion-app-inner {
       background-color: #fff !important;
       color: #23272f !important;
     }
-    body:not(.dark),
-    html:not(.dark-mode) {
+    body.notion-light-theme,
+    html.notion-light-theme {
       --bg-main: #fff;
       --bg-sidebar: #f7f7f8;
       --text-main: #23272f;
@@ -84,111 +83,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --link: var(--indigo-6);
       --surface-hover: #e5e5e7;
     }
-      
-    body.dark,
-    .notion-app-inner ,
-    .notion-body.dark,
-    html.dark-mode {
-      --bg-main: #191b1e;
-      --bg-sidebar: #2b2e32;
-      --text-main: #f7f7f8;
-      --border-main: #454952;
-      --link: var(--indigo-4);
-      --surface-hover:#454952;
-    }
 
-    /* Perbaikan background agar dinamis sesuai mode */
-    .notion-app-inner {
-      background-color: #fff !important;
-    }
-    body.dark .notion-app-inner,
-    html.dark-mode .notion-app-inner,
-    .notion-app-inner.notion-dark-theme {
-      background-color: #191b1e !important;
-    }
-
-    /* ==========================
-      TOGGLE DARK/LIGHT MODE
-    ========================== */
-    
-    #x-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 9999;
-      background: var(--bg-main);
-      border: 2px solid var(--border-main);
-      border-radius: 50px;
-      padding: 8px 12px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--text-main);
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    #x-toggle:hover {
-      background: var(--surface-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    }
-    
-    #x-toggle .toggle-icon {
-      width: 16px;
-      height: 16px;
-      transition: transform 0.3s ease;
-    }
-    
-    #x-toggle .toggle-icon.sun {
-      background: #fbbf24;
-      border-radius: 50%;
-      position: relative;
-    }
-    
-    #x-toggle .toggle-icon.sun::after {
-      content: '';
-      position: absolute;
-      top: -4px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 2px;
-      height: 4px;
-      background: #fbbf24;
-      border-radius: 1px;
-    }
-    
-    #x-toggle .toggle-icon.moon {
-      background: #6366f1;
-      border-radius: 50%;
-      position: relative;
-    }
-    
-    #x-toggle .toggle-icon.moon::after {
-      content: '';
-      position: absolute;
-      top: 2px;
-      left: 2px;
-      width: 8px;
-      height: 8px;
-      background: var(--bg-main);
-      border-radius: 50%;
-    }
-    
-    /* Dark mode styles */
-    body.dark #x-toggle .toggle-icon.sun,
-    html.dark-mode #x-toggle .toggle-icon.sun {
-      display: none;
-    }
-    
-    body:not(.dark) #x-toggle .toggle-icon.moon,
-    html:not(.dark-mode) #x-toggle .toggle-icon.moon {
-      display: none;
-    }
-  
     /* =====================
       HIDE & REMOVED
     ===================== */
