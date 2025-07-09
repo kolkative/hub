@@ -122,6 +122,49 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     height: 60px !important;
     min-height: 60px !important;
     max-height: 60px !important;
+    padding-left: 250px !important;
+  }
+
+  /* =====================
+    HIDE & REMOVED
+  ===================== */
+  
+  #x-burger,
+  .toggle-mode,
+  .notion-page-controls,
+  .notion-topbar,
+  .notion-topbar-mobile {
+    display: none !important;
+  }
+
+  /* ==================
+    X-TOGGLE
+  ===================== */
+    
+  #x-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    min-height: 36px;
+    padding: 6px;
+    position: fixed !important;
+    top: 16px;
+    right: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 4000 !important;
+  }
+ 
+  #x-toggle svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+  }
+ 
+  #x-toggle:hover {
+    color: var(--accent, #64ffda);
   }
     
   /* =========================
@@ -216,19 +259,25 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   ===================== */
   
   @media (max-width: 900px) {
-    #x-sidebar {
-      display: none !important;
-    }
-    body.sidebar-open #x-sidebar {
-      display: block !important;
-    }
+    .notion-topbar,
+    .notion-topbar-mobile,  
     .notion-frame {
       padding-left: 0 !important;
       transition: padding-left 0.3s cubic-bezier(0.4,0,0.2,1);
     }
+    
+    #x-sidebar {
+      display: none !important;
+    }
+    
+    body.sidebar-open #x-sidebar {
+      display: block !important;
+    }
+    
     body.sidebar-open .notion-frame {
       padding-left: 250px !important;
     }
+    
     #x-burger {
       display: flex !important;
       position: fixed !important;
@@ -243,62 +292,13 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       height: 44px !important;
       padding: 0 !important;
     }
+    
     body.sidebar-open #x-burger {
       transform: translateX(250px);
     }
-    .main-content,
-    .notion-page-content,
-    div.notion-selectable .notion-page-block {
-      z-index: 2 !important;
-      position: relative !important;
-    }
-    #x-burger {
-      display: flex !important;
-    }
-  }
-     
-  /* =====================
-    OVERLAY STYLE (MOBILE ONLY)
-  ===================== */
-  
-  #x-sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(2px);
-    z-index: unset;
-    display: none;
-    pointer-events: auto;
-  }
-  
-  /* Pastikan x-burger selalu di atas overlay dan tidak blur */
-  body.x-sidebar-open #x-burger {
-    z-index: 3100 !important;
-    pointer-events: auto !important;
-    filter: none !important;
+    
   }
 
-  /* =====================
-    HAMBURGER BUTTON RESPONSIVE
-  ===================== */
-    
-  #x-burger {
-    position: fixed;
-    top: 16px;
-    left: 28px;
-    z-index: 9999 !important;
-    align-items: center;
-    justify-content: center;
-    background: none;
-    border: none;
-    cursor: pointer;
-    width: 44px;
-    height: 44px;
-    padding: 0;
-  }
   
   `,
   customHeadJS: googleTag(GOOGLE_TAG_ID),
