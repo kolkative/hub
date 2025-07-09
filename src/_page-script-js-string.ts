@@ -124,8 +124,6 @@ window.onload = function () {
     });
   });
 
-  window.addEventListener("load", injectSidebar);
-
 })();
 
 // Inject x-header at the top of the body
