@@ -123,7 +123,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   h1 {
     font-size: 16px !important;
     position: fixed !important;
-    top: 0 !important;
+    top: 60px !important;
     left: 0 !important;
     right: 0 !important;
     width: 100vw !important;

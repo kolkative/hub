@@ -66,12 +66,6 @@ function injectSidebar() {
   sidebar.setAttribute("aria-label", "Sidebar");
   var html = "";
   html += '<div class="x-sidebar-inner">';
-  html +=
-    '<div class="x-sidebar-logo" style="display:flex;align-items:center;padding:24px 0 12px 0;padding-left:14px;font-weight:700;font-size:1.15rem;letter-spacing:-1px;">';
-  html +=
-    '<img src="https://i.imgur.com/uyJEQnp.png" alt="Kolkative Hub" style="width:20px;height:20px;object-fit:contain;vertical-align:middle;margin-right:4px;"/>';
-  html += '<span class="x-sidebar-logo-text">Kolkative Hub</span>';
-  html += "</div>";
   // Main menu
   html += '<ul class="x-sidebar-menu x-sidebar-menu-main">';
   // Feed
@@ -352,7 +346,7 @@ window.addEventListener("resize", function () {
     function updateBurgerSidebar() {
       if (window.innerWidth < 900) {
         burger.style.display = "flex";
-        if (sidebar) sidebar.style.zIndex = 5000;
+        if (sidebar) sidebar.style.zIndex = "unset";
       } else {
         burger.style.display = "none";
         document.body.classList.remove("sidebar-open");
