@@ -85,7 +85,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   .notion-body.dark,
   html.dark-mode {
     --bg-main: #191b1e;
-    --bg-sidebar: #010101;
+    --bg-sidebar: #2b2e32;
     --text-main: #f7f7f8;
     --border-main: #454952;
     --link: var(--indigo-4);
@@ -129,21 +129,22 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     width: 100vw !important;
     min-width: 100vw !important;
     max-width: 100vw !important;
-    background: var(--bg-sidebar, #23272f) !important;
+    background: var(--bg-sidebar) !important;
     background-clip: padding-box !important;
     z-index: 2 !important;
-    padding: 4px 0 4px 24px !important;
-    border-bottom: 2px solid #3b82f6 !important;
+    padding: 24px 0 24px 24px !important;
+    border-bottom: 1px solid var(--border-main) !important;
     box-sizing: border-box !important;
+    font-weight: 400;
   }
 
-  .layout-content {
+  /* .layout-content {
     padding-top: 60px;  
-  }
+  } */
 
-  .notion-page-content {
+  /* .notion-page-content {
     margin-top: 34px; 
-  }
+  } */
 
   /* =====================
     HIDE & REMOVED
@@ -220,7 +221,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   #x-sidebar .x-sidebar-section-title {
     margin: 18px 0 4px 8px;
     font-size: 0.98em;
-    font-weight: 600;
+    font-weight: 400;
     opacity: 0.7;
     letter-spacing: 0.01em;
   }
