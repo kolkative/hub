@@ -135,27 +135,27 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   }
 
   .layout.layout-wide {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-bottom: 0 !important;
+    padding-left: -50px !important;
+    padding-right: -50px !important;
+    margin-left: -50px !important;
+    margin-right: -50px !important;
+    padding-bottom: -50px !important;
   }
 
   .layout-content {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    padding-left: -50px !important;
+    padding-right: -50px !important;
+    margin-left: -50px !important;
+    margin-right: -50px !important;
   }
 
   .notion-page-content {
     margin-top: 150px !important;
     max-width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    margin-left: -50px !important;
+    margin-right: -50px !important;
+    padding-left: -50px !important;
+    padding-right: -50px !important;
   }
 
   /* =====================
@@ -222,7 +222,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   #x-sidebar .x-sidebar-inner {
     flex: 1;
     overflow-y: auto;
-    padding: 70px 8px 8px 8px;
+    padding: 70px 0px 4px 8px;
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -256,7 +256,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   #x-sidebar .x-sidebar-menu a {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 2px;
     padding: 14px 14px 14px 14px;
     color: inherit;
     text-decoration: none;
