@@ -106,10 +106,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     background: var(--bg-main) !important;
     color: var(--text-main) !important;
   }
-
-  .layout.layout-wide {
-    padding: 0px 0px 0px 0px !important;
-  }
     
   .notion-frame {
     background: var(--bg-main) !important;
@@ -136,9 +132,13 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     z-index: 2500 !important;
   }
 
+  .layout.layout-wide {
+    padding-bottom: 0px !important;
+    margin-width: 36px;
+  }
+
   .notion-page-content {
-    padding: 0px 0px 0px 0px !important;
-    margin: 84px 0px 0px 0px !important;
+    margin-top: 84px !important;
   }
 
   /* =====================
@@ -161,12 +161,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     display: flex !important;
     align-items: center;
     justify-content: center;
-    min-width: 36px;
-    min-height: 36px;
-    padding: 6px;
+    min-width: 60px;
+    min-height: 60px;
     position: fixed !important;
-    top: 16px;
-    right: 20px;
+    top: 0px;
+    right: 10px;
     background: none;
     border: none;
     cursor: pointer;
@@ -374,16 +373,16 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     
   #x-burger {
     position: fixed;
-    top: 16px;
-    left: 20px;
+    top: 0px;
+    left: 10px;
     z-index: 2500 !important;
     align-items: center;
     justify-content: center;
     background: none;
     border: none;
     cursor: pointer;
-    width: 44px;
-    height: 44px;
+    width: 60px;
+    height: 60px;
     padding: 0;
   }
 
