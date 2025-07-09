@@ -135,6 +135,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   }
 
   .layout.layout-wide {
+    --margin-width: 16px !important;
     padding-bottom: 0px !important;
   }
 
