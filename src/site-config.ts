@@ -134,11 +134,18 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     z-index: 2500 !important;
   }
   
-  .layout
+  .layout,
   .layout.layout-wide {
     --margin-width: 20px !important;
     --content-width: min(900px, 100%) !important;
+    padding-left: 16px;
+    padding-right: 16px;
     padding-bottom: 0px !important;
+  }
+    
+  .layout.layout-wide > * {
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   .layout-content {
