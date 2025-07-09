@@ -52,8 +52,8 @@ window.onload = function () {
   const THEME_KEY = "theme";
   const NOTION_DARK_CLASS = "notion-dark-theme";
 
-  const sunIcon = '<i class="bi bi-sun-fill"></i>';
-  const moonIcon = '<i class="bi bi-moon-fill"></i>';
+  const sunIcon = '<i class="hgi hgi-stroke hgi-moon-02"></i>';
+  const moonIcon = '<i class="hgi hgi-stroke hgi-moon-02"></i>';
 
   let currentTheme;
 
@@ -141,60 +141,4 @@ window.onload = function () {
       document.body.insertBefore(header, document.body.firstChild);
     }
   });
-})();
-
-// Responsive & interactive x-burger (hamburger button) for sidebar
-(function () {
-  function injectBurgerAndOverlay() {
-    let burger = document.getElementById("x-burger");
-    let overlay = document.getElementById("x-sidebar-overlay");
-    let sidebar = document.getElementById("x-sidebar");
-
-    // Burger button
-    if (!burger) {
-      burger = document.createElement("button");
-      burger.id = "x-burger";
-      burger.setAttribute("aria-label", "Open sidebar");
-      burger.innerHTML =
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="currentColor" fill="none"><path d="M4 8.5L20 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4 15.5L20 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
-      document.body.appendChild(burger);
-    }
-
-    // Overlay
-    if (!overlay) {
-      overlay = document.createElement("div");
-      overlay.id = "x-sidebar-overlay";
-      document.body.appendChild(overlay);
-    }
-
-    // Responsive show/hide
-    function updateBurgerSidebar() {
-      if (window.innerWidth < 900) {
-        burger.style.display = "flex";
-        if (sidebar) sidebar.style.zIndex = "unset";
-      } else {
-        burger.style.display = "none";
-        document.body.classList.remove("sidebar-open");
-        overlay.style.display = "none";
-        if (sidebar) sidebar.style.zIndex = "unset";
-      }
-    }
-    updateBurgerSidebar();
-    window.addEventListener("resize", updateBurgerSidebar);
-
-    // Burger click: toggle sidebar
-    burger.onclick = function () {
-      if (window.innerWidth < 900) {
-        const isOpen = document.body.classList.toggle("sidebar-open");
-        overlay.style.display = isOpen ? "block" : "none";
-      }
-    };
-
-    // Overlay click: close sidebar
-    overlay.onclick = function () {
-      document.body.classList.remove("sidebar-open");
-      overlay.style.display = "none";
-    };
-  }
-  window.addEventListener("DOMContentLoaded", injectBurgerAndOverlay);
 })();
