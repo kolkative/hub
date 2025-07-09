@@ -108,9 +108,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   }
 
   .layout.layout-wide {
-    padding-bottom: 24px !important;
-    padding-left: -100px !important;
-    padding-right: -100px !important;
+    padding: 0px 0px 0px 0px !important;
   }
     
   .notion-frame {
@@ -138,12 +136,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     z-index: 2500 !important;
   }
 
-  /* .layout-content {
-    padding-top: 60px;  
-  } */
-
   .notion-page-content {
-    margin-top: 84px !important;
+    padding: 0px 0px 0px 0px !important;
+    margin: 84px 0px 0px 0px !important;
   }
 
   /* =====================
@@ -171,7 +166,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     padding: 6px;
     position: fixed !important;
     top: 16px;
-    right: 28px;
+    right: 20px;
     background: none;
     border: none;
     cursor: pointer;
@@ -214,7 +209,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     padding: 70px 12px 24px 12px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 4px;
   }
   
   #x-sidebar .x-sidebar-section-title {
@@ -380,7 +375,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   #x-burger {
     position: fixed;
     top: 16px;
-    left: 28px;
+    left: 20px;
     z-index: 2500 !important;
     align-items: center;
     justify-content: center;
@@ -413,7 +408,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   #x-header-inner {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     width: 100%;
     max-width: 1200px;
     justify-content: flex-start;
