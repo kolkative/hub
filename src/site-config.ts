@@ -67,15 +67,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   // Custom JS for head and body of a Notion page
   customHeadCSS: `
     /* ==========================
-      LIGHT MODE CUSTOM ONLY
+      LIGHT MODE CUSTOM ONLY (notion-app-inner saja)
     ========================== */
-    body.notion-light-theme .notion-app-inner,
-    html.notion-light-theme .notion-app-inner {
+    .notion-app-inner.notion-light-theme {
       background-color: #fff !important;
       color: #23272f !important;
-    }
-    body.notion-light-theme,
-    html.notion-light-theme {
       --bg-main: #fff;
       --bg-sidebar: #f7f7f8;
       --text-main: #23272f;
@@ -83,10 +79,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --link: var(--indigo-6);
       --surface-hover: #e5e5e7;
     }
-
-    /* =====================
+    /* ==========================
       TOGGLE BUTTON
-    ===================== */
+    ========================== */
     #x-toggle {
       position: fixed;
       top: 20px;

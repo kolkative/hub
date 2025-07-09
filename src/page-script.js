@@ -19,19 +19,16 @@ window.onload = function () {
     
     // Add click event
     toggle.addEventListener('click', function() {
-      const body = document.body
-      const html = document.documentElement
-      const isLight = body.classList.contains('notion-light-theme') || html.classList.contains('notion-light-theme')
+      const notionApp = document.querySelector('.notion-app-inner')
+      const isLight = notionApp && notionApp.classList.contains('notion-light-theme')
       if (isLight) {
         // Kembali ke default (dark bawaan Notion)
-        body.classList.remove('notion-light-theme')
-        html.classList.remove('notion-light-theme')
+        notionApp.classList.remove('notion-light-theme')
         toggle.querySelector('.toggle-text').textContent = 'Light'
         localStorage.setItem('theme', 'dark')
       } else {
         // Aktifkan light mode custom
-        body.classList.add('notion-light-theme')
-        html.classList.add('notion-light-theme')
+        if (notionApp) notionApp.classList.add('notion-light-theme')
         toggle.querySelector('.toggle-text').textContent = 'Dark'
         localStorage.setItem('theme', 'light')
       }
@@ -44,11 +41,9 @@ window.onload = function () {
   // Initialize theme from localStorage
   function initializeTheme() {
     const savedTheme = localStorage.getItem('theme')
-    const body = document.body
-    const html = document.documentElement
-    if (savedTheme === 'light') {
-      body.classList.add('notion-light-theme')
-      html.classList.add('notion-light-theme')
+    const notionApp = document.querySelector('.notion-app-inner')
+    if (savedTheme === 'light' && notionApp) {
+      notionApp.classList.add('notion-light-theme')
     }
   }
   
