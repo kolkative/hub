@@ -142,17 +142,14 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     padding-right: 16px;
     padding-bottom: 0px !important;
   }
-    
+
   .layout.layout-wide > * {
     margin-left: auto !important;
     margin-right: auto !important;
   }
 
-  .layout-content {
-    margin-left: 0px !important;
-    margin-right: 0px !important;
-    margin-top: 0px !important;
-    margin-bottom: 0px !important;
+  .layout.layout-wide .notion-selectable {
+  max-width: 100% !important;
   }
 
   .notion-page-content {
