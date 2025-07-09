@@ -66,7 +66,92 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
   // Custom JS for head and body of a Notion page
   customHeadCSS: `
+    /* ==========================
+      LIGHT AND DARK THEMES
+    ========================== */
     
+    body,
+    .notion-body,
+    html.light-mode {
+      --bg-main: #fff;
+      --bg-sidebar: #f7f7f8;
+      --text-main: #23272f;
+      --border-main: #e5e5e7;
+      --link: var(--indigo-6);
+      --surface-hover: #e5e5e7;
+    }
+      
+    body.dark,
+    .notion-body.dark,
+    html.dark-mode {
+      --bg-main: #191b1e;
+      --bg-sidebar: #2b2e32;
+      --text-main: #f7f7f8;
+      --border-main: #454952;
+      --link: var(--indigo-4);
+      --surface-hover:#454952;
+    }
+
+    /* =========================
+      STYLE OVERIDE
+    ========================= */
+    
+    /* body {
+      padding-top: 60px !important;
+    } */
+
+    html.notion-html,
+    .notion-app,
+    .notion-app-inner {
+      background: var(--bg-main) !important;
+      color: var(--text-main) !important;
+    }
+      
+    .notion-frame {
+      background: var(--bg-main) !important;
+      color: var(--text-main) !important;
+      padding-left: 0 !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+    body.sidebar-enabled .notion-frame {
+      padding-left: 250px !important;
+    }
+    
+    h1 {
+      font-size: 18px !important;
+      position: fixed !important;
+      top: 60px !important;
+      left: 0 !important;
+      right: 0 !important;
+      width: 100vw !important;
+      min-width: 100vw !important;
+      max-width: 100vw !important;
+      background: var(--bg-sidebar) !important;
+      background-clip: padding-box !important;
+      z-index: 2 !important;
+      padding: 24px 0 24px 24px !important;
+      border-bottom: 1px solid var(--border-main) !important;
+      box-sizing: border-box !important;
+      font-weight: 500 !important;
+      z-index: 2500 !important;
+    }
+
+    .layout.layout-wide {
+      --margin-width: 24px !important;
+      --content-width: 1fr !important;
+      padding-bottom: 0px !important;
+    }
+
+    .layout.layout-wide .notion-selectable {
+      max-width: none !important;
+      width: auto !important;
+    }
+
+    .notion-page-content {
+      margin-top: 100px !important;
+    }
+
     /* ==========================
       HIDE OVERIDE
     ========================== */
@@ -76,53 +161,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     header.notion-topbar-mobile,
     div[style*="min-height: 44px"] {
       display: none !important;
-    }
-    
-    /* ==========================
-      ADAPTIVE ROOT COLOR
-    ========================== */
-    .notion-app-inner {
-      --x-bg: var(--notion-light-bg, #fff);
-      --x-text: var(--notion-light-text, #191919);
-      background: var(--x-bg) !important;
-      color: var(--x-text) !important;
-    }
-    .notion-app-inner.notion-dark-theme {
-      --x-bg: var(--notion-dark-bg, #191919);
-      --x-text: var(--notion-dark-text, #fff);
-    }
-    .notion-app-inner, .notion-app-inner * {
-      background: var(--x-bg, inherit);
-      color: var(--x-text, inherit);
-    }
-    /* Toggle button basic style (customize as needed) */
-    .x-toggle {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      z-index: 9999;
-      background: var(--x-bg);
-      color: var(--x-text);
-      border: none;
-      border-radius: 2rem;
-      padding: 0.5rem 1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 1.5rem;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .notion-app-inner.notion-dark-theme .hgi hgi-stroke hgi-moon-02,
-    .x-toggle .hgi hgi-stroke hgi-sun-03 {
-      display: inline;
-    }
-
-    .notion-app-inner.notion-dark-theme .hgi hgi-stroke hgi-sun-03,
-    .x-toggle .hgi hgi-stroke hgi-moon-02 {
-      display: none;
     }
     
   `,
