@@ -132,14 +132,14 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
        ADAPTIVE BODY BACKGROUND
     ========================== */
     #notion-app,
-    .body.notion-body,
+    .notion-body,
     html.notion-html {
-      background-color: #191b1e !important;
+      background-color: #fff !important;
     }
     .notion-app-inner:not(.notion-dark-theme) ~ .#notion-app,
-    .notion-app-inner:not(.notion-dark-theme) ~ .body.notion-body,
+    .notion-app-inner:not(.notion-dark-theme) ~ ..notion-body,
     .notion-app-inner:not(.notion-dark-theme) ~ .html.notion-html {
-      background-color: #fff !important;
+      background-color: #191b1e !important;
     }
 
   `,
