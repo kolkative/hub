@@ -230,7 +230,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     margin: 0; padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 6px;
   }
   
   #x-sidebar .x-sidebar-menu-main {
@@ -244,7 +244,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   #x-sidebar .x-sidebar-menu a {
     display: flex;
     align-items: center;
-    gap: 0;
+    gap: 6px;
     padding: 14px 14px 14px 14px;
     color: inherit;
     text-decoration: none;
@@ -336,7 +336,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(2px);
     z-index: 2000;
     display: none;
     pointer-events: auto;
@@ -368,7 +367,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     #x-header,
     #x-header-inner {
-      justify-content: center;
+      justify-content: center !important;
       align-items: center;
     }
     
@@ -414,7 +413,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   #x-header-inner {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 6px;
     width: 100%;
     max-width: 1200px;
     justify-content: flex-start;
@@ -429,9 +428,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     font-weight: 500;
     color: var(--text-main, #f7f7f8);
   }
-  
- 
-
   
   `,
   customHeadJS: googleTag(GOOGLE_TAG_ID),
