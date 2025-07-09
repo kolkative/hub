@@ -96,6 +96,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     STYLE OVERIDE
   ========================= */
   
+  body {
+    padding-top: 60px !important;
+  }
+
   html.notion-html,
   .notion-app,
   .notion-app-inner {
@@ -135,7 +139,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   /* =====================
     HIDE & REMOVED
   ===================== */
-  
   
   #x-burger,
   .toggle-mode,
@@ -307,7 +310,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     stroke: #3b82f6;
   }
   
-    /* Hugeicons fix for sidebar */
+  /* Hugeicons fix for sidebar */
   #x-sidebar .hgi {
     font-family: 'Hugeicons', 'Arial', sans-serif !important;
     font-style: normal;
@@ -326,7 +329,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     overflow: visible;
   }
   
-    #x-sidebar .x-sidebar-menu a.active .hgi {
+  #x-sidebar .x-sidebar-menu a.active .hgi {
     color: #3b82f6;
   }
   
@@ -345,7 +348,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     z-index: unset;
     display: none;
     pointer-events: auto;
-    }
+  }
 
   /* =====================
     RESPONSIVE: MOBILE VIEW
@@ -424,9 +427,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     color: var(--text-main, #f7f7f8);
     letter-spacing: -1px;
   }
-  body {
-    padding-top: 60px !important;
-  }
+ 
 
   
   `,

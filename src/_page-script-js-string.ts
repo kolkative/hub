@@ -173,33 +173,57 @@ window.addEventListener("resize", function () {
   }
 });
 
-// Modifikasi tryInjectBurger agar tombol SELALU muncul DI MOBILE SAJA:
-(function () {
+// --- Hamburger Button Injection (Mobile/Tablet Only) ---
+(function() {
   function tryInjectBurger() {
-    if (window.innerWidth > 900) return; // hanya inject di mobile
-
-    let burger = document.getElementById("x-burger");
-    if (!burger) {
-      burger = document.createElement("button");
-      burger.id = "x-burger";
-      burger.setAttribute("aria-label", "Open sidebar");
-      burger.innerHTML =
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="currentColor" fill="none"><path d="M4 8.5L20 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4 15.5L20 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
-      document.body.appendChild(burger);
+    if (document.getElementById('x-burger')) return;
+    var burger = document.createElement('button');
+    burger.id = 'x-burger';
+    burger.setAttribute('aria-label', 'Open sidebar');
+    burger.innerHTML = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="currentColor" fill="none"><path d="M4 8.5L20 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4 15.5L20 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>;
+    burger.style.display = 'none';
+    burger.style.background = 'none';
+    burger.style.border = 'none';
+    burger.style.cursor = 'pointer';
+    burger.style.marginRight = '12px';
+    document.body.appendChild(burger);
+    // Overlay
+    var overlay = document.getElementById('x-sidebar-overlay');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.id = 'x-sidebar-overlay';
+      overlay.style.display = 'none';
+      overlay.addEventListener('click', function() {
+        var sidebar = document.getElementById('x-sidebar');
+        if (sidebar) sidebar.style.display = 'none';
+        overlay.style.display = 'none';
+        document.body.classList.remove('x-sidebar-open');
+      });
+      document.body.appendChild(overlay);
     }
-
-    burger.style.display = "flex";
-
-
-    // Pastikan hanya event handler toggle class sidebar-open
-    burger.onclick = function () {
-      if (window.innerWidth < 900) {
-        document.body.classList.toggle('sidebar-open');
+    // Toggle sidebar
+    burger.addEventListener('click', function() {
+      var sidebar = document.getElementById('x-sidebar');
+      if (!sidebar) return;
+      if (sidebar.style.display === 'block') {
+        sidebar.style.display = 'none';
+        overlay.style.display = 'none';
+        document.body.classList.remove('x-sidebar-open');
+        burger.classList.remove('active');
+      } else {
+        sidebar.style.display = 'block';
+        sidebar.style.position = 'fixed';
+        sidebar.style.top = '0';
+        sidebar.style.left = '0';
+        sidebar.style.height = '100vh';
+        overlay.style.display = 'block';
+        document.body.classList.add('x-sidebar-open');
+        burger.classList.add('active');
+        document.body.appendChild(burger);
       }
-    };
+    });
     clearInterval(window._burgerInterval);
   }
-
   window._burgerInterval = setInterval(tryInjectBurger, 500);
 })();
 
