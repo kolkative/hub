@@ -53,7 +53,7 @@ window.onload = function () {
   const THEME_KEY = "theme";
   const NOTION_DARK_CLASS = "notion-dark-theme";
 
-  const sunIcon = '<i class="hgi hgi-stroke hgi-moon-02"></i>';
+  const sunIcon = '<i class="hgi hgi-stroke hgi-sun-03"></i>';
   const moonIcon = '<i class="hgi hgi-stroke hgi-moon-02"></i>';
 
   let currentTheme;
@@ -102,7 +102,7 @@ window.onload = function () {
 
   // --- Main Execution ---
   currentTheme = getInitialTheme();
-  setTheme(currentTheme); // Set awal agar sinkron
+  forceTheme(currentTheme); // FIX: was setTheme(currentTheme)
 
   // Start the persistent poller (our "watchdog")
   setInterval(() => forceTheme(currentTheme), 250);
