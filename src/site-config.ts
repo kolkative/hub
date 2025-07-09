@@ -140,7 +140,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     HIDE & REMOVED
   ===================== */
   
-  #x-burger,
   .toggle-mode,
   .notion-topbar,
   .notion-topbar-mobile,
@@ -373,20 +372,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       margin-left: 250px !important;
     }
     
-    #x-burger {
-      display: flex !important;
-      position: fixed !important;
-      top: 16px !important;
-      left: 18px !important;
-      z-index: 4000 !important;
-      background: none !important;
-      border: none !important;
-      align-items: center !important;
-      justify-content: center !important;
-      width: 44px !important;
-      height: 44px !important;
-      padding: 0 !important;
-    }
     
   }
 
