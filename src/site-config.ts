@@ -121,7 +121,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   }
   
   h1 {
-    font-size: 16px !important;
+    font-size: 18px !important;
     position: fixed !important;
     top: 60px !important;
     left: 0 !important;
@@ -143,7 +143,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   } */
 
   .notion-page-content {
-    margin-top: 75px; 
+    margin-top: 84px !important; 
+    margin-left: 24px !important;
+    margin-right: 24px !important;
+    margin-bottom: 0px !important;
   }
 
   /* =====================
@@ -251,7 +254,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     text-decoration: none;
     border-radius: 6px;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 300;
     transition: background .15s, color .15s;
     opacity: 0.95;
   }
@@ -366,6 +369,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     body.sidebar-open .notion-frame {
       margin-left: 250px !important;
     }
+
+    #x-header,
+    #x-header-inner {
+      justify-content: center;
+      padding-left: 24px;
+    }
     
   }
 
@@ -396,39 +405,35 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     height: 60px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background: var(--bg-main);
-    border-bottom: 1px solid var(--bg-border);
+    justify-content: flex-start;
+    background: var(--bg-sidebar);
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2100;
+    z-index: 2000;
     padding: 0 24px;
   }
-
   #x-header-inner {
     display: flex;
     align-items: center;
     gap: 16px;
     width: 100%;
     max-width: 1200px;
-    justify-content: center;
+    justify-content: flex-start;
   }
-
   #x-header-logo {
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
     object-fit: contain;
     margin-right: 12px;
   }
-
   #x-header-title {
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 500;
     color: var(--text-main, #f7f7f8);
-    letter-spacing: -1px;
   }
+  
  
 
   
