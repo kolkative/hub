@@ -131,9 +131,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     /* ==========================
        ADAPTIVE BODY BACKGROUND
     ========================== */
-    .body,
+    #notion-app,
     .body.notion-body,
-    .notion-body {
+    html.notion-html {
       background-color: #191b1e !important;
     }
     .notion-app-inner:not(.notion-dark-theme) ~ .body,
