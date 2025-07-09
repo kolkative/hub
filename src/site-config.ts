@@ -135,6 +135,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     border-bottom: 1px solid var(--border-main) !important;
     box-sizing: border-box !important;
     font-weight: 500 !important;
+    z-index: 2500 !important;
   }
 
   /* .layout-content {
