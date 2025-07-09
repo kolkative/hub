@@ -136,10 +136,15 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     box-sizing: border-box !important;
   }
 
+  .notion-page-content {
+    margin-top: 34px; 
+  }
+
   /* =====================
     HIDE & REMOVED
   ===================== */
   
+  .header,
   .toggle-mode,
   .notion-topbar,
   .notion-topbar-mobile,
@@ -342,11 +347,14 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     left: 0;
     right: 0;
     bottom: 0;
+    width: 100vw;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(2px);
-    z-index: unset;
+    z-index: 4999;
     display: none;
     pointer-events: auto;
+    transition: opacity 0.2s;
   }
 
   /* =====================
