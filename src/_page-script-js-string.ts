@@ -258,7 +258,5 @@ function injectSidebar() {
     } else {
       link.classList.remove("active");
     }
-
-    window.addEventListener("load", injectSidebar);
     
   });</script>`
