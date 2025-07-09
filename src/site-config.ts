@@ -156,14 +156,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   .toggle-mode,
   .notion-page-controls,
   .notion-topbar,
-  .notion-topbar-mobile,
   header.notion-topbar-mobile,
-  header.notion-topbar-mobile[style] {
+  div[style*="min-height: 44px"] {
     display: none !important;
-    height: 0 !important;
-    min-height: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
   }
 
   /* ==================
@@ -199,7 +194,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     X-SIDEBAR
   ========================= */
 
-  /*
   #x-sidebar {
     position: fixed;
     top: 0; left: 0; bottom: 0;
@@ -350,7 +344,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     pointer-events: auto;
     transition: opacity 0.2s;
   }
-  */
 
   /* =====================
     RESPONSIVE: MOBILE VIEW
@@ -363,7 +356,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       transition: margin-left 0.3s cubic-bezier(0.4,0,0.2,1);
     }
     
-    /* #x-sidebar {
+    #x-sidebar {
       display: none !important;
     }
     
@@ -373,7 +366,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     
     body.sidebar-open .notion-frame {
       margin-left: 250px !important;
-    } */
+    }
 
     #x-header,
     #x-header-inner {
