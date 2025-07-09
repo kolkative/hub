@@ -92,7 +92,63 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --surface-hover:#454952;
     }
 
+    /* =========================
+      STYLE OVERIDE
+    ========================= */
     
+    /* body {
+      padding-top: 60px !important;
+    } */
+
+    html.notion-html,
+    .notion-app,
+    .notion-app-inner {
+      background: var(--bg-main) !important;
+      color: var(--text-main) !important;
+    }
+      
+    .notion-frame {
+      background: var(--bg-main) !important;
+      color: var(--text-main) !important;
+      padding-left: 250px !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    h1 {
+      font-size: 18px !important;
+      position: fixed !important;
+      top: 60px !important;
+      left: 0 !important;
+      right: 0 !important;
+      width: 100vw !important;
+      min-width: 100vw !important;
+      max-width: 100vw !important;
+      background: var(--bg-sidebar) !important;
+      background-clip: padding-box !important;
+      z-index: 2 !important;
+      padding: 24px 0 24px 24px !important;
+      border-bottom: 1px solid var(--border-main) !important;
+      box-sizing: border-box !important;
+      font-weight: 500 !important;
+      z-index: 2500 !important;
+    }
+
+    .layout.layout-wide {
+      --margin-width: 24px !important;
+      --content-width: 1fr !important;
+      padding-bottom: 0px !important;
+    }
+
+    .layout.layout-wide .notion-selectable {
+      max-width: none !important;
+      width: auto !important;
+    }
+
+    .notion-page-content {
+      margin-top: 100px !important;
+    }
+
     /* ==========================
       HIDE OVERIDE
     ========================== */
@@ -104,6 +160,47 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: none !important;
     }
     
+    /* =====================
+      HIDE & REMOVED
+    ===================== */
+    
+    .toggle-mode,
+    .notion-page-controls,
+    .notion-topbar,
+    header.notion-topbar-mobile,
+    div[style*="min-height: 44px"] {
+      display: none !important;
+    }
+
+    /* ==================
+      X-TOGGLE
+    ===================== */
+      
+    #x-toggle {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      min-width: 60px;
+      min-height: 60px;
+      position: fixed !important;
+      top: 0px;
+      right: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 2500 !important;
+    }
+  
+    #x-toggle svg {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+  
+    #x-toggle:hover {
+      color: var(--accent, #64ffda);
+    }
+
   `,
   customHeadJS: googleTag(GOOGLE_TAG_ID),
   customBodyJS: PAGE_SCRIPT_JS_STRING,
