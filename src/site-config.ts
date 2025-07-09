@@ -138,11 +138,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
   .notion-page-content {
     margin-top: 150px !important;
-    max-width: 700px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding-left: 12px !important;
-    padding-right: 12px !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   /* =====================
@@ -209,7 +209,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   #x-sidebar .x-sidebar-inner {
     flex: 1;
     overflow-y: auto;
-    padding: 70px 12px 24px 12px;
+    padding: 70px 8px 8px 8px;
     display: flex;
     flex-direction: column;
     gap: 4px;
