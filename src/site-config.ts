@@ -133,10 +133,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     font-weight: 500 !important;
     z-index: 2500 !important;
   }
-
+  
+  .layout
   .layout.layout-wide {
-    --margin-width: 16px !important;
-    --content-width: min(800px, 100%) !important;
+    --margin-width: 20px !important;
+    --content-width: min(900px, 100%) !important;
     padding-bottom: 0px !important;
   }
 
