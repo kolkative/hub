@@ -6,56 +6,83 @@ export const PAGE_SCRIPT_JS_STRING = `<script>
 
 // This script is injected into the Notion page and runs on every page load.
 window.onload = function () {
-  // === TOGGLE LIGHT MODE CUSTOM ===
+  function applyLightMode() {
+    // Hapus style light mode jika ada
+    const existing = document.getElementById('notion-light-style');
+    if (existing) existing.remove();
+
+    // Cek mode dari #theme-data
+    const themeData = document.getElementById('theme-data');
+    if (!themeData) return;
+    let mode = 'system';
+    try {
+      mode = JSON.parse(themeData.textContent).mode;
+    } catch {}
+
+    if (mode === 'light') {
+      // Tambahkan style block khusus light mode
+      const style = document.createElement('style');
+      style.id = 'notion-light-style';
+      style.innerHTML = `
+        .notion-app-inner {
+          background-color: #fff !important;
+          color: #23272f !important;
+          --bg-main: #fff;
+          --bg-sidebar: #f7f7f8;
+          --text-main: #23272f;
+          --border-main: #e5e5e7;
+          --link: var(--indigo-6);
+          --surface-hover: #e5e5e7;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+  }
+
+  // Toggle button
   function createToggleButton() {
-    // Check if toggle already exists
-    if (document.getElementById('x-toggle')) {
-      return
-    }
-    
-    // Create toggle button
-    const toggle = document.createElement('div')
-    toggle.id = 'x-toggle'
-    toggle.innerHTML = '<div class="toggle-icon sun"></div><span class="toggle-text">Light</span><div class="toggle-icon moon"></div>'
-    
-    // Add click event
+    if (document.getElementById('x-toggle')) return;
+    const toggle = document.createElement('div');
+    toggle.id = 'x-toggle';
+    toggle.innerHTML = '<div class="toggle-icon sun"></div><span class="toggle-text">Light</span><div class="toggle-icon moon"></div>';
+
     toggle.addEventListener('click', function() {
-      const body = document.body
-      const html = document.documentElement
-      const isLight = body.classList.contains('notion-light-theme') || html.classList.contains('notion-light-theme')
-      if (isLight) {
-        // Kembali ke default (dark bawaan Notion)
-        body.classList.remove('notion-light-theme')
-        html.classList.remove('notion-light-theme')
-        toggle.querySelector('.toggle-text').textContent = 'Light'
-        localStorage.setItem('theme', 'dark')
+      const themeData = document.getElementById('theme-data');
+      if (!themeData) return;
+      let mode = 'system';
+      try {
+        mode = JSON.parse(themeData.textContent).mode;
+      } catch {}
+      if (mode === 'light') {
+        themeData.textContent = JSON.stringify({ mode: 'system' });
+        toggle.querySelector('.toggle-text').textContent = 'Light';
+        localStorage.setItem('theme', 'dark');
       } else {
-        // Aktifkan light mode custom
-        body.classList.add('notion-light-theme')
-        html.classList.add('notion-light-theme')
-        toggle.querySelector('.toggle-text').textContent = 'Dark'
-        localStorage.setItem('theme', 'light')
+        themeData.textContent = JSON.stringify({ mode: 'light' });
+        toggle.querySelector('.toggle-text').textContent = 'Dark';
+        localStorage.setItem('theme', 'light');
       }
-    })
-    
-    // Append to body
-    document.body.appendChild(toggle)
+      applyLightMode();
+    });
+
+    document.body.appendChild(toggle);
   }
-  
-  // Initialize theme from localStorage
+
+  // Inisialisasi dari localStorage
   function initializeTheme() {
-    const savedTheme = localStorage.getItem('theme')
-    const body = document.body
-    const html = document.documentElement
+    const themeData = document.getElementById('theme-data');
+    if (!themeData) return;
+    const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') {
-      body.classList.add('notion-light-theme')
-      html.classList.add('notion-light-theme')
+      themeData.textContent = JSON.stringify({ mode: 'light' });
+    } else {
+      themeData.textContent = JSON.stringify({ mode: 'system' });
     }
+    applyLightMode();
   }
-  
-  // Create toggle button and initialize theme
-  createToggleButton()
-  initializeTheme()
+
+  createToggleButton();
+  initializeTheme();
 
   setInterval(() => {
     // === DESKTOP ===
