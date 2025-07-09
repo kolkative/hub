@@ -125,6 +125,18 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     padding-left: 250px !important;
   }
 
+  /* =========================
+    CUSTOM: Breadcrumb di tengah topbar
+  ========================= */
+  .notion-topbar .notranslate.shadow-cursor-breadcrumb {
+    height: 60px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding-left: 100px !important;
+    box-sizing: border-box;
+  }
+
   /* =====================
     HIDE & REMOVED
   ===================== */
@@ -171,7 +183,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   ========================= */
 
   #x-sidebar {
-    position: fixed;
+    position: flex !important;
     top: 0; left: 0; bottom: 0;
     width: 250px;
     background: var(--bg-sidebar, #23272f);
@@ -281,7 +293,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: flex !important;
       position: fixed !important;
       top: 16px !important;
-      left: 28px !important;
+      left: 18px !important;
       z-index: 4000 !important;
       background: none !important;
       border: none !important;
@@ -296,12 +308,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       transform: translateX(250px);
     }
     
-  }
-
-  @media (min-width: 901px) {
-    #x-sidebar {
-      display: flex !important;
-    }
   }
 
   
