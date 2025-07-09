@@ -62,10 +62,70 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   },
 
   // Google Font name, you can choose from https://fonts.google.com
-  googleFont: 'Roboto',
+  googleFont: 'Inter',
 
   // Custom JS for head and body of a Notion page
   customHeadCSS: `
+    :root {
+      --color-bg: #fff;
+      --color-bg-dark: #18181b;
+      --color-text: #18181b;
+      --color-text-dark: #fafafa;
+      --color-primary: #2563eb;
+      --color-secondary: #fbbf24;
+      --radius: 12px;
+      --font-main: 'Inter', sans-serif;
+      --transition: 0.2s cubic-bezier(.4,0,.2,1);
+    }
+    body {
+      font-family: var(--font-main);
+      transition: background var(--transition), color var(--transition);
+    }
+    #light-mode-toggle {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      background: var(--color-bg-dark);
+      color: var(--color-text-dark);
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      cursor: pointer;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, color 0.2s;
+    }
+    #light-mode-toggle:hover {
+      background: var(--color-primary);
+      color: #fff;
+    }
+    .notion-app-inner.notion-light-theme {
+      background: var(--color-bg) !important;
+      color: var(--color-text) !important;
+    }
+    .notion-app-inner.notion-light-theme * {
+      background-color: var(--color-bg) !important;
+      color: var(--color-text) !important;
+      border-color: var(--color-bg-dark) !important;
+      box-shadow: none !important;
+    }
+
+    /* ==========================
+      HIDE OVERIDE
+    ========================== */
+    .toggle-mode,
+    .notion-page-controls,
+    .notion-topbar,
+    header.notion-topbar-mobile,
+    div[style*="min-height: 44px"] {
+      display: none !important;
+    }
+    
   `,
   customHeadJS: googleTag(GOOGLE_TAG_ID),
   customBodyJS: PAGE_SCRIPT_JS_STRING,
