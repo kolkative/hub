@@ -96,7 +96,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       color: var(--x-text, inherit);
     }
     /* Toggle button basic style (customize as needed) */
-    .x-toggle-theme {
+    .x-toggle {
       position: fixed;
       bottom: 2rem;
       right: 2rem;
@@ -114,18 +114,17 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-size: 1.5rem;
       transition: background 0.2s, color 0.2s;
     }
-    .x-toggle-theme .hugeicons-sun-2 {
+
+    .notion-app-inner.notion-dark-theme .hgi hgi-stroke hgi-moon-02,
+    .x-toggle .hgi hgi-stroke hgi-sun-03 {
       display: inline;
     }
-    .notion-app-inner.notion-dark-theme .x-toggle-theme .hugeicons-sun-2 {
+
+    .notion-app-inner.notion-dark-theme .hgi hgi-stroke hgi-sun-03,
+    .x-toggle .hgi hgi-stroke hgi-moon-02 {
       display: none;
     }
-    .x-toggle-theme .hugeicons-moon {
-      display: none;
-    }
-    .notion-app-inner.notion-dark-theme .x-toggle-theme .hugeicons-moon {
-      display: inline;
-    }
+    
   `,
   customHeadJS: googleTag(GOOGLE_TAG_ID),
   customBodyJS: PAGE_SCRIPT_JS_STRING,

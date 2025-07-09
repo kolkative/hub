@@ -47,12 +47,11 @@ window.onload = function () {
 
     // Create x-toggle sun/moon button
     const btn = document.createElement('button');
-    btn.className = 'x-toggle-theme';
+    btn.className = 'x-toggle';
     btn.setAttribute('aria-label', 'Toggle light/dark mode');
-    btn.innerHTML = `
-      <i class="hugeicons-sun-2"></i>
-      <i class="hugeicons-moon"></i>
-    `;
+    btn.innerHTML =
+      '<i class="hgi hgi-stroke hgi-sun-03"></i>' +
+      '<i class="hgi hgi-stroke hgi-moon-02"></i>';
     // Toggle logic: toggle 'notion-dark-theme' on .notion-app-inner
     btn.addEventListener('click', function() {
       const app = document.querySelector('.notion-app-inner');
