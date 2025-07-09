@@ -111,11 +111,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background: var(--bg-main) !important;
       color: var(--text-main) !important;
       padding-left: 250px !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
     }
 
-    h1 {
+    /*h1 {
       font-size: 18px !important;
       position: fixed !important;
       top: 60px !important;
@@ -132,7 +130,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       box-sizing: border-box !important;
       font-weight: 500 !important;
       z-index: 2500 !important;
-    }
+    } /*
 
     .layout.layout-wide {
       --margin-width: 24px !important;
