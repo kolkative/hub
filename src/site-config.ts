@@ -17,7 +17,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   // twitterHandle: '',
 
   // URL to custom favicon.ico
-  siteIcon: 'https://i.imgur.com/BYyeyuM.png',
+  siteIcon: 'https://i.imgur.com/k1uXQVU.png',
 
   // Additional safety: avoid serving extraneous Notion content from your website
   // Use the value from your Notion settings => Workspace => Settings => Domain
@@ -108,12 +108,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
       
     .notion-frame {
-      background: var(--bg-main) !important;
-      color: var(--text-main) !important;
       padding-left: 250px !important;
     }
 
-    /*h1 {
+    h1 {
       font-size: 18px !important;
       position: fixed !important;
       top: 60px !important;
@@ -130,18 +128,18 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       box-sizing: border-box !important;
       font-weight: 500 !important;
       z-index: 2500 !important;
-    } /*
+    }
 
-    .layout.layout-wide {
+    /*.layout.layout-wide {
       --margin-width: 24px !important;
       --content-width: 1fr !important;
       padding-bottom: 0px !important;
-    }
+    } */
 
-    .layout.layout-wide .notion-selectable {
+    /*.layout.layout-wide .notion-selectable {
       max-width: none !important;
       width: auto !important;
-    }
+    } */
 
     .notion-page-content {
       margin-top: 100px !important;
