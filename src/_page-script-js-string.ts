@@ -201,4 +201,122 @@ window.addEventListener("resize", function () {
   }
 
   window._burgerInterval = setInterval(tryInjectBurger, 500);
+})();
+
+(function () {
+  // --- Adaptive Theme Management (v4 - Persistent Poller) ---
+  const THEME_KEY = "theme";
+  const NOTION_DARK_CLASS = "notion-dark-theme";
+
+  const sunIcon = '<i class="bi bi-sun-fill"></i>';
+  const moonIcon = '<i class="bi bi-moon-fill"></i>';
+
+  let currentTheme;
+
+  // This function is our watchdog. It constantly enforces our desired theme.
+  function forceTheme(theme) {
+    // 1. Set our custom theme class on the root <html> element
+    if (theme === "light") {
+      document.documentElement.classList.add("light-mode");
+      document.documentElement.classList.remove("dark-mode");
+    } else {
+      document.documentElement.classList.add("dark-mode");
+      document.documentElement.classList.remove("light-mode");
+    }
+
+    // 2. Force Notion's internal theme to match our state
+    const notionApp = document.querySelector(".notion-app-inner");
+    if (notionApp) {
+      if (
+        theme === "light" &&
+        notionApp.classList.contains(NOTION_DARK_CLASS)
+      ) {
+        notionApp.classList.remove(NOTION_DARK_CLASS);
+      } else if (
+        theme === "dark" &&
+        !notionApp.classList.contains(NOTION_DARK_CLASS)
+      ) {
+        notionApp.classList.add(NOTION_DARK_CLASS);
+      }
+    }
+  }
+
+  function updateButtonIcon(button, theme) {
+    if (button) {
+      button.innerHTML = theme === "dark" ? sunIcon : moonIcon;
+      button.classList.remove("toggle-dark", "toggle-light");
+      button.classList.add(theme === "dark" ? "toggle-dark" : "toggle-light");
+    }
+  }
+
+  function getInitialTheme() {
+    const savedTheme = localStorage.getItem(THEME_KEY);
+    // If a theme is saved in localStorage, use it. Otherwise, default to dark.
+    return savedTheme || "dark";
+  }
+
+  // Sinkronisasi toggle NoteHost <-> custom theme
+  function syncThemeFromBody() {
+    const html = document.documentElement;
+    const body = document.body;
+    if (body.classList.contains("dark")) {
+      html.classList.add("dark-mode");
+      html.classList.remove("light-mode");
+      localStorage.setItem("theme", "dark");
+    } else {
+      html.classList.add("light-mode");
+      html.classList.remove("dark-mode");
+      localStorage.setItem("theme", "light");
+    }
+  }
+
+  // Pantau perubahan class pada body (toggle NoteHost)
+  const themeObserver = new MutationObserver(syncThemeFromBody);
+  themeObserver.observe(document.body, {
+    attributes: true,
+    attributeFilter: ["class"],
+  });
+
+  // Saat toggle custom diklik, update juga class body
+  function setTheme(theme) {
+    const html = document.documentElement;
+    const body = document.body;
+    if (theme === "dark") {
+      html.classList.add("dark-mode");
+      html.classList.remove("light-mode");
+      body.classList.add("dark");
+    } else {
+      html.classList.add("light-mode");
+      html.classList.remove("dark-mode");
+      body.classList.remove("dark");
+    }
+    localStorage.setItem("theme", theme);
+  }
+
+  // --- Main Execution ---
+  currentTheme = getInitialTheme();
+  setTheme(currentTheme); // Set awal agar sinkron
+
+  // Start the persistent poller (our "watchdog")
+  setInterval(() => forceTheme(currentTheme), 50);
+
+  // Create the button once the page is fully loaded
+  window.addEventListener("load", () => {
+    if (document.getElementById("x-toggle")) return;
+
+    const toggleButton = document.createElement("button");
+    toggleButton.id = "x-toggle";
+    document.body.appendChild(toggleButton);
+    updateButtonIcon(toggleButton, currentTheme);
+
+    toggleButton.addEventListener("click", () => {
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+      setTheme(newTheme);
+      currentTheme = newTheme;
+      updateButtonIcon(toggleButton, newTheme);
+    });
+  });
+
+  window.addEventListener("load", injectSidebar);
+
 })();</script>`

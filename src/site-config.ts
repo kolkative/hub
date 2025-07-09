@@ -211,7 +211,94 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     opacity: 0.95;
   }
   
+  /* =====================
+    RESPONSIVE: MOBILE VIEW
+  ===================== */
   
+  @media (max-width: 900px) {
+    #x-sidebar {
+      display: none !important;
+    }
+    body.sidebar-open #x-sidebar {
+      display: block !important;
+    }
+    .notion-frame {
+      padding-left: 0 !important;
+      transition: padding-left 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    body.sidebar-open .notion-frame {
+      padding-left: 250px !important;
+    }
+    #x-burger {
+      display: flex !important;
+      position: fixed !important;
+      top: 16px !important;
+      left: 28px !important;
+      z-index: 4000 !important;
+      background: none !important;
+      border: none !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 44px !important;
+      height: 44px !important;
+      padding: 0 !important;
+    }
+    body.sidebar-open #x-burger {
+      transform: translateX(250px);
+    }
+    .main-content,
+    .notion-page-content,
+    div.notion-selectable .notion-page-block {
+      z-index: 2 !important;
+      position: relative !important;
+    }
+    #x-burger {
+      display: flex !important;
+    }
+  }
+     
+  /* =====================
+    OVERLAY STYLE (MOBILE ONLY)
+  ===================== */
+  
+  #x-sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2px);
+    z-index: unset;
+    display: none;
+    pointer-events: auto;
+  }
+  
+  /* Pastikan x-burger selalu di atas overlay dan tidak blur */
+  body.x-sidebar-open #x-burger {
+    z-index: 3100 !important;
+    pointer-events: auto !important;
+    filter: none !important;
+  }
+
+  /* =====================
+    HAMBURGER BUTTON RESPONSIVE
+  ===================== */
+    
+  #x-burger {
+    position: fixed;
+    top: 16px;
+    left: 28px;
+    z-index: 9999 !important;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+  }
   
   `,
   customHeadJS: googleTag(GOOGLE_TAG_ID),
