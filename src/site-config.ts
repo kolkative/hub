@@ -136,9 +136,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     html.notion-html {
       background-color: #191b1e !important;
     }
-    .notion-app-inner:not(.notion-dark-theme) ~ .body,
+    .notion-app-inner:not(.notion-dark-theme) ~ .#notion-app,
     .notion-app-inner:not(.notion-dark-theme) ~ .body.notion-body,
-    .notion-app-inner:not(.notion-dark-theme) ~ .notion-body {
+    .notion-app-inner:not(.notion-dark-theme) ~ .html.notion-html {
       background-color: #fff !important;
     }
 
