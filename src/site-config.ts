@@ -67,17 +67,33 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   // Custom JS for head and body of a Notion page
   customHeadCSS: `
     /* ==========================
-       LIGHT MODE OVERRIDE
+       ADAPTIVE ROOT THEME VARIABLE
     ========================== */
+    /* Light mode root */
     .notion-app-inner:not(.notion-dark-theme) {
-      background-color: #fff !important;
-      color: #23272f !important;
       --bg-main: #fff;
-      --bg-sidebar: #f7f7f8;
       --text-main: #23272f;
+      --bg-sidebar: #f7f7f8;
       --border-main: #e5e5e7;
       --link: var(--indigo-6);
       --surface-hover: #e5e5e7;
+    }
+    /* Dark mode root (default Notion) */
+    .notion-app-inner.notion-dark-theme {
+      --bg-main: #191b1e;
+      --text-main: #f7f7f8;
+      --bg-sidebar: #2b2e32;
+      --border-main: #454952;
+      --link: var(--indigo-4);
+      --surface-hover: #454952;
+    }
+    /* Semua elemen lain mengikuti root */
+    html,
+    body,
+    .notion-body,
+    #notion-app {
+      background-color: var(--bg-main) !important;
+      color: var(--text-main) !important;
     }
 
     /* ==========================
@@ -126,20 +142,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     header.notion-topbar-mobile,
     div[style*="min-height: 44px"] {
       display: none !important;
-    }
-
-    /* ==========================
-       ADAPTIVE BODY BACKGROUND
-    ========================== */
-    #notion-app,
-    .notion-body,
-    html.notion-html {
-      background-color: #fff !important;
-    }
-    .notion-app-inner:not(.notion-dark-theme) ~ .#notion-app,
-    .notion-app-inner:not(.notion-dark-theme) ~ ..notion-body,
-    .notion-app-inner:not(.notion-dark-theme) ~ .html.notion-html {
-      background-color: #191b1e !important;
     }
 
   `,
