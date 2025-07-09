@@ -96,9 +96,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     STYLE OVERIDE
   ========================= */
   
-  body {
+  /* body {
     padding-top: 60px !important;
-  }
+  } */
 
   html.notion-html,
   .notion-app,
@@ -193,7 +193,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     background: var(--bg-sidebar);
     color: var(--text-main);
     border-right: 1px solid var(--border-main);
-    z-index: unset;
+    z-index: 2000;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -202,36 +202,17 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     transition: background .2s, color .2s;
   }
   
-    #x-sidebar .x-sidebar-inner {
+  #x-sidebar .x-sidebar-inner {
     flex: 1;
     overflow-y: auto;
-    padding: 0 12px 24px 12px;
+    padding: 24px 12px 24px 12px;
     display: flex;
     flex-direction: column;
     gap: 8px;
   }
   
-    #x-sidebar .x-sidebar-logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 700;
-    font-size: 1.15rem;
-    padding: 24px 0 12px 0;
-    padding-left: 14px;
-    letter-spacing: -1px;
-    color: var(--text-main, #f7f7f8);
-  }
   
-    #x-sidebar .x-sidebar-logo img {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-    vertical-align: middle;
-    margin-right: 4px;
-  }
-  
-    #x-sidebar .x-sidebar-section-title {
+  #x-sidebar .x-sidebar-section-title {
     margin: 18px 0 4px 8px;
     font-size: 0.98em;
     font-weight: 600;
@@ -239,7 +220,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     letter-spacing: 0.01em;
   }
   
-    #x-sidebar .x-sidebar-menu {
+  #x-sidebar .x-sidebar-menu {
     list-style: none;
     margin: 0; padding: 0;
     display: flex;
@@ -247,15 +228,15 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     gap: 2px;
   }
   
-    #x-sidebar .x-sidebar-menu-main {
+  #x-sidebar .x-sidebar-menu-main {
     margin-bottom: 8px;
   }
   
-    #x-sidebar .x-sidebar-menu li {
+  #x-sidebar .x-sidebar-menu li {
     margin: 0; padding: 0;
   }
   
-    #x-sidebar .x-sidebar-menu a {
+  #x-sidebar .x-sidebar-menu a {
     display: flex;
     align-items: center;
     gap: 0;
@@ -269,7 +250,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     opacity: 0.95;
   }
   
-    #x-sidebar .x-sidebar-menu a:hover,
+  #x-sidebar .x-sidebar-menu a:hover,
   #x-sidebar .x-sidebar-menu a.active {
     background: var(--surface-hover, #2e2e38);
     color: var(--accent, #64ffda);
@@ -351,7 +332,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     height: 100vh;
     background: rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(2px);
-    z-index: 4999;
+    z-index: 2000;
     display: none;
     pointer-events: auto;
     transition: opacity 0.2s;
@@ -390,7 +371,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     position: fixed;
     top: 16px;
     left: 28px;
-    z-index: 9999 !important;
+    z-index: 2000 !important;
     align-items: center;
     justify-content: center;
     background: none;
@@ -418,6 +399,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     z-index: 2000;
     padding: 0 24px;
   }
+
   #x-header-inner {
     display: flex;
     align-items: center;
@@ -426,12 +408,14 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     max-width: 1200px;
     justify-content: center;
   }
+
   #x-header-logo {
     width: 16px;
     height: 16px;
     object-fit: contain;
     margin-right: 12px;
   }
+
   #x-header-title {
     font-size: 1rem;
     font-weight: 400;
