@@ -111,6 +111,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     background: var(--bg-main) !important;
     color: var(--text-main) !important;
     padding-left: 250px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
   
   h1 {
@@ -133,7 +135,18 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   }
 
   .layout.layout-wide {
-    padding-bottom: 0px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .layout-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   .notion-page-content {
@@ -169,7 +182,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     min-height: 60px;
     position: fixed !important;
     top: 0px;
-    right: 6px;
+    right: 5px;
     background: none;
     border: none;
     cursor: pointer;
@@ -228,15 +241,16 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     margin: 0; padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 2px !important;
   }
   
   #x-sidebar .x-sidebar-menu-main {
-    margin-bottom: 8px;
+    margin-bottom: 4px !important;
   }
   
   #x-sidebar .x-sidebar-menu li {
     margin: 0; padding: 0;
+    margin-bottom: 2px !important;
   }
   
   #x-sidebar .x-sidebar-menu a {
@@ -378,7 +392,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   #x-burger {
     position: fixed;
     top: 0px;
-    left: 6px;
+    left: 5px;
     z-index: 2500 !important;
     align-items: center;
     justify-content: center;
