@@ -67,13 +67,16 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   // Custom JS for head and body of a Notion page
   customHeadCSS: `
     /* ==========================
-      LIGHT AND DARK THEMES
+      LIGHT MODE OVERRIDE
     ========================== */
-    
-    body,
-    .notion-app-inner,
-    .notion-body,
-    html.light-mode {
+    body:not(.dark) .notion-app-inner,
+    html:not(.dark-mode) .notion-app-inner,
+    .notion-app-inner:not(.notion-dark-theme) {
+      background-color: #fff !important;
+      color: #23272f !important;
+    }
+    body:not(.dark),
+    html:not(.dark-mode) {
       --bg-main: #fff;
       --bg-sidebar: #f7f7f8;
       --text-main: #23272f;
