@@ -130,15 +130,35 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     display: flex !important;
     align-items: center !important;
     justify-content: flex-start !important;
-    padding-left: 100px !important;
+    padding-left: 10px !important;
     box-sizing: border-box;
+  }
+
+  h1 {
+    padding-left: 10px !important;
+  }
+
+  body div.notion-selectable .notion-page-block {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    min-width: 100vw !important;
+    max-width: 100vw !important;
+    background: var(--bg-sidebar, #23272f) !important;
+    background-clip: padding-box !important;
+    z-index: 2 !important;
+    padding: 4px 0 4px 50px !important;
+    border-bottom: 2px solid #3b82f6 !important;
+    box-sizing: border-box !important;
   }
 
   /* =====================
     HIDE & REMOVED
   ===================== */
   
-  h1,
+  
   #x-burger,
   .toggle-mode,
   .notion-page-controls {
@@ -383,10 +403,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       width: 44px !important;
       height: 44px !important;
       padding: 0 !important;
-    }
-    
-    body.sidebar-open #x-burger {
-      transform: translateX(250px);
     }
     
   }
