@@ -134,7 +134,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     z-index: 2500 !important;
   }
   
-  .layout,
+  .layout.layout-phone,
   .layout.layout-wide {
     --margin-width: 24px !important;
     --content-width: 1fr !important;
