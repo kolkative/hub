@@ -136,8 +136,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   
   .layout,
   .layout.layout-wide {
-    --margin-width: 20px !important;
+    --margin-width: 24px !important;
     --content-width: 1fr !important;
+    padding-bottom: 0px !important;
   }
 
   .layout.layout-wide .notion-selectable {
@@ -146,7 +147,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   }
 
   .notion-page-content {
-    margin-top: 150px !important;
+    margin-top: 100px !important;
   }
 
   /* =====================
@@ -216,7 +217,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     padding: 70px 0px 4px 8px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 2px;
   }
   
   #x-sidebar .x-sidebar-section-title {
@@ -416,18 +417,18 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   #x-header-inner {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 2px;
     width: 100%;
     max-width: 1200px;
     justify-content: flex-start;
   }
   #x-header-logo {
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
     object-fit: contain;
   }
   #x-header-title {
-    font-size: 1rem;
+    font-size: 14px;
     font-weight: 500;
     color: var(--text-main, #f7f7f8);
   }
