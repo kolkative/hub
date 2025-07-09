@@ -133,8 +133,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     font-weight: 500 !important;
     z-index: 2500 !important;
   }
-  
-  .layout.layout-phone,
+
   .layout.layout-wide {
     --margin-width: 24px !important;
     --content-width: 1fr !important;
@@ -154,12 +153,17 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     HIDE & REMOVED
   ===================== */
   
-  .header,
   .toggle-mode,
+  .notion-page-controls,
   .notion-topbar,
   .notion-topbar-mobile,
-  .notion-page-controls {
+  header.notion-topbar-mobile,
+  header.notion-topbar-mobile[style] {
     display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   /* ==================
