@@ -204,6 +204,23 @@ window.addEventListener("resize", function () {
 })();
 
 (function () {
+  // Array of stylesheets to inject in order
+  const stylesheets = [
+    "https://unpkg.com/open-props",
+    "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css",
+    "https://cdn.jsdelivr.net/npm/@hugeicons/font/css/hugeicons.min.css",
+  ];
+
+  stylesheets.forEach((href) => {
+    // Check if the stylesheet is already on the page
+    if (!document.querySelector('link[href="' + href + '"]')) {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = href;
+      document.head.appendChild(link);
+    }
+  });
+  
   // --- Adaptive Theme Management (v4 - Persistent Poller) ---
   const THEME_KEY = "theme";
   const NOTION_DARK_CLASS = "notion-dark-theme";

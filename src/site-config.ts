@@ -129,11 +129,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     HIDE & REMOVED
   ===================== */
   
+  h1,
   #x-burger,
   .toggle-mode,
-  .notion-page-controls,
-  .notion-topbar,
-  .notion-topbar-mobile {
+  .notion-page-controls {
     display: none !important;
   }
 
