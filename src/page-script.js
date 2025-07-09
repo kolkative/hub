@@ -6,35 +6,17 @@
 // This script is injected into the Notion page and runs on every page load.
 window.onload = function () {
   function applyLightMode() {
-    // Hapus style light mode jika ada
-    const existing = document.getElementById('notion-light-style');
-    if (existing) existing.remove();
-
-    // Cek mode dari #theme-data
     const themeData = document.getElementById('theme-data');
-    if (!themeData) return;
+    const notionApp = document.querySelector('.notion-app-inner');
+    if (!themeData || !notionApp) return;
     let mode = 'system';
     try {
       mode = JSON.parse(themeData.textContent).mode;
     } catch {}
-
     if (mode === 'light') {
-      // Tambahkan style block khusus light mode
-      const style = document.createElement('style');
-      style.id = 'notion-light-style';
-      style.innerHTML = `
-        .notion-app-inner {
-          background-color: #fff !important;
-          color: #23272f !important;
-          --bg-main: #fff;
-          --bg-sidebar: #f7f7f8;
-          --text-main: #23272f;
-          --border-main: #e5e5e7;
-          --link: var(--indigo-6);
-          --surface-hover: #e5e5e7;
-        }
-      `;
-      document.head.appendChild(style);
+      notionApp.classList.add('notion-light-theme');
+    } else {
+      notionApp.classList.remove('notion-light-theme');
     }
   }
 
