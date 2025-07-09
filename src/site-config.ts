@@ -109,9 +109,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
   .layout.layout-wide {
     padding-bottom: 24px !important;
-    padding-top: 24px !important;
-    padding-left: 24px !important;
-    padding-right: 24px !important;
+    padding-left: -100px !important;
+    padding-right: -100px !important;
   }
     
   .notion-frame {
@@ -143,10 +142,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   } */
 
   .notion-page-content {
-    margin-top: 84px !important; 
-    margin-left: 24px !important;
-    margin-right: 24px !important;
-    margin-bottom: 0px !important;
+    margin-top: 84px !important;
   }
 
   /* =====================
@@ -248,7 +244,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     display: flex;
     align-items: center;
     gap: 0;
-    padding: 7px 8px 7px 14px;
+    padding: 14px 14px 14px 14px;
     color: inherit;
     text-decoration: none;
     border-radius: 6px;
@@ -315,7 +311,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     display: inline-block;
     vertical-align: middle;
     speak: never;
-    margin-right: 10px;
+    margin-right: 14px;
     color: inherit;
     width: 1.2em;
     height: 1.2em;
@@ -406,6 +402,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     align-items: center;
     justify-content: flex-start;
     background: var(--bg-sidebar);
+    border-bottom: 1px solid var(--border-main);
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     position: fixed;
     top: 0;
@@ -425,7 +422,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     width: 24px;
     height: 24px;
     object-fit: contain;
-    margin-right: 8px;
   }
   #x-header-title {
     font-size: 1rem;
