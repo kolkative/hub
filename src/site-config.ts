@@ -67,9 +67,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   // Custom JS for head and body of a Notion page
   customHeadCSS: `
     /* ==========================
-      LIGHT MODE CUSTOM ONLY (notion-app-inner saja)
+       LIGHT MODE OVERRIDE
     ========================== */
-    .notion-app-inner.notion-light-theme {
+    .notion-app-inner:not(.notion-dark-theme) {
       background-color: #fff !important;
       color: #23272f !important;
       --bg-main: #fff;
@@ -79,8 +79,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --link: var(--indigo-6);
       --surface-hover: #e5e5e7;
     }
+
     /* ==========================
-      TOGGLE BUTTON
+       TOGGLE BUTTON
     ========================== */
     #x-toggle {
       position: fixed;
@@ -143,12 +144,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       border-radius: 50%;
     }
     /* Hide sun icon in dark mode, hide moon icon in light mode */
-    body:not(.notion-light-theme) #x-toggle .toggle-icon.sun,
-    html:not(.notion-light-theme) #x-toggle .toggle-icon.sun {
+    .notion-app-inner.notion-dark-theme ~ #x-toggle .toggle-icon.sun {
       display: none;
     }
-    body.notion-light-theme #x-toggle .toggle-icon.moon,
-    html.notion-light-theme #x-toggle .toggle-icon.moon {
+    .notion-app-inner:not(.notion-dark-theme) ~ #x-toggle .toggle-icon.moon {
       display: none;
     }
 
