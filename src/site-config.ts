@@ -129,7 +129,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     display: flex !important;
     justify-content: flex-start !important;
     padding-left: 24px !important;
-    padding-top: 10px !important
+    padding-top: 24px !important
     box-sizing: border-box;
   }
 
@@ -144,7 +144,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     background: var(--bg-sidebar, #23272f) !important;
     background-clip: padding-box !important;
     z-index: 2 !important;
-    padding: 4px 0 4px 50px !important;
+    padding: 4px 0 4px 24px !important;
     border-bottom: 2px solid #3b82f6 !important;
     box-sizing: border-box !important;
   }
@@ -400,13 +400,13 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       padding: 0 !important;
     }
 
-  .notion-topbar .notranslate.shadow-cursor-breadcrumb {
-    display: flex !important;
-    justify-content: flex-start !important;
-    padding-left: 0px !important;
-    padding-top: 10px !important
-    box-sizing: border-box;
-  }
+    .notion-topbar .notranslate.shadow-cursor-breadcrumb {
+      display: flex !important;
+      justify-content: flex-start !important;
+      padding-left: 0px !important;
+      padding-top: 24px !important
+      box-sizing: border-box;
+    }
     
   }
 
