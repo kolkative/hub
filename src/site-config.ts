@@ -134,11 +134,15 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
   .layout.layout-wide {
     padding-bottom: 0px !important;
-    margin-width: 36px;
   }
 
   .notion-page-content {
-    margin-top: 84px !important;
+    margin-top: 150px !important;
+    max-width: 700px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
   }
 
   /* =====================
@@ -165,7 +169,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     min-height: 60px;
     position: fixed !important;
     top: 0px;
-    right: 10px;
+    right: 6px;
     background: none;
     border: none;
     cursor: pointer;
@@ -374,7 +378,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   #x-burger {
     position: fixed;
     top: 0px;
-    left: 10px;
+    left: 6px;
     z-index: 2500 !important;
     align-items: center;
     justify-content: center;
