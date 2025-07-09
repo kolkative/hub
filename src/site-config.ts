@@ -94,12 +94,13 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --surface-hover:#454952;
     }
 
+    /* Perbaikan background agar dinamis sesuai mode */
     .notion-app-inner {
       background-color: #fff !important;
     }
-
-    .notion-app-inner .notion-dark-theme,
-    .notion-dark-theme {
+    body.dark .notion-app-inner,
+    html.dark-mode .notion-app-inner,
+    .notion-app-inner.notion-dark-theme {
       background-color: #191b1e !important;
     }
 
