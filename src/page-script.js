@@ -139,12 +139,24 @@ function injectSidebar() {
   html += "</div>";
   sidebar.innerHTML = html;
   document.body.appendChild(sidebar);
+  document.body.classList.add('sidebar-enabled');
+
+  // Logic: highlight menu sesuai URL saat load
+  var mainMenuLinks = sidebar.querySelectorAll(".x-sidebar-menu-main a");
+  var currentPath = window.location.pathname.replace(/\/$/, ''); // hapus trailing slash
+  mainMenuLinks.forEach(function (link) {
+    var linkPath = new URL(link.href, window.location.origin).pathname.replace(/\/$/, '');
+    if (currentPath === linkPath) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
 
   // Logic: hanya satu menu utama yang active
   var mainMenuLinks = sidebar.querySelectorAll(".x-sidebar-menu-main a");
   mainMenuLinks.forEach(function (link) {
     link.addEventListener("click", function (e) {
-      e.preventDefault();
       mainMenuLinks.forEach(function (l) {
         l.classList.remove("active");
       });
@@ -278,7 +290,7 @@ window.addEventListener("resize", function () {
   setTheme(currentTheme); // Set awal agar sinkron
 
   // Start the persistent poller (our "watchdog")
-  setInterval(() => forceTheme(currentTheme), 50);
+  setInterval(() => forceTheme(currentTheme), 250);
 
   // Create the button once the page is fully loaded
   window.addEventListener("load", () => {
@@ -372,3 +384,14 @@ window.addEventListener("resize", function () {
   }
   window.addEventListener("DOMContentLoaded", injectBurgerAndOverlay);
 })();
+
+// Utility functions for class manipulation
+function addClass(el, className) {
+  if (el && !el.classList.contains(className)) el.classList.add(className);
+}
+function removeClass(el, className) {
+  if (el && el.classList.contains(className)) el.classList.remove(className);
+}
+function hasClass(el, className) {
+  return el && el.classList.contains(className);
+}

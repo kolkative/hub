@@ -110,9 +110,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   .notion-frame {
     background: var(--bg-main) !important;
     color: var(--text-main) !important;
-    padding-left: 250px !important;
+    padding-left: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
+  }
+  body.sidebar-enabled .notion-frame {
+    padding-left: 250px !important;
   }
   
   h1 {
