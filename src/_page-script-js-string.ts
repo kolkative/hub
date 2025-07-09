@@ -336,4 +336,21 @@ window.addEventListener("resize", function () {
 
   window.addEventListener("load", injectSidebar);
 
+})();
+
+// Inject x-header at the top of the body
+(function () {
+  window.addEventListener("DOMContentLoaded", function () {
+    if (!document.getElementById("x-header")) {
+      var header = document.createElement("div");
+      header.id = "x-header";
+      header.innerHTML = `
+        <div id="x-header-inner">
+          <img id="x-header-logo" src="https://i.imgur.com/uyJEQnp.png" alt="Kolkative Hub" />
+          <span id="x-header-title">Kolkative Hub</span>
+        </div>
+      `;
+      document.body.insertBefore(header, document.body.firstChild);
+    }
+  });
 })();</script>`

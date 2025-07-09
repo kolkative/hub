@@ -124,10 +124,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     max-height: 60px !important;
     padding-left: 250px !important;
   }
-
-  /* =========================
-    CUSTOM: Breadcrumb di tengah topbar
-  ========================= */
+    
   .notion-topbar .notranslate.shadow-cursor-breadcrumb {
     height: 60px !important;
     display: flex !important;
@@ -308,6 +305,47 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       transform: translateX(250px);
     }
     
+  }
+
+  /* =========================
+    X-HEADER CUSTOM
+  ========================= */
+  #x-header {
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-main, #23272f);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5000;
+    padding: 0 24px;
+  }
+  #x-header-inner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: center;
+  }
+  #x-header-logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    margin-right: 12px;
+  }
+  #x-header-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main, #f7f7f8);
+    letter-spacing: -1px;
+  }
+  body {
+    padding-top: 60px !important;
   }
 
   
