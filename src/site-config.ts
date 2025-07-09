@@ -135,27 +135,18 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   }
 
   .layout.layout-wide {
-    padding-left: -50px !important;
-    padding-right: -50px !important;
-    margin-left: -50px !important;
-    margin-right: -50px !important;
-    padding-bottom: -50px !important;
+    padding-bottom: 0px !important;
   }
 
   .layout-content {
-    padding-left: -50px !important;
-    padding-right: -50px !important;
-    margin-left: -50px !important;
-    margin-right: -50px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
   }
 
   .notion-page-content {
     margin-top: 150px !important;
-    max-width: 100% !important;
-    margin-left: -50px !important;
-    margin-right: -50px !important;
-    padding-left: -50px !important;
-    padding-right: -50px !important;
   }
 
   /* =====================
