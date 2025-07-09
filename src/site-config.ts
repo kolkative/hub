@@ -66,13 +66,150 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
   // Custom JS for head and body of a Notion page
   customHeadCSS: `
+  /* ==========================
+    LIGHT AND DARK THEMES
+  ========================== */
+  
+  body,
+  .notion-body,
+  html.light-mode {
+    --bg-main: #fff;
+    --bg-sidebar: #f7f7f8;
+    --text-main: #23272f;
+    --border-main: #e5e5e7;
+    --link: var(--indigo-6);
+    --surface-hover: #e5e5e7;
+  }
+    
+  body.dark,
+  .notion-body.dark,
+  html.dark-mode {
+    --bg-main: #06061a;
+    --bg-sidebar: #23272f;
+    --text-main: #f7f7f8;
+    --border-main: #2e2e38;
+    --link: var(--indigo-4);
+    --surface-hover: #2e2e38;
+  }
+
+  /* =========================
+    STYLE OVERIDE
+  ========================= */
+  
+  html.notion-html,
+  .notion-app,
+  .notion-app-inner {
+    background: var(--bg-main) !important;
+    color: var(--text-main) !important;
+  }
+
+  .notion-layout {
+    margin-top: 0px !important;
+    margin-left: 0px !important;
+    margin-bottom: 0px !important;
+    margin-right: 0px !important;
+  }
+    
+  .notion-frame {
+    background: var(--bg-main) !important;
+    color: var(--text-main) !important;
+    padding-left: 250px !important;
+  }
+  
   .notion-topbar,
   .notion-topbar-mobile {
+    background: var(--bg-sidebar: #23272f);
     height: 60px !important;
     min-height: 60px !important;
     max-height: 60px !important;
   }
     
+  /* =========================
+    X-SIDEBAR
+  ========================= */
+
+  #x-sidebar {
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    width: 250px;
+    background: var(--bg-sidebar, #23272f);
+    color: var(--text-main, #f7f7f8);
+    border-right: 1px solid var(--border-main, #2e2e38);
+    z-index: unset;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: inherit;
+    font-size: 14px;
+    transition: background .2s, color .2s;
+  }
+  
+  #x-sidebar .x-sidebar-inner {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 12px 24px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  #x-sidebar .x-sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 1.15rem;
+    padding: 24px 0 12px 0;
+    padding-left: 14px;
+    letter-spacing: -1px;
+    color: var(--text-main, #f7f7f8);
+  }
+  
+  #x-sidebar .x-sidebar-logo img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 4px;
+  }
+
+  #x-sidebar .x-sidebar-section-title {
+    margin: 18px 0 4px 8px;
+    font-size: 0.98em;
+    font-weight: 600;
+    opacity: 0.7;
+    letter-spacing: 0.01em;
+  }
+  
+  #x-sidebar .x-sidebar-menu {
+    list-style: none;
+    margin: 0; padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  #x-sidebar .x-sidebar-menu-main {
+    margin-bottom: 8px;
+  }
+  
+  #x-sidebar .x-sidebar-menu li {
+    margin: 0; padding: 0;
+  }
+  
+  #x-sidebar .x-sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 7px 8px 7px 14px;
+    color: inherit;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background .15s, color .15s;
+    opacity: 0.95;
+  }
   
   
   
