@@ -262,7 +262,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-topbar-mobile,  
     .notion-frame {
       padding-left: 0 !important;
-      transition: padding-left 0.3s cubic-bezier(0.4,0,0.2,1);
+      transition: margin-left 0.3s cubic-bezier(0.4,0,0.2,1);
     }
     
     #x-sidebar {
@@ -296,6 +296,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       transform: translateX(250px);
     }
     
+  }
+
+  @media (min-width: 901px) {
+    #x-sidebar {
+      display: flex !important;
+    }
   }
 
   
