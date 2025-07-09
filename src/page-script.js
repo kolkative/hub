@@ -343,12 +343,11 @@ window.addEventListener("resize", function () {
     if (!document.getElementById("x-header")) {
       var header = document.createElement("div");
       header.id = "x-header";
-      header.innerHTML = `
-        <div id="x-header-inner">
-          <img id="x-header-logo" src="https://i.imgur.com/uyJEQnp.png" alt="Kolkative Hub" />
-          <span id="x-header-title">Kolkative Hub</span>
-        </div>
-      `;
+      header.innerHTML =
+        '<div id="x-header-inner">' +
+          '<img id="x-header-logo" src="https://i.imgur.com/uyJEQnp.png" alt="Kolkative Hub" />' +
+          '<span id="x-header-title">Kolkative Hub</span>' +
+        '</div>';
       document.body.insertBefore(header, document.body.firstChild);
     }
   });
