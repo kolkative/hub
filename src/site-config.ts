@@ -95,12 +95,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     .notion-app-inner {
-      background-color: var(--bg-main) #fff;
+      background-color: var(--bg-main) #fff !important;
     }
 
     .notion-app-inner .notion-dark-theme,
     .notion-dark-theme {
-      background-color: var(--bg-main) #191b1e;
+      background-color: var(--bg-main) #191b1e !important;
     }
 
     /* ==========================
