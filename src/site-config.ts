@@ -380,7 +380,25 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       margin-left: 250px !important;
     }
     
+  }
+
+  /* =====================
+    X-BURGER
+  ===================== */
     
+  #x-burger {
+    position: fixed;
+    top: 16px;
+    left: 28px;
+    z-index: 9999 !important;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    padding: 0;
   }
 
   /* =========================
