@@ -141,13 +141,17 @@ function injectSidebar() {
   sidebar.innerHTML = html;
   document.body.appendChild(sidebar);
 
-  // Logic: highlight menu sesuai URL saat load (bandingkan pathname saja, tanpa trailing slash)
+  // Logic: highlight menu sesuai URL saat load (bandingkan pathname saja, tanpa trailing slash, aman dengan try-catch)
   var mainMenuLinks = sidebar.querySelectorAll(".x-sidebar-menu-main a");
   var currentPath = window.location.pathname.replace(/\/$/, ''); // hapus trailing slash
   mainMenuLinks.forEach(function (link) {
-    var linkPath = new URL(link.href).pathname.replace(/\/$/, '');
-    if (currentPath === linkPath) {
-      link.classList.add("active");
+    try {
+      var linkPath = new URL(link.href, window.location.origin).pathname.replace(/\/$/, '');
+      if (currentPath === linkPath) {
+        link.classList.add("active");
+      }
+    } catch (e) {
+      // skip jika href tidak valid
     }
   });
 }
@@ -230,7 +234,7 @@ window.addEventListener("resize", function () {
 
   function getInitialTheme() {
     const savedTheme = localStorage.getItem(THEME_KEY);
-    // If a theme is saved in localStorage, use it. Otherwise, default to dark.
+    // Jika ada theme di localStorage, pakai itu. Jika tidak, default ke dark.
     return savedTheme || "dark";
   }
 
