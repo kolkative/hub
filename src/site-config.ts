@@ -116,8 +116,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     .toggle-icon svg {
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 50px;
+      left: 50px;
       width: 24px;
       height: 24px;
       color: var(--text-main);
