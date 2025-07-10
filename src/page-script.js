@@ -21,6 +21,13 @@ window.onload = function () {
     }
   }
 
+  // Tambahkan CDN HugeIcons stroke rounded
+  const hugeIconsCDN = document.createElement("link");
+  hugeIconsCDN.rel = "stylesheet";
+  hugeIconsCDN.href =
+    "https://unpkg.com/@hugeicons/core@latest/hugeicons-rounded-stroke.css";
+  document.head.appendChild(hugeIconsCDN);
+
   // Tambahkan ikon HugeIcons (stroke, rounded) ke dalam toggle button
   // Anda bisa menyematkan SVG langsung di dalam elemen
 
