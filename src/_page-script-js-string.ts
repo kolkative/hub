@@ -26,9 +26,9 @@ window.onload = function () {
     if (document.getElementById('x-toggle')) return;
     const toggle = document.createElement('div');
     toggle.id = 'x-toggle';
-    toggle.innerHTML = '<div class="toggle-icon sun"></div><span class="toggle-text">Light</span><div class="toggle-icon moon"></div>';
-
-    toggle.addEventListener('click', function() {
+    toggle.innerHTML = '<div class="toggle-icon"></div>';
+  
+    toggle.addEventListener('click', function () {
       const themeData = document.getElementById('theme-data');
       if (!themeData) return;
       let mode = 'system';
@@ -37,16 +37,15 @@ window.onload = function () {
       } catch {}
       if (mode === 'light') {
         themeData.textContent = JSON.stringify({ mode: 'system' });
-        toggle.querySelector('.toggle-text').textContent = 'Light';
         localStorage.setItem('theme', 'dark');
+        document.body.classList.add('dark-theme');
       } else {
         themeData.textContent = JSON.stringify({ mode: 'light' });
-        toggle.querySelector('.toggle-text').textContent = 'Dark';
         localStorage.setItem('theme', 'light');
+        document.body.classList.remove('dark-theme');
       }
-      applyLightMode();
     });
-
+  
     document.body.appendChild(toggle);
   }
 
