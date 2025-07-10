@@ -98,53 +98,70 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     /* Sidebar Kolkative - compact & theme aware */
-    #sidebar-navigation {
+    #x-sidebar {
       position: fixed;
       left: 0;
       top: 0;
-      width: 220px;
+      width: 210px;
       height: 100vh;
       background: var(--bg-sidebar, #23272f);
       color: var(--text-main, #fff);
       z-index: 1000;
       box-shadow: 2px 0 8px rgba(0,0,0,0.08);
-      padding: 16px 0 16px 0;
+      padding: 10px 0 10px 0;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 4px;
     }
-    #sidebar-navigation nav {
+    #x-sidebar nav {
       width: 100%;
     }
-    #sidebar-navigation ul {
+    #x-sidebar ul {
       list-style: none;
-      padding: 0 0 0 12px;
+      padding: 0 0 0 8px;
       margin: 0;
       gap: 0;
     }
-    #sidebar-navigation .sidebar-link {
-      display: block;
-      padding: 7px 16px;
+    #x-sidebar .sidebar-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 10px 5px 8px;
       color: var(--text-main, #fff);
       text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.2s, color 0.2s;
-      font-size: 0.98rem;
+      border-radius: 4px;
+      transition: background 0.18s, color 0.18s;
+      font-size: 0.93rem;
       cursor: pointer;
-      margin-bottom: 2px;
+      margin-bottom: 1px;
+      min-height: 28px;
+      line-height: 1.2;
     }
-    #sidebar-navigation .sidebar-link.selected {
-      background: var(--surface-hover, #3b82f6);
+    #x-sidebar .sidebar-link.selected {
+      background: var(--surface-hover);
       color: var(--text-main, #fff);
       font-weight: bold;
     }
-    #sidebar-navigation .sidebar-section {
-      margin: 16px 0 4px 16px;
-      font-size: 0.97rem;
+    #x-sidebar .sidebar-link:hover {
+      background: rgba(59,130,246,0.12);
+      color: var(--text-main, #fff);
+    }
+    #x-sidebar .sidebar-section {
+      margin: 12px 0 2px 10px;
+      font-size: 0.93rem;
       color: var(--text-main, #b0b8c1);
       letter-spacing: 1px;
       font-weight: 600;
+    }
+    #x-sidebar .sidebar-icon {
+      width: 16px;
+      height: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 2px;
+      opacity: 0.7;
     }
 
     /* Ganti selector callout Notion agar lebih stabil */
