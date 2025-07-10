@@ -97,7 +97,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       margin-top: 50px;
     }
 
-    div.notion-selectable.notion-callout-block {
+    div.notion-selectable.notion-callout-block > div {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -111,19 +111,19 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-size: 1rem;
       line-height: 1.5;
       text-decoration: none;
-      box-shadow: 2px 2px 0 var(--surface-hover) !important; /* shadow ala Phosphor */
+      box-shadow: 2px 2px 0 #0000 !important; /* shadow ala Phosphor */
       transition: all 0.15s ease-in-out;
     }
     
-    div.notion-selectable.notion-callout-block {
+    div.notion-selectable.notion-callout-block > div {
       background: var(--bg-sidebar) !important;
       transform: translateY(-1px);
-      box-shadow: 3px 3px 0 var(--surface-hover) !important;
+      box-shadow: 3px 3px 0 #0000 !important;
     }
     
-    div.notion-selectable.notion-callout-block:active {
+    div.notion-selectable.notion-callout-block:active > div {
       transform: translateY(1px);
-      box-shadow: 1px 1px 0 var(--surface-hover) !important;
+      box-shadow: 1px 1px 0 #0000 !important;
     }
 
     a {
