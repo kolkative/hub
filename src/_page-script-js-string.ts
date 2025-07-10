@@ -15,9 +15,11 @@ window.onload = function () {
       mode = JSON.parse(themeData.textContent).mode;
     } catch {}
     if (mode === 'light') {
-      notionApp.classList.add('notion-light-theme');
+      notionApp.classList.remove('notion-dark-theme');
     } else {
-      notionApp.classList.remove('notion-light-theme');
+      if (!notionApp.classList.contains('notion-dark-theme')) {
+        notionApp.classList.add('notion-dark-theme');
+      }
     }
   }
 
