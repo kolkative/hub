@@ -127,6 +127,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .toggle-icon .hidden {
       opacity: 0;
       pointer-events: none;
+      display: none !important;
     }
 
     .toggle-icon .icon {
