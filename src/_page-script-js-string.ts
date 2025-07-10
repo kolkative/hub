@@ -134,6 +134,24 @@ window.onload = function () {
         link.classList.add('selected');
       }
     });
+
+    // Intercept klik semua menu agar highlight muncul sebelum redirect
+    document.querySelectorAll('.sidebar-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Hapus highlight dari semua link
+        document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('selected'));
+        // Tambahkan highlight ke link yang diklik
+        this.classList.add('selected');
+        // Redirect setelah delay 300ms
+        const href = this.getAttribute('href');
+        if (href && href !== window.location.pathname) {
+          setTimeout(() => {
+            window.location.href = href;
+          }, 300);
+        }
+      });
+    });
   }
 
   createToggleButton();
