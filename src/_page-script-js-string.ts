@@ -29,21 +29,9 @@ window.onload = function () {
     "https://unpkg.com/@hugeicons/core@latest/hugeicons-rounded-stroke.css";
   document.head.appendChild(hugeIconsCDN);
 
-  // Tunggu sampai style telah dimuat dan DOM siap
-  function whenDOMReady(callback) {
-    if (
-      document.readyState === "complete" ||
-      document.readyState === "interactive"
-    ) {
-      setTimeout(callback, 0);
-    } else {
-      document.addEventListener("DOMContentLoaded", callback);
-    }
-  }
-
+  // Toggle button
   function createToggleButton() {
     if (document.getElementById("x-toggle")) return;
-
     const toggle = document.createElement("div");
     toggle.id = "x-toggle";
     toggle.innerHTML =
@@ -52,41 +40,28 @@ window.onload = function () {
       '<i id="toggle-icon-moon" class="hugeicons-moon-r hidden"></i>' +
       "</div>";
 
-    toggle.style.position = "fixed";
-    toggle.style.bottom = "16px";
-    toggle.style.right = "16px";
-    toggle.style.zIndex = "9999";
-
     toggle.addEventListener("click", function () {
       const themeData = document.getElementById("theme-data");
       if (!themeData) return;
-
       let mode = "system";
       try {
         mode = JSON.parse(themeData.textContent).mode;
       } catch {}
-
-      const sunIcon = document.getElementById("toggle-icon-sun");
-      const moonIcon = document.getElementById("toggle-icon-moon");
-
       if (mode === "light") {
         themeData.textContent = JSON.stringify({ mode: "system" });
         localStorage.setItem("theme", "dark");
         document.body.classList.add("dark-theme");
-        sunIcon.classList.add("hidden");
-        moonIcon.classList.remove("hidden");
       } else {
         themeData.textContent = JSON.stringify({ mode: "light" });
         localStorage.setItem("theme", "light");
         document.body.classList.remove("dark-theme");
-        moonIcon.classList.add("hidden");
-        sunIcon.classList.remove("hidden");
       }
     });
 
     document.body.appendChild(toggle);
   }
 
+  // Inisialisasi dari localStorage
   function initializeTheme() {
     const themeData = document.getElementById("theme-data");
     if (!themeData) return;
@@ -99,16 +74,17 @@ window.onload = function () {
     applyLightMode();
   }
 
-  whenDOMReady(() => {
-    createToggleButton();
-    initializeTheme();
-  });
+  createToggleButton();
+  initializeTheme();
 
   setInterval(() => {
+    // === DESKTOP ===
+    // Remove all Notion tooltips on images (desktop)
     document
       .querySelectorAll('div[style*="position: absolute; top: 4px;"]')
       ?.forEach((el) => (el.style.display = "none"));
 
+    // Remove hidden properties dropdown (desktop)
     const propertiesDropdown = document.querySelector(
       'div[aria-label="Page properties"]'
     )?.nextElementSibling;
@@ -116,6 +92,9 @@ window.onload = function () {
       propertiesDropdown.style.display = "none";
     }
 
+    // === MOBILE ===
+    // Hide mobile properties dropdown (if exists)
+    // Try to find a dropdown or menu that appears after a properties button in mobile
     const mobilePropertiesBtn = document.querySelector(
       '.notion-mobile [aria-label="Page properties"]'
     );

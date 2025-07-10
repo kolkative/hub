@@ -103,7 +103,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background-color: var(--background-color);
+      background-color: var(--bg-main);
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
@@ -120,7 +120,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       left: 0;
       width: 24px;
       height: 24px;
-      color: var(--text-color);
+      color: var(--text-main);
       transition: opacity 0.3s ease;
     }
 
