@@ -333,14 +333,14 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     #x-toggle {
       position: fixed;
-      top: 24px;
-      right: 24px;
+      top: 30px;
+      right: 20px;
       z-index: 10;
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 60px;
-      height: 24px;
+      width: 30px;
+      height: 60px;
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
