@@ -97,11 +97,33 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       margin-top: 50px;
     }
 
-    .notion-callout-block {
-      background-color: var(--bg-sidebar) !important;
-      color: var(--text-main) !important;
-      border-radius: 20px !important;
-      border: 1px solid var(--border-main) !important;
+    div.notion-selectable.notion-callout-block > div > div {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem; /* ruang dalam tombol */
+      border: 1px solid var(--border-main) !important; /* warna garis */
+      border-radius: 0.75rem; /* sudut membulat */
+      background-color: var(--bg-sidebar); /* warna dasar */
+      color: var(--text-main); /* warna teks */
+      font-family: 'Space Gotesk', sans-serif;
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 1.5;
+      text-decoration: none;
+      box-shadow: 2px 2px 0 var(--surface-hover) !important; /* shadow ala Phosphor */
+      transition: all 0.15s ease-in-out;
+    }
+    
+    div.notion-selectable.notion-callout-block > div > div {
+      background-color: #f2f2f2;
+      transform: translateY(-1px);
+      box-shadow: 3px 3px 0 var(--surface-hover) !important;
+    }
+    
+    div.notion-selectable.notion-callout-block > div > div:active {
+      transform: translateY(1px);
+      box-shadow: 1px 1px 0 var(--surface-hover) !important;
     }
 
     a {
