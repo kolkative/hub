@@ -144,35 +144,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: none !important;
     }
 
-    .notion-selectable.notion-page-block.notion-collection-item {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.25rem 1.5rem; /* ruang dalam tombol */
-      border: 1px solid var(--bg-sidebar); /* warna garis */
-      border-radius: 0.75rem; /* sudut membulat */
-      background-color: var(--bg-main); /* warna dasar */
-      color: var(--text-main);
-      font-family: 'Space Mono', sans-serif;
-      font-weight: 500;
-      font-size: 1rem;
-      line-height: 1.5;
-      text-decoration: none;
-      box-shadow: 2px 2px 0 #000000; /* shadow ala Phosphor */
-      transition: all 0.15s ease-in-out;
-    }
-    
-    .notion-selectable.notion-page-block.notion-collection-item:hover {
-      background-color: var(--surface-hover);
-      transform: translateY(-1px);
-      box-shadow: 3px 3px 0 #000000;
-    }
-    
-    .notion-selectable.notion-page-block.notion-collection-item:active {
-      transform: translateY(1px);
-      box-shadow: 1px 1px 0 #000000;
-    }
-    
+   
 
   `,
   customHeadJS: googleTag(GOOGLE_TAG_ID),
