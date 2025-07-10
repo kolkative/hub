@@ -67,7 +67,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   // Custom JS for head and body of a Notion page
   customHeadCSS: `
     /* =======================
-       THEME VARIABLE
+       THEME & STYLE
     ========================== */
     /* Light mode root */
     .notion-app-inner {
@@ -93,45 +93,205 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       color: var(--text-main) !important;
     }
 
-    /* =======================
-       TOGGLE ICON MINIMAL
-    ========================== */
-    /* Toggle Button Minimal */
-    #x-toggle {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      z-index: 10;
-      display: flex;
+    a {
+      color: var(--text-main) !important;
+      font-size: 20px;
+      line-height: 150%;
+      font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
+        "Helvetica Neue", sans-serif;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 400;
+      text-decoration: underline;
+      padding:3px;
+    }
+    
+    a:link{
+        color: var(--link) !important;
+    }
+    
+    a:visited{
+        color: var(--link) !important;
+    }
+    
+    a:hover{
+        background: linear-gradient(#eee, #eee);
+        background-size: auto 4em;
+        background-repeat: no-repeat;
+        background-position: 0% 15px; 
+    }
+
+    .title {
+      width: 100%;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-main) !important;
+      margin-top: 50px;
+    }
+    
+    .subtitle {
+      color: var(--text-main) !important;
+      font-weight: 500;
+    }
+
+    h1 {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      width: 100vw !important;
+      min-width: 100vw !important;
+      max-width: 100vw !important;
+      background: var(--bg-sidebar,) !important;
+      background-clip: padding-box !important;
+      z-index: 2 !important;
+      font-size: 20px !important;
+      padding: 24px 0px 24px 24px !important;
+      border-bottom: 1px solid var(--border-main);
+      border-top: 1px solid var(--border-main);
+      box-sizing: border-box !important;
+    }
+
+    h2 {
+      font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
+        "Helvetica Neue", Arial, sans-serif;
+      font-size: 30px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+    
+    h3 {
+      font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
+        "Helvetica Neue", Arial, sans-serif;
+      font-size: 25px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+    
+    h4 {
+      font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
+        "Helvetica Neue", Arial, sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+    
+    h5 {
+      font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
+        "Helvetica Neue", Arial, sans-serif;
+      font-size: 18px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+    
+    h6 {
+      font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
+        "Helvetica Neue", Arial, sans-serif;
+      font-size: 14px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 700;
+      line-height: 1;
+    }
+    
+    p {
+      color: rgba(0, 0, 0, 0.6);
+      font-size: 20px;
+      line-height: 150%;
+      font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
+        "Helvetica Neue", Arial, sans-serif;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 400;
+    }
+    
+    button {
+      background-color: var(--bg-sidebar) !important;
+      color: #404b59;
+      border: 1px solid var(--border-main) !important;
+      box-shadow: rgba(15, 15, 15, 0.1) 0px 1px 2px;
+      border-radius: 6px;
       align-items: center;
-      justify-content: center;
-      width: 24px;
-      height: 24px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+      height: fit-content;
+      min-width: 180px;
+      font-size: large;
+      font-weight: 500;
+      padding: 12px;
     }
     
-    .toggle-icon {
-      position: relative;
-      width: 24px;
-      height: 24px;
+    button:hover {
+      background-color: var(--bg-sidebar) !important;
       color: var(--text-main) !important;
     }
     
-    .toggle-icon i {
-      position: absolute;
-      top: 0;
-      left: 0;
-      font-size: 24px;
-      color: var(--text-main) !important;
-      transition: opacity 0.3s ease;
+    button.primary {
+      background-color: var(--bg-sidebar) !important;
+      color: #fff;
+      border: 1px solid var(--border-main) !important;
+      border-radius: 3px;
+      align-items: center;
+      height: fit-content;
+      min-width: 180px;
+      font-size: large;
+      font-weight: 500;
+      padding: 12px;
     }
     
-    .hidden {
-      display: none !important;
+    button.primary:hover {
+      background-color: #cf534a;
+      color: #fff;
+    }
+    
+    form {
+      font-size: 20px;
+    }
+    
+    ul {
+      font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
+        "Helvetica Neue", Arial, sans-serif;
+    }
+    
+    li {
+      font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
+        "Helvetica Neue", Arial, sans-serif;
+      font-size: 20px;
+      line-height: 1.5;
+    }
+    
+    table {
+      border: 1px solid var(--border-main) !important;
+      border-collapse: collapse;
+      padding: 20px;
+    }
+    
+    tr {
+      border: 1px solid var(--border-main) !important;
+      padding: 10px;
+    }
+    tr:nth-child(even) {
+      background-color: var(--bg-sidebar) !important;
+    }
+    
+    td {
+      border: 1px solid var(--border-main) !important;
+      padding: 10px;
+    }
+    
+    th {
+      border: 1px solid var(--border-main) !important;
+      text-align: left;
+      padding: 20px;
     }
     
     
+
     /* ==================
       HIDE & REMOVED
     ===================== */
@@ -143,8 +303,47 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     div[style*="min-height: 44px"] {
       display: none !important;
     }
+    
+    /* ========== SCROLLBAR ========== */
+    div.notion-frame > div.notion-scroller > div{
+      background-color: #00000000 !important;
+    }
 
-   
+    .notion-scroller.vertical.horizontal > div:nth-child(2) {
+    background: var(--theme--bg) !important
+    }
+
+    ::-webkit-scrollbar {
+      width: 0 !important;
+      height: 0 !important;
+    }
+
+    .notion-table-view div[style *="min-height: 32px;"] .notion-record-icon[style*="margin-bottom: -1px; margin-right: 4px;"] {
+      display: none !important;
+    }
+
+    /* ========== HIDE ARROWS IN PAGE LINK ========== */
+    .pageLinkIndicator {
+      display: none !important;
+    }
+
+    /* =======================
+      X-TOGGLE
+    ========================== */
+
+    #x-toggle {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
 
   `,
   customHeadJS: googleTag(GOOGLE_TAG_ID),
