@@ -94,7 +94,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     .notion-page-content {
-      margin-top: 60px;
+      margin-top: 50px;
     }
       
 
@@ -140,6 +140,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     h1 {
       position: fixed !important;
+      color: var(--text-main) !important;
       top: 0 !important;
       left: 0 !important;
       right: 0 !important;
@@ -338,7 +339,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     #x-toggle {
       position: fixed;
-      top: 22px;
+      top: 23px;
       right: 20px;
       z-index: 10;
       display: flex;
