@@ -96,7 +96,13 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-page-content {
       margin-top: 50px;
     }
-      
+
+    .notion-callout-block {
+      background-color: var(--bg-sidebar) !important;
+      color: var(--text-main) !important;
+      border-radius: 20px !important;
+      border: 1px solid var(--border-main) !important;
+    }
 
     a {
       color: var(--text-main) !important;
@@ -220,7 +226,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     
     button {
       background-color: var(--bg-sidebar) !important;
-      color: #404b59;
+      color: var(--text-main) !important;
       border: 1px solid var(--border-main) !important;
       box-shadow: rgba(15, 15, 15, 0.1) 0px 1px 2px;
       border-radius: 6px;
