@@ -97,7 +97,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       margin-top: 50px;
     }
 
-    .notion-callout-block > div > div:nth-child(2) {
+    .notion-callout {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -111,7 +111,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-size: 1rem;
       line-height: 1.5;
       text-decoration: none;
-      box-shadow: 2px 2px 0 #0000 !important; /* shadow ala Phosphor */
+      box-shadow: 2px 2px 0 #000000 !important; /* shadow ala Phosphor */
       transition: all 0.15s ease-in-out;
     }
     
