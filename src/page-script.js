@@ -93,38 +93,37 @@ window.onload = function () {
     if (document.getElementById('sidebar-navigation')) return;
     const sidebar = document.createElement('aside');
     sidebar.id = 'sidebar-navigation';
-    sidebar.innerHTML = `
-      <nav class="sidebar-nav">
-        <ul>
-          <li><a href="https://hub.kolkative.my.id" class="sidebar-link">Feed</a></li>
-          <li><a href="https://hub.kolkative.my.id/team" class="sidebar-link">Teams</a></li>
-          <li><a href="https://hub.kolkative.my.id/player" class="sidebar-link">Cast & Crew</a></li>
-          <li><a href="https://hub.kolkative.my.id/event" class="sidebar-link">Events</a></li>
-          <li><a href="https://hub.kolkative.my.id/leaderboard" class="sidebar-link">Leaderboard</a></li>
-        </ul>
-        <div class="sidebar-section">Community</div>
-        <ul>
-          <li><a href="https://hub.kolkative.my.id/support" class="sidebar-link">Support</a></li>
-          <li><a href="https://hub.kolkative.my.id/academy" class="sidebar-link">Academy</a></li>
-          <li><a href="https://hub.kolkative.my.id/job" class="sidebar-link">Jobs</a></li>
-          <li><a href="https://hub.kolkative.my.id/form" class="sidebar-link">Kritik & Saran</a></li>
-        </ul>
-        <div class="sidebar-section">Marketplace</div>
-        <ul>
-          <li><a href="#" class="sidebar-link">Tickets</a></li>
-          <li><a href="#" class="sidebar-link">Mixing Templates</a></li>
-          <li><a href="#" class="sidebar-link">SFX Collections</a></li>
-          <li><a href="#" class="sidebar-link">Merch</a></li>
-        </ul>
-        <div class="sidebar-section">Links</div>
-        <ul>
-          <li><a href="#" class="sidebar-link">Partnership</a></li>
-          <li><a href="#" class="sidebar-link">Brand Assets & Guidelines</a></li>
-          <li><a href="#" class="sidebar-link">Official Blibli.com</a></li>
-          <li><a href="#" class="sidebar-link">Instagram</a></li>
-        </ul>
-      </nav>
-    `;
+    sidebar.innerHTML =
+      '<nav class="sidebar-nav">' +
+        '<ul>' +
+          '<li><a href="https://hub.kolkative.my.id" class="sidebar-link">Feed</a></li>' +
+          '<li><a href="https://hub.kolkative.my.id/team" class="sidebar-link">Teams</a></li>' +
+          '<li><a href="https://hub.kolkative.my.id/player" class="sidebar-link">Cast & Crew</a></li>' +
+          '<li><a href="https://hub.kolkative.my.id/event" class="sidebar-link">Events</a></li>' +
+          '<li><a href="https://hub.kolkative.my.id/leaderboard" class="sidebar-link">Leaderboard</a></li>' +
+        '</ul>' +
+        '<div class="sidebar-section">Community</div>' +
+        '<ul>' +
+          '<li><a href="https://hub.kolkative.my.id/support" class="sidebar-link">Support</a></li>' +
+          '<li><a href="https://hub.kolkative.my.id/academy" class="sidebar-link">Academy</a></li>' +
+          '<li><a href="https://hub.kolkative.my.id/job" class="sidebar-link">Jobs</a></li>' +
+          '<li><a href="https://hub.kolkative.my.id/form" class="sidebar-link">Kritik & Saran</a></li>' +
+        '</ul>' +
+        '<div class="sidebar-section">Marketplace</div>' +
+        '<ul>' +
+          '<li><a href="#" class="sidebar-link">Tickets</a></li>' +
+          '<li><a href="#" class="sidebar-link">Mixing Templates</a></li>' +
+          '<li><a href="#" class="sidebar-link">SFX Collections</a></li>' +
+          '<li><a href="#" class="sidebar-link">Merch</a></li>' +
+        '</ul>' +
+        '<div class="sidebar-section">Links</div>' +
+        '<ul>' +
+          '<li><a href="#" class="sidebar-link">Partnership</a></li>' +
+          '<li><a href="#" class="sidebar-link">Brand Assets & Guidelines</a></li>' +
+          '<li><a href="#" class="sidebar-link">Official Blibli.com</a></li>' +
+          '<li><a href="#" class="sidebar-link">Instagram</a></li>' +
+        '</ul>' +
+      '</nav>';
     document.body.appendChild(sidebar);
 
     // Highlight menu sesuai URL saat ini
