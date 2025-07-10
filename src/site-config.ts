@@ -88,7 +88,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --surface-hover: #454952;
     }
 
-    .notion-frame {
+    .notion-body {
       background-color: var(--bg-main) !important;
       color: var(--text-main) !important;
     }
