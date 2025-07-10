@@ -17,7 +17,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   // twitterHandle: '',
 
   // URL to custom favicon.ico
-  siteIcon: "https://i.imgur.com/SAjtNw5.png",
+  siteIcon: "https://imgur.com/SAjtNw5",
 
   // Additional safety: avoid serving extraneous Notion content from your website
   // Use the value from your Notion settings => Workspace => Settings => Domain
