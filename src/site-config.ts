@@ -70,7 +70,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
        THEME VARIABLE
     ========================== */
     /* Light mode root */
-    .notion-app-inner:not(.notion-dark-theme) {
+    .notion-app-inner {
       --bg-main: #fff;
       --text-main: #23272f;
       --bg-sidebar: #f7f7f8;
@@ -99,16 +99,14 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     /* Toggle Button Minimal */
     #x-toggle {
       position: fixed;
-      bottom: 1rem;
+      top: 1rem;
       right: 1rem;
-      z-index: 9999;
+      z-index: 10;
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: var(--bg-main, #f0f0f0);
+      width: 24px;
+      height: 24px;
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
@@ -124,7 +122,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       top: 0;
       left: 0;
       font-size: 24px;
-      color: var(--text-main, #333);
+      color: var(--text-main);
       transition: opacity 0.3s ease;
     }
     
