@@ -126,10 +126,16 @@ window.onload = function () {
       '</nav>';
     document.body.appendChild(sidebar);
 
-    // Highlight selected menu berdasarkan URL
+    // Highlight selected menu berdasarkan URL atau localStorage
+    const lastMenu = localStorage.getItem('sidebar-selected');
+    let highlighted = false;
     document.querySelectorAll('.sidebar-link').forEach(link => {
       const linkPath = link.getAttribute('href');
-      if (linkPath === window.location.pathname || (linkPath === '/' && window.location.pathname === '')) {
+      // Prioritaskan highlight dari localStorage jika ada
+      if (lastMenu && linkPath === lastMenu) {
+        link.classList.add('selected');
+        highlighted = true;
+      } else if (!highlighted && !lastMenu && (linkPath === window.location.pathname || (linkPath === '/' && window.location.pathname === ''))) {
         link.classList.add('selected');
       }
     });
@@ -142,6 +148,8 @@ window.onload = function () {
         document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('selected'));
         // Tambahkan highlight ke link yang diklik
         this.classList.add('selected');
+        // Simpan href ke localStorage
+        localStorage.setItem('sidebar-selected', this.getAttribute('href'));
         // Redirect setelah delay 300ms
         const href = this.getAttribute('href');
         if (href && href !== window.location.pathname) {
@@ -151,6 +159,13 @@ window.onload = function () {
         }
       });
     });
+
+    // Hapus highlight dari localStorage setelah halaman load
+    if (lastMenu) {
+      setTimeout(() => {
+        localStorage.removeItem('sidebar-selected');
+      }, 1000);
+    }
   }
 
   createToggleButton();
