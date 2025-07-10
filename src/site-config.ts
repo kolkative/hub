@@ -115,6 +115,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       position: relative;
       width: 24px;
       height: 24px;
+      color: var(--text-main) !important;
     }
     
     .toggle-icon i {
