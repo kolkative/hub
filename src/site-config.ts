@@ -148,12 +148,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.75rem 1.5rem; /* ruang dalam tombol */
-      border: 1px solid #000000; /* warna garis */
+      padding: 0.25rem 1.5rem; /* ruang dalam tombol */
+      border: 1px solid var(--bg-sidebar); /* warna garis */
       border-radius: 0.75rem; /* sudut membulat */
-      background-color: #fff; /* warna dasar */
-      color: #000000; /* warna teks */
-      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-main); /* warna dasar */
+      color: var(--text-main);
+      font-family: 'Space Mono', sans-serif;
       font-weight: 500;
       font-size: 1rem;
       line-height: 1.5;
@@ -163,7 +163,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
     
     .notion-selectable.notion-page-block.notion-collection-item:hover {
-      background-color: #f2f2f2;
+      background-color: var(--surface-hover);
       transform: translateY(-1px);
       box-shadow: 3px 3px 0 #000000;
     }
