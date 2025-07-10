@@ -144,6 +144,36 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: none !important;
     }
 
+    .notion-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem; /* ruang dalam tombol */
+      border: 1px solid #000000; /* warna garis */
+      border-radius: 0.75rem; /* sudut membulat */
+      background-color: #fff; /* warna dasar */
+      color: #000000; /* warna teks */
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 1.5;
+      text-decoration: none;
+      box-shadow: 2px 2px 0 #000000; /* shadow ala Phosphor */
+      transition: all 0.15s ease-in-out;
+    }
+    
+    .notion-link:hover {
+      background-color: #f2f2f2;
+      transform: translateY(-1px);
+      box-shadow: 3px 3px 0 #000000;
+    }
+    
+    .notion-link:active {
+      transform: translateY(1px);
+      box-shadow: 1px 1px 0 #000000;
+    }
+    
+
   `,
   customHeadJS: googleTag(GOOGLE_TAG_ID),
   customBodyJS: PAGE_SCRIPT_JS_STRING,
