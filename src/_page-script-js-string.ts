@@ -30,17 +30,15 @@ window.onload = function () {
 
     const toggle = document.createElement("div");
     toggle.id = "x-toggle";
-    toggle.innerHTML = `
-    <div class="toggle-icon">
-      <!-- HugeIcons stroke rounded - sun icon -->
-      <svg id="toggle-icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon icon-sun" width="24" height="24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1.5M12 19.5V21M4.22 4.22l1.06 1.06M17.72 17.72l1.06 1.06M3 12h1.5M19.5 12H21M4.22 19.78l1.06-1.06M17.72 6.28l1.06-1.06M12 7.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" />
-      </svg>
-      <!-- HugeIcons stroke rounded - moon icon (hidden by default) -->
-      <svg id="toggle-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon icon-moon hidden" width="24" height="24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3a7 7 0 0010.58 9.79z" />
-      </svg>
-    </div>`;
+    toggle.innerHTML =
+      '<div class="toggle-icon">' +
+      '<svg id="toggle-icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon icon-sun" width="24" height="24">' +
+      '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1.5M12 19.5V21M4.22 4.22l1.06 1.06M17.72 17.72l1.06 1.06M3 12h1.5M19.5 12H21M4.22 19.78l1.06-1.06M17.72 6.28l1.06-1.06M12 7.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" />' +
+      "</svg>" +
+      '<svg id="toggle-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon icon-moon hidden" width="24" height="24">' +
+      '<path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3a7 7 0 0010.58 9.79z" />' +
+      "</svg>" +
+      "</div>";
 
     toggle.addEventListener("click", function () {
       const themeData = document.getElementById("theme-data");
