@@ -339,7 +339,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 24px;
+      width: 60px;
       height: 24px;
       cursor: pointer;
       transition: background-color 0.3s ease;
