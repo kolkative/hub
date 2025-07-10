@@ -87,14 +87,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --link: var(--indigo-4);
       --surface-hover: #454952;
     }
-    /* Semua elemen lain mengikuti root, dengan prioritas tinggi */
-    html.notion-html,
-    body.notion-body,
-    #notion-app,
-    .notion-body,
-    html.notion-html body.notion-body,
-    html.notion-html #notion-app,
-    html.notion-html .notion-body {
+
+    .notion-frame {
       background-color: var(--bg-main) !important;
       color: var(--text-main) !important;
     }
