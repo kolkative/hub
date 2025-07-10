@@ -110,6 +110,13 @@ window.onload = function () {
           '<li><a href="/job" class="sidebar-link" data-menu="Jobs">Jobs</a></li>' +
           '<li><a href="/form" class="sidebar-link" data-menu="Kritik & Saran">Kritik & Saran</a></li>' +
         '</ul>' +
+        '<div class="sidebar-section">Marketplace</div>' +
+        '<ul>' +
+          '<li><a href="#" class="sidebar-link" data-menu="Tickets">Tickets</a></li>' +
+          '<li><a href="#" class="sidebar-link" data-menu="Mixing Templates">Mixing Templates</a></li>' +
+          '<li><a href="#" class="sidebar-link" data-menu="SFX Collections">SFX Collections</a></li>' +
+          '<li><a href="#" class="sidebar-link" data-menu="Merch">Merch</a></li>' +
+        '</ul>' +
         '<div class="sidebar-section">Links</div>' +
         '<ul>' +
           '<li><a href="#" class="sidebar-link" data-menu="Partnership">Partnership</a></li>' +
@@ -120,153 +127,18 @@ window.onload = function () {
       '</nav>';
     document.body.appendChild(sidebar);
 
-    // Highlight selected menu utama berdasarkan URL
+    // Highlight selected menu berdasarkan URL
     document.querySelectorAll('.sidebar-link').forEach(link => {
-      // Cek jika href sama dengan path saat ini
       const linkPath = link.getAttribute('href');
       if (linkPath === window.location.pathname || (linkPath === '/' && window.location.pathname === '')) {
         link.classList.add('selected');
       }
     });
-
-    // === SIDEBAR KHUSUS MARKETPLACE ===
-    if (!document.getElementById('marketplace-sidebar')) {
-      const marketplaceSidebar = document.createElement('aside');
-      marketplaceSidebar.id = 'marketplace-sidebar';
-      marketplaceSidebar.style.position = 'fixed';
-      marketplaceSidebar.style.left = '250px';
-      marketplaceSidebar.style.top = '0';
-      marketplaceSidebar.style.width = '200px';
-      marketplaceSidebar.style.height = '100vh';
-      marketplaceSidebar.style.background = '#23272f';
-      marketplaceSidebar.style.color = '#fff';
-      marketplaceSidebar.style.zIndex = '20';
-      marketplaceSidebar.style.boxShadow = '2px 0 8px rgba(0,0,0,0.08)';
-      marketplaceSidebar.style.padding = '32px 0 32px 0';
-      marketplaceSidebar.style.overflowY = 'auto';
-      marketplaceSidebar.innerHTML =
-        '<div class="sidebar-section">Marketplace</div>' +
-        '<ul style="list-style:none;padding:0 0 0 16px;margin:0;">' +
-          '<li><div class="marketplace-link" data-menu="Tickets">Tickets</div></li>' +
-          '<li><div class="marketplace-link" data-menu="Mixing Templates">Mixing Templates</div></li>' +
-          '<li><div class="marketplace-link" data-menu="SFX Collections">SFX Collections</div></li>' +
-          '<li><div class="marketplace-link" data-menu="Merch">Merch</div></li>' +
-        '</ul>';
-      document.body.appendChild(marketplaceSidebar);
-
-      // Buat konten utama Marketplace jika belum ada
-      let content = document.getElementById('marketplace-content');
-      if (!content) {
-        content = document.createElement('div');
-        content.id = 'marketplace-content';
-        content.style.position = 'fixed';
-        content.style.left = '450px';
-        content.style.top = '0';
-        content.style.width = 'calc(100vw - 450px)';
-        content.style.height = '100vh';
-        content.style.overflowY = 'auto';
-        content.style.background = 'var(--bg-main, #fff)';
-        content.style.padding = '40px 32px 32px 32px';
-        content.style.zIndex = '10';
-        content.style.boxSizing = 'border-box';
-        document.body.appendChild(content);
-      }
-      // Daftar konten Marketplace
-      const menuContent = {
-        'Tickets': '<h2>Tickets</h2><p>Ini halaman Tickets.</p>',
-        'Mixing Templates': '<h2>Mixing Templates</h2><p>Ini halaman Mixing Templates.</p>',
-        'SFX Collections': '<h2>SFX Collections</h2><p>Ini halaman SFX Collections.</p>',
-        'Merch': '<h2>Merch</h2><p>Ini halaman Merch.</p>'
-      };
-      // State menu aktif Marketplace
-      let selectedMarketplace = 'Tickets';
-      function selectMarketplace(menu) {
-        selectedMarketplace = menu;
-        updateMarketplaceUI();
-      }
-      function updateMarketplaceUI() {
-        document.querySelectorAll('.marketplace-link').forEach(link => {
-          link.classList.toggle('selected', link.getAttribute('data-menu') === selectedMarketplace);
-        });
-        content.style.opacity = 0;
-        content.style.transform = 'translateY(20px)';
-        setTimeout(() => {
-          content.innerHTML = menuContent[selectedMarketplace] || '<h2>' + selectedMarketplace + '</h2>';
-          content.style.opacity = 1;
-          content.style.transform = 'translateY(0)';
-        }, 150);
-      }
-      // Event listener menu Marketplace
-      document.querySelectorAll('.marketplace-link').forEach(link => {
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-          selectMarketplace(this.getAttribute('data-menu'));
-        });
-      });
-      // Inisialisasi
-      updateMarketplaceUI();
-    }
-  }
-
-  // === MARKETPLACE SIDEBAR INTERAKTIF VANILLA JS ===
-  function enhanceMarketplaceSidebar() {
-    // Tambahkan class 'marketplace' pada link Marketplace
-    document.querySelectorAll('#sidebar-navigation .sidebar-section + ul').forEach((ul, idx) => {
-      if (idx === 2) { // Marketplace section (urutan ke-3)
-        ul.querySelectorAll('a, .sidebar-link').forEach((el) => {
-          el.classList.add('marketplace');
-          el.setAttribute('data-menu', el.textContent.trim());
-        });
-      }
-    });
-
-    // Buat konten dinamis untuk Marketplace
-    let content = document.getElementById('marketplace-content');
-    if (!content) {
-      content = document.createElement('div');
-      content.id = 'marketplace-content';
-      content.style.transition = 'opacity 0.3s, transform 0.3s';
-      content.style.margin = '32px 0 0 260px';
-      content.style.fontSize = '1.2rem';
-      content.style.minHeight = '40px';
-      document.body.appendChild(content);
-    }
-
-    // State sederhana
-    let selectedMarketplace = 'Tickets';
-    function selectMarketplace(menu) {
-      selectedMarketplace = menu;
-      updateMarketplaceUI();
-    }
-    function updateMarketplaceUI() {
-      document.querySelectorAll('.sidebar-link.marketplace').forEach(link => {
-        link.classList.toggle('selected', link.dataset.menu === selectedMarketplace);
-      });
-      // Animasi keluar
-      content.style.opacity = 0;
-      content.style.transform = 'translateY(20px)';
-      setTimeout(() => {
-        content.textContent = 'Ini halaman ' + selectedMarketplace + '.';
-        // Animasi masuk
-        content.style.opacity = 1;
-        content.style.transform = 'translateY(0)';
-      }, 200);
-    }
-    // Event listener
-    document.querySelectorAll('.sidebar-link.marketplace').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        selectMarketplace(this.dataset.menu);
-      });
-    });
-    // Inisialisasi
-    updateMarketplaceUI();
   }
 
   createToggleButton();
   initializeTheme();
   createSidebarNavigation();
-  enhanceMarketplaceSidebar();
 
   setInterval(() => {
     // === DESKTOP ===
