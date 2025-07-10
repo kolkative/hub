@@ -94,7 +94,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     .notion-page-content {
-      margin-top: 130px;
+      margin-top: 60px;
+    }
       
 
     a {
