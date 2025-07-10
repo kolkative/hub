@@ -122,7 +122,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       top: 0;
       left: 0;
       font-size: 24px;
-      color: var(--text-main);
+      color: var(--text-main) !important;
       transition: opacity 0.3s ease;
     }
     

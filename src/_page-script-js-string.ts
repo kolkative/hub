@@ -4,12 +4,12 @@ export const PAGE_SCRIPT_JS_STRING = `<script>
 /* eslint-disable no-param-reassign */
 
 window.onload = function () {
-  // Tambahkan CDN Bootstrap Icons
-  const bootstrapIconsCDN = document.createElement("link");
-  bootstrapIconsCDN.rel = "stylesheet";
-  bootstrapIconsCDN.href =
-    "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css";
-  document.head.appendChild(bootstrapIconsCDN);
+  // Tambahkan CDN HugeIcons stroke rounded
+  const hugeIconsCDN = document.createElement("link");
+  hugeIconsCDN.rel = "stylesheet";
+  hugeIconsCDN.href =
+    "https://unpkg.com/@hugeicons/core@latest/hugeicons-rounded-stroke.css";
+  document.head.appendChild(hugeIconsCDN);
 
   function applyLightMode() {
     const themeData = document.getElementById("theme-data");
@@ -33,8 +33,8 @@ window.onload = function () {
     toggle.id = "x-toggle";
     toggle.innerHTML =
       '<div class="toggle-icon">' +
-      '<i id="toggle-icon-sun" class="bi bi-sun-fill"></i>' +
-      '<i id="toggle-icon-moon" class="bi bi-moon-fill hidden"></i>' +
+      '<i id="toggle-icon-sun" class="hugeicons-sun-r"></i>' +
+      '<i id="toggle-icon-moon" class="hugeicons-moon-r hidden"></i>' +
       "</div>";
 
     toggle.addEventListener("click", function () {
