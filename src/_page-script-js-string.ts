@@ -97,105 +97,115 @@ window.onload = function () {
     sidebar.innerHTML =
       '<nav class="sidebar-nav">' +
         '<ul>' +
-          '<li><div class="sidebar-link" data-menu="Feed">Feed</div></li>' +
-          '<li><div class="sidebar-link" data-menu="Teams">Teams</div></li>' +
-          '<li><div class="sidebar-link" data-menu="Cast & Crew">Cast & Crew</div></li>' +
-          '<li><div class="sidebar-link" data-menu="Events">Events</div></li>' +
-          '<li><div class="sidebar-link" data-menu="Leaderboard">Leaderboard</div></li>' +
+          '<li><a href="/" class="sidebar-link" data-menu="Feed">Feed</a></li>' +
+          '<li><a href="/team" class="sidebar-link" data-menu="Teams">Teams</a></li>' +
+          '<li><a href="/player" class="sidebar-link" data-menu="Cast & Crew">Cast & Crew</a></li>' +
+          '<li><a href="/event" class="sidebar-link" data-menu="Events">Events</a></li>' +
+          '<li><a href="/leaderboard" class="sidebar-link" data-menu="Leaderboard">Leaderboard</a></li>' +
         '</ul>' +
         '<div class="sidebar-section">Community</div>' +
         '<ul>' +
-          '<li><div class="sidebar-link" data-menu="Support">Support</div></li>' +
-          '<li><div class="sidebar-link" data-menu="Academy">Academy</div></li>' +
-          '<li><div class="sidebar-link" data-menu="Jobs">Jobs</div></li>' +
-          '<li><div class="sidebar-link" data-menu="Kritik & Saran">Kritik & Saran</div></li>' +
-        '</ul>' +
-        '<div class="sidebar-section">Marketplace</div>' +
-        '<ul>' +
-          '<li><div class="sidebar-link marketplace" data-menu="Tickets">Tickets</div></li>' +
-          '<li><div class="sidebar-link marketplace" data-menu="Mixing Templates">Mixing Templates</div></li>' +
-          '<li><div class="sidebar-link marketplace" data-menu="SFX Collections">SFX Collections</div></li>' +
-          '<li><div class="sidebar-link marketplace" data-menu="Merch">Merch</div></li>' +
+          '<li><a href="/support" class="sidebar-link" data-menu="Support">Support</a></li>' +
+          '<li><a href="/academy" class="sidebar-link" data-menu="Academy">Academy</a></li>' +
+          '<li><a href="/job" class="sidebar-link" data-menu="Jobs">Jobs</a></li>' +
+          '<li><a href="/form" class="sidebar-link" data-menu="Kritik & Saran">Kritik & Saran</a></li>' +
         '</ul>' +
         '<div class="sidebar-section">Links</div>' +
         '<ul>' +
-          '<li><div class="sidebar-link" data-menu="Partnership">Partnership</div></li>' +
-          '<li><div class="sidebar-link" data-menu="Brand Assets & Guidelines">Brand Assets & Guidelines</div></li>' +
-          '<li><div class="sidebar-link" data-menu="Official Blibli.com">Official Blibli.com</div></li>' +
-          '<li><div class="sidebar-link" data-menu="Instagram">Instagram</div></li>' +
+          '<li><a href="#" class="sidebar-link" data-menu="Partnership">Partnership</a></li>' +
+          '<li><a href="#" class="sidebar-link" data-menu="Brand Assets & Guidelines">Brand Assets & Guidelines</a></li>' +
+          '<li><a href="#" class="sidebar-link" data-menu="Official Blibli.com">Official Blibli.com</a></li>' +
+          '<li><a href="#" class="sidebar-link" data-menu="Instagram">Instagram</a></li>' +
         '</ul>' +
       '</nav>';
     document.body.appendChild(sidebar);
 
-    // Buat konten utama jika belum ada
-    let content = document.getElementById('main-content');
-    if (!content) {
-      content = document.createElement('div');
-      content.id = 'main-content';
-      content.style.position = 'fixed';
-      content.style.left = '250px';
-      content.style.top = '0';
-      content.style.width = 'calc(100vw - 250px)';
-      content.style.height = '100vh';
-      content.style.overflowY = 'auto';
-      content.style.background = 'var(--bg-main, #fff)';
-      content.style.padding = '40px 32px 32px 32px';
-      content.style.zIndex = '10';
-      content.style.boxSizing = 'border-box';
-      document.body.appendChild(content);
-    }
-
-    // Daftar menu dan konten
-    const menuContent = {
-      'Feed': '<h2>Feed</h2><p>Selamat datang di Kolkative Hub!</p>',
-      'Teams': '<h2>Teams</h2><p>Daftar tim Kolkative.</p>',
-      'Cast & Crew': '<h2>Cast & Crew</h2><p>Informasi pemain dan kru.</p>',
-      'Events': '<h2>Events</h2><p>Jadwal dan info event.</p>',
-      'Leaderboard': '<h2>Leaderboard</h2><p>Peringkat komunitas.</p>',
-      'Support': '<h2>Support</h2><p>Bantuan dan dukungan.</p>',
-      'Academy': '<h2>Academy</h2><p>Belajar dan pelatihan.</p>',
-      'Jobs': '<h2>Jobs</h2><p>Lowongan dan karir.</p>',
-      'Kritik & Saran': '<h2>Kritik & Saran</h2><p>Kirim masukan Anda.</p>',
-      'Tickets': '<h2>Tickets</h2><p>Ini halaman Tickets.</p>',
-      'Mixing Templates': '<h2>Mixing Templates</h2><p>Ini halaman Mixing Templates.</p>',
-      'SFX Collections': '<h2>SFX Collections</h2><p>Ini halaman SFX Collections.</p>',
-      'Merch': '<h2>Merch</h2><p>Ini halaman Merch.</p>',
-      'Partnership': '<h2>Partnership</h2><p>Info kerjasama.</p>',
-      'Brand Assets & Guidelines': '<h2>Brand Assets & Guidelines</h2><p>Branding resmi Kolkative.</p>',
-      'Official Blibli.com': '<h2>Official Blibli.com</h2><p>Link ke Blibli.com.</p>',
-      'Instagram': '<h2>Instagram</h2><p>Link ke Instagram resmi.</p>'
-    };
-
-    // State menu aktif
-    let selectedMenu = 'Feed';
-    function selectMenu(menu) {
-      selectedMenu = menu;
-      updateSidebarUI();
-      updateContentUI();
-    }
-    function updateSidebarUI() {
-      document.querySelectorAll('.sidebar-link').forEach(link => {
-        link.classList.toggle('selected', link.getAttribute('data-menu') === selectedMenu);
-      });
-    }
-    function updateContentUI() {
-      content.style.opacity = 0;
-      content.style.transform = 'translateY(20px)';
-      setTimeout(() => {
-        content.innerHTML = menuContent[selectedMenu] || '<h2>' + selectedMenu + '</h2>';
-        content.style.opacity = 1;
-        content.style.transform = 'translateY(0)';
-      }, 150);
-    }
-    // Event listener semua menu
+    // Highlight selected menu utama berdasarkan URL
     document.querySelectorAll('.sidebar-link').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        selectMenu(this.getAttribute('data-menu'));
-      });
+      // Cek jika href sama dengan path saat ini
+      const linkPath = link.getAttribute('href');
+      if (linkPath === window.location.pathname || (linkPath === '/' && window.location.pathname === '')) {
+        link.classList.add('selected');
+      }
     });
-    // Inisialisasi
-    selectMenu(selectedMenu);
+
+    // === SIDEBAR KHUSUS MARKETPLACE ===
+    if (!document.getElementById('marketplace-sidebar')) {
+      const marketplaceSidebar = document.createElement('aside');
+      marketplaceSidebar.id = 'marketplace-sidebar';
+      marketplaceSidebar.style.position = 'fixed';
+      marketplaceSidebar.style.left = '250px';
+      marketplaceSidebar.style.top = '0';
+      marketplaceSidebar.style.width = '200px';
+      marketplaceSidebar.style.height = '100vh';
+      marketplaceSidebar.style.background = '#23272f';
+      marketplaceSidebar.style.color = '#fff';
+      marketplaceSidebar.style.zIndex = '20';
+      marketplaceSidebar.style.boxShadow = '2px 0 8px rgba(0,0,0,0.08)';
+      marketplaceSidebar.style.padding = '32px 0 32px 0';
+      marketplaceSidebar.style.overflowY = 'auto';
+      marketplaceSidebar.innerHTML =
+        '<div class="sidebar-section">Marketplace</div>' +
+        '<ul style="list-style:none;padding:0 0 0 16px;margin:0;">' +
+          '<li><div class="marketplace-link" data-menu="Tickets">Tickets</div></li>' +
+          '<li><div class="marketplace-link" data-menu="Mixing Templates">Mixing Templates</div></li>' +
+          '<li><div class="marketplace-link" data-menu="SFX Collections">SFX Collections</div></li>' +
+          '<li><div class="marketplace-link" data-menu="Merch">Merch</div></li>' +
+        '</ul>';
+      document.body.appendChild(marketplaceSidebar);
+
+      // Buat konten utama Marketplace jika belum ada
+      let content = document.getElementById('marketplace-content');
+      if (!content) {
+        content = document.createElement('div');
+        content.id = 'marketplace-content';
+        content.style.position = 'fixed';
+        content.style.left = '450px';
+        content.style.top = '0';
+        content.style.width = 'calc(100vw - 450px)';
+        content.style.height = '100vh';
+        content.style.overflowY = 'auto';
+        content.style.background = 'var(--bg-main, #fff)';
+        content.style.padding = '40px 32px 32px 32px';
+        content.style.zIndex = '10';
+        content.style.boxSizing = 'border-box';
+        document.body.appendChild(content);
+      }
+      // Daftar konten Marketplace
+      const menuContent = {
+        'Tickets': '<h2>Tickets</h2><p>Ini halaman Tickets.</p>',
+        'Mixing Templates': '<h2>Mixing Templates</h2><p>Ini halaman Mixing Templates.</p>',
+        'SFX Collections': '<h2>SFX Collections</h2><p>Ini halaman SFX Collections.</p>',
+        'Merch': '<h2>Merch</h2><p>Ini halaman Merch.</p>'
+      };
+      // State menu aktif Marketplace
+      let selectedMarketplace = 'Tickets';
+      function selectMarketplace(menu) {
+        selectedMarketplace = menu;
+        updateMarketplaceUI();
+      }
+      function updateMarketplaceUI() {
+        document.querySelectorAll('.marketplace-link').forEach(link => {
+          link.classList.toggle('selected', link.getAttribute('data-menu') === selectedMarketplace);
+        });
+        content.style.opacity = 0;
+        content.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          content.innerHTML = menuContent[selectedMarketplace] || '<h2>' + selectedMarketplace + '</h2>';
+          content.style.opacity = 1;
+          content.style.transform = 'translateY(0)';
+        }, 150);
+      }
+      // Event listener menu Marketplace
+      document.querySelectorAll('.marketplace-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          selectMarketplace(this.getAttribute('data-menu'));
+        });
+      });
+      // Inisialisasi
+      updateMarketplaceUI();
+    }
   }
 
   // === MARKETPLACE SIDEBAR INTERAKTIF VANILLA JS ===
