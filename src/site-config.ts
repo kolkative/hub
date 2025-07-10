@@ -96,44 +96,42 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     /* =======================
        TOGGLE ICON MINIMAL
     ========================== */
+    /* Toggle Button Minimal */
     #x-toggle {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      z-index: 9999;
       display: flex;
       align-items: center;
       justify-content: center;
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background-color: var(--bg-main);
+      background-color: var(--bg-main, #f0f0f0);
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-
+    
     .toggle-icon {
       position: relative;
       width: 24px;
       height: 24px;
     }
-
-    .toggle-icon svg {
+    
+    .toggle-icon i {
       position: absolute;
-      top: 50px;
-      left: 50px;
-      width: 24px;
-      height: 24px;
-      color: var(--text-main);
+      top: 0;
+      left: 0;
+      font-size: 24px;
+      color: var(--text-main, #333);
       transition: opacity 0.3s ease;
     }
-
-    .toggle-icon .hidden {
-      opacity: 0;
-      pointer-events: none;
+    
+    .hidden {
       display: none !important;
     }
-
-    .toggle-icon .icon {
-      opacity: 1;
-    }
-
+    
     
     /* ==================
       HIDE & REMOVED
