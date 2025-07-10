@@ -98,21 +98,21 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     .notion-callout-block > div[style*="background: rgb(37, 37, 37)"] {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.75rem 1.5rem; /* ruang dalam tombol */
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 0.75rem 1.5rem !important; /* ruang dalam tombol */
       border: 1px solid var(--border-main) !important; /* warna garis */
-      border-radius: 0.75rem; /* sudut membulat */
-      background: var(--bg-sidebar); /* warna dasar */
-      color: var(--text-main); /* warna teks */
-      font-family: 'Space Gotesk', sans-serif;
-      font-weight: 500;
-      font-size: 1rem;
-      line-height: 1.5;
-      text-decoration: none;
+      border-radius: 0.75rem !important; /* sudut membulat */
+      background: var(--bg-sidebar) !important; /* warna dasar */
+      color: var(--text-main) !important; /* warna teks */
+      font-family: 'Space Gotesk', sans-serif !important;
+      font-weight: 500 !important;
+      font-size: 1rem !important;
+      line-height: 1.5 !important;
+      text-decoration: none !important;
       box-shadow: 2px 2px 0 #000000 !important; /* shadow ala Phosphor */
-      transition: all 0.15s ease-in-out;
+      transition: all 0.15s ease-in-out !important;
     }
     
 

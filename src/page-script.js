@@ -96,49 +96,105 @@ window.onload = function () {
     sidebar.innerHTML =
       '<nav class="sidebar-nav">' +
         '<ul>' +
-          '<li><a href="https://hub.kolkative.my.id" class="sidebar-link">Feed</a></li>' +
-          '<li><a href="https://hub.kolkative.my.id/team" class="sidebar-link">Teams</a></li>' +
-          '<li><a href="https://hub.kolkative.my.id/player" class="sidebar-link">Cast & Crew</a></li>' +
-          '<li><a href="https://hub.kolkative.my.id/event" class="sidebar-link">Events</a></li>' +
-          '<li><a href="https://hub.kolkative.my.id/leaderboard" class="sidebar-link">Leaderboard</a></li>' +
+          '<li><div class="sidebar-link" data-menu="Feed">Feed</div></li>' +
+          '<li><div class="sidebar-link" data-menu="Teams">Teams</div></li>' +
+          '<li><div class="sidebar-link" data-menu="Cast & Crew">Cast & Crew</div></li>' +
+          '<li><div class="sidebar-link" data-menu="Events">Events</div></li>' +
+          '<li><div class="sidebar-link" data-menu="Leaderboard">Leaderboard</div></li>' +
         '</ul>' +
         '<div class="sidebar-section">Community</div>' +
         '<ul>' +
-          '<li><a href="https://hub.kolkative.my.id/support" class="sidebar-link">Support</a></li>' +
-          '<li><a href="https://hub.kolkative.my.id/academy" class="sidebar-link">Academy</a></li>' +
-          '<li><a href="https://hub.kolkative.my.id/job" class="sidebar-link">Jobs</a></li>' +
-          '<li><a href="https://hub.kolkative.my.id/form" class="sidebar-link">Kritik & Saran</a></li>' +
+          '<li><div class="sidebar-link" data-menu="Support">Support</div></li>' +
+          '<li><div class="sidebar-link" data-menu="Academy">Academy</div></li>' +
+          '<li><div class="sidebar-link" data-menu="Jobs">Jobs</div></li>' +
+          '<li><div class="sidebar-link" data-menu="Kritik & Saran">Kritik & Saran</div></li>' +
         '</ul>' +
         '<div class="sidebar-section">Marketplace</div>' +
         '<ul>' +
-          '<li><a href="#" class="sidebar-link">Tickets</a></li>' +
-          '<li><a href="#" class="sidebar-link">Mixing Templates</a></li>' +
-          '<li><a href="#" class="sidebar-link">SFX Collections</a></li>' +
-          '<li><a href="#" class="sidebar-link">Merch</a></li>' +
+          '<li><div class="sidebar-link marketplace" data-menu="Tickets">Tickets</div></li>' +
+          '<li><div class="sidebar-link marketplace" data-menu="Mixing Templates">Mixing Templates</div></li>' +
+          '<li><div class="sidebar-link marketplace" data-menu="SFX Collections">SFX Collections</div></li>' +
+          '<li><div class="sidebar-link marketplace" data-menu="Merch">Merch</div></li>' +
         '</ul>' +
         '<div class="sidebar-section">Links</div>' +
         '<ul>' +
-          '<li><a href="#" class="sidebar-link">Partnership</a></li>' +
-          '<li><a href="#" class="sidebar-link">Brand Assets & Guidelines</a></li>' +
-          '<li><a href="#" class="sidebar-link">Official Blibli.com</a></li>' +
-          '<li><a href="#" class="sidebar-link">Instagram</a></li>' +
+          '<li><div class="sidebar-link" data-menu="Partnership">Partnership</div></li>' +
+          '<li><div class="sidebar-link" data-menu="Brand Assets & Guidelines">Brand Assets & Guidelines</div></li>' +
+          '<li><div class="sidebar-link" data-menu="Official Blibli.com">Official Blibli.com</div></li>' +
+          '<li><div class="sidebar-link" data-menu="Instagram">Instagram</div></li>' +
         '</ul>' +
       '</nav>';
     document.body.appendChild(sidebar);
 
-    // Highlight menu sesuai URL saat ini
+    // Buat konten utama jika belum ada
+    let content = document.getElementById('main-content');
+    if (!content) {
+      content = document.createElement('div');
+      content.id = 'main-content';
+      content.style.position = 'fixed';
+      content.style.left = '250px';
+      content.style.top = '0';
+      content.style.width = 'calc(100vw - 250px)';
+      content.style.height = '100vh';
+      content.style.overflowY = 'auto';
+      content.style.background = 'var(--bg-main, #fff)';
+      content.style.padding = '40px 32px 32px 32px';
+      content.style.zIndex = '10';
+      content.style.boxSizing = 'border-box';
+      document.body.appendChild(content);
+    }
+
+    // Daftar menu dan konten
+    const menuContent = {
+      'Feed': '<h2>Feed</h2><p>Selamat datang di Kolkative Hub!</p>',
+      'Teams': '<h2>Teams</h2><p>Daftar tim Kolkative.</p>',
+      'Cast & Crew': '<h2>Cast & Crew</h2><p>Informasi pemain dan kru.</p>',
+      'Events': '<h2>Events</h2><p>Jadwal dan info event.</p>',
+      'Leaderboard': '<h2>Leaderboard</h2><p>Peringkat komunitas.</p>',
+      'Support': '<h2>Support</h2><p>Bantuan dan dukungan.</p>',
+      'Academy': '<h2>Academy</h2><p>Belajar dan pelatihan.</p>',
+      'Jobs': '<h2>Jobs</h2><p>Lowongan dan karir.</p>',
+      'Kritik & Saran': '<h2>Kritik & Saran</h2><p>Kirim masukan Anda.</p>',
+      'Tickets': '<h2>Tickets</h2><p>Ini halaman Tickets.</p>',
+      'Mixing Templates': '<h2>Mixing Templates</h2><p>Ini halaman Mixing Templates.</p>',
+      'SFX Collections': '<h2>SFX Collections</h2><p>Ini halaman SFX Collections.</p>',
+      'Merch': '<h2>Merch</h2><p>Ini halaman Merch.</p>',
+      'Partnership': '<h2>Partnership</h2><p>Info kerjasama.</p>',
+      'Brand Assets & Guidelines': '<h2>Brand Assets & Guidelines</h2><p>Branding resmi Kolkative.</p>',
+      'Official Blibli.com': '<h2>Official Blibli.com</h2><p>Link ke Blibli.com.</p>',
+      'Instagram': '<h2>Instagram</h2><p>Link ke Instagram resmi.</p>'
+    };
+
+    // State menu aktif
+    let selectedMenu = 'Feed';
+    function selectMenu(menu) {
+      selectedMenu = menu;
+      updateSidebarUI();
+      updateContentUI();
+    }
+    function updateSidebarUI() {
+      document.querySelectorAll('.sidebar-link').forEach(link => {
+        link.classList.toggle('selected', link.getAttribute('data-menu') === selectedMenu);
+      });
+    }
+    function updateContentUI() {
+      content.style.opacity = 0;
+      content.style.transform = 'translateY(20px)';
+      setTimeout(() => {
+        content.innerHTML = menuContent[selectedMenu] || '<h2>' + selectedMenu + '</h2>';
+        content.style.opacity = 1;
+        content.style.transform = 'translateY(0)';
+      }, 150);
+    }
+    // Event listener semua menu
     document.querySelectorAll('.sidebar-link').forEach(link => {
-      if (link.href === window.location.href) {
-        link.classList.add('selected');
-      }
-    });
-    // Highlight saat diklik (untuk SPA atau halaman statis)
-    document.querySelectorAll('.sidebar-link').forEach(link => {
-      link.addEventListener('click', function() {
-        document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('selected'));
-        this.classList.add('selected');
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        selectMenu(this.getAttribute('data-menu'));
       });
     });
+    // Inisialisasi
+    selectMenu(selectedMenu);
   }
 
   // === MARKETPLACE SIDEBAR INTERAKTIF VANILLA JS ===
