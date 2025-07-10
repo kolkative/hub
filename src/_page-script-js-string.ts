@@ -29,8 +29,17 @@ window.onload = function () {
     "https://unpkg.com/@hugeicons/core@latest/hugeicons-rounded-stroke.css";
   document.head.appendChild(hugeIconsCDN);
 
-  // Tambahkan ikon HugeIcons (stroke, rounded) ke dalam toggle button
-  // Anda bisa menyematkan SVG langsung di dalam elemen
+  // Tunggu sampai style telah dimuat dan DOM siap
+  function whenDOMReady(callback) {
+    if (
+      document.readyState === "complete" ||
+      document.readyState === "interactive"
+    ) {
+      setTimeout(callback, 0);
+    } else {
+      document.addEventListener("DOMContentLoaded", callback);
+    }
+  }
 
   function createToggleButton() {
     if (document.getElementById("x-toggle")) return;
@@ -39,13 +48,14 @@ window.onload = function () {
     toggle.id = "x-toggle";
     toggle.innerHTML =
       '<div class="toggle-icon">' +
-      '<svg id="toggle-icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon icon-sun" width="24" height="24">' +
-      '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1.5M12 19.5V21M4.22 4.22l1.06 1.06M17.72 17.72l1.06 1.06M3 12h1.5M19.5 12H21M4.22 19.78l1.06-1.06M17.72 6.28l1.06-1.06M12 7.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" />' +
-      "</svg>" +
-      '<svg id="toggle-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon icon-moon hidden" width="24" height="24">' +
-      '<path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3a7 7 0 0010.58 9.79z" />' +
-      "</svg>" +
+      '<i id="toggle-icon-sun" class="hugeicons-sun-r"></i>' +
+      '<i id="toggle-icon-moon" class="hugeicons-moon-r hidden"></i>' +
       "</div>";
+
+    toggle.style.position = "fixed";
+    toggle.style.bottom = "16px";
+    toggle.style.right = "16px";
+    toggle.style.zIndex = "9999";
 
     toggle.addEventListener("click", function () {
       const themeData = document.getElementById("theme-data");
@@ -77,7 +87,6 @@ window.onload = function () {
     document.body.appendChild(toggle);
   }
 
-  // Inisialisasi dari localStorage
   function initializeTheme() {
     const themeData = document.getElementById("theme-data");
     if (!themeData) return;
@@ -90,17 +99,16 @@ window.onload = function () {
     applyLightMode();
   }
 
-  createToggleButton();
-  initializeTheme();
+  whenDOMReady(() => {
+    createToggleButton();
+    initializeTheme();
+  });
 
   setInterval(() => {
-    // === DESKTOP ===
-    // Remove all Notion tooltips on images (desktop)
     document
       .querySelectorAll('div[style*="position: absolute; top: 4px;"]')
       ?.forEach((el) => (el.style.display = "none"));
 
-    // Remove hidden properties dropdown (desktop)
     const propertiesDropdown = document.querySelector(
       'div[aria-label="Page properties"]'
     )?.nextElementSibling;
@@ -108,9 +116,6 @@ window.onload = function () {
       propertiesDropdown.style.display = "none";
     }
 
-    // === MOBILE ===
-    // Hide mobile properties dropdown (if exists)
-    // Try to find a dropdown or menu that appears after a properties button in mobile
     const mobilePropertiesBtn = document.querySelector(
       '.notion-mobile [aria-label="Page properties"]'
     );
