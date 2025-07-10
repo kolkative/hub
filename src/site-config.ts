@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-import { NoteHostSiteConfig, googleTag } from 'notehost'
-import { PAGE_SCRIPT_JS_STRING } from './_page-script-js-string'
-
-// Set this to your Google Tag ID from Google Analytics
-const GOOGLE_TAG_ID = 'G-2FG5VHBYH1'
-
-export const SITE_CONFIG: NoteHostSiteConfig = {
-  domain: 'hub.kolkative.my.id',
-
-  // Metatags, optional
-  // For main page link preview
-  siteName: 'Kolkative Hub',
-  siteDescription: 'Media Informasi dan Apresiasi',
-  siteImage: 'https://imgur.com/q0QXC8F',
-=======
 import { NoteHostSiteConfig, googleTag } from "notehost";
 import { PAGE_SCRIPT_JS_STRING } from "./_page-script-js-string";
 
@@ -28,38 +12,20 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   siteName: "Kolkative Hub",
   siteDescription: "Media Informasi dan Apresiasi",
   siteImage: "https://imgur.com/q0QXC8F",
->>>>>>> 705b44117c0c5fdb993d3617d243547659fa065d
 
   // Twitter handle, optional
   // twitterHandle: '',
 
   // URL to custom favicon.ico
-<<<<<<< HEAD
-  siteIcon: 'https://i.imgur.com/k1uXQVU.png',
-
-  // Additional safety: avoid serving extraneous Notion content from your website
-  // Use the value from your Notion settings => Workspace => Settings => Domain
-  notionDomain: 'kolkative',
-=======
   siteIcon: "https://imgur.com/SAjtNw5",
 
   // Additional safety: avoid serving extraneous Notion content from your website
   // Use the value from your Notion settings => Workspace => Settings => Domain
   notionDomain: "kolkative",
->>>>>>> 705b44117c0c5fdb993d3617d243547659fa065d
 
   // Map slugs (short page names) to Notion page IDs
   // Empty slug is your main page
   slugToPage: {
-<<<<<<< HEAD
-    '': '208db40e66ea8001b35af735e91f0e0c',
-    team: '208db40e66ea80199338dadddde8ebb4',
-    player: '211db40e66ea80739783ffc4a44671e5',
-    event: '211db40e66ea808e8ce0cfe0a9d415de',
-    kabaret: '208db40e66ea806f86b1d5f50f8f981c',
-    // individual teams
-    epigonen: '208db40e66ea80a185c7d0c381e72752',
-=======
     "": "208db40e66ea8001b35af735e91f0e0c",
     team: "208db40e66ea80199338dadddde8ebb4",
     player: "211db40e66ea80739783ffc4a44671e5",
@@ -67,25 +33,16 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     kabaret: "208db40e66ea806f86b1d5f50f8f981c",
     // individual teams
     epigonen: "208db40e66ea80a185c7d0c381e72752",
->>>>>>> 705b44117c0c5fdb993d3617d243547659fa065d
   },
 
   // Rewrite meta tags for specific pages
   // Use the Notion page ID as the key
   pageMetadata: {
-<<<<<<< HEAD
-    '208db40e66ea8001b35af735e91f0e0c': {
-      title: 'Kolkative Hub',
-      description: 'The Largest Kabaret Databases',
-      image: 'https://imgur.com/q0QXC8F',
-      author: 'Kolkative Compound',
-=======
     "208db40e66ea8001b35af735e91f0e0c": {
       title: "Kolkative Hub",
       description: "The Largest Kabaret Databases",
       image: "https://imgur.com/q0QXC8F",
       author: "Kolkative Compound",
->>>>>>> 705b44117c0c5fdb993d3617d243547659fa065d
     },
   },
 
@@ -93,11 +50,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   // But it is recommended to have one for www
   subDomains: {
     www: {
-<<<<<<< HEAD
-      redirect: 'https://hub.kolktive.my.id',
-=======
       redirect: "https://hub.kolktive.my.id",
->>>>>>> 705b44117c0c5fdb993d3617d243547659fa065d
     },
   },
 
@@ -109,22 +62,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   },
 
   // Google Font name, you can choose from https://fonts.google.com
-<<<<<<< HEAD
-  googleFont: 'Inter',
-
-  // Custom JS for head and body of a Notion page
-  customHeadCSS: `
-    /* ==========================
-      LIGHT AND DARK THEMES
-    ========================== */
-    
-    body,
-    .notion-body,
-    html.light-mode {
-      --bg-main: #fff;
-      --bg-sidebar: #f7f7f8;
-      --text-main: #23272f;
-=======
   googleFont: "",
 
   // Custom JS for head and body of a Notion page
@@ -137,27 +74,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --bg-main: #fff;
       --text-main: #23272f;
       --bg-sidebar: #f7f7f8;
->>>>>>> 705b44117c0c5fdb993d3617d243547659fa065d
       --border-main: #e5e5e7;
       --link: var(--indigo-6);
       --surface-hover: #e5e5e7;
     }
-<<<<<<< HEAD
-      
-    body.dark,
-    .notion-body.dark,
-    html.dark-mode {
-      --bg-main: #191b1e;
-      --bg-sidebar: #2b2e32;
-      --text-main: #f7f7f8;
-      --border-main: #454952;
-      --link: var(--indigo-4);
-      --surface-hover:#454952;
-    }
-
-  
-    /* =====================
-=======
     /* Dark mode root (default Notion) */
     .notion-app-inner.notion-dark-theme {
       --bg-main: #191b1e;
@@ -177,7 +97,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       margin-top: 50px;
     }
 
-    .notion-callout-content {
+    .notion-callout-block > div[style*="background: rgb(37, 37, 37)"] {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -397,7 +317,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     
 
     /* ==================
->>>>>>> 705b44117c0c5fdb993d3617d243547659fa065d
       HIDE & REMOVED
     ===================== */
     
@@ -408,8 +327,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     div[style*="min-height: 44px"] {
       display: none !important;
     }
-<<<<<<< HEAD
-=======
     
     /* ========== SCROLLBAR ========== */
     div.notion-frame > div.notion-scroller > div{
@@ -451,13 +368,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
->>>>>>> 705b44117c0c5fdb993d3617d243547659fa065d
 
   `,
   customHeadJS: googleTag(GOOGLE_TAG_ID),
   customBodyJS: PAGE_SCRIPT_JS_STRING,
-<<<<<<< HEAD
-}
-=======
 };
->>>>>>> 705b44117c0c5fdb993d3617d243547659fa065d
