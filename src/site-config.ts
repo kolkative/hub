@@ -97,7 +97,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       margin-top: 50px;
     }
 
-    .notion-callout {
+    .notion-callout-content {
       display: inline-flex;
       align-items: center;
       justify-content: center;
