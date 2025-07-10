@@ -144,7 +144,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: none !important;
     }
 
-    .notion-link {
+    .notion-page-block {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -162,13 +162,13 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       transition: all 0.15s ease-in-out;
     }
     
-    .notion-link:hover {
+    .notion-page-block:hover {
       background-color: #f2f2f2;
       transform: translateY(-1px);
       box-shadow: 3px 3px 0 #000000;
     }
     
-    .notion-link:active {
+    .notion-page-block:active {
       transform: translateY(1px);
       box-shadow: 1px 1px 0 #000000;
     }
