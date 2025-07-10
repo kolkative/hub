@@ -137,8 +137,14 @@ window.onload = function () {
         highlighted = true;
       } else if (!highlighted && !lastMenu && (linkPath === window.location.pathname || (linkPath === '/' && window.location.pathname === ''))) {
         link.classList.add('selected');
+        highlighted = true;
       }
     });
+    // Jika tidak ada highlight sama sekali (misal path tidak cocok), auto highlight menu Feed
+    if (!highlighted) {
+      const feedLink = document.querySelector('.sidebar-link[data-menu="Feed"]');
+      if (feedLink) feedLink.classList.add('selected');
+    }
 
     // Intercept klik semua menu agar highlight muncul sebelum redirect
     document.querySelectorAll('.sidebar-link').forEach(link => {

@@ -97,21 +97,72 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       margin-top: 50px;
     }
 
-    .notion-callout-block > div[style*="background: rgb(37, 37, 37)"] {
+    /* Sidebar Kolkative - compact & theme aware */
+    #sidebar-navigation {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 220px;
+      height: 100vh;
+      background: var(--bg-sidebar, #23272f);
+      color: var(--text-main, #fff);
+      z-index: 1000;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.08);
+      padding: 16px 0 16px 0;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    #sidebar-navigation nav {
+      width: 100%;
+    }
+    #sidebar-navigation ul {
+      list-style: none;
+      padding: 0 0 0 12px;
+      margin: 0;
+      gap: 0;
+    }
+    #sidebar-navigation .sidebar-link {
+      display: block;
+      padding: 7px 16px;
+      color: var(--text-main, #fff);
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.2s, color 0.2s;
+      font-size: 0.98rem;
+      cursor: pointer;
+      margin-bottom: 2px;
+    }
+    #sidebar-navigation .sidebar-link.selected {
+      background: var(--surface-hover, #3b82f6);
+      color: var(--text-main, #fff);
+      font-weight: bold;
+    }
+    #sidebar-navigation .sidebar-section {
+      margin: 16px 0 4px 16px;
+      font-size: 0.97rem;
+      color: var(--text-main, #b0b8c1);
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    /* Ganti selector callout Notion agar lebih stabil */
+    .notion-callout-block > .notion-callout-content {
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
-      padding: 0.75rem 1.5rem !important; /* ruang dalam tombol */
-      border: 1px solid var(--border-main) !important; /* warna garis */
-      border-radius: 0.75rem !important; /* sudut membulat */
-      background: var(--bg-sidebar) !important; /* warna dasar */
-      color: var(--text-main) !important; /* warna teks */
+      padding: 0.75rem 1.5rem !important;
+      border: 1px solid var(--border-main) !important;
+      border-radius: 0.75rem !important;
+      background: var(--bg-sidebar) !important;
+      color: var(--text-main) !important;
       font-family: 'Space Gotesk', sans-serif !important;
       font-weight: 500 !important;
       font-size: 1rem !important;
       line-height: 1.5 !important;
       text-decoration: none !important;
-      box-shadow: 2px 2px 0 #000000 !important; /* shadow ala Phosphor */
+      box-shadow: 2px 2px 0 #000000 !important;
       transition: all 0.15s ease-in-out !important;
     }
     
@@ -369,54 +420,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       transition: background-color 0.3s ease;
     }
 
-    #sidebar-navigation {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 250px;
-      height: 100vh;
-      background: #23272f;
-      color: #fff;
-      z-index: 1000;
-      box-shadow: 2px 0 8px rgba(0,0,0,0.08);
-      padding: 32px 0 32px 0;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    #sidebar-navigation .sidebar-nav {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    #sidebar-navigation ul {
-      list-style: none;
-      padding: 0 0 0 16px;
-      margin: 0;
-    }
-    #sidebar-navigation .sidebar-link {
-      display: block;
-      padding: 10px 24px;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: background 0.2s, color 0.2s;
-      font-size: 1rem;
-    }
-    #sidebar-navigation .sidebar-link:hover,
-    #sidebar-navigation .sidebar-link.selected {
-      background: #3b82f6;
-      color: #fff;
-    }
-    #sidebar-navigation .sidebar-section {
-      margin: 24px 0 8px 24px;
-      font-size: 1rem;
-      color: #b0b8c1;
-      letter-spacing: 1px;
-      font-weight: 600;
-    }
     @media (max-width: 600px) {
       #sidebar-navigation {
         width: 100vw;
