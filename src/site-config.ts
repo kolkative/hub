@@ -369,6 +369,64 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       transition: background-color 0.3s ease;
     }
 
+    #sidebar-navigation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100vh;
+      background: #23272f;
+      color: #fff;
+      z-index: 1000;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.08);
+      padding: 32px 0 32px 0;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    #sidebar-navigation .sidebar-nav {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    #sidebar-navigation ul {
+      list-style: none;
+      padding: 0 0 0 16px;
+      margin: 0;
+    }
+    #sidebar-navigation .sidebar-link {
+      display: block;
+      padding: 10px 24px;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+      font-size: 1rem;
+    }
+    #sidebar-navigation .sidebar-link:hover,
+    #sidebar-navigation .sidebar-link.selected {
+      background: #3b82f6;
+      color: #fff;
+    }
+    #sidebar-navigation .sidebar-section {
+      margin: 24px 0 8px 24px;
+      font-size: 1rem;
+      color: #b0b8c1;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+    @media (max-width: 600px) {
+      #sidebar-navigation {
+        width: 100vw;
+        height: auto;
+        position: relative;
+        box-shadow: none;
+        padding: 16px 0;
+      }
+    }
+
   `,
   customHeadJS: googleTag(GOOGLE_TAG_ID),
   customBodyJS: PAGE_SCRIPT_JS_STRING,
