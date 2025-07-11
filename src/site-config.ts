@@ -480,19 +480,15 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       user-select: none;
       transition: filter 0.2s;
     }
-
-    #x-header .logo-light {
+    #x-header .header-logo img {
+      height: 32px;
+      max-width: 120px;
       display: block;
     }
-    #x-header .logo-dark {
-      display: none;
-    }
-    .notion-app-inner.notion-dark-theme #x-header .logo-light {
-      display: none;
-    }
-    .notion-app-inner.notion-dark-theme #x-header .logo-dark {
-      display: block;
-    }
+    #x-header .logo-light { display: block; }
+    #x-header .logo-dark { display: none; }
+    .notion-app-inner.notion-dark-theme #x-header .logo-light { display: none; }
+    .notion-app-inner.notion-dark-theme #x-header .logo-dark { display: block; }
 
   `,
   customHeadJS: googleTag(GOOGLE_TAG_ID),
