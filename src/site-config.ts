@@ -91,7 +91,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
 
-    body {
+    body,
+    .notion.body {
       background-color: var(--bg-main) !important;
       color: var(--text-main) !important;
       margin-top: 60px !important;
