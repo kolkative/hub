@@ -395,7 +395,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       gap: 4px;
     }
     #x-sidebar nav {
-      padding-top: 80px;
+      padding-top: 60px;
       padding-left: 10px;
       width: 100%;
     }
