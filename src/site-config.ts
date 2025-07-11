@@ -363,7 +363,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       position: fixed;
       top: 23px;
       right: 20px;
-      z-index: 300;
+      z-index: 3000;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -384,7 +384,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       height: 100vh;
       background: var(--bg-sidebar);
       color: var(--text-main);
-      z-index: 100;
+      z-index: 1000;
       padding: 10px 0 10px 0;
       overflow-y: auto;
       display: flex;
@@ -465,7 +465,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       height: 60px;
       background: var(--bg-sidebar);
       color: var(--text-main);
-      z-index: 200;
+      z-index: 2000;
       display: flex;
       align-items: center;
       padding: 0 32px;
@@ -479,6 +479,19 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       cursor: pointer;
       user-select: none;
       transition: filter 0.2s;
+    }
+
+    #x-header .logo-light {
+      display: block;
+    }
+    #x-header .logo-dark {
+      display: none;
+    }
+    .notion-app-inner.notion-dark-theme #x-header .logo-light {
+      display: none;
+    }
+    .notion-app-inner.notion-dark-theme #x-header .logo-dark {
+      display: block;
     }
 
   `,
