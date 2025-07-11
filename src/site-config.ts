@@ -382,7 +382,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       top: 0;
       width: 250px;
       height: 100vh;
-      background: var(--bg-sidebar);
+      background: var(--bg-main);
       color: var(--bg-sidebar);
       z-index: 1000;
       padding: 10px 0 10px 0;
@@ -463,7 +463,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       left: 0;
       width: 100vw;
       height: 56px;
-      background: var(--bg-sidebar);
+      background: var(--bg-main);
       color: var(--bg-sidebar);
       z-index: 2000;
       display: flex;
