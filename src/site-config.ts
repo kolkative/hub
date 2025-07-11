@@ -70,25 +70,17 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
        THEME & STYLE
     ========================== */
     
-    /* Light mode root */
-    :root:not(.notion-dark-theme) {
-     --bg-main: #fff;
-     --text-main: #23272f;
-     --bg-sidebar: #f7f7f8;
-     --border-main: #e5e5e7;
-     --link: var(--indigo-6);
-     --surface-hover: #e5e5e7;
-   }
-
-    /* Dark mode root */
-    :root.notion-dark-theme {
-      --bg-main: #191b1e;
-      --text-main: #f7f7f8;
-      --bg-sidebar: #2b2e32;
-      --border-main: #454952;
-      --link: var(--indigo-4);
-      --surface-hover: #454952;
+    /* Light mode variable override */
+    .notion-app-inner.notion-light-theme {
+      --bg-main: #fff;
+      --text-main: #23272f;
+      --bg-sidebar: #f7f7f8;
+      --border-main: #e5e5e7;
+      --link: var(--indigo-6);
+      --surface-hover: #e5e5e7;
     }
+
+    /* Tidak perlu deklarasi variable untuk dark mode, biarkan default Notion/Arc/OS yang berlaku */
 
 
     body {

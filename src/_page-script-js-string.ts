@@ -11,46 +11,19 @@ window.onload = function () {
     "https://unpkg.com/@hugeicons/core@latest/hugeicons-rounded-stroke.css";
   document.head.appendChild(hugeIconsCDN);
 
-  function applyLightMode() {
+  function setThemeMode(mode) {
     const themeData = document.getElementById("theme-data");
-    const notionApp = document.querySelector(".notion-app-inner");
-    if (!themeData || !notionApp) return;
-
-    let mode = "system";
-    try {
-      mode = JSON.parse(themeData.textContent).mode;
-    } catch {}
-
-    if (mode === "light") {
-      notionApp.classList.remove("notion-dark-theme");
-    } else if (mode === "system") {
-      // Ikuti preferensi OS
-      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        notionApp.classList.add("notion-dark-theme");
-      } else {
-        notionApp.classList.remove("notion-dark-theme");
-      }
-    } else {
-      notionApp.classList.add("notion-dark-theme");
-    }
-
-    updateRootThemeClass();
+    if (!themeData) return;
+    themeData.textContent = JSON.stringify({ mode });
   }
 
-  /**
-   * NEW FUNCTION
-   * Copy notion-dark-theme class from .notion-app-inner to <html>
-   */
-  function updateRootThemeClass() {
-    const notionApp = document.querySelector(".notion-app-inner");
-    const htmlEl = document.documentElement;
-
-    if (!notionApp) return;
-
-    if (notionApp.classList.contains("notion-dark-theme")) {
-      htmlEl.classList.add("notion-dark-theme");
-    } else {
-      htmlEl.classList.remove("notion-dark-theme");
+  function getThemeMode() {
+    const themeData = document.getElementById("theme-data");
+    if (!themeData) return "system";
+    try {
+      return JSON.parse(themeData.textContent).mode || "system";
+    } catch {
+      return "system";
     }
   }
 
@@ -75,51 +48,42 @@ window.onload = function () {
       "</div>";
 
     toggle.addEventListener("click", function () {
-      const themeData = document.getElementById("theme-data");
-      const notionApp = document.querySelector(".notion-app-inner");
-      if (!themeData || !notionApp) return;
-
-      let mode = "system";
-      try {
-        mode = JSON.parse(themeData.textContent).mode;
-      } catch {}
-
-      const sunIcon = document.getElementById("toggle-icon-sun");
-      const moonIcon = document.getElementById("toggle-icon-moon");
-
-      if (mode === "light") {
-        themeData.textContent = JSON.stringify({ mode: "system" });
-        localStorage.setItem("theme", "dark");
-        notionApp.classList.add("notion-dark-theme");
-        sunIcon.classList.add("hidden");
-        moonIcon.classList.remove("hidden");
-      } else {
-        themeData.textContent = JSON.stringify({ mode: "light" });
-        localStorage.setItem("theme", "light");
-        notionApp.classList.remove("notion-dark-theme");
-        moonIcon.classList.add("hidden");
-        sunIcon.classList.remove("hidden");
-      }
-
-      updateRootThemeClass();
+      // Toggle: system -> light -> dark -> system ...
+      const current = getThemeMode();
+      let next;
+      if (current === "system") next = "light";
+      else if (current === "light") next = "dark";
+      else next = "system";
+      setThemeMode(next);
+      localStorage.setItem("theme", next);
+      updateToggleIcon(next);
     });
 
     document.body.appendChild(toggle);
+    updateToggleIcon(getThemeMode());
+  }
+
+  function updateToggleIcon(mode) {
+    const sunIcon = document.getElementById("toggle-icon-sun");
+    const moonIcon = document.getElementById("toggle-icon-moon");
+    if (!sunIcon || !moonIcon) return;
+    if (mode === "light") {
+      sunIcon.classList.remove("hidden");
+      moonIcon.classList.add("hidden");
+    } else if (mode === "dark") {
+      sunIcon.classList.add("hidden");
+      moonIcon.classList.remove("hidden");
+    } else {
+      sunIcon.classList.add("hidden");
+      moonIcon.classList.add("hidden");
+    }
   }
 
   function initializeTheme() {
     const themeData = document.getElementById("theme-data");
     if (!themeData) return;
     const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "light") {
-      themeData.textContent = JSON.stringify({ mode: "light" });
-    } else {
-      themeData.textContent = JSON.stringify({ mode: "system" });
-    }
-    applyLightMode();
-
-    // Tambahkan event listener untuk perubahan preferensi OS
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyLightMode);
+    setThemeMode(savedTheme || "system");
   }
 
   // === SIDEBAR NAVIGATION ===
