@@ -70,7 +70,19 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
        THEME & STYLE
     ========================== */
     
-    /* Light mode variable override */
+    /* Dark mode variable root */
+    body.notion-dark,
+    .notion-app-inner.notion-dark-theme {
+      --bg-main: #191b1e;
+      --text-main: #f7f7f8;
+      --bg-sidebar: #2b2e32;
+      --border-main: #454952;
+      --link: var(--indigo-4);
+      --surface-hover: #454952;
+    }
+
+    /* Light mode variable root */
+    body.notion-light,
     .notion-app-inner.notion-light-theme {
       --bg-main: #fff;
       --text-main: #23272f;
@@ -80,29 +92,14 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --surface-hover: #e5e5e7;
     }
 
-    /* Tidak perlu deklarasi variable untuk dark mode, biarkan default Notion/Arc/OS yang berlaku */
-
-
-    body {
-      background: var(--bg-main) !important;
-      color: var(--text-main) !important;
-      margin: 60px 0 0 0!important;
-    }
-
-    
-    #notion-app,
-    .notion.body,
     .notion-frame {
       background-color: var(--bg-main) !important;
       color: var(--text-main) !important;
-    }
-
-    .notion-frame {
       padding-left: 250px !important;
     }
 
     .notion-page-content {
-      margin-top: 50px;
+      margin-top: 60px;
     }
 
     .notion-callout-block > .notion-callout-content {
@@ -465,7 +462,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       top: 0;
       left: 0;
       width: 100vw;
-      height: 56px;
+      height: 60px;
       background: var(--bg-sidebar)!important;
       color: var(--text-main) !important;
       z-index: 20;

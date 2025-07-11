@@ -14,15 +14,18 @@ window.onload = function () {
     const themeData = document.getElementById("theme-data");
     if (!themeData) return;
     themeData.textContent = JSON.stringify({ mode });
+    document.body.classList.remove("notion-dark", "notion-light");
+    if (mode === "dark") document.body.classList.add("notion-dark");
+    else if (mode === "light") document.body.classList.add("notion-light");
   }
 
   function getThemeMode() {
     const themeData = document.getElementById("theme-data");
-    if (!themeData) return "system";
+    if (!themeData) return "dark";
     try {
-      return JSON.parse(themeData.textContent).mode || "system";
+      return JSON.parse(themeData.textContent).mode || "dark";
     } catch {
-      return "system";
+      return "dark";
     }
   }
 
@@ -47,12 +50,9 @@ window.onload = function () {
       "</div>";
 
     toggle.addEventListener("click", function () {
-      // Toggle: system -> light -> dark -> system ...
+      // Toggle: dark <-> light
       const current = getThemeMode();
-      let next;
-      if (current === "system") next = "light";
-      else if (current === "light") next = "dark";
-      else next = "system";
+      const next = current === "dark" ? "light" : "dark";
       setThemeMode(next);
       localStorage.setItem("theme", next);
       updateToggleIcon(next);
@@ -69,12 +69,9 @@ window.onload = function () {
     if (mode === "light") {
       sunIcon.classList.remove("hidden");
       moonIcon.classList.add("hidden");
-    } else if (mode === "dark") {
-      sunIcon.classList.add("hidden");
-      moonIcon.classList.remove("hidden");
     } else {
       sunIcon.classList.add("hidden");
-      moonIcon.classList.add("hidden");
+      moonIcon.classList.remove("hidden");
     }
   }
 
@@ -82,7 +79,7 @@ window.onload = function () {
     const themeData = document.getElementById("theme-data");
     if (!themeData) return;
     const savedTheme = localStorage.getItem("theme");
-    setThemeMode(savedTheme || "system");
+    setThemeMode(savedTheme || "dark");
   }
 
   // === SIDEBAR NAVIGATION ===
