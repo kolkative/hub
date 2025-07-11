@@ -115,6 +115,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       gap: 4px;
     }
     #x-sidebar nav {
+      padding-top: 80px;
       width: 100%;
     }
     #x-sidebar ul {
@@ -139,12 +140,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       line-height: 1.2;
     }
     #x-sidebar .sidebar-link.selected {
-      background: var(--surface-hover);
+      background: var(--link);
       color: var(--text-main, #fff);
       font-weight: bold;
     }
     #x-sidebar .sidebar-link:hover {
-      background: rgba(59,130,246,0.12);
+      background: var(--surface-hover;
       color: var(--text-main, #fff);
     }
     #x-sidebar .sidebar-section {
