@@ -30,7 +30,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     team: "208db40e66ea80199338dadddde8ebb4",
     player: "211db40e66ea80739783ffc4a44671e5",
     event: "211db40e66ea808e8ce0cfe0a9d415de",
-    kabaret: "208db40e66ea806f86b1d5f50f8f981c",
+    karya: "208db40e66ea806f86b1d5f50f8f981c",
     // individual teams
     epigonen: "208db40e66ea80a185c7d0c381e72752",
   },
@@ -115,6 +115,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       gap: 4px;
     }
     #x-sidebar nav {
+      padding-top: 80px;
+      padding-left: 10px;
       width: 100%;
     }
     #x-sidebar ul {
@@ -139,20 +141,21 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       line-height: 1.2;
     }
     #x-sidebar .sidebar-link.selected {
-      background: var(--link);
-      color: var(--text-main, #fff);
+      background: var(--surface-hover);
+      color: var(--link);
       font-weight: bold;
     }
     #x-sidebar .sidebar-link:hover {
-      background: var(--surface-hover;
-      color: var(--text-main, #fff);
+      background: var(--bg-main);
+      color: var(--text-main);
     }
     #x-sidebar .sidebar-section {
-      margin: 12px 0 2px 10px;
+      gap: 10px;
+      margin: 12px 10px 4px 10px;
       font-size: 0.93rem;
-      color: var(--text-main, #b0b8c1);
+      color: var(--text-main);
       letter-spacing: 1px;
-      font-weight: 600;
+      font-weight: 400;
     }
     #x-sidebar .sidebar-icon {
       width: 16px;
