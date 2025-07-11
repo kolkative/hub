@@ -211,9 +211,9 @@ window.onload = function () {
     const header = document.createElement('header');
     header.id = 'x-header';
     header.innerHTML =
-      '<a href="https://hub.kolkative.my.id" class="header-logo" target="_self" style="cursor:pointer;">' +
-        '<img src="https://imgur.com/BkAjSsD.png" id="logo-light" class="logo-light" alt="Kolkative Logo Light" display:block;">' +
-        '<img src="https://imgur.com/R3LDKJl.png" id="logo-dark" class="logo-dark" alt="Kolkative Logo Dark" display:none;">' +
+      '<a href="https://hub.kolkative.my.id" class="header-logo" target="_self">' +
+        '<img src="https://imgur.com/BkAjSsD.png" id="logo-light" class="logo-light" alt="Kolkative Logo Light">' +
+        '<img src="https://imgur.com/R3LDKJl.png" id="logo-dark" class="logo-dark" alt="Kolkative Logo Dark">' +
       '</a>';
     document.body.appendChild(header);
 

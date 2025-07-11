@@ -462,13 +462,13 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       top: 0;
       left: 0;
       width: 100vw;
-      height: 60px;
+      height: 56px;
       background: var(--bg-sidebar);
       color: var(--text-main);
       z-index: 2000;
       display: flex;
       align-items: center;
-      padding: 0 32px;
+      padding: 0 24px;
       box-sizing: border-box;
       border-bottom: 1px solid var(--border-main);
       transition: background 0.2s;
@@ -478,10 +478,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       align-items: center;
       cursor: pointer;
       user-select: none;
-      transition: filter 0.2s;
+      height: 40px;
     }
     #x-header .header-logo img {
-      height: 32px;
+      height: 28px;
       max-width: 120px;
       display: block;
     }
