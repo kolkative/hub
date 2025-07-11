@@ -382,8 +382,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       top: 0;
       width: 250px;
       height: 100vh;
-      background: var(--bg-main);
-      color: var(--bg-sidebar);
+      background: var(--bg-sidebar) !important;
+      color: var(--text-main) !important;
       z-index: 1000;
       padding: 10px 0 10px 0;
       overflow-y: auto;
@@ -463,13 +463,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       left: 0;
       width: 100vw;
       height: 56px;
-      background: var(--bg-main);
-      color: var(--bg-sidebar);
+      background: var(--bg-sidebar)!important;
+      color: var(--text-main) !important;
       z-index: 2000;
       display: flex;
       align-items: center;
       padding: 0 24px;
-      box-sizing: border-box;
       border-bottom: 1px solid var(--border-main);
       transition: background 0.2s;
     }
