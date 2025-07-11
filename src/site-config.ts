@@ -69,8 +69,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     /* =======================
        THEME & STYLE
     ========================== */
+    
     /* Light mode root */
-    .notion-app-inner {
+    html {
       --bg-main: #fff;
       --text-main: #23272f;
       --bg-sidebar: #f7f7f8;
@@ -78,8 +79,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --link: var(--indigo-6);
       --surface-hover: #e5e5e7;
     }
-    /* Dark mode root (default Notion) */
-    .notion-app-inner.notion-dark-theme {
+
+    /* Dark mode root */
+    html.notion-dark-theme {
       --bg-main: #191b1e;
       --text-main: #f7f7f8;
       --bg-sidebar: #2b2e32;
@@ -88,14 +90,15 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --surface-hover: #454952;
     }
 
+
     body {
+      background-color: var(--bg-main) !important;
+      color: var(--text-main) !important;
       margin-top: 60px !important;
     }
 
     .notion-frame {
       padding-left: 250px !important;
-      background-color: var(--bg-main) !important;
-      color: var(--text-main) !important;
     }
 
     .notion-page-content {
@@ -363,7 +366,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       position: fixed;
       top: 23px;
       right: 20px;
-      z-index: 3000;
+      z-index: 30;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -384,7 +387,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       height: 100vh;
       background: var(--bg-sidebar) !important;
       color: var(--text-main) !important;
-      z-index: 1000;
+      z-index: 10;
       padding: 10px 0 10px 0;
       overflow-y: auto;
       display: flex;
@@ -465,7 +468,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       height: 56px;
       background: var(--bg-sidebar)!important;
       color: var(--text-main) !important;
-      z-index: 2000;
+      z-index: 20;
       display: flex;
       align-items: center;
       padding: 0 24px;
