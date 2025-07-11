@@ -96,9 +96,9 @@ window.onload = function () {
     sidebar.innerHTML =
       '<nav class="sidebar-nav">' +
         '<ul>' +
-          '<li><a href="/" class="sidebar-link" data-menu="Feed"><span class="sidebar-icon">' +
+          '<li><a href="/karya" class="sidebar-link" data-menu="Karya"><span class="sidebar-icon">' +
           '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="7"/></svg>' +
-          '</span>Feed</a></li>' +
+          '</span>Karya</a></li>' +
           '<li><a href="/team" class="sidebar-link" data-menu="Teams"><span class="sidebar-icon">' +
           '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="10" height="10" rx="2"/></svg>' +
           '</span>Teams</a></li>' +
@@ -175,10 +175,7 @@ window.onload = function () {
       }
     });
     // Jika tidak ada highlight sama sekali (misal path tidak cocok), auto highlight menu Feed
-    if (!highlighted) {
-      const feedLink = document.querySelector('#x-sidebar .sidebar-link[data-menu="Feed"]');
-      if (feedLink) feedLink.classList.add('selected');
-    }
+    // (hapus logic ini)
 
     // Intercept klik semua menu agar highlight muncul sebelum redirect
     document.querySelectorAll('#x-sidebar .sidebar-link').forEach(link => {
@@ -208,9 +205,23 @@ window.onload = function () {
     }
   }
 
+  // === X-HEADER ===
+  function createXHeader() {
+    if (document.getElementById('x-header')) return;
+    const header = document.createElement('header');
+    header.id = 'x-header';
+    header.innerHTML =
+      '<a href="https://hub.kolkative.my.id" class="header-logo" target="_self">' +
+        '<img src="https://imgur.com/BkAjSsD.png" class="logo-light" alt="Kolkative Logo Light" height="40" style="height:40px;max-width:160px;display:block;">' +
+        '<img src="https://imgur.com/R3LDKJl.png" class="logo-dark" alt="Kolkative Logo Dark" height="40" style="height:40px;max-width:160px;display:block;">' +
+      '</a>';
+    document.body.appendChild(header);
+  }
+
   createToggleButton();
   initializeTheme();
   createSidebarNavigation();
+  createXHeader();
 
   setInterval(() => {
     // === DESKTOP ===

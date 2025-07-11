@@ -115,7 +115,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       gap: 4px;
     }
     #x-sidebar nav {
-      padding-top: 80px;
       width: 100%;
     }
     #x-sidebar ul {
@@ -436,6 +435,44 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       height: 30px;
       cursor: pointer;
       transition: background-color 0.3s ease;
+    }
+
+    /* Kolkative x-header */
+    #x-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 60px;
+      background: var(--bg-sidebar, #23272f);
+      color: var(--text-main, #fff);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      padding: 0 32px;
+      box-sizing: border-box;
+      border-bottom: 1px solid var(--border-main, #e5e5e7);
+      transition: background 0.2s;
+    }
+    #x-header .header-logo {
+      display: flex;
+      align-items: center;
+      height: 40px;
+      cursor: pointer;
+      user-select: none;
+      transition: filter 0.2s;
+    }
+    #x-header .logo-light {
+      display: block;
+    }
+    #x-header .logo-dark {
+      display: none;
+    }
+    .notion-app-inner.notion-dark-theme #x-header .logo-light {
+      display: none;
+    }
+    .notion-app-inner.notion-dark-theme #x-header .logo-dark {
+      display: block;
     }
 
     @media (max-width: 600px) {
