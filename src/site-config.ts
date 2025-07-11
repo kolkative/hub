@@ -88,7 +88,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --surface-hover: #454952;
     }
 
+    body {
+      margin-top: 60px !important;
+    }
+
     .notion-frame {
+      padding-left: 250px !important;
       background-color: var(--bg-main) !important;
       color: var(--text-main) !important;
     }
@@ -315,7 +320,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
     
     
-
     /* ==================
       HIDE & REMOVED
     ===================== */
@@ -359,7 +363,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       position: fixed;
       top: 23px;
       right: 20px;
-      z-index: 30;
+      z-index: 300;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -380,7 +384,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       height: 100vh;
       background: var(--bg-sidebar);
       color: var(--text-main);
-      z-index: 10;
+      z-index: 100;
       padding: 10px 0 10px 0;
       overflow-y: auto;
       display: flex;
@@ -441,7 +445,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     @media (max-width: 600px) {
-      #sidebar-navigation {
+      #x-sidebar {
         width: 100vw;
         height: auto;
         position: relative;
@@ -461,7 +465,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       height: 60px;
       background: var(--bg-sidebar);
       color: var(--text-main);
-      z-index: 20;
+      z-index: 200;
       display: flex;
       align-items: center;
       padding: 0 32px;
