@@ -376,12 +376,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       position: fixed;
       left: 0;
       top: 0;
-      width: 210px;
+      width: 250px;
       height: 100vh;
-      background: var(--bg-sidebar, #23272f);
-      color: var(--text-main, #fff);
+      background: var(--bg-sidebar);
+      color: var(--text-main);
       z-index: 10;
-      box-shadow: 2px 0 8px rgba(0,0,0,0.08);
       padding: 10px 0 10px 0;
       overflow-y: auto;
       display: flex;
@@ -395,7 +394,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
     #x-sidebar ul {
       list-style: none;
-      padding: 0 0 0 8px;
+      padding: 0 0 0 10px;
       margin: 0;
       gap: 0;
     }
@@ -403,8 +402,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 5px 10px 5px 8px;
-      color: var(--text-main, #fff);
+      padding: 5px 10px 5px 10px;
+      color: var(--text-main);
       text-decoration: none;
       border-radius: 4px;
       transition: background 0.18s, color 0.18s;
@@ -420,24 +419,24 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-weight: bold;
     }
     #x-sidebar .sidebar-link:hover {
-      background: var(--bg-main);
+      background: var(--surface-hover);
       color: var(--text-main);
     }
     #x-sidebar .sidebar-section {
       gap: 10px;
-      margin: 12px 10px 4px 10px;
+      margin: 12px 12px 12px 12px;
       font-size: 0.93rem;
       color: var(--text-main);
       letter-spacing: 1px;
-      font-weight: 400;
+      font-weight: 300;
     }
     #x-sidebar .sidebar-icon {
-      width: 16px;
-      height: 16px;
+      width: 24px;
+      height: 24px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      margin-right: 2px;
+      margin-right: 4px;
       opacity: 0.7;
     }
 
@@ -460,35 +459,22 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       left: 0;
       width: 100vw;
       height: 60px;
-      background: var(--bg-sidebar, #23272f);
-      color: var(--text-main, #fff);
+      background: var(--bg-sidebar);
+      color: var(--text-main);
       z-index: 20;
       display: flex;
       align-items: center;
       padding: 0 32px;
       box-sizing: border-box;
-      border-bottom: 1px solid var(--border-main, #e5e5e7);
+      border-bottom: 1px solid var(--border-main);
       transition: background 0.2s;
     }
     #x-header .header-logo {
       display: flex;
       align-items: center;
-      height: 40px;
       cursor: pointer;
       user-select: none;
       transition: filter 0.2s;
-    }
-    #x-header .logo-light {
-      display: block;
-    }
-    #x-header .logo-dark {
-      display: none;
-    }
-    .notion-app-inner.notion-dark-theme #x-header .logo-light {
-      display: none;
-    }
-    .notion-app-inner.notion-dark-theme #x-header .logo-dark {
-      display: block;
     }
 
   `,
