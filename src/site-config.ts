@@ -71,6 +71,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     ========================== */
     
     /* Light mode root */
+    
     html {
       --bg-main: #fff;
       --text-main: #23272f;
@@ -81,6 +82,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     /* Dark mode root */
+    notion-html notion-dark-theme,
     html.notion-dark-theme {
       --bg-main: #191b1e;
       --text-main: #f7f7f8;
@@ -91,11 +93,18 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
 
-    body,
-    .notion.body {
+    body {
       background-color: var(--bg-main) !important;
       color: var(--text-main) !important;
       margin-top: 60px !important;
+    }
+
+    body.notion-body,
+    #notion-app,
+    .notion.body,
+    .notion-frame {
+      background-color: var(--bg-main) !important;
+      color: var(--text-main) !important;
     }
 
     .notion-frame {
