@@ -383,7 +383,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       width: 250px;
       height: 100vh;
       background: var(--bg-sidebar);
-      color: var(--text-main);
+      color: var(--bg-sidebar);
       z-index: 1000;
       padding: 10px 0 10px 0;
       overflow-y: auto;
@@ -444,7 +444,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       opacity: 0.7;
     }
 
-    @media (max-width: 600px) {
+   /* @media (max-width: 600px) {
       #x-sidebar {
         width: 100vw;
         height: auto;
@@ -452,7 +452,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
         box-shadow: none;
         padding: 16px 0;
       }
-    }
+    } */
 
     /* =======================
       X-HEADER
@@ -464,7 +464,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       width: 100vw;
       height: 56px;
       background: var(--bg-sidebar);
-      color: var(--text-main);
+      color: var(--bg-sidebar);
       z-index: 2000;
       display: flex;
       align-items: center;
@@ -478,10 +478,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       align-items: center;
       cursor: pointer;
       user-select: none;
-      height: 40px;
     }
     #x-header .header-logo img {
-      height: 28px;
+      height: 24px;
       max-width: 120px;
       display: block;
     }
