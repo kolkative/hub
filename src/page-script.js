@@ -22,6 +22,13 @@ window.onload = function () {
 
     if (mode === "light") {
       notionApp.classList.remove("notion-dark-theme");
+    } else if (mode === "system") {
+      // Ikuti preferensi OS
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        notionApp.classList.add("notion-dark-theme");
+      } else {
+        notionApp.classList.remove("notion-dark-theme");
+      }
     } else {
       notionApp.classList.add("notion-dark-theme");
     }
@@ -109,6 +116,9 @@ window.onload = function () {
       themeData.textContent = JSON.stringify({ mode: "system" });
     }
     applyLightMode();
+
+    // Tambahkan event listener untuk perubahan preferensi OS
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyLightMode);
   }
 
   // === SIDEBAR NAVIGATION ===

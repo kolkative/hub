@@ -17,7 +17,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   // twitterHandle: '',
 
   // URL to custom favicon.ico
-  siteIcon: "https://imgur.com/ist3iHX",
+  siteIcon: "https://raw.githubusercontent.com/kolkative/web/refs/heads/main/public/favicon.svg",
 
   // Additional safety: avoid serving extraneous Notion content from your website
   // Use the value from your Notion settings => Workspace => Settings => Domain
@@ -71,19 +71,17 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     ========================== */
     
     /* Light mode root */
-    
-    html {
-      --bg-main: #fff;
-      --text-main: #23272f;
-      --bg-sidebar: #f7f7f8;
-      --border-main: #e5e5e7;
-      --link: var(--indigo-6);
-      --surface-hover: #e5e5e7;
-    }
+    :root:not(.notion-dark-theme) {
+     --bg-main: #fff;
+     --text-main: #23272f;
+     --bg-sidebar: #f7f7f8;
+     --border-main: #e5e5e7;
+     --link: var(--indigo-6);
+     --surface-hover: #e5e5e7;
+   }
 
     /* Dark mode root */
-    notion-html notion-dark-theme,
-    html.notion-dark-theme {
+    :root.notion-dark-theme {
       --bg-main: #191b1e;
       --text-main: #f7f7f8;
       --bg-sidebar: #2b2e32;
@@ -94,12 +92,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
 
     body {
-      background-color: var(--bg-main) !important;
+      background: var(--bg-main) !important;
       color: var(--text-main) !important;
-      margin-top: 60px !important;
+      margin: 60px 0 0 0!important;
     }
 
-    body.notion-body,
+    
     #notion-app,
     .notion.body,
     .notion-frame {
