@@ -17,7 +17,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   // twitterHandle: '',
 
   // URL to custom favicon.ico
-  siteIcon: "https://imgur.com/SAjtNw5",
+  siteIcon: "https://imgur.com/ist3iHX",
 
   // Additional safety: avoid serving extraneous Notion content from your website
   // Use the value from your Notion settings => Workspace => Settings => Domain
@@ -97,77 +97,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       margin-top: 50px;
     }
 
-    /* Sidebar Kolkative - compact & theme aware */
-    #x-sidebar {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 210px;
-      height: 100vh;
-      background: var(--bg-sidebar, #23272f);
-      color: var(--text-main, #fff);
-      z-index: 1000;
-      box-shadow: 2px 0 8px rgba(0,0,0,0.08);
-      padding: 10px 0 10px 0;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    #x-sidebar nav {
-      padding-top: 80px;
-      padding-left: 10px;
-      width: 100%;
-    }
-    #x-sidebar ul {
-      list-style: none;
-      padding: 0 0 0 8px;
-      margin: 0;
-      gap: 0;
-    }
-    #x-sidebar .sidebar-link {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 5px 10px 5px 8px;
-      color: var(--text-main, #fff);
-      text-decoration: none;
-      border-radius: 4px;
-      transition: background 0.18s, color 0.18s;
-      font-size: 0.93rem;
-      cursor: pointer;
-      margin-bottom: 1px;
-      min-height: 28px;
-      line-height: 1.2;
-    }
-    #x-sidebar .sidebar-link.selected {
-      background: var(--surface-hover);
-      color: var(--link);
-      font-weight: bold;
-    }
-    #x-sidebar .sidebar-link:hover {
-      background: var(--bg-main);
-      color: var(--text-main);
-    }
-    #x-sidebar .sidebar-section {
-      gap: 10px;
-      margin: 12px 10px 4px 10px;
-      font-size: 0.93rem;
-      color: var(--text-main);
-      letter-spacing: 1px;
-      font-weight: 400;
-    }
-    #x-sidebar .sidebar-icon {
-      width: 16px;
-      height: 16px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 2px;
-      opacity: 0.7;
-    }
-
-    /* Ganti selector callout Notion agar lebih stabil */
     .notion-callout-block > .notion-callout-content {
       display: inline-flex !important;
       align-items: center !important;
@@ -430,7 +359,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       position: fixed;
       top: 23px;
       right: 20px;
-      z-index: 10;
+      z-index: 30;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -440,7 +369,91 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       transition: background-color 0.3s ease;
     }
 
-    /* Kolkative x-header */
+    /* =======================
+      X-SIDEBAR
+    ========================== */
+    #x-sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 210px;
+      height: 100vh;
+      background: var(--bg-sidebar, #23272f);
+      color: var(--text-main, #fff);
+      z-index: 10;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.08);
+      padding: 10px 0 10px 0;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    #x-sidebar nav {
+      padding-top: 80px;
+      padding-left: 10px;
+      width: 100%;
+    }
+    #x-sidebar ul {
+      list-style: none;
+      padding: 0 0 0 8px;
+      margin: 0;
+      gap: 0;
+    }
+    #x-sidebar .sidebar-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 10px 5px 8px;
+      color: var(--text-main, #fff);
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background 0.18s, color 0.18s;
+      font-size: 0.93rem;
+      cursor: pointer;
+      margin-bottom: 1px;
+      min-height: 28px;
+      line-height: 1.2;
+    }
+    #x-sidebar .sidebar-link.selected {
+      background: var(--surface-hover);
+      color: var(--link);
+      font-weight: bold;
+    }
+    #x-sidebar .sidebar-link:hover {
+      background: var(--bg-main);
+      color: var(--text-main);
+    }
+    #x-sidebar .sidebar-section {
+      gap: 10px;
+      margin: 12px 10px 4px 10px;
+      font-size: 0.93rem;
+      color: var(--text-main);
+      letter-spacing: 1px;
+      font-weight: 400;
+    }
+    #x-sidebar .sidebar-icon {
+      width: 16px;
+      height: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 2px;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 600px) {
+      #sidebar-navigation {
+        width: 100vw;
+        height: auto;
+        position: relative;
+        box-shadow: none;
+        padding: 16px 0;
+      }
+    }
+
+    /* =======================
+      X-HEADER
+    ========================== */
     #x-header {
       position: fixed;
       top: 0;
@@ -449,7 +462,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       height: 60px;
       background: var(--bg-sidebar, #23272f);
       color: var(--text-main, #fff);
-      z-index: 2000;
+      z-index: 20;
       display: flex;
       align-items: center;
       padding: 0 32px;
@@ -476,16 +489,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
     .notion-app-inner.notion-dark-theme #x-header .logo-dark {
       display: block;
-    }
-
-    @media (max-width: 600px) {
-      #sidebar-navigation {
-        width: 100vw;
-        height: auto;
-        position: relative;
-        box-shadow: none;
-        padding: 16px 0;
-      }
     }
 
   `,
