@@ -211,11 +211,33 @@ window.onload = function () {
     const header = document.createElement('header');
     header.id = 'x-header';
     header.innerHTML =
-      '<a href="https://hub.kolkative.my.id" class="header-logo" target="_self">' +
-        '<img src="https://imgur.com/BkAjSsD.png" class="logo-light" alt="Kolkative Logo Light" height="40" style="height:40px;max-width:160px;display:block;">' +
-        '<img src="https://imgur.com/R3LDKJl.png" class="logo-dark" alt="Kolkative Logo Dark" height="40" style="height:40px;max-width:160px;display:block;">' +
+      '<a href="https://hub.kolkative.my.id" class="header-logo" target="_self" style="cursor:pointer;">' +
+        '<img src="https://imgur.com/BkAjSsD.png" id="logo-light" class="logo-light" alt="Kolkative Logo Light" height="40" style="height:40px;max-width:160px;display:block;">' +
+        '<img src="https://imgur.com/R3LDKJl.png" id="logo-dark" class="logo-dark" alt="Kolkative Logo Dark" height="40" style="height:40px;max-width:160px;display:none;">' +
       '</a>';
     document.body.appendChild(header);
+
+    // Logic show/hide logo sesuai mode
+    function updateLogoMode() {
+      const notionApp = document.querySelector('.notion-app-inner');
+      const logoLight = document.getElementById('logo-light');
+      const logoDark = document.getElementById('logo-dark');
+      if (!notionApp || !logoLight || !logoDark) return;
+      if (notionApp.classList.contains('notion-dark-theme')) {
+        logoLight.style.display = 'none';
+        logoDark.style.display = 'block';
+      } else {
+        logoLight.style.display = 'block';
+        logoDark.style.display = 'none';
+      }
+    }
+    updateLogoMode();
+    // Pantau perubahan mode
+    const observer = new MutationObserver(updateLogoMode);
+    const notionApp = document.querySelector('.notion-app-inner');
+    if (notionApp) {
+      observer.observe(notionApp, { attributes: true, attributeFilter: ['class'] });
+    }
   }
 
   createToggleButton();
