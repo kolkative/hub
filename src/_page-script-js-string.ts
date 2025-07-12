@@ -9,8 +9,7 @@ export const PAGE_SCRIPT_JS_STRING = `<script>
   const darkCSS = document.createElement('style');
   darkCSS.textContent = 
    'body:not([data-theme]) { visibility: hidden !important; }' +
-   'body[data-theme] { visibility: visible !important; }' +
-  ;
+   'body[data-theme] { visibility: visible !important; }';
   document.head.appendChild(darkCSS);
   
   // Set theme di body secepat mungkin
@@ -32,8 +31,7 @@ window.onload = function () {
     '@keyframes spin { ' +
       '0% { transform: rotate(0deg); }' +
       '100% { transform: rotate(360deg); }' +
-    '}'
-  ;
+    '}';
   document.head.appendChild(style);
 
   // Utility untuk menambahkan semua link Open Props sekaligus
