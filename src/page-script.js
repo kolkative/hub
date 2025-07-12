@@ -4,8 +4,15 @@
 
 // SET DARK MODE SEBELUM APAPUN
 (function() {
-  document.documentElement.style.colorScheme = 'dark';
-  document.body?.setAttribute('data-theme', 'dark');
+  // Set theme di body secepat mungkin
+  if (document.body) {
+    document.body.setAttribute('data-theme', 'dark');
+  } else {
+    // Jika body belum ada, tunggu DOM ready
+    document.addEventListener('DOMContentLoaded', function() {
+      document.body.setAttribute('data-theme', 'dark');
+    });
+  }
   localStorage.setItem('theme', 'dark');
 })();
 

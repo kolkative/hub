@@ -70,9 +70,13 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
        DARK MODE FALLBACK
     ========================== */
     
-    /* Paksa dark mode sebelum JavaScript jalan */
-    html, body { 
-      color-scheme: dark !important; 
+    /* Sembunyikan body sampai theme siap */
+    body:not([data-theme]) {
+      visibility: hidden !important;
+    }
+    
+    body[data-theme] {
+      visibility: visible !important;
     }
 
     /* =======================
@@ -352,9 +356,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       line-height: 1;
     }
 
-    /* Prevent FOUC: hide body until data-theme is set */
-    body:not([data-theme]) { visibility: hidden; }
-    body[data-theme] { visibility: visible; }
+
 
     /* Hilangkan efek hover pada header logo */
     .header-logo:hover, .header-logo img:hover, .header-logo:active { background: none !important; box-shadow: none !important; }
