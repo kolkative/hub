@@ -197,15 +197,14 @@ window.onload = function () {
           // Gunakan history.pushState untuk navigasi tanpa reload
           history.pushState({}, '', href);
           
-          // Simulasi navigasi tanpa reload (karena ini adalah Notion, kita tidak bisa fetch konten)
-          // Jadi kita hanya update URL dan biarkan Notion handle navigasinya
+          // Redirect ke halaman baru setelah delay
           setTimeout(() => {
             if (document.getElementById('x-loading')) {
               document.getElementById('x-loading').remove();
             }
-            // Hanya sync theme, jangan buat ulang elemen
-            syncNotionTheme();
-          }, 500);
+            // Redirect ke halaman baru
+            window.location.href = href;
+          }, 300);
         }
       });
     });
