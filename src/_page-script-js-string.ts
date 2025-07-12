@@ -1,5 +1,4 @@
-export const PAGE_SCRIPT_JS_STRING = `<script>
-/* eslint-disable func-names */
+export const PAGE_SCRIPT_JS_STRING = '<script>\n/* eslint-disable func-names */
 /* eslint-disable no-return-assign */
 /* eslint-disable no-param-reassign */
 
@@ -14,11 +13,11 @@ window.onload = function () {
       '<span style="color:#fff;font-size:2rem;">Sabar ya...!</span>' +
     '</div>' +
     '<style>' +
-      @keyframes spin-x-loader {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-    </style>
+      '@keyframes spin-x-loader {' +
+        '0% { transform: rotate(0deg); }' +
+        '100% { transform: rotate(360deg); }' +
+      '}' +
+    '</style>'
   document.body.appendChild(loader);
 
   // Tambahkan CDN HugeIcons stroke rounded
@@ -285,4 +284,4 @@ window.onload = function () {
     if (loaderEl) loaderEl.remove();
   }, 10); // pastikan semua sudah sinkron, bisa adjust delay jika perlu
 };
-</script>`
+</script>'

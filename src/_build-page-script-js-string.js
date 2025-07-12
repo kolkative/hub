@@ -7,7 +7,7 @@ const pageScriptPath = path.join(__dirname, 'page-script.js')
 try {
   const pageScriptContent = fs.readFileSync(pageScriptPath, 'utf8')
   const escapedContent = pageScriptContent.replace(/\\/g, '\\')
-  const finalContent = `export const PAGE_SCRIPT_JS_STRING = \`<script>\n${escapedContent}</script>\``
+  const finalContent = 'export const PAGE_SCRIPT_JS_STRING = \'<script>\\n' + escapedContent + '</script>\''
 
   fs.writeFileSync(outFilePath, finalContent)
   console.log('Page script was built successfully!')
