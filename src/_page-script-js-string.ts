@@ -25,14 +25,7 @@ export const PAGE_SCRIPT_JS_STRING = `<script>
 })();
 
 window.onload = function () {
-  // Tambahkan CSS untuk animasi loading
-  const style = document.createElement('style');
-  style.textContent = 
-    '@keyframes spin { ' +
-      '0% { transform: rotate(0deg); }' +
-      '100% { transform: rotate(360deg); }' +
-    '}';
-  document.head.appendChild(style);
+
 
   // Utility untuk menambahkan semua link Open Props sekaligus
   function addOpenPropsLinks() {
@@ -187,21 +180,11 @@ window.onload = function () {
         localStorage.setItem("sidebar-selected", this.getAttribute("href"));
         const href = this.getAttribute("href");
         if (href && href !== window.location.pathname) {
-          // Tampilkan loading state jika diperlukan
-          const loadingIndicator = document.createElement('div');
-          loadingIndicator.id = 'x-loading';
-          loadingIndicator.style = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:9999;background:var(--surface-1);padding:16px;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.15);';
-          loadingIndicator.innerHTML = '<div style="display:flex;align-items:center;gap:8px;"><div style="width:16px;height:16px;border:2px solid var(--text-2);border-top:2px solid var(--text-1);border-radius:50%;animation:spin 1s linear infinite;"></div>Loading...</div>';
-          document.body.appendChild(loadingIndicator);
-          
           // Gunakan history.pushState untuk navigasi tanpa reload
           history.pushState({}, '', href);
           
           // Redirect ke halaman baru setelah delay
           setTimeout(() => {
-            if (document.getElementById('x-loading')) {
-              document.getElementById('x-loading').remove();
-            }
             // Redirect ke halaman baru
             window.location.href = href;
           }, 300);

@@ -95,19 +95,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     /* Notion Callout - selector yang lebih tepat */
-    .notion-callout,
-    .notion-callout-block,
-    .notion-callout-block > div,
-    .notion-callout-block > .notion-callout-content,
-    [data-block-id*="callout"] {
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      padding: 0.75rem 1.5rem !important;
-      border: var(--border-size-1) solid var(--surface-3) !important;
-      border-radius: var(--radius-conditional-3) !important;
+    .notion-callout-block [role="note"] > div {
       background: var(--surface-2) !important;
       color: var(--text-1) !important;
+      border: var(--border-size-1) solid var(--surface-3) !important;
+      border-radius: var(--radius-conditional-3) !important;
       font-family: 'Space Gotesk', sans-serif !important;
       font-weight: 500 !important;
       font-size: 1rem !important;
@@ -115,6 +107,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       text-decoration: none !important;
       box-shadow: 2px 2px 0 #000000 !important;
       transition: all 0.15s ease-in-out !important;
+      /* tambahkan style lain sesuai kebutuhan */
     }
 
     h1 {
