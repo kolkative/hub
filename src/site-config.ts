@@ -69,6 +69,26 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
 
     /* =======================
+       ANTI FLASHING & DARK MODE AWAL
+    ========================== */
+    html, body {
+      background: #191919 !important;
+      color: #fff !important;
+    }
+    body:not([data-theme]) {
+      visibility: hidden !important;
+    }
+    body[data-theme] {
+      visibility: visible !important;
+    }
+    #x-loading, .spinner, .loading-indicator {
+      background: #191919 !important;
+      color: #fff !important;
+      border-color: #222 !important;
+    }
+
+
+    /* =======================
        THEME & STYLE
     ========================== */
     #notion-app,

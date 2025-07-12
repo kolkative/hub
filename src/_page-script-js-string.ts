@@ -3,25 +3,15 @@ export const PAGE_SCRIPT_JS_STRING = `<script>
 /* eslint-disable no-return-assign */
 /* eslint-disable no-param-reassign */
 
-// SET DARK MODE SEBELUM APAPUN
+// ANTI FLASHING & DARK MODE AWAL
 (function() {
-  // Inject CSS langsung untuk mencegah flashing
-  const darkCSS = document.createElement('style');
-  darkCSS.textContent = 
-   'body:not([data-theme]) { visibility: hidden !important; }' +
-   'body[data-theme] { visibility: visible !important; }';
-  document.head.appendChild(darkCSS);
-  
-  // Set theme di body secepat mungkin
-  if (document.body) {
-    document.body.setAttribute('data-theme', 'dark');
-  } else {
-    // Jika body belum ada, tunggu DOM ready
-    document.addEventListener('DOMContentLoaded', function() {
-      document.body.setAttribute('data-theme', 'dark');
-    });
-  }
-  localStorage.setItem('theme', 'dark');
+  var style = document.createElement('style');
+  style.textContent =
+    'html, body { background: #191919 !important; color: #fff !important; }' +
+    'body:not([data-theme]) { visibility: hidden !important; }' +
+    'body[data-theme] { visibility: visible !important; }' +
+    '#x-loading, .spinner, .loading-indicator { background: #191919 !important; color: #fff !important; border-color: #222 !important; }';
+  document.head.appendChild(style);
 })();
 
 window.onload = function () {
