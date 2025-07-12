@@ -1,4 +1,5 @@
-export const PAGE_SCRIPT_JS_STRING = '<script>\n/* eslint-disable func-names */
+export const PAGE_SCRIPT_JS_STRING = '<script>
+/* eslint-disable func-names */
 /* eslint-disable no-return-assign */
 /* eslint-disable no-param-reassign */
 
