@@ -27,12 +27,12 @@
 window.onload = function () {
   // Tambahkan CSS untuk animasi loading
   const style = document.createElement('style');
-  style.textContent = `
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-  `;
+  style.textContent = 
+    '@keyframes spin { ' +
+      '0% { transform: rotate(0deg); }' +
+      '100% { transform: rotate(360deg); }' +
+    '}'
+  ;
   document.head.appendChild(style);
 
   // Utility untuk menambahkan semua link Open Props sekaligus
