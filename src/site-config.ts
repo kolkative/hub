@@ -71,6 +71,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     /* =======================
        THEME & STYLE
     ========================== */
+    #notion-app,
+    .notion-app-inner,
+    .notion-app-inner.notion-dark-theme {
+      background: var(--surface-1) !important;
+      color: var(--text-1) !important;
+    }
 
     .notion-frame {
       background: var(--surface-1) !important;
@@ -79,9 +85,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     body,
-    #notion-app,
-    .notion-app-inner,
-    .notion-app-inner.notion-dark-theme,
     .notion-page-content {
       margin-top: 60px;
       color: var(--text-1) !important;
