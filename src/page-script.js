@@ -2,20 +2,7 @@
 /* eslint-disable no-return-assign */
 /* eslint-disable no-param-reassign */
 
-// ANTI FLASHING & DARK MODE AWAL
-(function() {
-  var style = document.createElement('style');
-  style.textContent =
-    'html, body { background: #191919 !important; color: #fff !important; }' +
-    'body:not([data-theme]) { visibility: hidden !important; }' +
-    'body[data-theme] { visibility: visible !important; }' +
-    '#x-loading, .spinner, .loading-indicator { background: #191919 !important; color: #fff !important; border-color: #222 !important; }';
-  document.head.appendChild(style);
-})();
-
 window.onload = function () {
-
-
   // Utility untuk menambahkan semua link Open Props sekaligus
   function addOpenPropsLinks() {
     var openPropsLinks = [
