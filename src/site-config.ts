@@ -150,24 +150,31 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background: var(--surface-1) !important;
     }
 
-    h1,h2,h3,h4,p,dt {
+    h1 {
+      position: fixed !important;
+      color: var(--text-main) !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      width: 100vw !important;
+      min-width: 100vw !important;
+      max-width: 100vw !important;
+      background: var(--bg-sidebar,) !important;
+      background-clip: padding-box !important;
+      z-index: 2 !important;
+      font-size: 20px !important;
+      padding: 24px 0px 24px 24px !important;
+      border-bottom: 1px solid var(--border-main);
+      border-top: 1px solid var(--border-main);
+      box-sizing: border-box !important;
+    }
+
+    h2,h3,h4,p,dt {
       color: var(--text-1);
     }
 
     h5,h6,small,dd {
       color: var(--text-2);
-    }
-    
-    p {
-      color: var(--text-1) !important;
-      background: var(--surface-1) !important;
-      font-size: 20px;
-      line-height: 150%;
-      font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
-        "Helvetica Neue", Arial, sans-serif;
-      font-style: normal;
-      font-variant: normal;
-      font-weight: 400;
     }
     
     button {
@@ -304,7 +311,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       position: fixed;
       top: 23px;
       right: 20px;
-      z-index: 30;
+      z-index: var(--layer-1);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -325,7 +332,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       height: 100vh;
       background: var(--bg-sidebar) !important;
       color: var(--text-main) !important;
-      z-index: 10;
+      z-index: var(--layer-3);
       padding: 10px 0 10px 0;
       overflow-y: auto;
       display: flex;
@@ -405,7 +412,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       height: 60px;
       background: var(--bg-sidebar)!important;
       color: var(--text-main) !important;
-      z-index: 20;
+      z-index: var(--layer-2);
       display: flex;
       align-items: center;
       padding: 0 24px;
@@ -437,6 +444,13 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       text-decoration: none !important;
       line-height: 1;
     }
+
+    /* Prevent FOUC: hide body until data-theme is set */
+    body:not([data-theme]) { visibility: hidden; }
+    body[data-theme] { visibility: visible; }
+
+    /* Hilangkan efek hover pada header logo */
+    .header-logo:hover, .header-logo:active { background: none !important; box-shadow: none !important; }
 
   `,
   customHeadJS: googleTag(GOOGLE_TAG_ID),
