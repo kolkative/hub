@@ -15,10 +15,27 @@ window.onload = function () {
     if (!themeData) return;
     themeData.textContent = JSON.stringify({ mode });
     document.body.classList.remove("dark", "light");
+    const appInner = document.querySelector('.notion-app-inner');
     if (mode === "dark") {
       document.body.classList.add("dark");
+      if (appInner) {
+        appInner.classList.add("notion-dark-theme");
+        appInner.classList.remove("notion-light-theme");
+      }
+      const logoLight = document.getElementById("logo-light");
+      const logoDark = document.getElementById("logo-dark");
+      if (logoLight) logoLight.style.display = "none";
+      if (logoDark) logoDark.style.display = "block";
     } else if (mode === "light") {
       document.body.classList.add("light");
+      if (appInner) {
+        appInner.classList.add("notion-light-theme");
+        appInner.classList.remove("notion-dark-theme");
+      }
+      const logoLight = document.getElementById("logo-light");
+      const logoDark = document.getElementById("logo-dark");
+      if (logoLight) logoLight.style.display = "block";
+      if (logoDark) logoDark.style.display = "none";
     }
   }
 
