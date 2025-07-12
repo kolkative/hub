@@ -1,4 +1,4 @@
-export const PAGE_SCRIPT_JS_STRING = '<script>
+export const PAGE_SCRIPT_JS_STRING = `<script>
 /* eslint-disable func-names */
 /* eslint-disable no-return-assign */
 /* eslint-disable no-param-reassign */
@@ -18,20 +18,13 @@ window.onload = function () {
         '0% { transform: rotate(0deg); }' +
         '100% { transform: rotate(360deg); }' +
       '}' +
-    '</style>'
+    '</style>';
   document.body.appendChild(loader);
 
-  // Tambahkan CDN HugeIcons stroke rounded
-  const hugeIconsCDN = document.createElement("link");
-  hugeIconsCDN.rel = "stylesheet";
-  hugeIconsCDN.href =
-    "https://unpkg.com/@hugeicons/core@latest/hugeicons-rounded-stroke.css";
-  document.head.appendChild(hugeIconsCDN);
-
+  // Fungsi untuk set mode theme pada body dan notion-app-inner
   function setThemeMode(mode) {
     const themeData = document.getElementById("theme-data");
-    if (!themeData) return;
-    themeData.textContent = JSON.stringify({ mode });
+    if (themeData) themeData.textContent = JSON.stringify({ mode });
     document.body.classList.remove("dark", "light");
     const appInner = document.querySelector('.notion-app-inner');
     if (mode === "dark") {
@@ -44,7 +37,7 @@ window.onload = function () {
       const logoDark = document.getElementById("logo-dark");
       if (logoLight) logoLight.style.display = "none";
       if (logoDark) logoDark.style.display = "block";
-    } else if (mode === "light") {
+    } else {
       document.body.classList.add("light");
       if (appInner) {
         appInner.classList.add("notion-light-theme");
@@ -57,15 +50,35 @@ window.onload = function () {
     }
   }
 
+  // Ambil mode theme dari localStorage, default dark
   function getThemeMode() {
-    const themeData = document.getElementById("theme-data");
-    if (!themeData) return "dark";
-    try {
-      return JSON.parse(themeData.textContent).mode || "dark";
-    } catch {
-      return "dark";
+    let mode = localStorage.getItem("theme");
+    if (mode !== "dark" && mode !== "light") {
+      mode = "dark";
+      localStorage.setItem("theme", mode);
     }
+    return mode;
   }
+
+  // Inisialisasi theme secepat mungkin
+  (function immediateThemeInit() {
+    const mode = getThemeMode();
+    setThemeMode(mode);
+  })();
+
+  // Observer untuk sinkronisasi class pada .notion-app-inner
+  const observer = new MutationObserver(() => {
+    const mode = getThemeMode();
+    setThemeMode(mode);
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
+
+  // Tambahkan CDN HugeIcons stroke rounded
+  const hugeIconsCDN = document.createElement("link");
+  hugeIconsCDN.rel = "stylesheet";
+  hugeIconsCDN.href =
+    "https://unpkg.com/@hugeicons/core@latest/hugeicons-rounded-stroke.css";
+  document.head.appendChild(hugeIconsCDN);
 
   function createToggleButton() {
     if (document.getElementById("x-toggle")) return;
@@ -250,7 +263,6 @@ window.onload = function () {
   }
 
   createToggleButton();
-  initializeTheme();
   createSidebarNavigation();
   createXHeader();
 
@@ -277,12 +289,10 @@ window.onload = function () {
     }
   }, 1000);
 
-  // Setelah semua inisialisasi theme, logo, dsb
-  // Tambahkan di akhir window.onload
+  // Hapus loader setelah semua siap
   setTimeout(() => {
-    document.body.classList.add('theme-ready');
     const loaderEl = document.getElementById('x-loader');
     if (loaderEl) loaderEl.remove();
-  }, 10); // pastikan semua sudah sinkron, bisa adjust delay jika perlu
+  }, 10);
 };
-</script>'
+</script>`
