@@ -490,7 +490,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-size: 1.25rem;
       font-weight: 600;
       color: var(--text-main);
-      letter-spacing: 0.01em;
+      letter-spacing: 0.005em;
       display: inline-block;
       vertical-align: middle;
       cursor: pointer;
