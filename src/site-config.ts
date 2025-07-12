@@ -72,8 +72,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
        ANTI FLASHING & DARK MODE AWAL
     ========================== */
     html, body {
-      background: #191919 !important;
-      color: #fff !important;
+      background: var(--surface-1) !important;
+      color: var(--text-1) !important;
     }
     body:not([data-theme]) {
       visibility: hidden !important;
@@ -82,9 +82,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       visibility: visible !important;
     }
     #x-loading, .spinner, .loading-indicator {
-      background: #191919 !important;
-      color: #fff !important;
-      border-color: #222 !important;
+      background: var(--surface-1) !important;
+      color: var(--text-1) !important;
+      border-color: var(--surface-3) !important;
     }
 
 
@@ -148,7 +148,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       box-sizing: border-box !important;
     }
 
-    
     /* ==================
       HIDE & REMOVED
     ===================== */
@@ -158,8 +157,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-topbar,
     header.notion-topbar-mobile,
     .pageLinkIndicator,
-    div.notion-frame > div.notion-scroller > div,
-    .notion-scroller.vertical.horizontal > div:nth-child(2),
+    .notion-callout-block [role="note"] > div:empty,
     div[style*="min-height: 44px"],
     .notion-table-view div[style *="min-height: 32px;"] .notion-record-icon[style*="margin-bottom: -1px; margin-right: 4px;"] {
       display: none !important;
