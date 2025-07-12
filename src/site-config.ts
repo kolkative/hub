@@ -66,8 +66,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
   // Custom JS for head and body of a Notion page
   customHeadCSS: `
-
-
     /* =======================
        ANTI FLASHING & DARK MODE AWAL
     ========================== */
@@ -75,7 +73,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background: var(--surface-1) !important;
       color: var(--text-1) !important;
     }
-
 
     /* =======================
        THEME & STYLE
@@ -175,13 +172,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       border-radius: none;
       cursor: pointer;
       transition: background-color 0.3s ease;
-      background: none;
+      background: none !important;
     }
-
-    #x-toggle:hover {
-      color: var(--link);
-    }
-
+      
     /* =======================
       X-SIDEBAR
     ========================== */
