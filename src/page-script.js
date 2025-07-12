@@ -4,6 +4,14 @@
 
 // SET DARK MODE SEBELUM APAPUN
 (function() {
+  // Inject CSS langsung untuk mencegah flashing
+  const darkCSS = document.createElement('style');
+  darkCSS.textContent = `
+    body:not([data-theme]) { visibility: hidden !important; }
+    body[data-theme] { visibility: visible !important; }
+  `;
+  document.head.appendChild(darkCSS);
+  
   // Set theme di body secepat mungkin
   if (document.body) {
     document.body.setAttribute('data-theme', 'dark');
