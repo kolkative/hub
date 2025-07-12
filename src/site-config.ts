@@ -72,11 +72,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .dark, .light {
       color: var(--text-1);
       background: var(--surface-1);
-      background-color: var(--surface-3);
     }
 
     .notion-frame {
-      background-color: var(--surface-3) !important;
+      background-color: var(--surface-1) !important;
       color: var(--text-1) !important;
       padding-left: 250px !important;
     }
@@ -95,7 +94,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       padding: 0.75rem 1.5rem !important;
       border: 1px solid var(--border-main) !important;
       border-radius: 0.75rem !important;
-      background: var(--surface-3) !important;
+      background: var(--surface-1) !important;
       color: var(--text-1) !important;
       font-family: 'Space Gotesk', sans-serif !important;
       font-weight: 500 !important;
@@ -159,7 +158,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       width: 100vw !important;
       min-width: 100vw !important;
       max-width: 100vw !important;
-      background: var(--bg-sidebar,) !important;
+      background: var(--surface-1) !important;
       background-clip: padding-box !important;
       z-index: 2 !important;
       font-size: 20px !important;
@@ -179,7 +178,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     
     button {
       color: var(--text-1) !important;
-      background-color: var(--surface-3) !important;
+      background-color: var(--surface-1) !important;
       border: 1px solid var(--border-main) !important;
       box-shadow: rgba(15, 15, 15, 0.1) 0px 1px 2px;
       border-radius: 6px;
@@ -198,7 +197,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     
     button.primary {
       color: var(--text-1) !important;
-      background-color: var(--surface-3) !important;
+      background-color: var(--surface-1) !important;
       border: 1px solid var(--border-main) !important;
       border-radius: 3px;
       align-items: center;
@@ -249,7 +248,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background: var(--surface-1) !important;
     }
     tr:nth-child(even) {
-      background-color: var(--surface-3) !important;
+      background-color: var(--surface-1) !important;
     }
     
     td {

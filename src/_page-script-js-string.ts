@@ -25,6 +25,39 @@ window.onload = function () {
   // Hapus seluruh logic class .dark/.light pada body
   // Toggle dan theme hanya pakai data-theme pada body
 
+  // Fungsi untuk sinkronisasi theme Notion dengan body [data-theme]
+  function syncNotionTheme() {
+    var theme = document.body.getAttribute('data-theme');
+    var notionAppInner = document.querySelector('.notion-app-inner');
+    
+    if (notionAppInner) {
+      // Hapus class yang ada
+      notionAppInner.classList.remove('notion-dark-theme');
+      
+      // Tambahkan class sesuai theme
+      if (theme === 'dark') {
+        notionAppInner.classList.add('notion-dark-theme');
+      }
+      // Untuk light theme, tidak perlu menambahkan class khusus
+    }
+  }
+
+  // Observer untuk memantau perubahan data-theme
+  function setupThemeObserver() {
+    var observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+          syncNotionTheme();
+        }
+      });
+    });
+    
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['data-theme']
+    });
+  }
+
   function createSidebarNavigation() {
     if (document.getElementById("x-sidebar")) return;
     const sidebar = document.createElement("aside");
@@ -186,6 +219,9 @@ window.onload = function () {
     if (theme !== 'dark' && theme !== 'light') theme = 'dark';
     document.body.setAttribute('data-theme', theme);
     updateToggleIcon(theme);
+    
+    // Sync Notion theme saat inisialisasi
+    syncNotionTheme();
 
     toggle.onclick = function() {
       var current = document.body.getAttribute('data-theme');
@@ -193,6 +229,8 @@ window.onload = function () {
       document.body.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
       updateToggleIcon(next);
+      // Sync Notion theme saat toggle
+      syncNotionTheme();
     };
     document.body.appendChild(toggle);
   }
@@ -200,6 +238,9 @@ window.onload = function () {
   createSidebarNavigation();
   createXHeader();
   createXToggle();
+  
+  // Setup observer untuk memantau perubahan theme
+  setupThemeObserver();
 
   setInterval(() => {
     // === DESKTOP ===
@@ -222,6 +263,9 @@ window.onload = function () {
     if (mobilePropertiesDropdown) {
       mobilePropertiesDropdown.style.display = "none";
     }
+    
+    // Sync Notion theme secara berkala untuk memastikan sinkronisasi
+    syncNotionTheme();
   }, 1000);
 
   // Tidak ada lagi loader
