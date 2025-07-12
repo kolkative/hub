@@ -71,11 +71,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     /* =======================
        THEME & STYLE
     ========================== */
-    #notion-app {
-      background: var(--surface-1) !important;
-      color: var(--text-1) !important;
-    }
-
+ 
     .notion-frame {
       background: var(--surface-1) !important;
       color: var(--text-1) !important;
