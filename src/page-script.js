@@ -169,6 +169,8 @@ window.onload = function () {
         localStorage.setItem("sidebar-selected", this.getAttribute("href"));
         const href = this.getAttribute("href");
         if (href && href !== window.location.pathname) {
+          // Tampilkan overlay spinner/blur sebelum reload
+          showContentLoadingOverlay();
           // Gunakan history.pushState untuk navigasi tanpa reload
           history.pushState({}, '', href);
           
@@ -248,6 +250,27 @@ window.onload = function () {
       syncNotionTheme();
     };
     document.body.appendChild(toggle);
+  }
+
+  // Tambahkan fungsi overlay spinner/blur
+  function showContentLoadingOverlay() {
+    let overlay = document.getElementById('content-loading-overlay');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.id = 'content-loading-overlay';
+      overlay.style = 'display:flex;position:fixed;inset:0;z-index:9999;background:rgba(25,25,25,0.7);backdrop-filter:blur(2px);align-items:center;justify-content:center;';
+      overlay.innerHTML = '<div class="content-spinner" style="width:48px;height:48px;border:4px solid #444;border-top:4px solid #fff;border-radius:50%;animation:content-spin 1s linear infinite;"></div>';
+      document.body.appendChild(overlay);
+      // Inject keyframes jika belum ada
+      if (!document.getElementById('content-spinner-style')) {
+        var style = document.createElement('style');
+        style.id = 'content-spinner-style';
+        style.textContent = '@keyframes content-spin { to { transform: rotate(360deg); } }';
+        document.head.appendChild(style);
+      }
+    } else {
+      overlay.style.display = 'flex';
+    }
   }
 
   createSidebarNavigation();

@@ -81,11 +81,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     body[data-theme] {
       visibility: visible !important;
     }
-    #x-loading, .spinner, .loading-indicator {
-      background: var(--surface-1) !important;
-      color: var(--text-1) !important;
-      border-color: var(--surface-3) !important;
-    }
 
 
     /* =======================
