@@ -99,19 +99,12 @@ window.onload = function () {
   function initializeTheme() {
     const themeData = document.getElementById("theme-data");
     if (!themeData) return;
-    const savedTheme = localStorage.getItem("theme");
-    const mode = savedTheme || "dark";
-    setThemeMode(mode);
-    // Atur visibility logo secara eksplisit setelah setThemeMode untuk mencegah dua logo tampil bersamaan
-    const logoLight = document.getElementById("logo-light");
-    const logoDark = document.getElementById("logo-dark");
-    if (mode === "dark") {
-      if (logoLight) logoLight.style.display = "none";
-      if (logoDark) logoDark.style.display = "block";
-    } else {
-      if (logoLight) logoLight.style.display = "block";
-      if (logoDark) logoDark.style.display = "none";
+    let mode = localStorage.getItem("theme");
+    if (mode !== "dark" && mode !== "light") {
+      mode = "dark";
+      localStorage.setItem("theme", mode);
     }
+    setThemeMode(mode);
   }
 
   // === SIDEBAR NAVIGATION ===
