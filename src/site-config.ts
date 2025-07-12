@@ -69,13 +69,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     /* =======================
        THEME & STYLE
     ========================== */
-    .dark, .light {
-      color: var(--text-1);
-      background: var(--surface-1);
-    }
 
     .notion-frame {
-      background-color: var(--surface-1) !important;
+      background: var(--surface-1) !important;
       color: var(--text-1) !important;
       padding-left: 250px !important;
     }
@@ -160,7 +156,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       max-width: 100vw !important;
       background: var(--surface-2) !important;
       background-clip: padding-box !important;
-      z-index: 2 !important;
+      z-index: var(--layer-3) !important;
       font-size: 20px !important;
       padding: 24px 0px 24px 24px !important;
       border-bottom: var(--border-size-1) solid var(--surface-3);
@@ -285,7 +281,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     .notion-scroller.vertical.horizontal > div:nth-child(2) {
-    background: var(--surface-1) !important
+      scrollbar-color: var(--surface-1) !important
     }
 
     ::-webkit-scrollbar {
@@ -308,8 +304,14 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       justify-content: center;
       width: 30px;
       height: 30px;
+      border-radius: none;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      background: none;
+    }
+
+    #x-toggle:hover {
+      color: var(--surface-3);
     }
 
     /* =======================
@@ -337,7 +339,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
     #x-sidebar ul {
       list-style: none;
-      padding: 0 0 0 10px;
+      padding: 0 10px 0 10px;
       margin: 0;
       gap: 0;
     }
@@ -367,7 +369,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
     #x-sidebar .sidebar-section {
       gap: 10px;
-      margin: 12px 12px 12px 12px;
+      margin: 12px 24px 12px 242px;
       font-size: 0.93rem;
       color: var(--text-2);
       letter-spacing: 1px;

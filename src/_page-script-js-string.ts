@@ -3,6 +3,16 @@ export const PAGE_SCRIPT_JS_STRING = `<script>
 /* eslint-disable no-return-assign */
 /* eslint-disable no-param-reassign */
 
+// Set data-theme pada body secepat mungkin, sebelum apapun dirender
+(function() {
+  var theme = localStorage.getItem('theme');
+  if (theme === 'dark' || theme === 'light') {
+    document.body.setAttribute('data-theme', theme);
+  } else {
+    document.body.setAttribute('data-theme', 'dark'); // default dark
+  }
+})();
+
 window.onload = function () {
   // Utility untuk menambahkan semua link Open Props sekaligus
   function addOpenPropsLinks() {
@@ -214,10 +224,8 @@ window.onload = function () {
       }
     }
 
-    // Set value dari localStorage atau default
-    var theme = localStorage.getItem('theme');
-    if (theme !== 'dark' && theme !== 'light') theme = 'dark';
-    document.body.setAttribute('data-theme', theme);
+    // Ambil theme dari body (sudah di-set di awal)
+    var theme = document.body.getAttribute('data-theme');
     updateToggleIcon(theme);
     
     // Sync Notion theme saat inisialisasi
