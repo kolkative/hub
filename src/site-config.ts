@@ -71,9 +71,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     /* =======================
        THEME & STYLE
     ========================== */
-    #notion-app,
-    .notion-app-inner,
-    .notion-app-inner.notion-dark-theme {
+    #notion-app {
       background: var(--surface-1) !important;
       color: var(--text-1) !important;
     }
