@@ -115,50 +115,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       box-shadow: 2px 2px 0 #000000 !important;
       transition: all 0.15s ease-in-out !important;
     }
-    
-    a {
-      color: var(--text-1) !important;
-      font-size: 20px;
-      line-height: 150%;
-      font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
-        "Helvetica Neue", sans-serif;
-      font-style: normal;
-      font-variant: normal;
-      font-weight: 400;
-      text-decoration: underline;
-      padding:3px;
-      background: var(--surface-2) !important;
-    }
-    
-    a:link{
-        color: var(--text-3) !important;
-    }
-    
-    a:visited{
-        color: var(--text-4) !important;
-    }
-    
-    a:hover{
-        background: var(--surface-3) !important;
-        background-size: auto 4em;
-        background-repeat: no-repeat;
-        background-position: 0% 15px; 
-    }
-
-    .title {
-      width: 100%;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--border-main) !important;
-      margin-top: 50px;
-      color: var(--text-1) !important;
-      background: var(--surface-2) !important;
-    }
-    
-    .subtitle {
-      color: var(--text-1) !important;
-      font-weight: 500;
-      background: var(--surface-2) !important;
-    }
 
     h1 {
       position: fixed !important;
@@ -188,19 +144,13 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-topbar,
     header.notion-topbar-mobile,
     .pageLinkIndicator,
+    div.notion-frame > div.notion-scroller > div,
+    .notion-scroller.vertical.horizontal > div:nth-child(2),
     div[style*="min-height: 44px"],
     .notion-table-view div[style *="min-height: 32px;"] .notion-record-icon[style*="margin-bottom: -1px; margin-right: 4px;"] {
       display: none !important;
     }
     
-    div.notion-frame > div.notion-scroller > div{
-      background-color: var(--surface-1) !important;
-    }
-
-    .notion-scroller.vertical.horizontal > div:nth-child(2) {
-      scrollbar-color: var(--surface-1) !important
-    }
-
     ::-webkit-scrollbar {
       width: 0 !important;
       height: 0 !important;
@@ -256,7 +206,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
     #x-sidebar ul {
       list-style: none;
-      padding: 0 10px 0 10px;
+      padding: 0 4px 0 4px;
       margin: 0;
       gap: 0;
     }
@@ -264,7 +214,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 5px 10px 5px 10px;
+      padding: 4px 10px 4px 10px;
       color: var(--link);
       text-decoration: none;
       border-radius: 10px;
