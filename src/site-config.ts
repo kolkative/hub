@@ -324,7 +324,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     /* ==================
       HIDE & REMOVED
     ===================== */
-    
+
     .toggle-mode,
     .notion-page-controls,
     .notion-topbar,
@@ -478,25 +478,25 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       align-items: center;
       cursor: pointer;
       user-select: none;
+      text-decoration: none !important;
     }
     #x-header .header-logo img {
       height: 24px;
       max-width: 120px;
       display: block;
     }
-    #x-header .logo-light { display: block; }
-    #x-header .logo-dark { display: none; }
-    .notion-app-inner.notion-dark-theme #x-header .logo-light { display: none; }
-    .notion-app-inner.notion-dark-theme #x-header .logo-dark { display: block; }
 
     .header-title {
-      margin-left: 12px;
-      font-size: 1.35rem;
+      margin-left: 8px;
+      font-size: 1.25rem;
       font-weight: 600;
       color: var(--text-main);
-      letter-spacing: 0.5px;
+      letter-spacing: 0.01em;
       display: inline-block;
       vertical-align: middle;
+      cursor: pointer;
+      text-decoration: none !important;
+      line-height: 1;
     }
 
   `,

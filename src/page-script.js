@@ -22,12 +22,20 @@ window.onload = function () {
         appInner.classList.add("notion-dark-theme");
         appInner.classList.remove("notion-light-theme");
       }
+      const logoLight = document.getElementById("logo-light");
+      const logoDark = document.getElementById("logo-dark");
+      if (logoLight) logoLight.style.display = "none";
+      if (logoDark) logoDark.style.display = "block";
     } else if (mode === "light") {
       document.body.classList.add("light");
       if (appInner) {
         appInner.classList.add("notion-light-theme");
         appInner.classList.remove("notion-dark-theme");
       }
+      const logoLight = document.getElementById("logo-light");
+      const logoDark = document.getElementById("logo-dark");
+      if (logoLight) logoLight.style.display = "block";
+      if (logoDark) logoDark.style.display = "none";
     }
   }
 
@@ -214,35 +222,12 @@ window.onload = function () {
     header.id = "x-header";
     header.innerHTML =
       '<a href="https://hub.kolkative.my.id" class="header-logo" target="_self">' +
-      '<img src="https://imgur.com/zxwpFNK.png" id="logo-light" class="logo-light" alt="Kolkative Logo Light">' +
-      '<img src="https://imgur.com/uyJEQnp.png" id="logo-dark" class="logo-dark" alt="Kolkative Logo Dark">' +
+      '<img src="https://imgur.com/BkAjSsD.png" id="logo-light" class="logo-light" alt="Kolkative Logo Light">' +
+      '<img src="https://imgur.com/R3LDKJl.png" id="logo-dark" class="logo-dark" alt="Kolkative Logo Dark">' +
       '<span class="header-title">Kolkative Hub</span>' +
       '</a>';
     document.body.appendChild(header);
-
-    function updateLogoMode() {
-      const notionApp = document.querySelector(".notion-app-inner");
-      const logoLight = document.getElementById("logo-light");
-      const logoDark = document.getElementById("logo-dark");
-      if (!notionApp || !logoLight || !logoDark) return;
-      if (notionApp.classList.contains("notion-dark-theme")) {
-        logoLight.style.display = "none";
-        logoDark.style.display = "block";
-      } else {
-        logoLight.style.display = "block";
-        logoDark.style.display = "none";
-      }
-    }
-    updateLogoMode();
-
-    const observer = new MutationObserver(updateLogoMode);
-    const notionApp = document.querySelector(".notion-app-inner");
-    if (notionApp) {
-      observer.observe(notionApp, {
-        attributes: true,
-        attributeFilter: ["class"],
-      });
-    }
+    // Hapus updateLogoMode dan observer, biarkan CSS yang handle logo mode
   }
 
   createToggleButton();
