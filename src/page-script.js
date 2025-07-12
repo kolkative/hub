@@ -2,6 +2,17 @@
 /* eslint-disable no-return-assign */
 /* eslint-disable no-param-reassign */
 
+// Tambahkan spinner loader overlay sebelum apapun dirender
+(function() {
+  // Buat elemen overlay
+  var loader = document.createElement('div');
+  loader.id = 'x-theme-loader';
+  loader.style = 'position:fixed;z-index:99999;inset:0;display:flex;align-items:center;justify-content:center;background:#181818;transition:opacity 0.3s;';
+  loader.innerHTML = '<div style="width:48px;height:48px;border:6px solid #fff;border-top:6px solid #888;border-radius:50%;animation:spin 1s linear infinite;"></div>' +
+    '<style>@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}</style>';
+  document.body.appendChild(loader);
+})();
+
 // Set data-theme pada body secepat mungkin, sebelum apapun dirender
 (function() {
   var theme = localStorage.getItem('theme');
@@ -35,28 +46,15 @@ window.onload = function () {
   // Toggle dan theme hanya pakai data-theme pada body
 
   // Fungsi untuk sinkronisasi theme Notion dengan body [data-theme]
-  function syncNotionTheme() {
-    var theme = document.body.getAttribute('data-theme');
-    var notionAppInner = document.querySelector('.notion-app-inner');
-    
-    if (notionAppInner) {
-      // Hapus class yang ada
-      notionAppInner.classList.remove('notion-dark-theme');
-      
-      // Tambahkan class sesuai theme
-      if (theme === 'dark') {
-        notionAppInner.classList.add('notion-dark-theme');
-      }
-      // Untuk light theme, tidak perlu menambahkan class khusus
-    }
-  }
+  // Hapus seluruh fungsi syncNotionTheme dan semua pemanggilannya
 
   // Observer untuk memantau perubahan data-theme
   function setupThemeObserver() {
     var observer = new MutationObserver(function(mutations) {
       mutations.forEach(function(mutation) {
         if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
-          syncNotionTheme();
+          // Sync Notion theme secara berkala untuk memastikan sinkronisasi
+          // syncNotionTheme(); // Hapus pemanggilan ini
         }
       });
     });
@@ -228,7 +226,7 @@ window.onload = function () {
     updateToggleIcon(theme);
     
     // Sync Notion theme saat inisialisasi
-    syncNotionTheme();
+    // syncNotionTheme(); // Hapus pemanggilan ini
 
     toggle.onclick = function() {
       var current = document.body.getAttribute('data-theme');
@@ -237,7 +235,7 @@ window.onload = function () {
       localStorage.setItem('theme', next);
       updateToggleIcon(next);
       // Sync Notion theme saat toggle
-      syncNotionTheme();
+      // syncNotionTheme(); // Hapus pemanggilan ini
     };
     document.body.appendChild(toggle);
   }
@@ -272,8 +270,19 @@ window.onload = function () {
     }
     
     // Sync Notion theme secara berkala untuk memastikan sinkronisasi
-    syncNotionTheme();
+    // syncNotionTheme(); // Hapus pemanggilan ini
   }, 1000);
+
+  // Hapus spinner loader setelah theme dan DOM siap
+  setTimeout(function() {
+    var loader = document.getElementById('x-theme-loader');
+    if (loader) {
+      loader.style.opacity = '0';
+      setTimeout(function() {
+        if (loader.parentNode) loader.parentNode.removeChild(loader);
+      }, 350);
+    }
+  }, 700);
 
   // Tidak ada lagi loader
 };
