@@ -4,6 +4,29 @@ export const PAGE_SCRIPT_JS_STRING = `<script>
 /* eslint-disable no-param-reassign */
 
 window.onload = function () {
+  // Utility untuk menambahkan semua link Open Props sekaligus
+  function addOpenPropsLinks() {
+    var openPropsLinks = [
+      'https://unpkg.com/open-props/normalize.min.css',
+      'https://unpkg.com/open-props/style',
+      'https://unpkg.com/open-props/theme.light.switch.min.css',
+      'https://unpkg.com/open-props/theme.dark.switch.min.css'
+    ];
+    openPropsLinks.forEach(function(href) {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = href;
+      document.head.appendChild(link);
+    });
+  }
+  addOpenPropsLinks();
+
+  // Manipulasi class theme di body
+  function setBodyThemeClass() {
+    document.body.classList.remove('light');
+    document.body.classList.add('dark'); // default dark
+  }
+  setBodyThemeClass();
   
   function createSidebarNavigation() {
     if (document.getElementById("x-sidebar")) return;
@@ -131,8 +154,51 @@ window.onload = function () {
     document.body.appendChild(header);
   }
 
+  function createXToggle() {
+    if (document.getElementById('x-toggle')) return;
+    var toggle = document.createElement('div');
+    toggle.id = 'x-toggle';
+    toggle.style = 'position:fixed;top:16px;right:16px;z-index:1000;cursor:pointer;display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--surface-1);box-shadow:0 1px 4px rgba(0,0,0,0.08)';
+    toggle.innerHTML =
+      '<span id="toggle-icon-sun" style="display:none;">' +
+        '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2m11-11h-2M3 12H1m16.95 7.07l-1.41-1.41M6.34 6.34L4.93 4.93m12.02 0l-1.41 1.41M6.34 17.66l-1.41 1.41"/></svg>' +
+      '</span>' +
+      '<span id="toggle-icon-moon" style="display:none;">' +
+        '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/></svg>' +
+      '</span>';
+
+    // Set icon sesuai theme
+    function updateToggleIcon(theme) {
+      var sun = toggle.querySelector('#toggle-icon-sun');
+      var moon = toggle.querySelector('#toggle-icon-moon');
+      if (theme === 'light') {
+        sun.style.display = '';
+        moon.style.display = 'none';
+      } else {
+        sun.style.display = 'none';
+        moon.style.display = '';
+      }
+    }
+
+    // Set value dari localStorage atau default
+    var theme = localStorage.getItem('theme');
+    if (theme !== 'dark' && theme !== 'light') theme = 'dark';
+    document.body.setAttribute('data-theme', theme);
+    updateToggleIcon(theme);
+
+    toggle.onclick = function() {
+      var current = document.body.getAttribute('data-theme');
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.body.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateToggleIcon(next);
+    };
+    document.body.appendChild(toggle);
+  }
+
   createSidebarNavigation();
   createXHeader();
+  createXToggle();
 
   setInterval(() => {
     // === DESKTOP ===

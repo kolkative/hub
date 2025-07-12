@@ -69,38 +69,23 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     /* =======================
        THEME & STYLE
     ========================== */
-    
-    /* Dark mode variable root */
-    body.dark,
-    .notion-app-inner.notion-dark-theme {
-      --bg-main: #191b1e;
-      --text-main: #f7f7f8;
-      --bg-sidebar: #2b2e32;
-      --border-main: #454952;
-      --link: var(--indigo-4);
-      --surface-hover: #454952;
-    }
-
-    /* Light mode variable root */
-    body.light,
-    .notion-app-inner.notion-light-theme {
-      --bg-main: #fff;
-      --text-main: #23272f;
-      --bg-sidebar: #f7f7f8;
-      --border-main: #e5e5e7;
-      --link: var(--indigo-6);
-      --surface-hover: #e5e5e7;
+    .dark, .light {
+      color: var(--text-1);
+      background: var(--surface-1);
+      background-color: var(--surface-3);
     }
 
     .notion-frame {
-      background-color: var(--bg-main) !important;
-      color: var(--text-main) !important;
+      background-color: var(--surface-3) !important;
+      color: var(--text-1) !important;
       padding-left: 250px !important;
     }
 
     body,
     .notion-page-content {
       margin-top: 60px;
+      color: var(--text-1) !important;
+      background: var(--surface-1) !important;
     }
 
     .notion-callout-block > .notion-callout-content {
@@ -110,8 +95,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       padding: 0.75rem 1.5rem !important;
       border: 1px solid var(--border-main) !important;
       border-radius: 0.75rem !important;
-      background: var(--bg-sidebar) !important;
-      color: var(--text-main) !important;
+      background: var(--surface-3) !important;
+      color: var(--text-1) !important;
       font-family: 'Space Gotesk', sans-serif !important;
       font-weight: 500 !important;
       font-size: 1rem !important;
@@ -121,9 +106,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       transition: all 0.15s ease-in-out !important;
     }
     
-
     a {
-      color: var(--text-main) !important;
+      color: var(--text-1) !important;
       font-size: 20px;
       line-height: 150%;
       font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
@@ -133,18 +117,19 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-weight: 400;
       text-decoration: underline;
       padding:3px;
+      background: var(--surface-1) !important;
     }
     
     a:link{
-        color: var(--link) !important;
+        color: var(--text-1) !important;
     }
     
     a:visited{
-        color: var(--link) !important;
+        color: var(--text-1) !important;
     }
     
     a:hover{
-        background: linear-gradient(#eee, #eee);
+        background: var(--surface-3) !important;
         background-size: auto 4em;
         background-repeat: no-repeat;
         background-position: 0% 15px; 
@@ -155,84 +140,27 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       padding-bottom: 10px;
       border-bottom: 1px solid var(--border-main) !important;
       margin-top: 50px;
+      color: var(--text-1) !important;
+      background: var(--surface-1) !important;
     }
     
     .subtitle {
-      color: var(--text-main) !important;
+      color: var(--text-1) !important;
       font-weight: 500;
+      background: var(--surface-1) !important;
     }
 
-    h1 {
-      position: fixed !important;
-      color: var(--text-main) !important;
-      top: 0 !important;
-      left: 0 !important;
-      right: 0 !important;
-      width: 100vw !important;
-      min-width: 100vw !important;
-      max-width: 100vw !important;
-      background: var(--bg-sidebar,) !important;
-      background-clip: padding-box !important;
-      z-index: 2 !important;
-      font-size: 20px !important;
-      padding: 24px 0px 24px 24px !important;
-      border-bottom: 1px solid var(--border-main);
-      border-top: 1px solid var(--border-main);
-      box-sizing: border-box !important;
+    h1,h2,h3,h4,p,dt {
+      color: var(--text-1);
     }
 
-    h2 {
-      font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
-        "Helvetica Neue", Arial, sans-serif;
-      font-size: 30px;
-      font-style: normal;
-      font-variant: normal;
-      font-weight: 700;
-      line-height: 1.1;
-    }
-    
-    h3 {
-      font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
-        "Helvetica Neue", Arial, sans-serif;
-      font-size: 25px;
-      font-style: normal;
-      font-variant: normal;
-      font-weight: 700;
-      line-height: 1.1;
-    }
-    
-    h4 {
-      font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
-        "Helvetica Neue", Arial, sans-serif;
-      font-size: 20px;
-      font-style: normal;
-      font-variant: normal;
-      font-weight: 700;
-      line-height: 1.1;
-    }
-    
-    h5 {
-      font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
-        "Helvetica Neue", Arial, sans-serif;
-      font-size: 18px;
-      font-style: normal;
-      font-variant: normal;
-      font-weight: 700;
-      line-height: 1.1;
-    }
-    
-    h6 {
-      font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
-        "Helvetica Neue", Arial, sans-serif;
-      font-size: 14px;
-      font-style: normal;
-      font-variant: normal;
-      font-weight: 700;
-      line-height: 1;
+    h5,h6,small,dd {
+      color: var(--text-2);
     }
     
     p {
-      color: rgba(0, 0, 0, 0.6);
+      color: var(--text-1) !important;
+      background: var(--surface-1) !important;
       font-size: 20px;
       line-height: 150%;
       font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
@@ -243,8 +171,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
     
     button {
-      background-color: var(--bg-sidebar) !important;
-      color: var(--text-main) !important;
+      color: var(--text-1) !important;
+      background-color: var(--surface-3) !important;
       border: 1px solid var(--border-main) !important;
       box-shadow: rgba(15, 15, 15, 0.1) 0px 1px 2px;
       border-radius: 6px;
@@ -257,13 +185,13 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
     
     button:hover {
-      background-color: var(--bg-sidebar) !important;
-      color: var(--text-main) !important;
+      color: var(--text-1) !important;
+      background-color: var(--surface-1) !important;
     }
     
     button.primary {
-      background-color: var(--bg-sidebar) !important;
-      color: #fff;
+      color: var(--text-1) !important;
+      background-color: var(--surface-3) !important;
       border: 1px solid var(--border-main) !important;
       border-radius: 3px;
       align-items: center;
@@ -275,8 +203,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
     
     button.primary:hover {
-      background-color: #cf534a;
-      color: #fff;
+      color: var(--text-1) !important;
+      background-color: var(--surface-1) !important;
     }
     
     form {
@@ -286,6 +214,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     ul {
       font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
         "Helvetica Neue", Arial, sans-serif;
+      color: var(--text-1) !important;
+      background: var(--surface-1) !important;
     }
     
     li {
@@ -293,31 +223,41 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
         "Helvetica Neue", Arial, sans-serif;
       font-size: 20px;
       line-height: 1.5;
+      color: var(--text-1) !important;
+      background: var(--surface-1) !important;
     }
     
     table {
       border: 1px solid var(--border-main) !important;
       border-collapse: collapse;
       padding: 20px;
+      color: var(--text-1) !important;
+      background: var(--surface-1) !important;
     }
     
     tr {
       border: 1px solid var(--border-main) !important;
       padding: 10px;
+      color: var(--text-1) !important;
+      background: var(--surface-1) !important;
     }
     tr:nth-child(even) {
-      background-color: var(--bg-sidebar) !important;
+      background-color: var(--surface-3) !important;
     }
     
     td {
       border: 1px solid var(--border-main) !important;
       padding: 10px;
+      color: var(--text-1) !important;
+      background: var(--surface-1) !important;
     }
     
     th {
       border: 1px solid var(--border-main) !important;
       text-align: left;
       padding: 20px;
+      color: var(--text-1) !important;
+      background: var(--surface-1) !important;
     }
     
     
