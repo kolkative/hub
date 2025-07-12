@@ -22,12 +22,9 @@ window.onload = function () {
   addOpenPropsLinks();
 
   // Manipulasi class theme di body
-  function setBodyThemeClass() {
-    document.body.classList.remove('light');
-    document.body.classList.add('dark'); // default dark
-  }
-  setBodyThemeClass();
-  
+  // Hapus seluruh logic class .dark/.light pada body
+  // Toggle dan theme hanya pakai data-theme pada body
+
   function createSidebarNavigation() {
     if (document.getElementById("x-sidebar")) return;
     const sidebar = document.createElement("aside");
