@@ -151,20 +151,20 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     h1 {
       position: fixed !important;
-      color: var(--text-main) !important;
+      color: var(--text-1) !important;
       top: 0 !important;
       left: 0 !important;
       right: 0 !important;
       width: 100vw !important;
       min-width: 100vw !important;
       max-width: 100vw !important;
-      background: var(--surface-1) !important;
+      background: var(--surface-3) !important;
       background-clip: padding-box !important;
       z-index: 2 !important;
       font-size: 20px !important;
       padding: 24px 0px 24px 24px !important;
-      border-bottom: 1px solid var(--border-main);
-      border-top: 1px solid var(--border-main);
+      border-bottom: var(--border-size-1) solid var(--gray-1));
+      border-top: var(--border-size-1) solid var(--gray-1);
       box-sizing: border-box !important;
     }
 
@@ -181,7 +181,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background-color: var(--surface-1) !important;
       border: 1px solid var(--border-main) !important;
       box-shadow: rgba(15, 15, 15, 0.1) 0px 1px 2px;
-      border-radius: 6px;
+      border-radius: var(--radius-conditional-4);
       align-items: center;
       height: fit-content;
       min-width: 180px;
@@ -191,15 +191,15 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
     
     button:hover {
-      color: var(--text-1) !important;
-      background-color: var(--surface-1) !important;
+      color: var(--text-2) !important;
+      background-color: var(--surface-2) !important;
     }
     
     button.primary {
       color: var(--text-1) !important;
       background-color: var(--surface-1) !important;
       border: 1px solid var(--border-main) !important;
-      border-radius: 3px;
+      border-radius: var(--radius-conditional-3);
       align-items: center;
       height: fit-content;
       min-width: 180px;
@@ -209,8 +209,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
     
     button.primary:hover {
-      color: var(--text-1) !important;
-      background-color: var(--surface-1) !important;
+      color: var(--text-2) !important;
+      background-color: var(--surface-2) !important;
     }
     
     form {
@@ -221,7 +221,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
         "Helvetica Neue", Arial, sans-serif;
       color: var(--text-1) !important;
-      background: var(--surface-1) !important;
+      background: var(--surface-3) !important;
     }
     
     li {
@@ -230,7 +230,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-size: 20px;
       line-height: 1.5;
       color: var(--text-1) !important;
-      background: var(--surface-1) !important;
+      background: var(--surface-3) !important;
     }
     
     table {
@@ -238,32 +238,32 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       border-collapse: collapse;
       padding: 20px;
       color: var(--text-1) !important;
-      background: var(--surface-1) !important;
+      background: var(--surface-3) !important;
     }
     
     tr {
-      border: 1px solid var(--border-main) !important;
+      border: var(--border-size-1) solid var(--surface-3); !important;
       padding: 10px;
       color: var(--text-1) !important;
-      background: var(--surface-1) !important;
+      background: var(--surface-3) !important;
     }
     tr:nth-child(even) {
-      background-color: var(--surface-1) !important;
+      background-color: var(--surface-3) !important;
     }
     
     td {
-      border: 1px solid var(--border-main) !important;
+      border: var(--border-size-1) solid var(--surface-3) !important;
       padding: 10px;
       color: var(--text-1) !important;
-      background: var(--surface-1) !important;
+      background: var(--surface-3) !important;
     }
     
     th {
-      border: 1px solid var(--border-main) !important;
+      border: var(--border-size-1) solid var(--surface-3) !important;
       text-align: left;
       padding: 20px;
       color: var(--text-1) !important;
-      background: var(--surface-1) !important;
+      background: var(--surface-3) !important;
     }
     
     
@@ -275,17 +275,18 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-page-controls,
     .notion-topbar,
     header.notion-topbar-mobile,
-    div[style*="min-height: 44px"] {
+    .pageLinkIndicator,
+    div[style*="min-height: 44px"],
+    .notion-table-view div[style *="min-height: 32px;"] .notion-record-icon[style*="margin-bottom: -1px; margin-right: 4px;"] {
       display: none !important;
     }
     
-    /* ========== SCROLLBAR ========== */
     div.notion-frame > div.notion-scroller > div{
-      background-color: #00000000 !important;
+      background-color: var(--surface-1) !important;
     }
 
     .notion-scroller.vertical.horizontal > div:nth-child(2) {
-    background: var(--theme--bg) !important
+    background: var(--surface-1) !important
     }
 
     ::-webkit-scrollbar {
@@ -293,14 +294,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       height: 0 !important;
     }
 
-    .notion-table-view div[style *="min-height: 32px;"] .notion-record-icon[style*="margin-bottom: -1px; margin-right: 4px;"] {
-      display: none !important;
-    }
-
-    /* ========== HIDE ARROWS IN PAGE LINK ========== */
-    .pageLinkIndicator {
-      display: none !important;
-    }
 
     /* =======================
       X-TOGGLE
@@ -310,7 +303,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       position: fixed;
       top: 23px;
       right: 20px;
-      z-index: var(--layer-1);
+      z-index: var(--layer-7);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -329,9 +322,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       top: 0;
       width: 250px;
       height: 100vh;
-      background: var(--bg-sidebar) !important;
-      color: var(--text-main) !important;
-      z-index: var(--layer-3);
+      background: var(--surface-3) !important;
+      color: var(--text-1) !important;
+      z-index: var(--layer-4);
       padding: 10px 0 10px 0;
       overflow-y: auto;
       display: flex;
@@ -353,7 +346,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       align-items: center;
       gap: 8px;
       padding: 5px 10px 5px 10px;
-      color: var(--text-main);
+      color: var(--link);
       text-decoration: none;
       border-radius: 10px;
       transition: background 0.18s, color 0.18s;
@@ -364,19 +357,19 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       line-height: 1.2;
     }
     #x-sidebar .sidebar-link.selected {
-      background: var(--surface-hover);
-      color: var(--link);
+      background: var(--surface-2);
+      color: var(--link-visited);
       font-weight: bold;
     }
     #x-sidebar .sidebar-link:hover {
-      background: var(--surface-hover);
-      color: var(--text-main);
+      background: var(--surface-2);
+      color: var(--link);
     }
     #x-sidebar .sidebar-section {
       gap: 10px;
       margin: 12px 12px 12px 12px;
       font-size: 0.93rem;
-      color: var(--text-main);
+      color: var(--text-2);
       letter-spacing: 1px;
       font-weight: 300;
     }
@@ -409,9 +402,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       left: 0;
       width: 100vw;
       height: 60px;
-      background: var(--bg-sidebar)!important;
-      color: var(--text-main) !important;
-      z-index: var(--layer-2);
+      background: var(--surface-3)!important;
+      color: var(--text-1) !important;
+      z-index: var(--layer-5);
       display: flex;
       align-items: center;
       padding: 0 24px;
@@ -435,7 +428,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       margin-left: 8px;
       font-size: 1.25rem;
       font-weight: 600;
-      color: var(--text-main);
+      color: var(--text-1);
       letter-spacing: 0.005em;
       display: inline-block;
       vertical-align: middle;
