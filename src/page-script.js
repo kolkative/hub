@@ -2,18 +2,10 @@
 /* eslint-disable no-return-assign */
 /* eslint-disable no-param-reassign */
 
-// SET DARK MODE SEBELUM APAPUN - MENCEGAH FLASHING
+// SET DARK MODE SEBELUM APAPUN
 (function() {
-  // Langsung set dark mode sebelum DOM ready
   document.documentElement.style.colorScheme = 'dark';
-  if (document.body) {
-    document.body.setAttribute('data-theme', 'dark');
-  } else {
-    // Jika body belum ada, tunggu sebentar
-    document.addEventListener('DOMContentLoaded', function() {
-      document.body.setAttribute('data-theme', 'dark');
-    });
-  }
+  document.body?.setAttribute('data-theme', 'dark');
   localStorage.setItem('theme', 'dark');
 })();
 

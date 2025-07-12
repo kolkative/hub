@@ -67,6 +67,15 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   // Custom JS for head and body of a Notion page
   customHeadCSS: `
     /* =======================
+       DARK MODE FALLBACK
+    ========================== */
+    
+    /* Paksa dark mode sebelum JavaScript jalan */
+    html, body { 
+      color-scheme: dark !important; 
+    }
+
+    /* =======================
        THEME & STYLE
     ========================== */
 
