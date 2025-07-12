@@ -3,31 +3,7 @@
 /* eslint-disable no-param-reassign */
 
 window.onload = function () {
-  // Tambahkan loader di awal
-  const loader = document.createElement('div');
-  loader.id = 'x-loader';
-  loader.style = 'position:fixed;inset:0;z-index:9999;background:#19191a;display:flex;align-items:center;justify-content:center;';
-  loader.innerHTML =
-    '<div style="display:flex;align-items:center;gap:18px;">' +
-      '<span style="display:inline-block;width:32px;height:32px;border:4px solid #fff;border-top:4px solid #444;border-radius:50%;animation:spin-x-loader 1s linear infinite;"></span>' +
-      '<span style="color:#fff;font-size:2rem;">Sabar ya...!</span>' +
-    '</div>' +
-    '<style>' +
-      '@keyframes spin-x-loader {' +
-        '0% { transform: rotate(0deg); }' +
-        '100% { transform: rotate(360deg); }' +
-      '}' +
-    '</style>';
-  document.body.appendChild(loader);
-
-  // Tambahkan CDN HugeIcons stroke rounded
-  const hugeIconsCDN = document.createElement("link");
-  hugeIconsCDN.rel = "stylesheet";
-  hugeIconsCDN.href =
-    "https://unpkg.com/@hugeicons/core@latest/hugeicons-rounded-stroke.css";
-  document.head.appendChild(hugeIconsCDN);
-
-  // Sidebar dan header saja, tanpa theme
+  
   function createSidebarNavigation() {
     if (document.getElementById("x-sidebar")) return;
     const sidebar = document.createElement("aside");
@@ -180,9 +156,5 @@ window.onload = function () {
     }
   }, 1000);
 
-  // Hapus loader setelah semua siap
-  setTimeout(() => {
-    const loaderEl = document.getElementById('x-loader');
-    if (loaderEl) loaderEl.remove();
-  }, 10);
+  // Tidak ada lagi loader
 };
