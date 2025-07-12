@@ -158,7 +158,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background-clip: padding-box !important;
       z-index: var(--layer-3) !important;
       font-size: 20px !important;
-      padding: 24px 0px 24px 24px !important;
+      padding: 20px 0px 24px 20px !important;
       border-bottom: var(--border-size-1) solid var(--surface-3);
       box-sizing: border-box !important;
     }
@@ -369,7 +369,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
     #x-sidebar .sidebar-section {
       gap: 10px;
-      margin: 12px 24px 12px 242px;
+      margin: 12px 24px 12px 24px;
       font-size: 0.93rem;
       color: var(--text-2);
       letter-spacing: 1px;
