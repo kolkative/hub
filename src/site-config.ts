@@ -17,7 +17,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   // twitterHandle: '',
 
   // URL to custom favicon.ico
-  siteIcon: "https://raw.githubusercontent.com/kolkative/web/refs/heads/main/public/favicon.svg",
+  siteIcon: "https://raw.githubusercontent.com/kolkative/web/refs/heads/main/public/kolkative-hub-logo.svg",
 
   // Additional safety: avoid serving extraneous Notion content from your website
   // Use the value from your Notion settings => Workspace => Settings => Domain
@@ -71,7 +71,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     ========================== */
     
     /* Dark mode variable root */
-    body.notion-dark,
+    body.dark,
     .notion-app-inner.notion-dark-theme {
       --bg-main: #191b1e;
       --text-main: #f7f7f8;
@@ -82,7 +82,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     /* Light mode variable root */
-    body.notion-light,
+    body.light,
     .notion-app-inner.notion-light-theme {
       --bg-main: #fff;
       --text-main: #23272f;
@@ -98,6 +98,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       padding-left: 250px !important;
     }
 
+    body,
     .notion-page-content {
       margin-top: 60px;
     }
@@ -487,6 +488,16 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     #x-header .logo-dark { display: none; }
     .notion-app-inner.notion-dark-theme #x-header .logo-light { display: none; }
     .notion-app-inner.notion-dark-theme #x-header .logo-dark { display: block; }
+
+    .header-title {
+      margin-left: 12px;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--text-main);
+      letter-spacing: 0.5px;
+      display: inline-block;
+      vertical-align: middle;
+    }
 
   `,
   customHeadJS: googleTag(GOOGLE_TAG_ID),

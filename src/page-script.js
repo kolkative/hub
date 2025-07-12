@@ -14,9 +14,21 @@ window.onload = function () {
     const themeData = document.getElementById("theme-data");
     if (!themeData) return;
     themeData.textContent = JSON.stringify({ mode });
-    document.body.classList.remove("notion-dark", "notion-light");
-    if (mode === "dark") document.body.classList.add("notion-dark");
-    else if (mode === "light") document.body.classList.add("notion-light");
+    document.body.classList.remove("dark", "light");
+    const appInner = document.querySelector('.notion-app-inner');
+    if (mode === "dark") {
+      document.body.classList.add("dark");
+      if (appInner) {
+        appInner.classList.add("notion-dark-theme");
+        appInner.classList.remove("notion-light-theme");
+      }
+    } else if (mode === "light") {
+      document.body.classList.add("light");
+      if (appInner) {
+        appInner.classList.add("notion-light-theme");
+        appInner.classList.remove("notion-dark-theme");
+      }
+    }
   }
 
   function getThemeMode() {
@@ -89,8 +101,69 @@ window.onload = function () {
     sidebar.id = "x-sidebar";
     sidebar.innerHTML =
       '<nav class="sidebar-nav">' +
-      // … (biarkan bagian nav tetap sesuai versi file aslinya) …
-      "</nav>";
+        '<ul>' +
+          '<li><a href="/karya" class="sidebar-link" data-menu="Karya"><span class="sidebar-icon">' +
+          '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="7"/></svg>' +
+          '</span>Karya</a></li>' +
+          '<li><a href="/team" class="sidebar-link" data-menu="Teams"><span class="sidebar-icon">' +
+          '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="10" height="10" rx="2"/></svg>' +
+          '</span>Teams</a></li>' +
+          '<li><a href="/player" class="sidebar-link" data-menu="Cast & Crew"><span class="sidebar-icon">' +
+          '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 14s2-2 6-2 6 2 6 2"/><circle cx="8" cy="6" r="3"/></svg>' +
+          '</span>Cast & Crew</a></li>' +
+          '<li><a href="/event" class="sidebar-link" data-menu="Events"><span class="sidebar-icon">' +
+          '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="12" height="10" rx="2"/><path d="M2 8h12"/></svg>' +
+          '</span>Events</a></li>' +
+          '<li><a href="/leaderboard" class="sidebar-link" data-menu="Leaderboard"><span class="sidebar-icon">' +
+          '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="10" width="3" height="4"/><rect x="7" y="6" width="3" height="8"/><rect x="12" y="2" width="3" height="12"/></svg>' +
+          '</span>Leaderboard</a></li>' +
+        '</ul>' +
+        '<div class="sidebar-section">Community</div>' +
+        '<ul>' +
+          '<li><a href="/support" class="sidebar-link" data-menu="Support"><span class="sidebar-icon">' +
+          '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="7"/></svg>' +
+          '</span>Support</a></li>' +
+          '<li><a href="/academy" class="sidebar-link" data-menu="Academy"><span class="sidebar-icon">' +
+          '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="10" height="10" rx="2"/></svg>' +
+          '</span>Academy</a></li>' +
+          '<li><a href="/job" class="sidebar-link" data-menu="Jobs"><span class="sidebar-icon">' +
+          '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 14s2-2 6-2 6 2 6 2"/><circle cx="8" cy="6" r="3"/></svg>' +
+          '</span>Jobs</a></li>' +
+          '<li><a href="/form" class="sidebar-link" data-menu="Kritik & Saran"><span class="sidebar-icon">' +
+          '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="12" height="10" rx="2"/><path d="M2 8h12"/></svg>' +
+          '</span>Kritik & Saran</a></li>' +
+        '</ul>' +
+        '<div class="sidebar-section">Marketplace</div>' +
+        '<ul>' +
+          '<li><a href="#" class="sidebar-link" data-menu="Tickets"><span class="sidebar-icon">' +
+          '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="7"/></svg>' +
+          '</span>Tickets</a></li>' +
+          '<li><a href="#" class="sidebar-link" data-menu="Mixing Templates"><span class="sidebar-icon">' +
+          '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="10" height="10" rx="2"/></svg>' +
+          '</span>Mixing Templates</a></li>' +
+          '<li><a href="#" class="sidebar-link" data-menu="SFX Collections"><span class="sidebar-icon">' +
+          '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 14s2-2 6-2 6 2 6 2"/><circle cx="8" cy="6" r="3"/></svg>' +
+          '</span>SFX Collections</a></li>' +
+          '<li><a href="#" class="sidebar-link" data-menu="Merch"><span class="sidebar-icon">' +
+          '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="12" height="10" rx="2"/><path d="M2 8h12"/></svg>' +
+          '</span>Merch</a></li>' +
+        '</ul>' +
+        '<div class="sidebar-section">Links</div>' +
+        '<ul>' +
+          '<li><a href="#" class="sidebar-link" data-menu="Partnership"><span class="sidebar-icon">' +
+          '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="7"/></svg>' +
+          '</span>Partnership</a></li>' +
+          '<li><a href="#" class="sidebar-link" data-menu="Brand Assets & Guidelines"><span class="sidebar-icon">' +
+          '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="10" height="10" rx="2"/></svg>' +
+          '</span>Brand Assets & Guidelines</a></li>' +
+          '<li><a href="#" class="sidebar-link" data-menu="Official Blibli.com"><span class="sidebar-icon">' +
+          '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 14s2-2 6-2 6 2 6 2"/><circle cx="8" cy="6" r="3"/></svg>' +
+          '</span>Official Blibli.com</a></li>' +
+          '<li><a href="#" class="sidebar-link" data-menu="Instagram"><span class="sidebar-icon">' +
+          '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="12" height="10" rx="2"/><path d="M2 8h12"/></svg>' +
+          '</span>Instagram</a></li>' +
+        '</ul>' +
+      '</nav>';
     document.body.appendChild(sidebar);
 
     const lastMenu = localStorage.getItem("sidebar-selected");
@@ -141,9 +214,10 @@ window.onload = function () {
     header.id = "x-header";
     header.innerHTML =
       '<a href="https://hub.kolkative.my.id" class="header-logo" target="_self">' +
-      '<img src="https://imgur.com/BkAjSsD.png" id="logo-light" class="logo-light" alt="Kolkative Logo Light">' +
-      '<img src="https://imgur.com/R3LDKJl.png" id="logo-dark" class="logo-dark" alt="Kolkative Logo Dark">' +
-      "</a>";
+      '<img src="https://imgur.com/zxwpFNK.png" id="logo-light" class="logo-light" alt="Kolkative Logo Light">' +
+      '<img src="https://imgur.com/uyJEQnp.png" id="logo-dark" class="logo-dark" alt="Kolkative Logo Dark">' +
+      '<span class="header-title">Kolkative Hub</span>' +
+      '</a>';
     document.body.appendChild(header);
 
     function updateLogoMode() {
