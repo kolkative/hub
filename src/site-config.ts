@@ -75,12 +75,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background: var(--surface-1) !important;
       color: var(--text-1) !important;
     }
-    body:not([data-theme]) {
-      visibility: hidden !important;
-    }
-    body[data-theme] {
-      visibility: visible !important;
-    }
 
 
     /* =======================

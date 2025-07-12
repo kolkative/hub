@@ -258,7 +258,7 @@ window.onload = function () {
     if (!overlay) {
       overlay = document.createElement('div');
       overlay.id = 'content-loading-overlay';
-      overlay.style = 'display:flex;position:fixed;inset:0;z-index:9999;background:rgba(25,25,25,0.7);backdrop-filter:blur(2px);align-items:center;justify-content:center;';
+      overlay.style = 'display:flex;position:fixed;inset:0;z-index:var(--layer-2);background:rgba(25,25,25,0.7);backdrop-filter:blur(2px);align-items:center;justify-content:center;';
       overlay.innerHTML = '<div class="content-spinner" style="width:48px;height:48px;border:4px solid #444;border-top:4px solid #fff;border-radius:50%;animation:content-spin 1s linear infinite;"></div>';
       document.body.appendChild(overlay);
       // Inject keyframes jika belum ada
