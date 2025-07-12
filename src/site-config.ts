@@ -92,9 +92,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       align-items: center !important;
       justify-content: center !important;
       padding: 0.75rem 1.5rem !important;
-      border: 1px solid var(--border-main) !important;
-      border-radius: 0.75rem !important;
-      background: var(--surface-1) !important;
+      border: var(--border-size-1) solid var(--surface-3) !important;
+      border-radius: var(--radius-conditional-3) !important;
+      background: var(--surface-2) !important;
       color: var(--text-1) !important;
       font-family: 'Space Gotesk', sans-serif !important;
       font-weight: 500 !important;
@@ -116,15 +116,15 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-weight: 400;
       text-decoration: underline;
       padding:3px;
-      background: var(--surface-1) !important;
+      background: var(--surface-2) !important;
     }
     
     a:link{
-        color: var(--text-1) !important;
+        color: var(--text-3) !important;
     }
     
     a:visited{
-        color: var(--text-1) !important;
+        color: var(--text-4) !important;
     }
     
     a:hover{
@@ -140,13 +140,13 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       border-bottom: 1px solid var(--border-main) !important;
       margin-top: 50px;
       color: var(--text-1) !important;
-      background: var(--surface-1) !important;
+      background: var(--surface-2) !important;
     }
     
     .subtitle {
       color: var(--text-1) !important;
       font-weight: 500;
-      background: var(--surface-1) !important;
+      background: var(--surface-2) !important;
     }
 
     h1 {
@@ -158,13 +158,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       width: 100vw !important;
       min-width: 100vw !important;
       max-width: 100vw !important;
-      background: var(--surface-3) !important;
+      background: var(--surface-2) !important;
       background-clip: padding-box !important;
       z-index: 2 !important;
       font-size: 20px !important;
       padding: 24px 0px 24px 24px !important;
-      border-bottom: var(--border-size-1) solid var(--gray-1));
-      border-top: var(--border-size-1) solid var(--gray-1);
+      border-bottom: var(--border-size-1) solid var(--surface-3);
       box-sizing: border-box !important;
     }
 
@@ -178,8 +177,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     
     button {
       color: var(--text-1) !important;
-      background-color: var(--surface-1) !important;
-      border: 1px solid var(--border-main) !important;
+      background-color: var(--surface-2) !important;
+      border: var(--border-size-1) solid var(--surface-3) !important;
       box-shadow: rgba(15, 15, 15, 0.1) 0px 1px 2px;
       border-radius: var(--radius-conditional-4);
       align-items: center;
@@ -192,12 +191,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     
     button:hover {
       color: var(--text-2) !important;
-      background-color: var(--surface-2) !important;
+      background-color: var(--surface-3) !important;
     }
     
     button.primary {
       color: var(--text-1) !important;
-      background-color: var(--surface-1) !important;
+      background-color: var(--surface-2) !important;
       border: 1px solid var(--border-main) !important;
       border-radius: var(--radius-conditional-3);
       align-items: center;
@@ -210,7 +209,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     
     button.primary:hover {
       color: var(--text-2) !important;
-      background-color: var(--surface-2) !important;
+      background-color: var(--surface-3) !important;
     }
     
     form {
@@ -221,7 +220,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
         "Helvetica Neue", Arial, sans-serif;
       color: var(--text-1) !important;
-      background: var(--surface-3) !important;
+      background: var(--surface-2) !important;
     }
     
     li {
@@ -230,7 +229,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-size: 20px;
       line-height: 1.5;
       color: var(--text-1) !important;
-      background: var(--surface-3) !important;
+      background: var(--surface-2) !important;
     }
     
     table {
@@ -238,24 +237,24 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       border-collapse: collapse;
       padding: 20px;
       color: var(--text-1) !important;
-      background: var(--surface-3) !important;
+      background: var(--surface-2) !important;
     }
     
     tr {
       border: var(--border-size-1) solid var(--surface-3); !important;
       padding: 10px;
       color: var(--text-1) !important;
-      background: var(--surface-3) !important;
+      background: var(--surface-2) !important;
     }
     tr:nth-child(even) {
-      background-color: var(--surface-3) !important;
+      background-color: var(--surface-2) !important;
     }
     
     td {
       border: var(--border-size-1) solid var(--surface-3) !important;
       padding: 10px;
       color: var(--text-1) !important;
-      background: var(--surface-3) !important;
+      background: var(--surface-2) !important;
     }
     
     th {
@@ -263,7 +262,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       text-align: left;
       padding: 20px;
       color: var(--text-1) !important;
-      background: var(--surface-3) !important;
+      background: var(--surface-2) !important;
     }
     
     
@@ -322,7 +321,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       top: 0;
       width: 250px;
       height: 100vh;
-      background: var(--surface-3) !important;
+      background: var(--surface-2) !important;
       color: var(--text-1) !important;
       z-index: var(--layer-4);
       padding: 10px 0 10px 0;
@@ -330,6 +329,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: flex;
       flex-direction: column;
       gap: 4px;
+      border-right: var(--border-size-1) solid var(--surface-3);
     }
     #x-sidebar nav {
       padding: 60px 10px 10px 10px;
@@ -357,12 +357,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       line-height: 1.2;
     }
     #x-sidebar .sidebar-link.selected {
-      background: var(--surface-2);
-      color: var(--link-visited);
+      background: var(--surface-1);
+      color: var(--link);
       font-weight: bold;
     }
     #x-sidebar .sidebar-link:hover {
-      background: var(--surface-2);
+      background: var(--surface-1);
       color: var(--link);
     }
     #x-sidebar .sidebar-section {
@@ -402,13 +402,13 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       left: 0;
       width: 100vw;
       height: 60px;
-      background: var(--surface-3)!important;
+      background: var(--surface-2)!important;
       color: var(--text-1) !important;
       z-index: var(--layer-5);
       display: flex;
       align-items: center;
       padding: 0 24px;
-      border-bottom: 1px solid var(--border-main);
+      border-bottom: var(--border-size-1) solid var(--surface-3);
       transition: background 0.2s;
     }
     #x-header .header-logo {
@@ -442,7 +442,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     body[data-theme] { visibility: visible; }
 
     /* Hilangkan efek hover pada header logo */
-    .header-logo:hover, .header-logo:active { background: none !important; box-shadow: none !important; }
+    .header-logo:hover, .header-logo img:hover, .header-logo:active { background: none !important; box-shadow: none !important; }
 
   `,
   customHeadJS: googleTag(GOOGLE_TAG_ID),
