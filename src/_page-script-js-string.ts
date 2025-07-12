@@ -3,7 +3,20 @@ export const PAGE_SCRIPT_JS_STRING = `<script>
 /* eslint-disable no-return-assign */
 /* eslint-disable no-param-reassign */
 
+// ANTI FLASHING & DARK MODE AWAL
+(function() {
+  var style = document.createElement('style');
+  style.textContent =
+    'html, body { background: var(--surface-1) !important; color: var(--text-1) !important; }' +
+    'body:not([data-theme]) { visibility: hidden !important; }' +
+    'body[data-theme] { visibility: visible !important; }' +
+    '#x-loading, .spinner, .loading-indicator { background: var(--surface-1) !important; color: var(--text-1) !important; border-color: var(--surface-3) !important; }';
+  document.head.appendChild(style);
+})();
+
 window.onload = function () {
+
+
   // Utility untuk menambahkan semua link Open Props sekaligus
   function addOpenPropsLinks() {
     var openPropsLinks = [
