@@ -57,8 +57,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   // The 404 (not found) page is optional
   // If you don't have one, the default 404 page will be used
   fof: {
-    page: "22adb40e66ea80ff83d9c1a195eecd5b",
-    slug: "404", // default
+    page: "",
+    slug: "default",
   },
 
   // Google Font name, you can choose from https://fonts.google.com
@@ -393,8 +393,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       gap: 4px;
     }
     #x-sidebar nav {
-      padding-top: 60px;
-      padding-left: 10px;
+      padding: 60px 10px 10px 10px;
       width: 100%;
     }
     #x-sidebar ul {
@@ -410,7 +409,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       padding: 5px 10px 5px 10px;
       color: var(--text-main);
       text-decoration: none;
-      border-radius: 4px;
+      border-radius: 10px;
       transition: background 0.18s, color 0.18s;
       font-size: 0.93rem;
       cursor: pointer;
@@ -441,7 +440,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      margin-right: 4px;
+      margin-right: 2px;
       opacity: 0.7;
     }
 
