@@ -81,6 +81,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       margin-top: 60px;
       color: var(--text-1) !important;
       background: var(--surface-1) !important;
+      z-index: var(--layer-2) !important;
+      padding: 0 0 0 0 !important;
     }
 
     .notion-callout-block > .notion-callout-content {
@@ -158,7 +160,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background-clip: padding-box !important;
       z-index: var(--layer-3) !important;
       font-size: 20px !important;
-      padding: 20px 0px 24px 20px !important;
+      padding: 18px 0px 18px 24px !important;
       border-bottom: var(--border-size-1) solid var(--surface-3);
       box-sizing: border-box !important;
     }
@@ -311,7 +313,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     #x-toggle:hover {
-      color: var(--surface-3);
+      color: var(--link);
     }
 
     /* =======================
@@ -334,7 +336,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       border-right: var(--border-size-1) solid var(--surface-3);
     }
     #x-sidebar nav {
-      padding: 60px 10px 10px 10px;
+      padding: 70px 10px 10px 10px;
       width: 100%;
     }
     #x-sidebar ul {
