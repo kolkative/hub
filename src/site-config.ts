@@ -94,7 +94,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       padding: 0 0 0 0 !important;
     }
 
-    .notion-callout-block > .notion-callout-content {
+    /* Notion Callout - selector yang lebih tepat */
+    .notion-callout,
+    .notion-callout-block,
+    .notion-callout-block > div,
+    .notion-callout-block > .notion-callout-content,
+    [data-block-id*="callout"] {
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
@@ -209,26 +214,26 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     #x-sidebar .sidebar-link {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 4px;
       padding: 4px 10px 4px 10px;
-      color: var(--link);
+      color: var(--text-1);
       text-decoration: none;
       border-radius: 10px;
       transition: background 0.18s, color 0.18s;
       font-size: 0.93rem;
       cursor: pointer;
       margin-bottom: 1px;
-      min-height: 28px;
+      min-height: 24px;
       line-height: 1.2;
     }
     #x-sidebar .sidebar-link.selected {
-      background: var(--surface-1);
-      color: var(--link);
+      background: var(--surface-3);
+      color: var(--text-1);
       font-weight: bold;
     }
     #x-sidebar .sidebar-link:hover {
-      background: var(--surface-1);
-      color: var(--link);
+      background: var(--surface-3);
+      color: var(--text-1);
     }
     #x-sidebar .sidebar-section {
       gap: 10px;
@@ -301,11 +306,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       text-decoration: none !important;
       line-height: 1;
     }
-
-
-
-    /* Hilangkan efek hover pada header logo */
-    .header-logo:hover, .header-logo img:hover, .header-logo:active { background: none !important; box-shadow: none !important; }
 
   `,
   customHeadJS: googleTag(GOOGLE_TAG_ID),
