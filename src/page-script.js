@@ -222,12 +222,11 @@ window.onload = function () {
     header.id = "x-header";
     header.innerHTML =
       '<a href="https://hub.kolkative.my.id" class="header-logo" target="_self">' +
-      '<img src="https://imgur.com/BkAjSsD.png" id="logo-light" class="logo-light" alt="Kolkative Logo Light">' +
-      '<img src="https://imgur.com/R3LDKJl.png" id="logo-dark" class="logo-dark" alt="Kolkative Logo Dark">' +
+      '<img src="https://imgur.com/zxwpFNK.png" class="logo" id="logo-light" alt="Kolkative Logo Light">' +
+      '<img src="https://imgur.com/uyJEQnp.png" class="logo" id="logo-dark" alt="Kolkative Logo Dark">' +
       '<span class="header-title">Kolkative Hub</span>' +
       '</a>';
     document.body.appendChild(header);
-    // Hapus updateLogoMode dan observer, biarkan CSS yang handle logo mode
   }
 
   createToggleButton();
