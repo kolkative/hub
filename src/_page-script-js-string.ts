@@ -3,7 +3,32 @@ export const PAGE_SCRIPT_JS_STRING = `<script>
 /* eslint-disable no-return-assign */
 /* eslint-disable no-param-reassign */
 
+// SET DARK MODE SEBELUM APAPUN - MENCEGAH FLASHING
+(function() {
+  // Langsung set dark mode sebelum DOM ready
+  document.documentElement.style.colorScheme = 'dark';
+  if (document.body) {
+    document.body.setAttribute('data-theme', 'dark');
+  } else {
+    // Jika body belum ada, tunggu sebentar
+    document.addEventListener('DOMContentLoaded', function() {
+      document.body.setAttribute('data-theme', 'dark');
+    });
+  }
+  localStorage.setItem('theme', 'dark');
+})();
+
 window.onload = function () {
+  // Tambahkan CSS untuk animasi loading
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  `;
+  document.head.appendChild(style);
+
   // Utility untuk menambahkan semua link Open Props sekaligus
   function addOpenPropsLinks() {
     var openPropsLinks = [
@@ -157,9 +182,25 @@ window.onload = function () {
         localStorage.setItem("sidebar-selected", this.getAttribute("href"));
         const href = this.getAttribute("href");
         if (href && href !== window.location.pathname) {
+          // Tampilkan loading state jika diperlukan
+          const loadingIndicator = document.createElement('div');
+          loadingIndicator.id = 'x-loading';
+          loadingIndicator.style = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:9999;background:var(--surface-1);padding:16px;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.15);';
+          loadingIndicator.innerHTML = '<div style="display:flex;align-items:center;gap:8px;"><div style="width:16px;height:16px;border:2px solid var(--text-2);border-top:2px solid var(--text-1);border-radius:50%;animation:spin 1s linear infinite;"></div>Loading...</div>';
+          document.body.appendChild(loadingIndicator);
+          
+          // Gunakan history.pushState untuk navigasi tanpa reload
+          history.pushState({}, '', href);
+          
+          // Simulasi navigasi tanpa reload (karena ini adalah Notion, kita tidak bisa fetch konten)
+          // Jadi kita hanya update URL dan biarkan Notion handle navigasinya
           setTimeout(() => {
-            window.location.href = href;
-          }, 300);
+            if (document.getElementById('x-loading')) {
+              document.getElementById('x-loading').remove();
+            }
+            // Hanya sync theme, jangan buat ulang elemen
+            syncNotionTheme();
+          }, 500);
         }
       });
     });
@@ -214,10 +255,10 @@ window.onload = function () {
       }
     }
 
-    // Set value dari localStorage atau default
-    var theme = localStorage.getItem('theme');
-    if (theme !== 'dark' && theme !== 'light') theme = 'dark';
+    // Paksa dark mode - abaikan localStorage
+    var theme = 'dark';
     document.body.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
     updateToggleIcon(theme);
     
     syncNotionTheme();
@@ -240,7 +281,25 @@ window.onload = function () {
   syncNotionTheme();
   setupThemeObserver();
 
-  setInterval(() => {
+  // Event listener untuk menangani navigasi tanpa reload
+  window.addEventListener('popstate', function() {
+    // Hanya sync theme, jangan buat ulang elemen
+    syncNotionTheme();
+  });
+
+  // Event listener untuk menangani perubahan URL
+  let lastUrl = location.href;
+  new MutationObserver(() => {
+    const url = location.href;
+    if (url !== lastUrl) {
+      lastUrl = url;
+      // Hanya sync theme, jangan buat ulang elemen
+      syncNotionTheme();
+    }
+  }).observe(document, {subtree: true, childList: true});
+
+  // Hanya jalankan sekali untuk hide elemen Notion
+  function hideNotionElements() {
     // === DESKTOP ===
     document
       .querySelectorAll('div[style*="position: absolute; top: 4px;"]')
@@ -261,8 +320,10 @@ window.onload = function () {
     if (mobilePropertiesDropdown) {
       mobilePropertiesDropdown.style.display = "none";
     }
-    
-  }, 1000);
+  }
+
+  // Jalankan sekali saja
+  hideNotionElements();
 
 };
 </script>`
