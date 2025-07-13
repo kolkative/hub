@@ -96,18 +96,21 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --hover: var(--gray-3), #dee2e6; 
     }
 
-    .notion-app-inner.notion-dark-theme,
-    .notion-app-inner,
-    #notion-app,
-    body {
+    html.notion-html,
+    .notion-app,
+    .notion-app-inner {
       background: var(--bg-1) !important;
       color: var(--text-1) !important;
     }
 
-
     .notion-frame {
-      background: var(--bg-1) !important;
-      color: var(--text-1) !important;
+      background: var(--bg-main) !important;
+      color: var(--text-main) !important;
+      padding-left: 0 !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+    body.sidebar-enabled .notion-frame {
       padding-left: 250px !important;
     }
 
@@ -189,6 +192,16 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       cursor: pointer;
       transition: background-color 0.3s ease;
       background: none !important;
+    }
+
+    #x-toggle svg {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+  
+    #x-toggle:hover {
+      color: var(--link);
     }
 
     /* =======================
