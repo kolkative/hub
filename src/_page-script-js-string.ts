@@ -206,6 +206,7 @@ function createSidebarNavigation() {
       '</ul>' +
     '</nav>';
   document.body.appendChild(sidebar);
+  document.body.classList.add('sidebar-enabled');
 
   const lastMenu = localStorage.getItem("sidebar-selected");
   let highlighted = false;
@@ -299,6 +300,7 @@ createXHeader();
 window.addEventListener('popstate', function() {
   syncNotionTheme(document.body.classList.contains('dark') ? 'dark' : 'light');
 });
+
 let lastUrl = location.href;
 new MutationObserver(() => {
   const url = location.href;

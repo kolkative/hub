@@ -275,15 +275,21 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       opacity: 0.7;
     }
 
-   /* @media (max-width: 600px) {
-      #x-sidebar {
-        width: 100vw;
-        height: auto;
-        position: relative;
-        box-shadow: none;
-        padding: 16px 0;
-      }
-    } */
+    #x-sidebar-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.25);
+      z-index: 2000;
+      display: none;
+      pointer-events: auto;
+      transition: opacity 0.2s;
+    }
+
 
     /* =======================
       X-HEADER
@@ -303,30 +309,65 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       border-bottom: var(--border-size-1) solid var(--border);
       transition: background 0.2s;
     }
-    #x-header .header-logo {
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-      user-select: none;
-      text-decoration: none !important;
+    #x-header-logo {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
     }
-    #x-header .header-logo img {
-      height: 24px;
-      max-width: 120px;
-      display: block;
+    #x-header-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-1);
     }
 
-    .header-title {
-      margin-left: 8px;
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--text-1);
-      letter-spacing: 0.005em;
-      display: inline-block;
-      vertical-align: middle;
+    /* =====================
+    RESPONSIVE: MOBILE VIEW
+    ===================== */
+    
+    @media (max-width: 900px) {
+
+      .notion-frame {
+        padding-left: 0 !important;
+        transition: margin-left 0.3s cubic-bezier(0.4,0,0.2,1);
+      }
+      
+      #x-sidebar {
+        display: none !important;
+      }
+      
+      body.sidebar-open #x-sidebar {
+        display: block !important;
+      }
+      
+      body.sidebar-open .notion-frame {
+        margin-left: 250px !important;
+      }
+
+      #x-header,
+      #x-header-inner {
+        justify-content: center !important;
+        align-items: center;
+      }
+      
+    }
+
+    /* =====================
+      X-BURGER
+    ===================== */
+      
+    #x-burger {
+      position: fixed;
+      top: 0px;
+      left: 5px;
+      z-index: 2500 !important;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
       cursor: pointer;
-      text-decoration: none !important;
-      line-height: 1;
+      width: 60px;
+      height: 60px;
+      padding: 0;
     }
 
   `,
