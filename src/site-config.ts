@@ -30,7 +30,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     team: "208db40e66ea80199338dadddde8ebb4",
     player: "211db40e66ea80739783ffc4a44671e5",
     event: "211db40e66ea808e8ce0cfe0a9d415de",
-    karya: "217db40e66ea80019ed8d59fc830c005",
+    kabaret: "217db40e66ea80019ed8d59fc830c005",
     // individual teams
     epigonen: "208db40e66ea80a185c7d0c381e72752",
   },

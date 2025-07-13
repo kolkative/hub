@@ -220,7 +220,7 @@ function createSidebarNavigation() {
   sidebar.innerHTML =
     '<nav class="sidebar-nav">' +
       '<ul>' +
-        '<li><a href="/karya" class="sidebar-link" data-menu="Karya"><span class="sidebar-icon">' +
+        '<li><a href="/kabaret" class="sidebar-link" data-menu="Karya"><span class="sidebar-icon">' +
         '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="7"/></svg>' +
         '</span>Karya</a></li>' +
         '<li><a href="/team" class="sidebar-link" data-menu="Teams"><span class="sidebar-icon">' +
