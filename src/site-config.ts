@@ -91,8 +91,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --layer-6: 6;
     }
     
-    body.dark,
-    html.dark {
+    html, body {
       --bg-1: #0d0f12;   
       --bg-2: #16191d;
       --bg-3: #212529;     
@@ -103,8 +102,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --hover: #495057; 
     }
       
-    body,
-    html.light {
+    html.light, body.light {
       --bg-1: #f8f9fa;   
       --bg-2: #f1f3f5;
       --bg-3: #e9ecef;     
@@ -115,7 +113,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --hover: #dee2e6; 
     }
 
-    html.notion-html,
     .notion-app,
     .notion-app-inner {
       background: var(--bg-1) !important;

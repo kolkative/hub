@@ -78,28 +78,15 @@ window.onload = function () {
   function syncThemeFromBody(mutations) {
     mutations.forEach((mutation) => {
       if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-        // Update <script id="theme-data"> sesuai class body
         const themeScript = document.getElementById('theme-data');
         if (themeScript && themeScript.tagName === 'SCRIPT') {
-          let mode = 'dark';
-          if (document.body.classList.contains('light')) mode = 'light';
-          themeScript.textContent = JSON.stringify({ mode });
-        }
-        // Sinkronisasi ke html/localStorage jika belum ada theme tersimpan
-        const savedTheme = localStorage.getItem(THEME_KEY);
-        if (!savedTheme) {
-          const html = document.documentElement;
-          const body = document.body;
-          if (body.classList.contains("dark")) {
-            html.classList.add("dark");
-            html.classList.remove("light");
-            localStorage.setItem("theme", "dark");
+          if (document.body.classList.contains('light')) {
+            themeScript.textContent = JSON.stringify({ mode: 'light' });
           } else {
-            html.classList.add("light");
-            html.classList.remove("dark");
-            localStorage.setItem("theme", "light");
+            themeScript.textContent = JSON.stringify({ mode: 'system' });
           }
         }
+        // Tidak pernah menambah .dark pada body
       }
     });
   }
@@ -127,29 +114,29 @@ window.onload = function () {
   function setTheme(theme) {
     const html = document.documentElement;
     const body = document.body;
-    
+    const themeScript = document.getElementById('theme-data');
+
     // Pastikan theme valid
     if (theme !== "dark" && theme !== "light") {
       theme = "dark"; // Default ke dark jika invalid
     }
-    
-    if (theme === "dark") {
-      html.classList.add("dark");
-      html.classList.remove("light");
-      body.classList.add("dark");
-    } else {
+
+    if (theme === "light") {
       html.classList.add("light");
-      html.classList.remove("dark");
-      body.classList.remove("dark");
+      body.classList.add("light");
+      if (themeScript && themeScript.tagName === 'SCRIPT') {
+        themeScript.textContent = JSON.stringify({ mode: 'light' });
+      }
+    } else {
+      html.classList.remove("light");
+      body.classList.remove("light");
+      if (themeScript && themeScript.tagName === 'SCRIPT') {
+        themeScript.textContent = JSON.stringify({ mode: 'system' });
+      }
     }
-    
-    // Simpan ke localStorage
+
     localStorage.setItem("theme", theme);
-    
-    // Update currentTheme
     currentTheme = theme;
-    
-    // Sync dengan Notion
     syncNotionTheme(theme);
   }
 
