@@ -383,10 +383,14 @@ function injectBurgerAndOverlay() {
       burger.style.display = "none";
       document.body.classList.remove("sidebar-open");
       overlay.style.display = "none";
-      if (sidebar) sidebar.style.zIndex = "var(--layer-6)";
+      if (sidebar) sidebar.style.zIndex = "var(--layer-4)";
     }
   }
+  
+  // Initial setup
   updateBurgerSidebar();
+  
+  // Listen for resize events
   window.addEventListener("resize", updateBurgerSidebar);
 
   // Burger click: toggle sidebar
@@ -403,18 +407,10 @@ function injectBurgerAndOverlay() {
     overlay.style.display = "none";
   };
 }
+
+// Call immediately and also on DOMContentLoaded
+injectBurgerAndOverlay();
 window.addEventListener("DOMContentLoaded", injectBurgerAndOverlay);
 })();
 
-// --- Responsive: Sidebar auto show/hide on resize ---
-window.addEventListener("resize", function () {
-var sidebar = document.getElementById("x-sidebar");
-var overlay = document.getElementById("x-sidebar-overlay");
-if (window.innerWidth > 900 && sidebar) {
-  sidebar.style.display = "";
-}
-if (window.innerWidth > 900) {
-  document.body.classList.remove("x-sidebar-open");
-  if (overlay) overlay.style.display = "none";
-}
-}); 
+// Responsive handling sudah ditangani di dalam injectBurgerAndOverlay()

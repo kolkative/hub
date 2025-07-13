@@ -347,6 +347,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
       .notion-frame {
         transition: margin-left 0.3s cubic-bezier(0.4,0,0.2,1);
+        padding-left: 0 !important;
       }
       
       #x-sidebar {
@@ -375,6 +376,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
         justify-content: center !important;
         align-items: center;
       }
+
+      /* Show burger on mobile */
+      #x-burger {
+        display: flex !important;
+      }
       
     }
 
@@ -386,6 +392,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       position: fixed;
       top: 0px;
       left: 5px;
+      display: none;
       align-items: center;
       justify-content: center;
       background: none;
@@ -395,6 +402,18 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       height: 60px;
       padding: 0;
       z-index: var(--layer-6);
+      color: var(--text-1);
+      transition: color 0.2s ease;
+    }
+
+    #x-burger:hover {
+      color: var(--link);
+    }
+
+    #x-burger svg {
+      width: 24px;
+      height: 24px;
+      display: block;
     }
 
   `,
