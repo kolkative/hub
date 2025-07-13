@@ -123,6 +123,17 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background: var(--bg-1) !important;
       color: var(--text-1) !important;
       padding-left: 250px !important;
+      /* Tambahan untuk mencegah overflow kanan saat sidebar muncul */
+      max-width: calc(100vw - 0px) !important;
+      box-sizing: border-box !important;
+      overflow-x: hidden !important;
+    }
+
+    .layout.layout--wide {
+      /* Tambahan untuk mencegah overflow kanan saat sidebar muncul */
+      max-width: calc(100vw - 0px) !important;
+      box-sizing: border-box !important;
+      overflow-x: hidden !important;
     }
 
     body,
@@ -345,11 +356,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     
     @media (max-width: 900px) {
 
-      .notion-frame {
-        transition: margin-left 0.3s cubic-bezier(0.4,0,0.2,1);
-        padding-left: 0 !important;
-      }
-      
       #x-sidebar {
         display: none !important;
         transform: translateX(-100%) !important;
@@ -368,6 +374,19 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       body:not(.sidebar-open) .notion-frame {
         margin-left: 0 !important;
         padding-left: 0 !important;
+      }
+
+      .notion-frame {
+        transition: margin-left 0.3s cubic-bezier(0.4,0,0.2,1);
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        /* Reset max-width di mobile agar tidak terpotong */
+        max-width: 100vw !important;
+      }
+
+      .layout.layout--wide {
+        /* Reset max-width di mobile agar tidak terpotong */
+        max-width: 100vw !important;
       }
 
       #x-header,
