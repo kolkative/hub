@@ -365,7 +365,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
         margin-left: 250px !important;
       }
 
-      /* Memastikan notion-frame kembali ke posisi normal saat sidebar tidak aktif */
       body:not(.sidebar-open) .notion-frame {
         margin-left: 0 !important;
         padding-left: 0 !important;
@@ -377,9 +376,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
         align-items: center;
       }
 
-      /* Show burger on mobile */
       #x-burger {
         display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
       }
       
     }
@@ -404,6 +404,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       z-index: var(--layer-6);
       color: var(--text-1);
       transition: color 0.2s ease;
+      opacity: 1;
+      visibility: visible;
     }
 
     #x-burger:hover {
@@ -414,6 +416,13 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       width: 24px;
       height: 24px;
       display: block;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Ensure burger is always on top */
+    #x-burger {
+      pointer-events: auto !important;
     }
 
   `,
