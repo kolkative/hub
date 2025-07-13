@@ -343,14 +343,20 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       transition: background 0.2s;
     }
     #x-header-logo {
-      width: 18px;
-      height: 18px;
+      width: 24px;
+      height: 24px;
+      color: var(--text-1);
       object-fit: contain;
+      display: inline-block;
+      vertical-align: middle;
     }
     #x-header-title {
       font-size: 14px;
       font-weight: 500;
       color: var(--text-1);
+      letter-spacing: 0.01em;
+      margin-left: 8px;
+      vertical-align: middle;
     }
 
     /* =====================
@@ -384,7 +390,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
         padding-left: 0 !important;
 
       }
-
 
       #x-header,
       #x-header-inner {

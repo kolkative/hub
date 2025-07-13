@@ -338,13 +338,9 @@ function createXHeader() {
   const header = document.createElement("header");
   header.id = "x-header";
   header.innerHTML =
-    '<a href="https://hub.kolkative.my.id" class="header-logo" target="_self" style="display:flex;align-items:center;gap:8px;">' +
-    '<span class="logo" style="display:inline-block;width:32px;height:32px;">' +
-    '<svg viewBox="0 0 32 32" width="32" height="32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">' +
-    '<polygon points="16,2 20,12 31,12 22,18 25,29 16,22 7,29 10,18 1,12 12,12"/>' +
-    '</svg>' +
-    '</span>' +
-    '<span class="header-title">Kolkative Hub</span>' +
+    '<a href="https://hub.kolkative.my.id" class="header-logo" target="_self">' +
+    '<img id="x-header-logo" src="https://raw.githubusercontent.com/kolkative/web/refs/heads/main/public/kolkative-hub-logo.svg" alt="Kolkative Hub Logo">' +
+    '<span id="x-header-title">Kolkative Hub</span>' +
     '</a>';
   document.body.appendChild(header);
 }
