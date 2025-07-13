@@ -43,7 +43,7 @@ window.onload = function () {
       document.documentElement.classList.remove("light");
       document.body.classList.remove("light");
     }
-    // Tidak pernah menambah/menghapus class .dark
+    // Tidak pernah update <script id='theme-data'> di sini
     // 2. Force Notion's internal theme to match our state
     const notionApp = document.querySelector(".notion-app-inner");
     if (notionApp) {
@@ -73,15 +73,7 @@ window.onload = function () {
   function syncThemeFromBody(mutations) {
     mutations.forEach((mutation) => {
       if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-        const themeScript = document.getElementById('theme-data');
-        if (themeScript && themeScript.tagName === 'SCRIPT') {
-          if (document.body.classList.contains('light')) {
-            themeScript.textContent = JSON.stringify({ mode: 'light' });
-          } else {
-            themeScript.textContent = JSON.stringify({ mode: 'system' });
-          }
-        }
-        // Tidak pernah menambah .dark pada body
+        // Observer hanya sync class, tidak update script theme-data
       }
     });
   }
