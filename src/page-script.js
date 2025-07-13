@@ -127,11 +127,11 @@ window.onload = function () {
   }
 
   // --- Main Execution ---
-  currentTheme = getInitialTheme();
-  setTheme(currentTheme); // Set awal agar sinkron
+  // currentTheme = getInitialTheme();
+  // setTheme(currentTheme); // Hapus pemaksaan theme di awal load
 
-  // Start the persistent poller (our "watchdog")
-  setInterval(() => forceTheme(currentTheme), 250);
+  // Tidak perlu interval forceTheme
+  // setInterval(() => forceTheme(currentTheme), 250);
 
   // Create the button once the page is fully loaded
   if (document.getElementById("x-toggle")) return;
@@ -142,7 +142,7 @@ window.onload = function () {
   updateButtonIcon(toggleButton, currentTheme);
 
   toggleButton.addEventListener("click", () => {
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    const newTheme = currentTheme === "light" ? "dark" : "light";
     setTheme(newTheme);
     updateButtonIcon(toggleButton, newTheme);
   });
