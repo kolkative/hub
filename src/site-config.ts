@@ -66,30 +66,20 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
   // Custom JS for head and body of a Notion page
   customHeadCSS: `
+
     /* =======================
        THEME & STYLE
     ========================== */
-    .dark, .light {
-      color: var(--text-1);
+    #notion-app,
+    .notion-app-inner,
+    .notion-app-inner.notion-dark-theme {
       background: var(--surface-1) !important;
-      background-color: var(--surface-3) !important;
+      color: var(--text-1) !important;
     }
 
-    .notion-app-inner {
-      background: var(--surface-1) !important;
-      color: var(--text-1);
-    }
-    .notion-app-inner.notion-dark-theme {
-      background: var(--surface-3) !important;
-      color: var(--text-1);
-    }
-    .notion-app-inner.notion-light-theme {
-      background: var(--surface-1) !important;
-      color: var(--text-1);
-    }
 
     .notion-frame {
-      background-color: var(--surface-3) !important;
+      background: var(--surface-1) !important;
       color: var(--text-1) !important;
       padding-left: 250px !important;
     }
@@ -99,17 +89,16 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       margin-top: 60px;
       color: var(--text-1) !important;
       background: var(--surface-1) !important;
+      z-index: var(--layer-2) !important;
+      padding: 0 0 0 0 !important;
     }
 
-    .notion-callout-block > .notion-callout-content {
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      padding: 0.75rem 1.5rem !important;
-      border: 1px solid var(--border-main) !important;
-      border-radius: 0.75rem !important;
-      background: var(--surface-3) !important;
+    /* Notion Callout - selector yang lebih tepat */
+    .notion-callout-block [role="note"] > div {
+      background: var(--surface-2) !important;
       color: var(--text-1) !important;
+      border: var(--border-size-1) solid var(--surface-3) !important;
+      border-radius: var(--radius-conditional-3) !important;
       font-family: 'Space Gotesk', sans-serif !important;
       font-weight: 500 !important;
       font-size: 1rem !important;
@@ -176,115 +165,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background-clip: padding-box !important;
       z-index: var(--layer-2);
       font-size: 20px !important;
-      padding: 24px 0px 24px 24px !important;
-      border-bottom: 1px solid var(--border-main);
-      border-top: 1px solid var(--border-main);
+      padding: 18px 0px 18px 24px !important;
+      border-bottom: var(--border-size-1) solid var(--surface-3);
       box-sizing: border-box !important;
     }
 
-    h2,h3,h4,p,dt {
-      color: var(--text-1);
-      background: var(--surface-1) !important;
-    }
-    
-    h5,h6,small,dd {
-      color: var(--text-2);
-      background: var(--surface-1) !important;
-    }
-    
-    button {
-      color: var(--text-1) !important;
-      background-color: var(--surface-3) !important;
-      border: 1px solid var(--border-main) !important;
-      box-shadow: rgba(15, 15, 15, 0.1) 0px 1px 2px;
-      border-radius: 6px;
-      align-items: center;
-      height: fit-content;
-      min-width: 180px;
-      font-size: large;
-      font-weight: 500;
-      padding: 12px;
-    }
-    
-    button:hover {
-      color: var(--text-1) !important;
-      background-color: var(--surface-1) !important;
-    }
-    
-    button.primary {
-      color: var(--text-1) !important;
-      background-color: var(--surface-3) !important;
-      border: 1px solid var(--border-main) !important;
-      border-radius: 3px;
-      align-items: center;
-      height: fit-content;
-      min-width: 180px;
-      font-size: large;
-      font-weight: 500;
-      padding: 12px;
-    }
-    
-    button.primary:hover {
-      color: var(--text-1) !important;
-      background-color: var(--surface-1) !important;
-    }
-    
-    form {
-      font-size: 20px;
-      background: var(--surface-1) !important;
-      color: var(--text-1);
-    }
-    
-    ul {
-      font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
-        "Helvetica Neue", Arial, sans-serif;
-      color: var(--text-1) !important;
-      background: var(--surface-1) !important;
-    }
-    
-    li {
-      font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
-        "Helvetica Neue", Arial, sans-serif;
-      font-size: 20px;
-      line-height: 1.5;
-      color: var(--text-1) !important;
-      background: var(--surface-1) !important;
-    }
-    
-    table {
-      border: 1px solid var(--border-main) !important;
-      border-collapse: collapse;
-      padding: 20px;
-      color: var(--text-1) !important;
-      background: var(--surface-1) !important;
-    }
-    
-    tr {
-      border: 1px solid var(--border-main) !important;
-      padding: 10px;
-      color: var(--text-1) !important;
-      background: var(--surface-1) !important;
-    }
-    tr:nth-child(even) {
-      background-color: var(--surface-3) !important;
-    }
-    
-    td {
-      border: 1px solid var(--border-main) !important;
-      padding: 10px;
-      color: var(--text-1) !important;
-      background: var(--surface-1) !important;
-    }
-    
-    th {
-      border: 1px solid var(--border-main) !important;
-      text-align: left;
-      padding: 20px;
-      color: var(--text-1) !important;
-      background: var(--surface-1) !important;
-    }
-    
-    
     /* ==================
       HIDE & REMOVED
     ===================== */
@@ -293,32 +178,18 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-page-controls,
     .notion-topbar,
     header.notion-topbar-mobile,
-    div[style*="min-height: 44px"] {
+    .pageLinkIndicator,
+    .notion-callout-block [role="note"] > div:empty,
+    div[style*="min-height: 44px"],
+    .notion-table-view div[style *="min-height: 32px;"] .notion-record-icon[style*="margin-bottom: -1px; margin-right: 4px;"] {
       display: none !important;
     }
     
-    /* ========== SCROLLBAR ========== */
-    div.notion-frame > div.notion-scroller > div{
-      background-color: #00000000 !important;
-    }
-
-    .notion-scroller.vertical.horizontal > div:nth-child(2) {
-    background: var(--theme--bg) !important
-    }
-
     ::-webkit-scrollbar {
       width: 0 !important;
       height: 0 !important;
     }
 
-    .notion-table-view div[style *="min-height: 32px;"] .notion-record-icon[style*="margin-bottom: -1px; margin-right: 4px;"] {
-      display: none !important;
-    }
-
-    /* ========== HIDE ARROWS IN PAGE LINK ========== */
-    .pageLinkIndicator {
-      display: none !important;
-    }
 
     /* =======================
       X-TOGGLE
@@ -328,14 +199,16 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       position: fixed;
       top: 23px;
       right: 20px;
-      z-index: var(--layer-1);
+      z-index: var(--layer-7);
       display: flex;
       align-items: center;
       justify-content: center;
       width: 30px;
       height: 30px;
+      border-radius: none;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      background: none !important;
     }
 
     /* =======================
@@ -347,54 +220,55 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       top: 0;
       width: 250px;
       height: 100vh;
-      background: var(--bg-sidebar) !important;
-      color: var(--text-main) !important;
-      z-index: var(--layer-3);
+      background: var(--surface-2) !important;
+      color: var(--text-1) !important;
+      z-index: var(--layer-4);
       padding: 10px 0 10px 0;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
       gap: 4px;
+      border-right: var(--border-size-1) solid var(--surface-3);
     }
     #x-sidebar nav {
-      padding: 60px 10px 10px 10px;
+      padding: 70px 10px 10px 10px;
       width: 100%;
     }
     #x-sidebar ul {
       list-style: none;
-      padding: 0 0 0 10px;
+      padding: 0 4px 0 4px;
       margin: 0;
       gap: 0;
     }
     #x-sidebar .sidebar-link {
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 5px 10px 5px 10px;
-      color: var(--text-main);
+      gap: 4px;
+      padding: 4px 10px 4px 10px;
+      color: var(--text-1);
       text-decoration: none;
       border-radius: 10px;
       transition: background 0.18s, color 0.18s;
       font-size: 0.93rem;
       cursor: pointer;
       margin-bottom: 1px;
-      min-height: 28px;
+      min-height: 24px;
       line-height: 1.2;
     }
     #x-sidebar .sidebar-link.selected {
-      background: var(--surface-hover);
-      color: var(--link);
+      background: var(--surface-3);
+      color: var(--text-1);
       font-weight: bold;
     }
     #x-sidebar .sidebar-link:hover {
-      background: var(--surface-hover);
-      color: var(--text-main);
+      background: var(--surface-3);
+      color: var(--text-1);
     }
     #x-sidebar .sidebar-section {
       gap: 10px;
-      margin: 12px 12px 12px 12px;
+      margin: 12px 24px 12px 24px;
       font-size: 0.93rem;
-      color: var(--text-main);
+      color: var(--text-2);
       letter-spacing: 1px;
       font-weight: 300;
     }
@@ -427,13 +301,13 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       left: 0;
       width: 100vw;
       height: 60px;
-      background: var(--bg-sidebar)!important;
-      color: var(--text-main) !important;
-      z-index: var(--layer-2);
+      background: var(--surface-2)!important;
+      color: var(--text-1) !important;
+      z-index: var(--layer-5);
       display: flex;
       align-items: center;
       padding: 0 24px;
-      border-bottom: 1px solid var(--border-main);
+      border-bottom: var(--border-size-1) solid var(--surface-3);
       transition: background 0.2s;
     }
     #x-header .header-logo {
@@ -453,7 +327,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       margin-left: 8px;
       font-size: 1.25rem;
       font-weight: 600;
-      color: var(--text-main);
+      color: var(--text-1);
       letter-spacing: 0.005em;
       display: inline-block;
       vertical-align: middle;
@@ -461,13 +335,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       text-decoration: none !important;
       line-height: 1;
     }
-
-    /* Prevent FOUC: hide body until data-theme is set */
-    body:not([data-theme]) { visibility: hidden; }
-    body[data-theme] { visibility: visible; }
-
-    /* Hilangkan efek hover pada header logo */
-    .header-logo:hover, .header-logo:active { background: none !important; box-shadow: none !important; }
 
   `,
   customHeadJS: googleTag(GOOGLE_TAG_ID),
