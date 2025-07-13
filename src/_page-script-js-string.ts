@@ -3,7 +3,6 @@ export const PAGE_SCRIPT_JS_STRING = `<script>
 /* eslint-disable no-return-assign */
 /* eslint-disable no-param-reassign */
 
-// ANTI FLASHING & DARK MODE AWAL
 (function() {
   var style = document.createElement('style');
   style.textContent =
@@ -16,14 +15,9 @@ export const PAGE_SCRIPT_JS_STRING = `<script>
 
 window.onload = function () {
 
-
-  // Utility untuk menambahkan semua link Open Props sekaligus
   function addOpenPropsLinks() {
     var openPropsLinks = [
-      'https://unpkg.com/open-props/normalize.min.css',
-      'https://unpkg.com/open-props/style',
-      'https://unpkg.com/open-props/theme.light.switch.min.css',
-      'https://unpkg.com/open-props/theme.dark.switch.min.css'
+      'https://unpkg.com/open-props'
     ];
     openPropsLinks.forEach(function(href) {
       var link = document.createElement('link');
@@ -34,28 +28,19 @@ window.onload = function () {
   }
   addOpenPropsLinks();
 
-  // Manipulasi class theme di body
-  // Hapus seluruh logic class .dark/.light pada body
-  // Toggle dan theme hanya pakai data-theme pada body
-
-  // Fungsi untuk sinkronisasi theme Notion dengan body [data-theme]
   function syncNotionTheme() {
     var theme = document.body.getAttribute('data-theme');
     var notionAppInner = document.querySelector('.notion-app-inner');
     
     if (notionAppInner) {
-      // Hapus class yang ada
       notionAppInner.classList.remove('notion-dark-theme');
-      
-      // Tambahkan class sesuai theme
       if (theme === 'dark') {
         notionAppInner.classList.add('notion-dark-theme');
       }
-      // Untuk light theme, tidak perlu menambahkan class khusus
+
     }
   }
 
-  // Observer untuk memantau perubahan data-theme
   function setupThemeObserver() {
     var observer = new MutationObserver(function(mutations) {
       mutations.forEach(function(mutation) {
@@ -170,14 +155,14 @@ window.onload = function () {
         localStorage.setItem("sidebar-selected", this.getAttribute("href"));
         const href = this.getAttribute("href");
         if (href && href !== window.location.pathname) {
-          // Tampilkan overlay spinner/blur sebelum reload
+
           showContentLoadingOverlay();
-          // Gunakan history.pushState untuk navigasi tanpa reload
+
           history.pushState({}, '', href);
           
-          // Redirect ke halaman baru setelah delay
+
           setTimeout(() => {
-            // Redirect ke halaman baru
+
             window.location.href = href;
           }, 300);
         }
@@ -220,7 +205,7 @@ window.onload = function () {
         '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256"><path d="M227.89,147.89A96,96,0,1,1,108.11,28.11,96.09,96.09,0,0,0,227.89,147.89Z" opacity="0.2"></path><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"></path></svg>' +
       '</span>';
 
-    // Set icon sesuai theme
+
     function updateToggleIcon(theme) {
       var sun = toggle.querySelector('#toggle-icon-sun');
       var moon = toggle.querySelector('#toggle-icon-moon');
@@ -233,7 +218,7 @@ window.onload = function () {
       }
     }
 
-    // Paksa dark mode - abaikan localStorage
+
     var theme = 'dark';
     document.body.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
@@ -247,13 +232,12 @@ window.onload = function () {
       document.body.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
       updateToggleIcon(next);
-      // Sync Notion theme saat toggle
+
       syncNotionTheme();
     };
     document.body.appendChild(toggle);
   }
 
-  // Tambahkan fungsi overlay spinner/blur
   function showContentLoadingOverlay() {
     let overlay = document.getElementById('content-loading-overlay');
     if (!overlay) {
@@ -280,24 +264,23 @@ window.onload = function () {
   syncNotionTheme();
   setupThemeObserver();
 
-  // Event listener untuk menangani navigasi tanpa reload
+
   window.addEventListener('popstate', function() {
-    // Hanya sync theme, jangan buat ulang elemen
+
     syncNotionTheme();
   });
 
-  // Event listener untuk menangani perubahan URL
   let lastUrl = location.href;
   new MutationObserver(() => {
     const url = location.href;
     if (url !== lastUrl) {
       lastUrl = url;
-      // Hanya sync theme, jangan buat ulang elemen
+
       syncNotionTheme();
     }
   }).observe(document, {subtree: true, childList: true});
 
-  // Hanya jalankan sekali untuk hide elemen Notion
+
   function hideNotionElements() {
     // === DESKTOP ===
     document
@@ -321,7 +304,6 @@ window.onload = function () {
     }
   }
 
-  // Jalankan sekali saja
   hideNotionElements();
 
 };
