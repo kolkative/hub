@@ -30,7 +30,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     team: "208db40e66ea80199338dadddde8ebb4",
     player: "211db40e66ea80739783ffc4a44671e5",
     event: "211db40e66ea808e8ce0cfe0a9d415de",
-    karya: "208db40e66ea806f86b1d5f50f8f981c",
+    karya: "217db40e66ea80019ed8d59fc830c005",
     // individual teams
     epigonen: "208db40e66ea80a185c7d0c381e72752",
   },
@@ -391,7 +391,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       position: fixed;
       top: 0px;
       left: 5px;
-      z-index: var(--layer-6) !important;
+      z-index: var(--layer-7) !important;
       align-items: center;
       justify-content: center;
       background: none;
