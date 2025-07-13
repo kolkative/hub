@@ -379,12 +379,12 @@ function injectBurgerAndOverlay() {
   function updateBurgerSidebar() {
     if (window.innerWidth < 900) {
       burger.style.display = "flex";
-      if (sidebar) sidebar.style.zIndex = "unset";
+      if (sidebar) sidebar.style.zIndex = "var(--layer-6)";
     } else {
       burger.style.display = "none";
       document.body.classList.remove("sidebar-open");
       overlay.style.display = "none";
-      if (sidebar) sidebar.style.zIndex = "unset";
+      if (sidebar) sidebar.style.zIndex = "var(--layer-6)";
     }
   }
   updateBurgerSidebar();
