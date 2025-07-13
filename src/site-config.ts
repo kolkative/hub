@@ -118,7 +118,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       box-shadow: 2px 2px 0 #000000 !important;
       transition: all 0.15s ease-in-out !important;
     }
-    
+
     a {
       color: var(--text-1) !important;
       font-size: 20px;
@@ -186,7 +186,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       color: var(--text-1);
       background: var(--surface-1) !important;
     }
-
+    
     h5,h6,small,dd {
       color: var(--text-2);
       background: var(--surface-1) !important;
