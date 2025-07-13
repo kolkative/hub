@@ -146,6 +146,57 @@ window.onload = function () {
     setTheme(newTheme);
     updateButtonIcon(toggleButton, newTheme);
   });
+
+  // Create x-burger button with same logic as x-toggle
+  if (document.getElementById("x-burger")) return;
+
+  const burgerButton = document.createElement("button");
+  burgerButton.id = "x-burger";
+  burgerButton.setAttribute("aria-label", "Open sidebar");
+  burgerButton.innerHTML =
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="currentColor" fill="none"><path d="M4 8.5L20 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4 15.5L20 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
+  document.body.appendChild(burgerButton);
+
+  // Create overlay for sidebar
+  if (!document.getElementById("x-sidebar-overlay")) {
+    const overlay = document.createElement("div");
+    overlay.id = "x-sidebar-overlay";
+    document.body.appendChild(overlay);
+  }
+
+  // Responsive show/hide for burger
+  function updateBurgerDisplay() {
+    if (window.innerWidth < 900) {
+      burgerButton.style.display = "flex";
+    } else {
+      burgerButton.style.display = "none";
+      document.body.classList.remove("sidebar-open");
+    }
+  }
+
+  // Initial setup
+  updateBurgerDisplay();
+  window.addEventListener("resize", updateBurgerDisplay);
+
+  // Burger click: toggle sidebar
+  burgerButton.addEventListener("click", () => {
+    if (window.innerWidth < 900) {
+      const isOpen = document.body.classList.toggle("sidebar-open");
+      const overlay = document.getElementById("x-sidebar-overlay");
+      if (overlay) {
+        overlay.style.display = isOpen ? "block" : "none";
+      }
+    }
+  });
+
+  // Overlay click: close sidebar
+  const overlay = document.getElementById("x-sidebar-overlay");
+  if (overlay) {
+    overlay.addEventListener("click", () => {
+      document.body.classList.remove("sidebar-open");
+      overlay.style.display = "none";
+    });
+  }
 };
 
 function addOpenPropsLinks() {
@@ -350,67 +401,6 @@ new MutationObserver(() => {
 }).observe(document, {subtree: true, childList: true});
 
 
-// Responsive & interactive x-burger (hamburger button) for sidebar
-(function () {
-function injectBurgerAndOverlay() {
-  let burger = document.getElementById("x-burger");
-  let overlay = document.getElementById("x-sidebar-overlay");
-  let sidebar = document.getElementById("x-sidebar");
-
-  // Burger button
-  if (!burger) {
-    burger = document.createElement("button");
-    burger.id = "x-burger";
-    burger.setAttribute("aria-label", "Open sidebar");
-    burger.innerHTML =
-      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="currentColor" fill="none"><path d="M4 8.5L20 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4 15.5L20 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
-    document.body.appendChild(burger);
-  }
-
-  // Overlay
-  if (!overlay) {
-    overlay = document.createElement("div");
-    overlay.id = "x-sidebar-overlay";
-    document.body.appendChild(overlay);
-  }
-
-  // Responsive show/hide
-  function updateBurgerSidebar() {
-    if (window.innerWidth < 900) {
-      burger.style.display = "flex";
-      if (sidebar) sidebar.style.zIndex = "var(--layer-6)";
-    } else {
-      burger.style.display = "none";
-      document.body.classList.remove("sidebar-open");
-      overlay.style.display = "none";
-      if (sidebar) sidebar.style.zIndex = "var(--layer-4)";
-    }
-  }
-  
-  // Initial setup
-  updateBurgerSidebar();
-  
-  // Listen for resize events
-  window.addEventListener("resize", updateBurgerSidebar);
-
-  // Burger click: toggle sidebar
-  burger.onclick = function () {
-    if (window.innerWidth < 900) {
-      const isOpen = document.body.classList.toggle("sidebar-open");
-      overlay.style.display = isOpen ? "block" : "none";
-    }
-  };
-
-  // Overlay click: close sidebar
-  overlay.onclick = function () {
-    document.body.classList.remove("sidebar-open");
-    overlay.style.display = "none";
-  };
-}
-
-// Call immediately and also on DOMContentLoaded
-injectBurgerAndOverlay();
-window.addEventListener("DOMContentLoaded", injectBurgerAndOverlay);
-})();
+// x-burger logic moved to window.onload for consistent timing with x-toggle
 
 // Responsive handling sudah ditangani di dalam injectBurgerAndOverlay()
