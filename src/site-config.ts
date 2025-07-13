@@ -100,11 +100,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --border: #343a40;   
       --link: #4c6ef5;    
       --hover: #495057; 
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-    body::-webkit-scrollbar {
-      display: none !important;
     }
       
     html.light, body.light {
