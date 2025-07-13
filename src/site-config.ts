@@ -125,12 +125,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-frame {
       background: var(--bg-1) !important;
       color: var(--text-1) !important;
-    }
-
-    /* =======================
-      SIDEBAR INTERAKTIF (bukan theme)
-    ========================== */
-    body.sidebar-enabled .notion-frame {
       padding-left: 250px !important;
     }
 
@@ -143,7 +137,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       padding: 0 0 0 0 !important;
     }
 
-    /* Notion Callout - selector yang lebih tepat */
+
     .notion-callout-block [role="note"] > div {
       background: var(--bg-2) !important;
       color: var(--text-1) !important;
@@ -307,7 +301,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       width: 100vw;
       height: 100vh;
       background: rgba(0, 0, 0, 0.25);
-      z-index: 2000;
+      z-index: var(--layer-2);
       display: none;
       pointer-events: auto;
       transition: opacity 0.2s;
