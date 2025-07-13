@@ -72,28 +72,47 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     ========================== */
     
     /* CSS Variables untuk Theme */
+    :root {
+      --gray-0: #f8f9fa;
+      --gray-1: #f1f3f5;
+      --gray-2: #e9ecef;
+      --gray-3: #dee2e6;
+      --gray-7: #495057;
+      --gray-8: #343a40;
+      --gray-9: #212529;
+      --gray-10: #16191d;
+      --gray-11: #0d0f12;
+      --indigo-6: #4c6ef5;
+      --border-size-1: 1px;
+      --radius-conditional-3: 6px;
+      --layer-2: 2;
+      --layer-4: 4;
+      --layer-5: 5;
+      --layer-6: 6;
+    }
+    
     body.dark,
     html.dark {
-      --bg-1: var(--gray-11), #0d0f12;   
-      --bg-2: var(--gray-10), #16191d;
-      --bg-3: var(--gray-9), #212529;     
-      --text-1: var(--gray-0), #f8f9fa;
-      --text-2: var(--gray-1), #f1f3f5;  
-      --border: var(--gray-8), #343a40;   
-      --link: var(--indigo-6), #4c6ef5;    
-      --hover: var(--gray-7), #495057; 
+      --bg-1: #0d0f12;   
+      --bg-2: #16191d;
+      --bg-3: #212529;     
+      --text-1: #f8f9fa;
+      --text-2: #f1f3f5;  
+      --border: #343a40;   
+      --link: #4c6ef5;    
+      --hover: #495057; 
     }
       
     body,
     html.light {
-      --bg-1: var(--gray-0), #f8f9fa;   
-      --bg-2: var(--gray-1), #f1f3f5;
-      --bg-3: var(--gray-2), #e9ecef;     
-      --text-1: var(--gray-10), #16191d;
-      --text-2: var(--gray-9), #212529;   
-      --border: var(--gray-8), #343a40;   
-      --link: var(--indigo-6), #4c6ef5;    
-      --hover: var(--gray-3), #dee2e6; 
+      --bg-1: #f8f9fa;   
+      --bg-2: #f1f3f5;
+      --bg-3: #e9ecef;     
+      --text-1: #16191d;
+      --text-2: #212529;   
+      --border: #343a40;   
+      --link: #4c6ef5;    
+      --hover: #dee2e6; 
     }
 
     html.notion-html,
@@ -104,8 +123,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     .notion-frame {
-      background: var(--bg-main) !important;
-      color: var(--text-main) !important;
+      background: var(--bg-1) !important;
+      color: var(--text-1) !important;
       padding-left: 0 !important;
       margin-left: 0 !important;
       margin-right: 0 !important;
