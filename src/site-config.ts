@@ -71,8 +71,21 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     ========================== */
     .dark, .light {
       color: var(--text-1);
-      background: var(--surface-1);
-      background-color: var(--surface-3);
+      background: var(--surface-1) !important;
+      background-color: var(--surface-3) !important;
+    }
+
+    .notion-app-inner {
+      background: var(--surface-1) !important;
+      color: var(--text-1);
+    }
+    .notion-app-inner.notion-dark-theme {
+      background: var(--surface-3) !important;
+      color: var(--text-1);
+    }
+    .notion-app-inner.notion-light-theme {
+      background: var(--surface-1) !important;
+      color: var(--text-1);
     }
 
     .notion-frame {
@@ -152,16 +165,16 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     h1 {
       position: fixed !important;
-      color: var(--text-main) !important;
+      color: var(--text-1) !important;
       top: 0 !important;
       left: 0 !important;
       right: 0 !important;
       width: 100vw !important;
       min-width: 100vw !important;
       max-width: 100vw !important;
-      background: var(--bg-sidebar,) !important;
+      background: var(--surface-1) !important;
       background-clip: padding-box !important;
-      z-index: 2 !important;
+      z-index: var(--layer-2);
       font-size: 20px !important;
       padding: 24px 0px 24px 24px !important;
       border-bottom: 1px solid var(--border-main);
@@ -171,10 +184,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     h2,h3,h4,p,dt {
       color: var(--text-1);
+      background: var(--surface-1) !important;
     }
 
     h5,h6,small,dd {
       color: var(--text-2);
+      background: var(--surface-1) !important;
     }
     
     button {
@@ -216,6 +231,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     
     form {
       font-size: 20px;
+      background: var(--surface-1) !important;
+      color: var(--text-1);
     }
     
     ul {
