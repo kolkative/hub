@@ -129,6 +129,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       margin-left: 0 !important;
       margin-right: 0 !important;
     }
+
+    /* =======================
+      SIDEBAR INTERAKTIF (bukan theme)
+    ========================== */
     body.sidebar-enabled .notion-frame {
       padding-left: 250px !important;
     }

@@ -27,8 +27,8 @@ window.onload = function () {
   const THEME_KEY = "theme";
   const NOTION_DARK_CLASS = "notion-dark-theme";
 
-  const sunIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" viewBox="0 0 256 256"><path d="M184,128a56,56,0,1,1-56-56A56,56,0,0,1,184,128Z" opacity="0.2"></path><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"></path></svg>';
-  const moonIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256"><path d="M227.89,147.89A96,96,0,1,1,108.11,28.11,96.09,96.09,0,0,0,227.89,147.89Z" opacity="0.2"></path><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"></path></svg>';
+  const sunIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" viewBox="0 0 256 256"><path d="M227.89,147.89A96,96,0,1,1,108.11,28.11,96.09,96.09,0,0,0,227.89,147.89Z" opacity="0.2"></path><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"></path></svg>';
+  const moonIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256"><path d="M184,128a56,56,0,1,1-56-56A56,56,0,0,1,184,128Z" opacity="0.2"></path><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"></path></svg>';
 
   let currentTheme;
 
@@ -78,16 +78,27 @@ window.onload = function () {
   function syncThemeFromBody(mutations) {
     mutations.forEach((mutation) => {
       if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-        const html = document.documentElement;
-        const body = document.body;
-        if (body.classList.contains("dark")) {
-          html.classList.add("dark");
-          html.classList.remove("light");
-          localStorage.setItem("theme", "dark");
-        } else {
-          html.classList.add("light");
-          html.classList.remove("dark");
-          localStorage.setItem("theme", "light");
+        // Update <script id="theme-data"> sesuai class body
+        const themeScript = document.getElementById('theme-data');
+        if (themeScript && themeScript.tagName === 'SCRIPT') {
+          let mode = 'dark';
+          if (document.body.classList.contains('light')) mode = 'light';
+          themeScript.textContent = JSON.stringify({ mode });
+        }
+        // Sinkronisasi ke html/localStorage jika belum ada theme tersimpan
+        const savedTheme = localStorage.getItem(THEME_KEY);
+        if (!savedTheme) {
+          const html = document.documentElement;
+          const body = document.body;
+          if (body.classList.contains("dark")) {
+            html.classList.add("dark");
+            html.classList.remove("light");
+            localStorage.setItem("theme", "dark");
+          } else {
+            html.classList.add("light");
+            html.classList.remove("dark");
+            localStorage.setItem("theme", "light");
+          }
         }
       }
     });
@@ -116,6 +127,12 @@ window.onload = function () {
   function setTheme(theme) {
     const html = document.documentElement;
     const body = document.body;
+    
+    // Pastikan theme valid
+    if (theme !== "dark" && theme !== "light") {
+      theme = "dark"; // Default ke dark jika invalid
+    }
+    
     if (theme === "dark") {
       html.classList.add("dark");
       html.classList.remove("light");
@@ -125,7 +142,15 @@ window.onload = function () {
       html.classList.remove("dark");
       body.classList.remove("dark");
     }
+    
+    // Simpan ke localStorage
     localStorage.setItem("theme", theme);
+    
+    // Update currentTheme
+    currentTheme = theme;
+    
+    // Sync dengan Notion
+    syncNotionTheme(theme);
   }
 
   // --- Main Execution ---
@@ -146,7 +171,6 @@ window.onload = function () {
   toggleButton.addEventListener("click", () => {
     const newTheme = currentTheme === "dark" ? "light" : "dark";
     setTheme(newTheme);
-    currentTheme = newTheme;
     updateButtonIcon(toggleButton, newTheme);
   });
 };
@@ -325,9 +349,22 @@ function showContentLoadingOverlay() {
 createSidebarNavigation();
 createXHeader();
 
+// Fungsi untuk memastikan theme di-load dengan benar
+function ensureThemeConsistency() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    setTheme(savedTheme);
+  } else {
+    setTheme("dark"); // Default ke dark
+  }
+}
+
+// Panggil saat halaman dimuat
+ensureThemeConsistency();
+
 // Sinkronisasi Notion theme saat popstate dan url berubah
 window.addEventListener('popstate', function() {
-  syncNotionTheme(document.body.classList.contains('dark') ? 'dark' : 'light');
+  ensureThemeConsistency();
 });
 
 let lastUrl = location.href;
@@ -335,7 +372,7 @@ new MutationObserver(() => {
   const url = location.href;
   if (url !== lastUrl) {
     lastUrl = url;
-    syncNotionTheme(document.body.classList.contains('dark') ? 'dark' : 'light');
+    ensureThemeConsistency();
   }
 }).observe(document, {subtree: true, childList: true});
 
