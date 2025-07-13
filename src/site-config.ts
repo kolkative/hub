@@ -399,6 +399,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       width: 60px;
       height: 60px;
       padding: 0;
+      z-index: var(--layer-6);
     }
 
   `,
