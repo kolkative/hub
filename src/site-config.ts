@@ -94,9 +94,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --hover: var(--gray-3), #dee2e6; 
     }
 
-    body[data-theme="dark"] .notion-app-inner.notion-dark-theme,
-    body[data-theme="light"] .notion-app-inner,
-    #notion-app {
+    .notion-app-inner.notion-dark-theme,
+    .notion-app-inner,
+    #notion-app,
+    body.notion-body {
       background: var(--bg-1) !important;
       color: var(--text-1) !important;
     }
