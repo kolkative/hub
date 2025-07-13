@@ -72,6 +72,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     ========================== */
     
     /* CSS Variables untuk Theme */
+    body.dark,
     html.dark {
       --bg-1: var(--gray-11), #0d0f12;   
       --bg-2: var(--gray-10), #16191d;
@@ -82,7 +83,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --link: var(--indigo-6), #4c6ef5;    
       --hover: var(--gray-7), #495057; 
     }
-    
+      
+    body,
     html.light {
       --bg-1: var(--gray-0), #f8f9fa;   
       --bg-2: var(--gray-1), #f1f3f5;
