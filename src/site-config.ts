@@ -82,7 +82,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --link: var(--indigo-6), #4c6ef5;    
       --hover: var(--gray-7), #495057; 
     }
-
+    
     body[data-theme="light"] {
       --bg-1: var(--gray-0), #f8f9fa;   
       --bg-2: var(--gray-1), #f1f3f5;
@@ -132,50 +132,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       transition: all 0.15s ease-in-out !important;
     }
 
-    a {
-      color: var(--link) !important;
-      font-size: 20px;
-      line-height: 150%;
-      font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
-        "Helvetica Neue", sans-serif;
-      font-style: normal;
-      font-variant: normal;
-      font-weight: 400;
-      text-decoration: underline;
-      padding:3px;
-      background: var(--bg-1) !important;
-    }
     
-    a:link{
-        color: var(--link) !important;
-    }
-    
-    a:visited{
-        color: var(--link) !important;
-    }
-    
-    a:hover{
-        background: var(--hover) !important;
-        background-size: auto 4em;
-        background-repeat: no-repeat;
-        background-position: 0% 15px; 
-    }
-
-    .title {
-      width: 100%;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--border) !important;
-      margin-top: 50px;
-      color: var(--text-1) !important;
-      background: var(--bg-1) !important;
-    }
-    
-    .subtitle {
-      color: var(--text-1) !important;
-      font-weight: 500;
-      background: var(--bg-1) !important;
-    }
-
     h1 {
       position: fixed !important;
       color: var(--text-1) !important;
@@ -209,10 +166,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: none !important;
     }
     
-    ::-webkit-scrollbar {
-      width: 0 !important;
-      height: 0 !important;
-    }
 
 
     /* =======================
