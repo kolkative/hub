@@ -35,28 +35,22 @@ window.onload = function () {
 
   // This function is our watchdog. It constantly enforces our desired theme.
   function forceTheme(theme) {
-    // 1. Set our custom theme class on the root <html> element
+    // 1. Set our custom theme class on the root <html> and <body> element
     if (theme === "light") {
       document.documentElement.classList.add("light");
-      document.documentElement.classList.remove("dark");
+      document.body.classList.add("light");
     } else {
-      document.documentElement.classList.add("dark");
       document.documentElement.classList.remove("light");
+      document.body.classList.remove("light");
     }
-
+    // Tidak pernah menambah/menghapus class .dark
     // 2. Force Notion's internal theme to match our state
     const notionApp = document.querySelector(".notion-app-inner");
     if (notionApp) {
-      if (
-        theme === "light" &&
-        notionApp.classList.contains(NOTION_DARK_CLASS)
-      ) {
-        notionApp.classList.remove(NOTION_DARK_CLASS);
-      } else if (
-        theme === "dark" &&
-        !notionApp.classList.contains(NOTION_DARK_CLASS)
-      ) {
-        notionApp.classList.add(NOTION_DARK_CLASS);
+      if (theme === "dark") {
+        notionApp.classList.add("notion-dark-theme");
+      } else {
+        notionApp.classList.remove("notion-dark-theme");
       }
     }
   }
