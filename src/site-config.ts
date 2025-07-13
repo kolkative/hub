@@ -56,10 +56,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
   // The 404 (not found) page is optional
   // If you don't have one, the default 404 page will be used
-  fof: {
-    page: "",
-    slug: "default",
-  },
+  // fof: {
+  //  page: "",
+  //  slug: "default",
+  //},
 
   // Google Font name, you can choose from https://fonts.google.com
   googleFont: "",
@@ -100,6 +100,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --border: #343a40;   
       --link: #4c6ef5;    
       --hover: #495057; 
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    body::-webkit-scrollbar {
+      display: none !important;
     }
       
     html.light, body.light {
@@ -236,6 +241,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       flex-direction: column;
       gap: 4px;
       border-right: var(--border-size-1) solid var(--border);
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    #x-sidebar::-webkit-scrollbar {
+      display: none !important;
     }
     #x-sidebar nav {
       padding: 70px 10px 10px 10px;
