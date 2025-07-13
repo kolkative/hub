@@ -3,6 +3,24 @@ export const PAGE_SCRIPT_JS_STRING = `<script>
 /* eslint-disable no-return-assign */
 /* eslint-disable no-param-reassign */
 
+function createXToggle() {
+  if (document.getElementById('x-toggle')) return;
+  const toggleButton = document.createElement('button');
+  toggleButton.id = 'x-toggle';
+  document.body.appendChild(toggleButton);
+  toggleButton.innerHTML = '<svg width="24" height="24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>';
+  // Event listener toggle theme
+  toggleButton.addEventListener('click', () => {
+    const newTheme = document.body.classList.contains('dark') ? 'light' : 'dark';
+    setTheme(newTheme);
+    updateButtonIcon(toggleButton, newTheme);
+  });
+  // Set icon awal
+  const initialTheme = document.body.classList.contains('dark') ? 'dark' : 'light';
+  updateButtonIcon(toggleButton, initialTheme);
+}
+
+// Panggil createXToggle di window.onload dan DOMContentLoaded
 window.onload = function () {
   setInterval(() => {
     // === DESKTOP ===
@@ -106,22 +124,9 @@ window.onload = function () {
   setInterval(() => forceTheme(currentTheme), 250);
 
   // Create the button once the page is fully loaded
-  window.addEventListener("load", () => {
-    if (document.getElementById("x-toggle")) return;
-
-    const toggleButton = document.createElement("button");
-    toggleButton.id = "x-toggle";
-    document.body.appendChild(toggleButton);
-    updateButtonIcon(toggleButton, currentTheme);
-
-    toggleButton.addEventListener("click", () => {
-      const newTheme = currentTheme === "dark" ? "light" : "dark";
-      setTheme(newTheme);
-      currentTheme = newTheme;
-      updateButtonIcon(toggleButton, newTheme);
-    });
-  })
-};
+  createXToggle();
+}
+window.addEventListener('DOMContentLoaded', createXToggle);
 
 function addOpenPropsLinks() {
   var openPropsLinks = [

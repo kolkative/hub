@@ -330,7 +330,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     @media (max-width: 900px) {
 
       .notion-frame {
-        padding-left: 0 !important;
         transition: margin-left 0.3s cubic-bezier(0.4,0,0.2,1);
       }
       
