@@ -180,18 +180,20 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     #x-toggle {
       position: fixed;
-      top: 23px;
-      right: 20px;
-      z-index: var(--layer-7);
+      top: 16px;
+      right: 16px;
+      z-index: 3000 !important;
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 30px;
-      height: 30px;
-      border-radius: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
       cursor: pointer;
+      background: var(--bg-2) !important;
+      border: none;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
       transition: background-color 0.3s ease;
-      background: none !important;
     }
 
     #x-toggle svg {
@@ -202,6 +204,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   
     #x-toggle:hover {
       color: var(--link);
+      background: var(--hover) !important;
     }
 
     /* =======================

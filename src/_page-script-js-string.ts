@@ -377,4 +377,17 @@ if (window.innerWidth > 900) {
   document.body.classList.remove("x-sidebar-open");
   if (overlay) overlay.style.display = "none";
 }
-});</script>`
+});
+
+// Tambahkan fallback agar x-toggle tetap muncul jika window.onload tidak terpanggil
+if (!document.getElementById('x-toggle')) {
+  window.addEventListener('DOMContentLoaded', function() {
+    if (!document.getElementById('x-toggle')) {
+      const toggleButton = document.createElement('button');
+      toggleButton.id = 'x-toggle';
+      document.body.appendChild(toggleButton);
+      // Tambahkan icon default
+      toggleButton.innerHTML = '<svg width="24" height="24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>';
+    }
+  });
+}</script>`
