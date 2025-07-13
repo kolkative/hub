@@ -390,7 +390,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       position: fixed;
       top: 0px;
       left: 5px;
-      z-index: 2500 !important;
+      z-index: var(--layer-6) !important;
       align-items: center;
       justify-content: center;
       background: none;
