@@ -19,7 +19,7 @@ window.onload = function () {
   addOpenPropsLinks();
 
   function syncNotionTheme() {
-    var theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    var theme = document.body.classList.contains('dark') ? 'dark' : 'light';
     var notionAppInner = document.querySelector('.notion-app-inner');
     if (notionAppInner) {
       notionAppInner.classList.remove('notion-dark-theme', 'notion-light-theme');
@@ -35,7 +35,7 @@ window.onload = function () {
         }
       });
     });
-    observer.observe(document.documentElement, {
+    observer.observe(document.body, {
       attributes: true,
       attributeFilter: ['class']
     });
@@ -205,17 +205,17 @@ window.onload = function () {
 
 
     var theme = 'dark';
-    document.documentElement.classList.remove('dark', 'light');
-    document.documentElement.classList.add(theme);
+    document.body.classList.remove('dark', 'light');
+    document.body.classList.add(theme);
     localStorage.setItem('theme', theme);
     updateToggleIcon(theme);
     syncNotionTheme();
 
     toggle.onclick = function() {
-      var current = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+      var current = document.body.classList.contains('dark') ? 'dark' : 'light';
       var next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.classList.remove('dark', 'light');
-      document.documentElement.classList.add(next);
+      document.body.classList.remove('dark', 'light');
+      document.body.classList.add(next);
       localStorage.setItem('theme', next);
       updateToggleIcon(next);
       syncNotionTheme();
