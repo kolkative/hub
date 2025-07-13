@@ -182,7 +182,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       position: fixed;
       top: 16px;
       right: 16px;
-      z-index: 3000 !important;
+      z-index: var(--layer-6) !important;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -330,6 +330,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     @media (max-width: 900px) {
 
       .notion-frame {
+        padding-left: 0 !important;
         transition: margin-left 0.3s cubic-bezier(0.4,0,0.2,1);
       }
       
