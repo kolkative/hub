@@ -125,9 +125,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-frame {
       background: var(--bg-1) !important;
       color: var(--text-1) !important;
-      padding-left: 0 !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
     }
 
     /* =======================
@@ -353,8 +350,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     @media (max-width: 900px) {
 
       .notion-frame {
-        padding-left: 0 !important;
-        margin-left: 0 !important;
         transition: margin-left 0.3s cubic-bezier(0.4,0,0.2,1);
       }
       
