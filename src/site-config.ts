@@ -70,16 +70,40 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     /* =======================
        THEME & STYLE
     ========================== */
+    
+    /* CSS Variables untuk Theme */
+    body[data-theme="dark"] {
+      --bg-1: var(--gray-11), #0d0f12;   
+      --bg-2: var(--gray-10), #16191d;
+      --bg-3: var(--gray-9), #212529;     
+      --text-1: var(--gray-0), #f8f9fa;
+      --text-2: var(--gray-1), #f1f3f5;  
+      --border: var(--gray-8), #343a40;   
+      --link: var(--indigo-6), #4c6ef5;    
+      --hover: var(--gray-7), #495057; 
+    }
+
+    body[data-theme="light"] {
+      --bg-1: var(--gray-0), #f8f9fa;   
+      --bg-2: var(--gray-1), #f1f3f5;
+      --bg-3: var(--gray-2), #e9ecef;     
+      --text-1: var(--gray-10), #16191d;
+      --text-2: var(--gray-9), #212529;   
+      --border: var(--gray-8), #343a40;   
+      --link: var(--indigo-6), #4c6ef5;    
+      --hover: var(--gray-3), #dee2e6; 
+    }
+
     #notion-app,
     .notion-app-inner,
     .notion-app-inner.notion-dark-theme {
-      background: var(--surface-1) !important;
+      background: var(--bg-1) !important;
       color: var(--text-1) !important;
     }
 
 
     .notion-frame {
-      background: var(--surface-1) !important;
+      background: var(--bg-1) !important;
       color: var(--text-1) !important;
       padding-left: 250px !important;
     }
@@ -88,16 +112,16 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-page-content {
       margin-top: 60px;
       color: var(--text-1) !important;
-      background: var(--surface-1) !important;
+      background: var(--bg-1) !important;
       z-index: var(--layer-2) !important;
       padding: 0 0 0 0 !important;
     }
 
     /* Notion Callout - selector yang lebih tepat */
     .notion-callout-block [role="note"] > div {
-      background: var(--surface-2) !important;
+      background: var(--bg-2) !important;
       color: var(--text-1) !important;
-      border: var(--border-size-1) solid var(--surface-3) !important;
+      border: var(--border-size-1) solid var(--border) !important;
       border-radius: var(--radius-conditional-3) !important;
       font-family: 'Space Gotesk', sans-serif !important;
       font-weight: 500 !important;
@@ -109,7 +133,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     a {
-      color: var(--text-1) !important;
+      color: var(--link) !important;
       font-size: 20px;
       line-height: 150%;
       font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
@@ -119,19 +143,19 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-weight: 400;
       text-decoration: underline;
       padding:3px;
-      background: var(--surface-1) !important;
+      background: var(--bg-1) !important;
     }
     
     a:link{
-        color: var(--text-1) !important;
+        color: var(--link) !important;
     }
     
     a:visited{
-        color: var(--text-1) !important;
+        color: var(--link) !important;
     }
     
     a:hover{
-        background: var(--surface-3) !important;
+        background: var(--hover) !important;
         background-size: auto 4em;
         background-repeat: no-repeat;
         background-position: 0% 15px; 
@@ -140,16 +164,16 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .title {
       width: 100%;
       padding-bottom: 10px;
-      border-bottom: 1px solid var(--border-main) !important;
+      border-bottom: 1px solid var(--border) !important;
       margin-top: 50px;
       color: var(--text-1) !important;
-      background: var(--surface-1) !important;
+      background: var(--bg-1) !important;
     }
     
     .subtitle {
       color: var(--text-1) !important;
       font-weight: 500;
-      background: var(--surface-1) !important;
+      background: var(--bg-1) !important;
     }
 
     h1 {
@@ -161,12 +185,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       width: 100vw !important;
       min-width: 100vw !important;
       max-width: 100vw !important;
-      background: var(--surface-1) !important;
+      background: var(--bg-1) !important;
       background-clip: padding-box !important;
       z-index: var(--layer-2);
       font-size: 20px !important;
       padding: 18px 0px 18px 24px !important;
-      border-bottom: var(--border-size-1) solid var(--surface-3);
+      border-bottom: var(--border-size-1) solid var(--border);
       box-sizing: border-box !important;
     }
 
@@ -220,7 +244,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       top: 0;
       width: 250px;
       height: 100vh;
-      background: var(--surface-2) !important;
+      background: var(--bg-2) !important;
       color: var(--text-1) !important;
       z-index: var(--layer-4);
       padding: 10px 0 10px 0;
@@ -228,7 +252,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: flex;
       flex-direction: column;
       gap: 4px;
-      border-right: var(--border-size-1) solid var(--surface-3);
+      border-right: var(--border-size-1) solid var(--border);
     }
     #x-sidebar nav {
       padding: 70px 10px 10px 10px;
@@ -256,12 +280,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       line-height: 1.2;
     }
     #x-sidebar .sidebar-link.selected {
-      background: var(--surface-3);
+      background: var(--bg-3);
       color: var(--text-1);
       font-weight: bold;
     }
     #x-sidebar .sidebar-link:hover {
-      background: var(--surface-3);
+      background: var(--hover);
       color: var(--text-1);
     }
     #x-sidebar .sidebar-section {
@@ -301,13 +325,13 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       left: 0;
       width: 100vw;
       height: 60px;
-      background: var(--surface-2)!important;
+      background: var(--bg-2)!important;
       color: var(--text-1) !important;
       z-index: var(--layer-5);
       display: flex;
       align-items: center;
       padding: 0 24px;
-      border-bottom: var(--border-size-1) solid var(--surface-3);
+      border-bottom: var(--border-size-1) solid var(--border);
       transition: background 0.2s;
     }
     #x-header .header-logo {
