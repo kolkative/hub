@@ -3,24 +3,6 @@ export const PAGE_SCRIPT_JS_STRING = `<script>
 /* eslint-disable no-return-assign */
 /* eslint-disable no-param-reassign */
 
-function createXToggle() {
-  if (document.getElementById('x-toggle')) return;
-  const toggleButton = document.createElement('button');
-  toggleButton.id = 'x-toggle';
-  document.body.appendChild(toggleButton);
-  toggleButton.innerHTML = '<svg width="24" height="24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>';
-  // Event listener toggle theme
-  toggleButton.addEventListener('click', () => {
-    const newTheme = document.body.classList.contains('dark') ? 'light' : 'dark';
-    setTheme(newTheme);
-    updateButtonIcon(toggleButton, newTheme);
-  });
-  // Set icon awal
-  const initialTheme = document.body.classList.contains('dark') ? 'dark' : 'light';
-  updateButtonIcon(toggleButton, initialTheme);
-}
-
-// Panggil createXToggle di window.onload dan DOMContentLoaded
 window.onload = function () {
   setInterval(() => {
     // === DESKTOP ===
@@ -93,6 +75,37 @@ window.onload = function () {
     return savedTheme || "dark";
   }
 
+  // Sinkronisasi toggle NoteHost <-> custom theme
+  function syncThemeFromBody(mutations) {
+    mutations.forEach((mutation) => {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+        const html = document.documentElement;
+        const body = document.body;
+        if (body.classList.contains("dark")) {
+          html.classList.add("dark");
+          html.classList.remove("light");
+          localStorage.setItem("theme", "dark");
+        } else {
+          html.classList.add("light");
+          html.classList.remove("dark");
+          localStorage.setItem("theme", "light");
+        }
+      }
+    });
+  }
+
+  // Fungsi untuk sinkronisasi theme Notion
+  function syncNotionTheme(theme) {
+    const notionApp = document.querySelector('.notion-app-inner');
+    if (notionApp) {
+      if (theme === 'dark') {
+        notionApp.classList.add('notion-dark-theme');
+      } else {
+        notionApp.classList.remove('notion-dark-theme');
+      }
+    }
+  }
+
   // Pantau perubahan class pada body (toggle NoteHost)
   const themeObserver = new MutationObserver(syncThemeFromBody);
   themeObserver.observe(document.body, {
@@ -124,9 +137,20 @@ window.onload = function () {
   setInterval(() => forceTheme(currentTheme), 250);
 
   // Create the button once the page is fully loaded
-  createXToggle();
-}
-window.addEventListener('DOMContentLoaded', createXToggle);
+  if (document.getElementById("x-toggle")) return;
+
+  const toggleButton = document.createElement("button");
+  toggleButton.id = "x-toggle";
+  document.body.appendChild(toggleButton);
+  updateButtonIcon(toggleButton, currentTheme);
+
+  toggleButton.addEventListener("click", () => {
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    currentTheme = newTheme;
+    updateButtonIcon(toggleButton, newTheme);
+  });
+};
 
 function addOpenPropsLinks() {
   var openPropsLinks = [
@@ -278,6 +302,7 @@ function createXHeader() {
   document.body.appendChild(header);
 }
 
+// Tambahkan fungsi overlay spinner/blur
 function showContentLoadingOverlay() {
   let overlay = document.getElementById('content-loading-overlay');
   if (!overlay) {
@@ -314,6 +339,7 @@ new MutationObserver(() => {
     syncNotionTheme(document.body.classList.contains('dark') ? 'dark' : 'light');
   }
 }).observe(document, {subtree: true, childList: true});
+
 
 // Responsive & interactive x-burger (hamburger button) for sidebar
 (function () {
@@ -382,17 +408,4 @@ if (window.innerWidth > 900) {
   document.body.classList.remove("x-sidebar-open");
   if (overlay) overlay.style.display = "none";
 }
-});
-
-// Tambahkan fallback agar x-toggle tetap muncul jika window.onload tidak terpanggil
-if (!document.getElementById('x-toggle')) {
-  window.addEventListener('DOMContentLoaded', function() {
-    if (!document.getElementById('x-toggle')) {
-      const toggleButton = document.createElement('button');
-      toggleButton.id = 'x-toggle';
-      document.body.appendChild(toggleButton);
-      // Tambahkan icon default
-      toggleButton.innerHTML = '<svg width="24" height="24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>';
-    }
-  });
-}</script>`
+}); </script>`

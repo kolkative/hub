@@ -74,6 +74,37 @@ window.onload = function () {
     return savedTheme || "dark";
   }
 
+  // Sinkronisasi toggle NoteHost <-> custom theme
+  function syncThemeFromBody(mutations) {
+    mutations.forEach((mutation) => {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+        const html = document.documentElement;
+        const body = document.body;
+        if (body.classList.contains("dark")) {
+          html.classList.add("dark");
+          html.classList.remove("light");
+          localStorage.setItem("theme", "dark");
+        } else {
+          html.classList.add("light");
+          html.classList.remove("dark");
+          localStorage.setItem("theme", "light");
+        }
+      }
+    });
+  }
+
+  // Fungsi untuk sinkronisasi theme Notion
+  function syncNotionTheme(theme) {
+    const notionApp = document.querySelector('.notion-app-inner');
+    if (notionApp) {
+      if (theme === 'dark') {
+        notionApp.classList.add('notion-dark-theme');
+      } else {
+        notionApp.classList.remove('notion-dark-theme');
+      }
+    }
+  }
+
   // Pantau perubahan class pada body (toggle NoteHost)
   const themeObserver = new MutationObserver(syncThemeFromBody);
   themeObserver.observe(document.body, {
@@ -105,21 +136,19 @@ window.onload = function () {
   setInterval(() => forceTheme(currentTheme), 250);
 
   // Create the button once the page is fully loaded
-  window.addEventListener("load", () => {
-    if (document.getElementById("x-toggle")) return;
+  if (document.getElementById("x-toggle")) return;
 
-    const toggleButton = document.createElement("button");
-    toggleButton.id = "x-toggle";
-    document.body.appendChild(toggleButton);
-    updateButtonIcon(toggleButton, currentTheme);
+  const toggleButton = document.createElement("button");
+  toggleButton.id = "x-toggle";
+  document.body.appendChild(toggleButton);
+  updateButtonIcon(toggleButton, currentTheme);
 
-    toggleButton.addEventListener("click", () => {
-      const newTheme = currentTheme === "dark" ? "light" : "dark";
-      setTheme(newTheme);
-      currentTheme = newTheme;
-      updateButtonIcon(toggleButton, newTheme);
-    });
-  })
+  toggleButton.addEventListener("click", () => {
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    currentTheme = newTheme;
+    updateButtonIcon(toggleButton, newTheme);
+  });
 };
 
 function addOpenPropsLinks() {
@@ -272,8 +301,6 @@ function createXHeader() {
   document.body.appendChild(header);
 }
 
-
-
 // Tambahkan fungsi overlay spinner/blur
 function showContentLoadingOverlay() {
   let overlay = document.getElementById('content-loading-overlay');
@@ -297,7 +324,6 @@ function showContentLoadingOverlay() {
 
 createSidebarNavigation();
 createXHeader();
-createXToggle();
 
 // Sinkronisasi Notion theme saat popstate dan url berubah
 window.addEventListener('popstate', function() {
@@ -312,6 +338,7 @@ new MutationObserver(() => {
     syncNotionTheme(document.body.classList.contains('dark') ? 'dark' : 'light');
   }
 }).observe(document, {subtree: true, childList: true});
+
 
 // Responsive & interactive x-burger (hamburger button) for sidebar
 (function () {
@@ -380,4 +407,4 @@ if (window.innerWidth > 900) {
   document.body.classList.remove("x-sidebar-open");
   if (overlay) overlay.style.display = "none";
 }
-});
+}); 
