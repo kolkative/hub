@@ -350,19 +350,29 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
       .notion-frame {
         padding-left: 0 !important;
+        margin-left: 0 !important;
         transition: margin-left 0.3s cubic-bezier(0.4,0,0.2,1);
       }
       
       #x-sidebar {
         display: none !important;
+        transform: translateX(-100%) !important;
+        transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
       }
       
       body.sidebar-open #x-sidebar {
         display: block !important;
+        transform: translateX(0) !important;
       }
       
       body.sidebar-open .notion-frame {
         margin-left: 250px !important;
+      }
+
+      /* Memastikan notion-frame kembali ke posisi normal saat sidebar tidak aktif */
+      body:not(.sidebar-open) .notion-frame {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
       }
 
       #x-header,
