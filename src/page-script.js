@@ -18,30 +18,25 @@ window.onload = function () {
   addOpenPropsLinks();
 
   function syncNotionTheme() {
-    var theme = document.body.getAttribute('data-theme');
+    var theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
     var notionAppInner = document.querySelector('.notion-app-inner');
-    
     if (notionAppInner) {
-      notionAppInner.classList.remove('notion-dark-theme');
-      if (theme === 'dark') {
-        notionAppInner.classList.add('notion-dark-theme');
-      }
-
+      notionAppInner.classList.remove('notion-dark-theme', 'notion-light-theme');
+      notionAppInner.classList.add('notion-' + theme + '-theme');
     }
   }
 
   function setupThemeObserver() {
     var observer = new MutationObserver(function(mutations) {
       mutations.forEach(function(mutation) {
-        if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
           syncNotionTheme();
         }
       });
     });
-    
-    observer.observe(document.body, {
+    observer.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ['data-theme']
+      attributeFilter: ['class']
     });
   }
 
@@ -209,19 +204,19 @@ window.onload = function () {
 
 
     var theme = 'dark';
-    document.body.setAttribute('data-theme', theme);
+    document.documentElement.classList.remove('dark', 'light');
+    document.documentElement.classList.add(theme);
     localStorage.setItem('theme', theme);
     updateToggleIcon(theme);
-    
     syncNotionTheme();
 
     toggle.onclick = function() {
-      var current = document.body.getAttribute('data-theme');
+      var current = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
       var next = current === 'dark' ? 'light' : 'dark';
-      document.body.setAttribute('data-theme', next);
+      document.documentElement.classList.remove('dark', 'light');
+      document.documentElement.classList.add(next);
       localStorage.setItem('theme', next);
       updateToggleIcon(next);
-
       syncNotionTheme();
     };
     document.body.appendChild(toggle);
