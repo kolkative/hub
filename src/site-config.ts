@@ -403,6 +403,16 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
   `,
-  customHeadJS: googleTag(GOOGLE_TAG_ID),
+  customHeadJS: `
+    <script>
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'light') {
+        document.documentElement.classList.add('light');
+        document.body.classList.add('light');
+      }
+    } catch(e){}
+    </script>
+    ` + googleTag(GOOGLE_TAG_ID),
   customBodyJS: PAGE_SCRIPT_JS_STRING,
 };
