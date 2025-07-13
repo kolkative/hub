@@ -72,7 +72,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     ========================== */
     
     /* CSS Variables untuk Theme */
-    body.dark {
+    html.dark {
       --bg-1: var(--gray-11), #0d0f12;   
       --bg-2: var(--gray-10), #16191d;
       --bg-3: var(--gray-9), #212529;     
@@ -83,7 +83,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --hover: var(--gray-7), #495057; 
     }
     
-    body.light {
+    html.light {
       --bg-1: var(--gray-0), #f8f9fa;   
       --bg-2: var(--gray-1), #f1f3f5;
       --bg-3: var(--gray-2), #e9ecef;     
@@ -97,7 +97,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-app-inner.notion-dark-theme,
     .notion-app-inner,
     #notion-app,
-    body.notion-body {
+    body {
       background: var(--bg-1) !important;
       color: var(--text-1) !important;
     }
