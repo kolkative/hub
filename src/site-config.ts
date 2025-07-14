@@ -17,7 +17,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   // twitterHandle: '',
 
   // URL to custom favicon.ico
-  siteIcon: "https://raw.githubusercontent.com/kolkative/web/refs/heads/main/public/kolkative-hub-logo.svg",
+  siteIcon:
+    "https://raw.githubusercontent.com/kolkative/web/refs/heads/main/public/kolkative-hub-logo.svg",
 
   // Additional safety: avoid serving extraneous Notion content from your website
   // Use the value from your Notion settings => Workspace => Settings => Domain
@@ -89,10 +90,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --layer-4: 4;
       --layer-5: 5;
       --layer-6: 6;
-      --content-width: minmax(auto, 1100px) !important;
-      --margin-left-width: 270px !important;
       --margin-right-width: 270px !important;
-      --margin-width: 270px !important;
+     
     }
     
     html, body {
@@ -127,8 +126,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background: var(--bg-1) !important;
       color: var(--text-1) !important;
     }
-
-  
 
     body,
     .notion-page-content {
