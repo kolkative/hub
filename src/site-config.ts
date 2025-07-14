@@ -129,6 +129,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       z-index: var(--layer-2) !important;
       padding: 0 0 0 0 !important;
     }
+
+    .layout {
+      grid-template-columns: minmax(274px, 1fr) minmax(0, var(--content-max-width, 720px)) minmax(24px, 1fr) !important;
+    }
     
     .notion-callout-block [role="note"] > div {
       background: var(--bg-2) !important;
