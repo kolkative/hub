@@ -90,8 +90,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --layer-4: 4;
       --layer-5: 5;
       --layer-6: 6;
-      --margin-width: 270px !important;
-      --margin-width-right: 270px !important;
     }
     
     html, body {
@@ -137,6 +135,19 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       padding: 0 0 0 0 !important;
     }
 
+    .layout.layout-wide {
+      --margin-left-width: 0px;
+      --margin-right-width: 0px;
+      --content-width: 100%;
+      grid-template-columns:
+        0px  /* full-start -> margin kiri */
+        1fr  /* content-start -> konten */
+        0px; /* content-end -> margin kanan */
+    }
+
+    .layout.layout-wide > * {
+      outline: 1px dashed magenta;
+    }
 
     .notion-callout-block [role="note"] > div {
       background: var(--bg-2) !important;
