@@ -136,31 +136,29 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       grid-column: 3 !important;
     }
 
-    /* Pastikan padding dalam gallery tidak menyebabkan overflow */
+    /* Pastikan gallery container tidak overflow */
     .notion-gallery-view {
-      padding-left: 1rem !important;
-      padding-right: 1rem !important;
-      min-width: 0 !important;
+      padding: 0 1rem !important;
       max-width: 100% !important;
       box-sizing: border-box !important;
+      overflow-x: hidden !important;
     }
 
-    /* Atur isi grid gallery */
-    .notion-gallery-view > div {
+    /* Terapkan grid ke blok kontainer semua card */
+    .notion-selectable.notion-collection_view-block {
       display: grid !important;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important;
       gap: 1rem !important;
       justify-content: start !important;
       box-sizing: border-box !important;
     }
 
-    /* Pastikan item card tidak melebihi kolom */
-    .notion-gallery-view > div > div {
+    /* Pastikan card tidak overflow */
+    .notion-selectable.notion-collection_view-block > div {
       width: 100% !important;
       max-width: 100% !important;
       box-sizing: border-box !important;
     }
-
 
 
     body,
