@@ -90,7 +90,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --layer-4: 4;
       --layer-5: 5;
       --layer-6: 6;
-     
+
+      --margin-width: 270px !important;
     }
     
     html, body {
@@ -124,11 +125,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-frame {
       background: var(--bg-1) !important;
       color: var(--text-1) !important;
-      padding-left: 250px !important;
-    }
-    
-    .layout.layout-wide {
-      --margin-right-width: calc(var(--margin-width) + 270px);
     }
 
     body,
@@ -169,7 +165,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background-clip: padding-box !important;
       z-index: var(--layer-2);
       font-size: 20px !important;
-      padding: 18px 0px 18px 270px !important;
+      padding: 18px 0px 18px 24px !important;
       border-bottom: var(--border-size-1) solid var(--border);
       box-sizing: border-box !important;
     }
