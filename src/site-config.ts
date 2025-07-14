@@ -131,8 +131,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     .layout {
-      grid-template-columns: minmax(274px, 1fr) minmax(0, var(--content-max-width, 720px)) minmax(24px, 1fr) !important;
+      grid-template-columns:
+        minmax(274px, 1fr)
+        minmax(0, var(--content-max-width, 720px))
+        minmax(24px, 1fr);
     }
+
     
     .notion-callout-block [role="note"] > div {
       background: var(--bg-2) !important;
