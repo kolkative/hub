@@ -89,6 +89,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --layer-4: 4;
       --layer-5: 5;
       --layer-6: 6;
+      --content-width: minmax(auto, 1100px) !important;
       --margin-left-width: 270px !important;
       --margin-right-width: 270px !important;
       --margin-width: 270px !important;
@@ -397,6 +398,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
         --margin-left-width: unset !important;
         --margin-right-width: unset !important;
         --margin-width: unset !important;
+        --content-width: unset !important;
       }
     }
 
