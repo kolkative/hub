@@ -140,9 +140,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --margin-right-width: 0px;
       --content-width: 100%;
       grid-template-columns:
-        0px  /* full-start -> margin kiri */
-        1fr  /* content-start -> konten */
-        0px; /* content-end -> margin kanan */
+        24px  /* margin kiri untuk sidebar */
+        minmax(0, 800px) /* konten */
+        auto;   /* margin kanan */
     }
 
     .layout.layout-wide > * {
