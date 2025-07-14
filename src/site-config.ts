@@ -58,9 +58,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   // The 404 (not found) page is optional
   // If you don't have one, the default 404 page will be used
   fof: {
-   page: "404",
-   slug: "404",
-  //},
+    page: "404",
+    slug: "404",
+  },
 
   // Google Font name, you can choose from https://fonts.google.com
   googleFont: "",
