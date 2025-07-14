@@ -135,18 +135,16 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       padding: 0 0 0 0 !important;
     }
 
-    .layout.layout-wide {
+   .layout.layout-full {
+      display: grid !important;
+      grid-template-columns: 0px 1fr 0px !important;
       --margin-left-width: 0px;
       --margin-right-width: 0px;
       --content-width: 100%;
-      grid-template-columns:
-        24px  /* margin kiri untuk sidebar */
-        minmax(0, 800px) /* konten */
-        auto;   /* margin kanan */
     }
 
-    .layout.layout-wide > * {
-      outline: 1px dashed magenta;
+    .layout.layout-full > * {
+      outline: 1px dashed hotpink;
     }
 
     .notion-callout-block [role="note"] > div {
