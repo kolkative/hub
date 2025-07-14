@@ -89,8 +89,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --layer-4: 4;
       --layer-5: 5;
       --layer-6: 6;
-      /* Override margin kiri grid agar konten tidak overflow saat sidebar muncul */
-      --margin-left-width: 250px !important;
+      /* Override margin kiri dan kanan grid agar konten tidak overflow dan simetris dengan sidebar */
+      --margin-left-width: 270px !important;
+      --margin-right-width: 270px !important;
     }
     
     html, body {
@@ -177,7 +178,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background-clip: padding-box !important;
       z-index: var(--layer-2);
       font-size: 20px !important;
-      padding: 18px 0px 18px 24px !important;
+      padding: 18px 0px 18px 250px !important;
       border-bottom: var(--border-size-1) solid var(--border);
       box-sizing: border-box !important;
     }
@@ -387,8 +388,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
       .notion-frame {
         transition: margin-left 0.3s cubic-bezier(0.4,0,0.2,1);
+        margin-left: 0 !important;
         padding-left: 0 !important;
-
+        max-width: 100vw !important;
       }
 
       #x-header,
