@@ -128,35 +128,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       column-gap: 2rem !important;
     }
 
-    /* Semua konten Notion ke kolom content (kolom ke-3) */
-    .layout.layout-wide > .notion-selectable,
-    .layout.layout-wide > .notion-scroller,
-    .layout.layout-wide > .notion-frame,
-    .layout.layout-wide > div {
-      grid-column: 3 !important;
-    }
-
-    /* Pastikan gallery container tidak overflow */
-    .notion-gallery-view {
-      padding: 0 1rem !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-      overflow-x: hidden !important;
-    }
-
-    /* Terapkan grid ke blok kontainer semua card */
-    .notion-selectable.notion-collection_view-block {
-      display: grid !important;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important;
-      gap: 1rem !important;
-      justify-content: start !important;
-      box-sizing: border-box !important;
-    }
-
-    /* Pastikan card tidak overflow */
-    .notion-selectable.notion-collection_view-block > div {
-      width: 100% !important;
-      max-width: 100% !important;
+    /* Batasi lebar maksimal agar tidak overflow viewport */
+    .notion-collection-view,
+    .notion-collection_view-block {
+      max-width: calc(100vw - 300px) !important; /* sesuaikan dengan lebar sidebar */
+      margin: 0 auto !important;
       box-sizing: border-box !important;
     }
 
