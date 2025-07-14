@@ -90,7 +90,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --layer-4: 4;
       --layer-5: 5;
       --layer-6: 6;
-      --margin-right-width: 270px !important;
      
     }
     
@@ -125,6 +124,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-frame {
       background: var(--bg-1) !important;
       color: var(--text-1) !important;
+    }
+    
+    .layout.layout-wide {
+      --margin-right-width: calc(var(--margin-width) + 270px);
     }
 
     body,
