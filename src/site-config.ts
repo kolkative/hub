@@ -91,7 +91,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --layer-6: 6;
       /* --margin-left-width: 0px !important; */
       /* --margin-right-width: 0px !important; */
-      /* --margin-width: 270px !important; */
+      --margin-width: 270px !important;
     }
     
     html, body {
