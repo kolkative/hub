@@ -115,15 +115,34 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     .notion-app,
-    .notion-app-inner {
-      background: var(--bg-1) !important;
-      color: var(--text-1) !important;
-    }
-
+    .notion-app-inner,
     .notion-frame {
       background: var(--bg-1) !important;
       color: var(--text-1) !important;
       padding-left: 250px !important;
+    }
+
+    .layout.layout-wide {
+      display: grid !important;
+      grid-template-columns: 250px minmax(0, 1fr) auto !important;
+      grid-template-areas: "sidebar content content" !important;
+    }
+
+    .layout.layout-wide > .notion-selectable,
+    .layout.layout-wide > .notion-scroller,
+    .layout.layout-wide > .notion-frame,
+    .layout.layout-wide > div {
+      grid-column: 2 !important;
+    }
+
+    .layout.layout-wide::before {
+      content: '';
+      grid-column: 1;
+      background: var(--bg-2) !important;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      z-index: 1;
     }
 
     body,
@@ -361,21 +380,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
         display: block !important;
         transform: translateX(0) !important;
       }
-      
-      body.sidebar-open .notion-frame {
-        margin-left: 250px !important;
-      }
-
-      body:not(.sidebar-open) .notion-frame {
-        margin-left: 0 !important;
-        padding-left: 0 !important;
-      }
-
-      .notion-frame {
-        transition: margin-left 0.3s cubic-bezier(0.4,0,0.2,1);
-        margin-left: 0 !important;
-        padding-left: 0 !important;
-      }
 
       #x-header,
       #x-header-inner {
@@ -389,12 +393,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
         visibility: visible !important;
       }
       
-      :root {
-        --margin-left-width: unset !important;
-        --margin-right-width: unset !important;
-        --margin-width: unset !important;
-        --content-width: unset !important;
-      }
     }
 
     /* =====================
