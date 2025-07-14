@@ -134,19 +134,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       z-index: var(--layer-2) !important;
       padding: 0 0 0 0 !important;
     }
-
-   .layout.layout-full {
-      display: grid !important;
-      grid-template-columns: 0px 1fr 0px !important;
-      --margin-left-width: 0px;
-      --margin-right-width: 0px;
-      --content-width: 100%;
-    }
-
-    .layout.layout-full > * {
-      outline: 1px dashed hotpink;
-    }
-
+    
     .notion-callout-block [role="note"] > div {
       background: var(--bg-2) !important;
       color: var(--text-1) !important;
