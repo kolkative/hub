@@ -136,20 +136,31 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       grid-column: 3 !important;
     }
 
-    /* Gallery layout fix */
-    .notion-collection-view-grid {
-      justify-content: flex-start !important;
-      gap: 1rem !important;
-      padding: 0 !important;
-      margin: 0 auto !important;
+    /* Pastikan padding dalam gallery tidak menyebabkan overflow */
+    .notion-gallery-view {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+      min-width: 0 !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
     }
 
-    /* Card gallery lebih fleksibel */
-    .notion-collection-card {
-      min-width: 200px !important;
-      max-width: 1fr !important;
-      flex: 1 1 200px !important;
+    /* Atur isi grid gallery */
+    .notion-gallery-view > div {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important;
+      gap: 1rem !important;
+      justify-content: start !important;
+      box-sizing: border-box !important;
     }
+
+    /* Pastikan item card tidak melebihi kolom */
+    .notion-gallery-view > div > div {
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
 
 
     body,
