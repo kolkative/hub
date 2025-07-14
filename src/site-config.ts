@@ -125,6 +125,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-frame {
       background: var(--bg-1) !important;
       color: var(--text-1) !important;
+      padding-left: 250px !important;
     }
 
     body,
