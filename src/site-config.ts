@@ -57,9 +57,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
   // The 404 (not found) page is optional
   // If you don't have one, the default 404 page will be used
-  // fof: {
-  //  page: "",
-  //  slug: "default",
+  fof: {
+   page: "404",
+   slug: "404",
   //},
 
   // Google Font name, you can choose from https://fonts.google.com
@@ -124,6 +124,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-frame {
       background: var(--bg-1) !important;
       color: var(--text-1) !important;
+      padding-left: 250px !important;
     }
     
     .layout.layout-wide {
