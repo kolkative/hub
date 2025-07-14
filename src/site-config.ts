@@ -90,7 +90,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --layer-5: 5;
       --layer-6: 6;
       --margin-left-width: 270px !important;
-      --margin-right-width: 0px !important;
+      --margin-right-width: 20px !important;
+      --margin-width: 270px !important;
     }
     
     html, body {
@@ -404,6 +405,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
         visibility: visible !important;
       }
       
+      :root {
+        --margin-left-width: unset !important;
+        --margin-right-width: unset !important;
+        --margin-width: unset !important;
+      }
     }
 
     /* =====================
