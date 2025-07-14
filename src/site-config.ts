@@ -123,26 +123,34 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     .layout.layout-wide {
       display: grid !important;
-      grid-template-columns: 250px minmax(0, 1fr) auto !important;
-      grid-template-areas: "sidebar content content" !important;
+      grid-template-columns: 250px 2rem minmax(0, 1fr) 2rem auto !important;
+      grid-template-areas: "sidebar spacer-left content spacer-right end" !important;
+      column-gap: 2rem !important;
     }
 
+    /* Semua konten Notion ke kolom content (kolom ke-3) */
     .layout.layout-wide > .notion-selectable,
     .layout.layout-wide > .notion-scroller,
     .layout.layout-wide > .notion-frame,
     .layout.layout-wide > div {
-      grid-column: 2 !important;
+      grid-column: 3 !important;
     }
 
-    .layout.layout-wide::before {
-      content: '';
-      grid-column: 1;
-      background: var(--bg-2) !important;
-      width: 100%;
-      height: 100%;
-      position: relative;
-      z-index: 1;
+    /* Gallery layout fix */
+    .notion-collection-view-grid {
+      justify-content: flex-start !important;
+      gap: 1rem !important;
+      padding: 0 !important;
+      margin: 0 auto !important;
     }
+
+    /* Card gallery lebih fleksibel */
+    .notion-collection-card {
+      min-width: 200px !important;
+      max-width: 1fr !important;
+      flex: 1 1 200px !important;
+    }
+
 
     body,
     .notion-page-content {
@@ -172,7 +180,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       position: fixed !important;
       color: var(--text-1) !important;
       top: 0 !important;
-      left: 0 !important;
+      left: 270px !important;
       right: 0 !important;
       width: 100vw !important;
       min-width: 100vw !important;
