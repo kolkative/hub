@@ -131,10 +131,15 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     .layout {
-      grid-template-columns:
-        minmax(274px, 1fr)
-        minmax(0, var(--content-max-width, 720px))
-        minmax(24px, 1fr);
+      display: grid;
+      grid-template-columns: minmax(274px, auto) minmax(0, var(--content-max-width, 720px));
+      justify-content: center;
+    }
+
+    .layout > *:last-child {
+      max-width: var(--content-max-width, 720px);
+      padding-inline: 1rem;
+      margin-inline: auto;
     }
 
     
