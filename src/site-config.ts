@@ -89,9 +89,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --layer-4: 4;
       --layer-5: 5;
       --layer-6: 6;
-      --margin-left-width: 0px !important;
-      --margin-right-width: 0px !important;
-      --margin-width: 270px !important;
+      /* --margin-left-width: 0px !important; */
+      /* --margin-right-width: 0px !important; */
+      /* --margin-width: 270px !important; */
     }
     
     html, body {
@@ -125,20 +125,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-frame {
       background: var(--bg-1) !important;
       color: var(--text-1) !important;
-      /* Hapus padding/margin-left agar tidak konflik dengan grid */
-      padding-left: 0 !important;
-      margin-left: 0 !important;
-      max-width: 100vw !important;
-      box-sizing: border-box !important;
-      overflow-x: hidden !important;
+      padding-left: 250px !important;
     }
 
-    .layout.layout--wide {
-      /* Tambahan untuk mencegah overflow kanan saat sidebar muncul */
-      max-width: calc(100vw - 0px) !important;
-      box-sizing: border-box !important;
-      overflow-x: hidden !important;
-    }
+  
 
     body,
     .notion-page-content {
@@ -390,7 +380,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
         transition: margin-left 0.3s cubic-bezier(0.4,0,0.2,1);
         margin-left: 0 !important;
         padding-left: 0 !important;
-        max-width: 100vw !important;
       }
 
       #x-header,
