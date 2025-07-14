@@ -121,22 +121,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       color: var(--text-1) !important;
     }
 
-    .layout.layout-wide {
-      display: grid !important;
-      grid-template-columns: 250px 2rem minmax(0, 1fr) 2rem auto !important;
-      grid-template-areas: "sidebar spacer-left content spacer-right end" !important;
-      column-gap: 2rem !important;
-    }
-
-    /* Batasi lebar maksimal agar tidak overflow viewport */
-    .notion-collection-view,
-    .notion-collection_view-block {
-      max-width: calc(100vw - 300px) !important; /* sesuaikan dengan lebar sidebar */
-      margin: 0 auto !important;
-      box-sizing: border-box !important;
-    }
-
-
     body,
     .notion-page-content {
       margin-top: 60px;
@@ -165,7 +149,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       position: fixed !important;
       color: var(--text-1) !important;
       top: 0 !important;
-      left: 270px !important;
+      left: 0px !important;
       right: 0 !important;
       width: 100vw !important;
       min-width: 100vw !important;
