@@ -17,7 +17,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   // twitterHandle: '',
 
   // URL to custom favicon.ico
-  siteIcon: "https://imgur.com/ist3iHX",
+  siteIcon:
+    "https://raw.githubusercontent.com/kolkative/web/5c93cb4da6dda9758bb8312fc0bc6f7148303fc6/public/favicon.svg",
 
   // Additional safety: avoid serving extraneous Notion content from your website
   // Use the value from your Notion settings => Workspace => Settings => Domain
@@ -71,8 +72,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     ========================== */
     
     /* Light mode root */
-    
-    html {
+    html
+    .notion-html {
       --bg-main: #fff;
       --text-main: #23272f;
       --bg-sidebar: #f7f7f8;
@@ -82,7 +83,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     /* Dark mode root */
-    notion-html notion-dark-theme,
+    .notion-html notion-dark-theme,
     html.notion-dark-theme {
       --bg-main: #191b1e;
       --text-main: #f7f7f8;
