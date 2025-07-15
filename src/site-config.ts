@@ -120,6 +120,14 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       color: var(--text-1) !important;
     }
 
+    .notion-frame {
+      background: var(--bg-1) !important;
+      color: var(--text-1) !important;
+      padding-left: 250px !important; 
+      transition: padding 0.3s ease;
+    }
+    
+
     body,
     .notion-page-content {
       margin-top: 60px;
