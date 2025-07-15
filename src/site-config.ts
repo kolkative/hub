@@ -100,7 +100,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --text-2: #f1f3f5;  
       --border: #343a40;   
       --link: #4c6ef5;    
-      --hover: #495057; 
+      --hover: #495057;
+      --margin-width: 24px !important; 
     }
       
     html.light, body.light {
