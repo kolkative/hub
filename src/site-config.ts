@@ -124,7 +124,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background: var(--bg-1) !important;
     }
 
-    .notion-frame [style*='padding-left: calc(96px + env(safe-area-inset-left));'] {
+    .notion-frame [style*='padding-left: calc(250px + env(safe-area-inset-left));'] {
       background: var(--bg-1) !important;
     }
 
@@ -214,33 +214,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
         visibility: visible !important;
       }
 
-      .enhancer--tweak-accented_links .notion-link-token {
-        color: blue !important;
-      }
-  
-      
-      .enhancer--tweak-accented_links .notion-link-token {
-        color: #d9d3d2 !important;
-      }
-  
-      .notion-link-token span[style*='border-bottom:0.05em'] {
-        border: none !important;
-      }
-  
-  
-      .notion-enable-hover:not(.notion-link-token)[style*='background'] {
-        border-radius: 3px !important;
-        padding: 0px 5px !important;
-        padding-bottom: 2px !important;
-      }
-
-      .notion-timeline-item.notion-page-block.notion-selectable > [href] > .notion-focusable {
-        background-color: rgb(54, 43, 28) !important;
-      }
-  
-      .notion-body .notion-enable-hover[style*='background:']:not([style*='border-radius']):not([style*='box-shadow']) {
-        border-radius: 3px !important;
-      }
   
 
       /* ==================
@@ -258,6 +231,17 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
         display: none !important;
         pointer-events: none !important;
       }
+    }
+
+    .notion-search .resultsPane {
+      display: block;
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+    
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .notion-search .resultsPane::-webkit-scrollbar {
+      display: none;
     }
 
     .notion-collection_view-block.notion-selectable:nth-of-type(9) > div:nth-of-type(1) > .notion-collection_view-block.notion-selectable > div > div:nth-of-type(1) > div:nth-of-type(1) {
@@ -320,7 +304,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: none !important;
     }
     
-
 
     /* =======================
       X-TOGGLE
