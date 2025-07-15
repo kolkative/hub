@@ -90,6 +90,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --layer-4: 4;
       --layer-5: 5;
       --layer-6: 6;
+      --margin-width: 24px !important; 
     }
     
     html, body {
@@ -101,7 +102,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --border: #343a40;   
       --link: #4c6ef5;    
       --hover: #495057;
-      --margin-width: 24px !important; 
     }
       
     html.light, body.light {
