@@ -115,12 +115,29 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     .notion-app,
-    .notion-app-inner,
-    .notion-frame {
+    .notion-app-inner {
       background: var(--bg-1) !important;
       color: var(--text-1) !important;
     }
 
+    .notion-scroller.vertical.horizontal > div:nth-child(2) {
+      background: var(--bg-1) !important;
+    }
+
+    .notion-frame [style*='padding-left: calc(96px + env(safe-area-inset-left));'] {
+      background: var(--bg-1) !important;
+    }
+
+    div.notion-frame > div.notion-scroller > div{
+      background-color: var(--bg-1) !important;
+    }
+
+    ::-webkit-scrollbar {
+      width: 0 !important;
+      height: 0 !important;
+    }
+
+    
     body,
     .notion-page-content {
       margin-top: 60px;
@@ -128,18 +145,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background: var(--bg-1) !important;
       z-index: var(--layer-2) !important;
       padding: 0 0 0 0 !important;
-    }
-
-    .layout {
-      display: grid;
-      grid-template-columns: minmax(274px, auto) minmax(0, var(--content-max-width, 720px));
-      justify-content: center;
-    }
-
-    .layout > *:last-child {
-      max-width: var(--content-max-width, 720px);
-      padding-inline: 1rem;
-      margin-inline: auto;
     }
 
     
@@ -162,7 +167,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       position: fixed !important;
       color: var(--text-1) !important;
       top: 0 !important;
-      left: 0px !important;
+      left: 0 !important;
       right: 0 !important;
       width: 100vw !important;
       min-width: 100vw !important;
@@ -176,10 +181,123 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       box-sizing: border-box !important;
     }
 
-    /* ==================
-      HIDE & REMOVED
-    ===================== */
+    .notion-page-mention-token [style="width:1em;display:inline-block;vertical-align:-0.15em;margin-right:0.1em"] {
+      width: 2px !important;
+    }
 
+    /* =====================
+    RESPONSIVE: MOBILE VIEW
+    ===================== */
+    
+    @media (max-width: 900px) {
+
+      #x-sidebar {
+        display: none !important;
+        transform: translateX(-100%) !important;
+        transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+      }
+      
+      body.sidebar-open #x-sidebar {
+        display: block !important;
+        transform: translateX(0) !important;
+      }
+
+      #x-header,
+      #x-header-inner {
+        justify-content: center !important;
+        align-items: center;
+      }
+
+      #x-burger {
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+
+      .enhancer--tweak-accented_links .notion-link-token {
+        color: blue !important;
+      }
+  
+      
+      .enhancer--tweak-accented_links .notion-link-token {
+        color: #d9d3d2 !important;
+      }
+  
+      .notion-link-token span[style*='border-bottom:0.05em'] {
+        border: none !important;
+      }
+  
+  
+      .notion-enable-hover:not(.notion-link-token)[style*='background'] {
+        border-radius: 3px !important;
+        padding: 0px 5px !important;
+        padding-bottom: 2px !important;
+      }
+
+      .notion-timeline-item.notion-page-block.notion-selectable > [href] > .notion-focusable {
+        background-color: rgb(54, 43, 28) !important;
+      }
+  
+      .notion-body .notion-enable-hover[style*='background:']:not([style*='border-radius']):not([style*='box-shadow']) {
+        border-radius: 3px !important;
+      }
+  
+
+      /* ==================
+      HIDE & REMOVED
+      ===================== */
+      header,
+      .notion-header,
+      .notion-topbar,
+      .notion-topbar-mobile
+      div[role="toolbar"],
+      div[style*="position: sticky"],
+      div[style*="position: fixed"],
+      div[style*="justify-content: end"],
+      div[style*="justify-content: flex-end"] {
+        display: none !important;
+        pointer-events: none !important;
+      }
+    }
+
+    .notion-collection_view-block.notion-selectable:nth-of-type(9) > div:nth-of-type(1) > .notion-collection_view-block.notion-selectable > div > div:nth-of-type(1) > div:nth-of-type(1) {
+      display: unset !important;
+    }
+    .notion-column-block.notion-selectable > div.notion-collection_view-block.notion-selectable > div > .notion-collection_view-block.notion-selectable > div > div > div > div > div {
+      display: none !important;
+    }
+    
+    .notion-page-content > .notion-collection_view-block.notion-selectable > div > .notion-collection_view-block.notion-selectable > div > div > .notion-focusable {
+      display: none !important;
+    }
+    .notion-column-block.notion-selectable > div.notion-collection_view-block.notion-selectable > div > .notion-collection_view-block.notion-selectable > div > div > .notion-focusable {
+      display: none !important;
+    }
+    .notion-column-block.notion-selectable > div.notion-collection_view-block.notion-selectable > div > .notion-collection_view-block.notion-selectable > div > div > .notion-collection-view-item-add > div.notion-focusable {
+      display: none !important;
+    }
+    .notion-column-block.notion-selectable > div.notion-collection_view-block.notion-selectable > div > .notion-collection_view-block.notion-selectable > div > div {
+      line-height: 80% !important;
+    }
+
+    .notion-table-view-add-row,
+    .shadow-cursor-breadcrumb, .notion-breadcrumb,
+    svg.alias, .notion-collection_view-block [style="display: flex; align-items: center; margin-right: 6px;"],
+    .notion-table-view div[style *="min-height: 32px;"] .notion-record-icon[style*="margin-bottom: -1px; margin-right: 4px;"] {
+      display: none !important;
+    }
+    
+    div[role="button"][aria-label="Filter"],
+    div[role="button"][aria-label="Sort"],
+    div[role="button"][aria-label="View options"],
+    div[role="button"][aria-label="Layout settings"] {
+      display: none !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      opacity: 0 !important;
+    }
+
+    header,
     .toggle-mode,
     .notion-page-controls,
     .notion-topbar,
@@ -188,6 +306,17 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-callout-block [role="note"] > div:empty,
     div[style*="min-height: 44px"],
     .notion-table-view div[style *="min-height: 32px;"] .notion-record-icon[style*="margin-bottom: -1px; margin-right: 4px;"] {
+      display: none !important;
+    }
+
+    .notion-gallery-view
+      .notion-selectable.notion-collection_view-block
+      div
+      + [role="button"],
+    .notion-gallery-view
+      .notion-selectable.notion-collection_view_page-block
+      div
+      + [role="button"] {
       display: none !important;
     }
     
@@ -353,36 +482,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       vertical-align: middle;
     }
 
-    /* =====================
-    RESPONSIVE: MOBILE VIEW
-    ===================== */
-    
-    @media (max-width: 900px) {
-
-      #x-sidebar {
-        display: none !important;
-        transform: translateX(-100%) !important;
-        transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
-      }
-      
-      body.sidebar-open #x-sidebar {
-        display: block !important;
-        transform: translateX(0) !important;
-      }
-
-      #x-header,
-      #x-header-inner {
-        justify-content: center !important;
-        align-items: center;
-      }
-
-      #x-burger {
-        display: flex !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-      }
-      
-    }
 
     /* =====================
       X-BURGER
