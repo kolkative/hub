@@ -186,6 +186,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       
       body.sidebar-open #x-sidebar {
         display: block !important;
+        padding-left: 270px !important;
         transform: translateX(0) !important;
       }
 
