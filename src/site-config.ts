@@ -167,6 +167,46 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       box-sizing: border-box !important;
     }
 
+    .notion-gallery .notion-page-link > .notion-page-title {
+      max-width: unset;
+    }
+    .notion-gallery-grid .notion-page-title-text {
+      font-size: unset;
+    }
+    .notion-gallery img {
+      object-fit: contain !important;
+      background: transparent;
+    }
+
+    .notion-collection-column-title-body {
+      display: inline-block;
+      height: auto;
+      vertical-align: middle;
+    }
+    .notion-collection-column-title {
+      display: initial !important;
+      line-height: 1;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .notion-table-header {
+      position: relative;
+    }
+    .notion-table {
+      min-width: 0;
+      width: 100vw;
+    }
+    .notion-collection-column-title-icon {
+      height: 100%;
+      vertical-align: middle;
+    }
+    .notion-table-header-placeholder {
+      height: 0;
+    }
+    
+    
+
     /* =====================
     RESPONSIVE: MOBILE VIEW
     ===================== */
@@ -184,7 +224,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       }
 
       body.sidebar-open .notion-frame {
-        padding-left: 250px !important; 
+        margin-left: 250px !important; 
         transition: padding 0.3s ease;
       }
       
