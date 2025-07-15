@@ -178,6 +178,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
         transform: translateX(-100%) !important;
         transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
       }
+
+      .notion-frame {
+        padding-left: unset !important; 
+        transition: padding 0.3s ease;
+      }
       
       body.sidebar-open #x-sidebar {
         display: block !important;
