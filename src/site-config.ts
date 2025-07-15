@@ -115,7 +115,25 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     .layout {
-      --margin-width: 24px !important;
+      display: grid !important;
+      grid-template-columns:
+        minmax(250px, auto)           /* Sidebar */
+        minmax(0, var(--content-width, 720px))  /* Konten utama */
+        minmax(16px, 1fr);            /* Margin kanan */
+      gap: 0;
+    }
+  
+    .layout > *:first-child {
+      grid-column: 1;
+      min-width: 250px;
+    }
+  
+    .layout > *:nth-child(2) {
+      grid-column: 2;
+    }
+  
+    .layout > *:nth-child(3) {
+      grid-column: 3;
     }
 
     .notion-app,
