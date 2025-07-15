@@ -205,11 +205,14 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
         padding-left: unset !important; 
         transition: padding 0.3s ease;
       }
+
+      body.sidebar-open .notion-frame {
+        display: block !important;
+        transform: translateX(0) !important;
+      }
       
       body.sidebar-open #x-sidebar {
-        display: block !important;
-        padding-left: 270px !important;
-        transform: translateX(0) !important;
+        padding-left: 250px !important; 
       }
 
       #x-header,
@@ -229,7 +232,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       /* ==================
       HIDE & REMOVED
       ===================== */
-      header,
+      
       .notion-header,
       .notion-topbar,
       .notion-topbar-mobile
