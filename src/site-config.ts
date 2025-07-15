@@ -114,28 +114,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --hover: #dee2e6; 
     }
 
-    .layout {
-      display: grid !important;
-      grid-template-columns:
-        minmax(250px, auto)           /* Sidebar */
-        minmax(0, var(--content-width, 720px))  /* Konten utama */
-        minmax(16px, 1fr);            /* Margin kanan */
-      gap: 0;
-    }
-  
-    .layout > *:first-child {
-      grid-column: 1;
-      min-width: 250px;
-    }
-  
-    .layout > *:nth-child(2) {
-      grid-column: 2;
-    }
-  
-    .layout > *:nth-child(3) {
-      grid-column: 3;
-    }
-
     .notion-app,
     .notion-app-inner {
       background: var(--bg-1) !important;
@@ -203,16 +181,16 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
       .notion-frame {
         padding-left: unset !important; 
-        transition: padding 0.3s ease;
       }
 
       body.sidebar-open .notion-frame {
-        display: block !important;
-        transform: translateX(0) !important;
+        padding-left: 250px !important; 
+        transition: padding 0.3s ease;
       }
       
       body.sidebar-open #x-sidebar {
-        padding-left: 250px !important; 
+        display: block !important;
+        transform: translateX(0) !important;
       }
 
       #x-header,
