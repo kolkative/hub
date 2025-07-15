@@ -120,24 +120,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       color: var(--text-1) !important;
     }
 
-    .notion-scroller.vertical.horizontal > div:nth-child(2) {
-      background: var(--bg-1) !important;
-    }
-
-    .notion-frame [style*='padding-left: calc(250px + env(safe-area-inset-left));'] {
-      background: var(--bg-1) !important;
-    }
-
-    div.notion-frame > div.notion-scroller > div{
-      background-color: var(--bg-1) !important;
-    }
-
-    ::-webkit-scrollbar {
-      width: 0 !important;
-      height: 0 !important;
-    }
-
-    
     body,
     .notion-page-content {
       margin-top: 60px;
@@ -153,10 +135,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       color: var(--text-1) !important;
       border: var(--border-size-1) solid var(--border) !important;
       border-radius: var(--radius-conditional-3) !important;
-      font-family: 'Space Gotesk', sans-serif !important;
-      font-weight: 500 !important;
-      font-size: 1rem !important;
-      line-height: 1.5 !important;
       text-decoration: none !important;
       box-shadow: 2px 2px 0 #000000 !important;
       transition: all 0.15s ease-in-out !important;
@@ -179,10 +157,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       padding: 18px 0px 18px 24px !important;
       border-bottom: var(--border-size-1) solid var(--border);
       box-sizing: border-box !important;
-    }
-
-    .notion-page-mention-token [style="width:1em;display:inline-block;vertical-align:-0.15em;margin-right:0.1em"] {
-      width: 2px !important;
     }
 
     /* =====================
@@ -223,11 +197,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       .notion-header,
       .notion-topbar,
       .notion-topbar-mobile
-      div[role="toolbar"],
-      div[style*="position: sticky"],
-      div[style*="position: fixed"],
-      div[style*="justify-content: end"],
-      div[style*="justify-content: flex-end"] {
+      div[role="toolbar"] {
         display: none !important;
         pointer-events: none !important;
       }
@@ -244,33 +214,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: none;
     }
 
-    .notion-collection_view-block.notion-selectable:nth-of-type(9) > div:nth-of-type(1) > .notion-collection_view-block.notion-selectable > div > div:nth-of-type(1) > div:nth-of-type(1) {
-      display: unset !important;
-    }
-    .notion-column-block.notion-selectable > div.notion-collection_view-block.notion-selectable > div > .notion-collection_view-block.notion-selectable > div > div > div > div > div {
-      display: none !important;
-    }
-    
-    .notion-page-content > .notion-collection_view-block.notion-selectable > div > .notion-collection_view-block.notion-selectable > div > div > .notion-focusable {
-      display: none !important;
-    }
-    .notion-column-block.notion-selectable > div.notion-collection_view-block.notion-selectable > div > .notion-collection_view-block.notion-selectable > div > div > .notion-focusable {
-      display: none !important;
-    }
-    .notion-column-block.notion-selectable > div.notion-collection_view-block.notion-selectable > div > .notion-collection_view-block.notion-selectable > div > div > .notion-collection-view-item-add > div.notion-focusable {
-      display: none !important;
-    }
-    .notion-column-block.notion-selectable > div.notion-collection_view-block.notion-selectable > div > .notion-collection_view-block.notion-selectable > div > div {
-      line-height: 80% !important;
-    }
-
-    .notion-table-view-add-row,
-    .shadow-cursor-breadcrumb, .notion-breadcrumb,
-    svg.alias, .notion-collection_view-block [style="display: flex; align-items: center; margin-right: 6px;"],
-    .notion-table-view div[style *="min-height: 32px;"] .notion-record-icon[style*="margin-bottom: -1px; margin-right: 4px;"] {
-      display: none !important;
-    }
-    
     div[role="button"][aria-label="Filter"],
     div[role="button"][aria-label="Sort"],
     div[role="button"][aria-label="View options"],
@@ -281,7 +224,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       opacity: 0 !important;
     }
 
-    header,
     .toggle-mode,
     .notion-page-controls,
     .notion-topbar,
