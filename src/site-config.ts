@@ -166,19 +166,29 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       box-sizing: border-box !important;
     }
 
-    .notion-collection-item > div:first-child {
-      aspect-ratio: 4 / 5;
+    /* Biar rasio cover gallery 4:5 (Instagram potrait) */
+    .notion-collection-card-cover {
+      position: relative;
+      width: 100%;
+      padding-top: 125%; /* 4/5 ratio */
+      height: 0 !important;
       overflow: hidden;
     }
 
-    .notion-collection-item img {
-      object-fit: cover;
-      height: 100%;
+    .notion-collection-card-cover > div {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
+      height: 100% !important;
+      background-size: cover !important;
+      background-position: center center !important;
     }
 
+
+
     .notion-page-content {
-      margin-top: 60px
+      margin-top: 60px;
       max-width: 1200px;
       margin: 0 auto;
     }
