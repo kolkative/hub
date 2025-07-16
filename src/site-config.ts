@@ -210,6 +210,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       height: 100% !important;
     }
 
+    .notion-collection_view-grid {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)) !important;
+    }
+
+
 
 
 
