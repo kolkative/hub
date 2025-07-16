@@ -168,18 +168,18 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     /* Biar rasio cover gallery 4:5 (Instagram potrait) */
     .notion-collection-card-cover {
-      position: relative;
-      width: 100%;
-      padding-top: 125%; /* 4/5 ratio */
+      position: relative !important;
+      width: 100% !important;
+      padding-top: 125% !important; /* 4/5 ratio */
       height: 0 !important;
-      overflow: hidden;
+      overflow: hidden !important;
     }
 
     .notion-collection-card-cover > div {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
       height: 100% !important;
       background-size: cover !important;
       background-position: center center !important;
@@ -188,39 +188,39 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
 
     .notion-page-content {
-      margin-top: 60px;
-      max-width: 1200px;
-      margin: 0 auto;
+      margin-top: 60px !important;
+      max-width: 1200px !important;
+      margin: 0 auto !important;
     }
 
     .notion-table-view {
-      max-width: 960px; /* atau 100% sesuai layout */
-      margin: 0 auto;
-      overflow-x: auto;
+      max-width: 960px !important;
+      margin: 0 auto !important;
+      overflow-x: auto !important;
     }
 
     .notion-collection-view {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 16px;
+      max-width: 1000px !important;
+      margin: 0 auto !important;
+      padding: 0 16px !important;
     }
 
     
     .notion-table-view {
-      max-width: 900px; /* Atau sesuai kebutuhan */
-      margin: 0 auto;
-      overflow-x: auto;
-      border-radius: 8px;
+      max-width: 900px !important;
+      margin: 0 auto !important;
+      overflow-x: auto !important;
+      border-radius: 8px !important;
       background: var(--bg-2);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      padding: 16px 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
+      padding: 16px 8px !important;
     }
 
     /* Agar table tidak melebihi container */
     .notion-table {
-      min-width: 600px;
-      width: 100%;
-      box-sizing: border-box;
+      min-width: 600px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
     
 
