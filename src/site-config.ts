@@ -128,8 +128,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
     
 
-    body {
-      margin-top: 60px;
+    body,
+    .notion-page-content {
+      margin-top: 60px !important; 
       color: var(--text-1) !important;
       background: var(--bg-1) !important;
       z-index: var(--layer-2) !important;
@@ -187,41 +188,48 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
 
 
-    .notion-page-content {
-      margin-top: 60px !important;
-      max-width: 1200px !important;
-      margin: 0 auto !important;
+    .notion-page-content .notion-table-view {
+      max-width: 708px;
+      margin: 0 auto;
+      overflow-x: auto;
     }
 
-    .notion-table-view {
-      max-width: 960px !important;
-      margin: 0 auto !important;
-      overflow-x: auto !important;
+
+
+    .notion-table-view th,
+    .notion-table-view td {
+      min-width: 100px; /* default Notion bisa 200-300px */
+      white-space: nowrap;
     }
 
-    .notion-collection-view {
-      max-width: 1000px !important;
-      margin: 0 auto !important;
-      padding: 0 16px !important;
+
+    /* Rasio potrait Instagram (4:5) */
+    .notion-collection-card-cover {
+      position: relative;
+      width: 100%;
+      padding-top: 125%; /* 4/5 */
+      height: 0 !important;
+      overflow: hidden;
     }
 
-    
-    .notion-table-view {
-      max-width: 900px !important;
-      margin: 0 auto !important;
-      overflow-x: auto !important;
-      border-radius: 8px !important;
-      background: var(--bg-2);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
-      padding: 16px 8px !important;
+    .notion-collection-card-cover > div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100% !important;
+      background-size: cover !important;
+      background-position: center center !important;
     }
 
-    /* Agar table tidak melebihi container */
-    .notion-table {
-      min-width: 600px !important;
-      width: 100% !important;
-      box-sizing: border-box !important;
+    /* Hilangkan inline height jika ada */
+    .notion-collection-card-cover > div[style*="background-image"] {
+      height: 100% !important;
     }
+
+
+
+
     
 
     /* =====================
