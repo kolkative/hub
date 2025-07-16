@@ -186,46 +186,49 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background-position: center center !important;
     }
 
-
-
-    .notion-page-content .notion-table-view {
-      max-width: 708px;
-      margin: 0 auto;
-      overflow-x: auto;
+    /* Wrapper table */
+    .notion-page-content .notion-collection-view {
+      max-width: 708px !important;
+      margin: 0 auto !important;
+      overflow-x: auto !important;
+      background: rgba(255, 255, 255, 0.05) !important; /* bisa disesuaikan */
+      border-radius: 12px !important;
+      padding: 12px !important;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
     }
 
-
-
+    /* Biar kolom table gak lebar banget */
     .notion-table-view th,
     .notion-table-view td {
-      min-width: 100px; /* default Notion bisa 200-300px */
-      white-space: nowrap;
+      min-width: 100px !important;
+      white-space: nowrap !important;
     }
 
-
-    /* Rasio potrait Instagram (4:5) */
+    /* Kontainer cover gallery card */
     .notion-collection-card-cover {
-      position: relative;
-      width: 100%;
-      padding-top: 125%; /* 4/5 */
+      position: relative !important;
+      width: 100% !important;
+      padding-top: 125% !important;  /* 4:5 aspect ratio */
       height: 0 !important;
-      overflow: hidden;
+      overflow: hidden !important;
     }
 
+    /* Layer background image (div dengan inline background-image) */
     .notion-collection-card-cover > div {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
       height: 100% !important;
       background-size: cover !important;
       background-position: center center !important;
     }
 
-    /* Hilangkan inline height jika ada */
+    /* Hilangkan inline height keras kepala */
     .notion-collection-card-cover > div[style*="background-image"] {
       height: 100% !important;
     }
+
 
 
 
