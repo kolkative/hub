@@ -167,28 +167,43 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       box-sizing: border-box !important;
     }
 
-    .notion-gallery .notion-page-block {
+    /* Bungkus gambar agar rasio portrait 4:5 */
+    .notion-gallery-view .notion-selectable.notion-collection_view-block {
+      aspect-ratio: 4 / 5;
       position: relative;
-      width: 100%;
-      padding-top: 125%; /* 4:5 ratio (5/4 = 1.25) */
       overflow: hidden;
+      min-width: 0;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
     }
-    .notion-gallery img {
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
+
+    /* Paksa gambar cover memenuhi area dan crop sesuai rasio */
+    .notion-gallery-view .notion-selectable.notion-collection_view-block img {
+      width: 100% !important;
+      height: 100% !important;
       object-fit: cover !important;
+      aspect-ratio: 4 / 5 !important;
+      position: absolute;
+      top: 0; left: 0;
     }
     
     .notion-table-view {
-      max-width: 100vw; /* atau misal 900px */
-      overflow-x: auto;
+      max-width: 900px; /* Atau sesuai kebutuhan */
       margin: 0 auto;
-      border-radius: 8px; /* opsional */
-      background: var(--bg-2); /* opsional */
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* opsional */
+      overflow-x: auto;
+      border-radius: 8px;
+      background: var(--bg-2);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      padding: 16px 8px;
     }
+
+    /* Agar table tidak melebihi container */
     .notion-table {
-      min-width: 600px; /* agar tidak terlalu kecil */
+      min-width: 600px;
+      width: 100%;
+      box-sizing: border-box;
     }
     
 
