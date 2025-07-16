@@ -167,27 +167,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       box-sizing: border-box !important;
     }
 
-    /* Biar rasio cover gallery 4:5 (Instagram potrait) */
-    .notion-collection-card-cover {
-      position: relative !important;
-      width: 100% !important;
-      padding-top: 125% !important; /* 4/5 ratio */
-      height: 0 !important;
-      overflow: hidden !important;
-    }
-
-    .notion-collection-card-cover > div {
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
-      background-size: cover !important;
-      background-position: center center !important;
-    }
-
     /* Wrapper table */
-    .notion-page-content .notion-collection-view {
+    .notion-page-content .notion-table-view {
       max-width: 708px !important;
       margin: 0 auto !important;
       overflow-x: auto !important;
