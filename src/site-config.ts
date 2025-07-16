@@ -167,44 +167,29 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       box-sizing: border-box !important;
     }
 
-    .notion-gallery .notion-page-link > .notion-page-title {
-      max-width: unset;
-    }
-    .notion-gallery-grid .notion-page-title-text {
-      font-size: unset;
+    .notion-gallery .notion-page-block {
+      position: relative;
+      width: 100%;
+      padding-top: 125%; /* 4:5 ratio (5/4 = 1.25) */
+      overflow: hidden;
     }
     .notion-gallery img {
-      object-fit: contain !important;
-      background: transparent;
-    }
-
-    .notion-collection-column-title-body {
-      display: inline-block;
-      height: auto;
-      vertical-align: middle;
-    }
-    .notion-collection-column-title {
-      display: initial !important;
-      line-height: 1;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    .notion-table-header {
-      position: relative;
-    }
-    .notion-table {
-      min-width: 0;
-      width: 100vw;
-    }
-    .notion-collection-column-title-icon {
-      height: 100%;
-      vertical-align: middle;
-    }
-    .notion-table-header-placeholder {
-      height: 0;
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      object-fit: cover !important;
     }
     
+    .notion-table-view {
+      max-width: 100vw; /* atau misal 900px */
+      overflow-x: auto;
+      margin: 0 auto;
+      border-radius: 8px; /* opsional */
+      background: var(--bg-2); /* opsional */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* opsional */
+    }
+    .notion-table {
+      min-width: 600px; /* agar tidak terlalu kecil */
+    }
     
 
     /* =====================
