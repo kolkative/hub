@@ -128,8 +128,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
     
 
-    body,
-    .notion-page-content {
+    body {
       margin-top: 60px;
       color: var(--text-1) !important;
       background: var(--bg-1) !important;
@@ -167,27 +166,35 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       box-sizing: border-box !important;
     }
 
-    /* Bungkus gambar agar rasio portrait 4:5 */
-    .notion-gallery-view .notion-selectable.notion-collection_view-block {
+    .notion-collection-item > div:first-child {
       aspect-ratio: 4 / 5;
-      position: relative;
       overflow: hidden;
-      min-width: 0;
-      min-height: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
     }
 
-    /* Paksa gambar cover memenuhi area dan crop sesuai rasio */
-    .notion-gallery-view .notion-selectable.notion-collection_view-block img {
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: cover !important;
-      aspect-ratio: 4 / 5 !important;
-      position: absolute;
-      top: 0; left: 0;
+    .notion-collection-item img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
     }
+
+    .notion-page-content {
+      margin-top: 60px
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .notion-table-view {
+      max-width: 960px; /* atau 100% sesuai layout */
+      margin: 0 auto;
+      overflow-x: auto;
+    }
+
+    .notion-collection-view {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
     
     .notion-table-view {
       max-width: 900px; /* Atau sesuai kebutuhan */
