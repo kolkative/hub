@@ -152,11 +152,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       transition: all 0.15s ease-in-out !important;
     }
 
-    h2 {
-      font-family: var(--font-mono, monospace) !important;
-      font-size: 50px !important;
-      margin-top: -8px !important;
-      margin-bottom: -8px !important;
+    h2,
+    h3 {
+      font-family: var(--font-neo-grotesque) !important;
+      font-size: 45px !important;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
       padding: 0 !important;
       gap: 0 !important;
     }
@@ -167,6 +168,14 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       margin: 0 !important;
       padding: 0 !important;
       gap: 0 !important;
+    }
+
+    h2 {
+      color: var(--brand) !important;
+    }
+
+    h3 {
+      color: var(--link) !important;
     }
 
     
@@ -796,13 +805,53 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     /* =======================
-       NOTION DIVIDER THEME COLOR
+       NOTION DIVIDER/SEPARATOR THEME COLOR
     ========================== */
-    hr {
-      border-color: var(--border) !important;
-      background: var(--border) !important;
+    div[role="separator"] {
+      border-bottom: 1px solid var(--border) !important;
+      background: none !important;
     }
 
+    /* =======================
+       COLLECTION VIEW TABLIST & TABLE HEADER THEME
+    ========================== */
+    .notion-collection-view-tabs,
+    .notion-collection-view-tabs [role="tablist"] {
+      background: var(--bg-2) !important;
+      color: var(--text-1) !important;
+      border-radius: 12px !important;
+      border: 1px solid var(--border) !important;
+      box-shadow: none !important;
+      padding: 4px 8px !important;
+    }
+    .notion-collection-view-tabs [role="tab"] {
+      background: transparent !important;
+      color: var(--text-1) !important;
+      border: none !important;
+      font-size: 13px !important;
+      font-weight: 500 !important;
+      border-radius: 8px !important;
+      margin: 0 2px !important;
+      padding: 6px 12px !important;
+      transition: background 0.2s, color 0.2s;
+    }
+    .notion-collection-view-tabs [role="tab"][aria-selected="true"] {
+      background: var(--link) !important;
+      color: #fff !important;
+    }
+    .notion-collection-view-tabs [role="tab"]:hover {
+      background: var(--hover) !important;
+      color: var(--text-1) !important;
+    }
+    /* Table view header cell */
+    .notion-table-view-header-cell {
+      background: var(--bg-2) !important;
+      color: var(--text-1) !important;
+      border-bottom: 2px solid var(--border) !important;
+      font-weight: 600 !important;
+      font-size: 14px !important;
+      box-shadow: none !important;
+    }
 
   `,
   customHeadJS: googleTag(GOOGLE_TAG_ID),
