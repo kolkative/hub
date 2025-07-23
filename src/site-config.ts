@@ -152,10 +152,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     h2 {
+      font-family: 'Bebas Neue', Bebas, Arial, sans-serif !important;
       color: var(--text-1) !important;
       font-size: 85px !important;
-      gap: 0 !important;
-      padding: 0 !important;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
     }
 
     
@@ -511,7 +512,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     #x-toggle {
       position: fixed;
-      top: 14px;
+      top: 15px;
       right: 18px;
       z-index: var(--layer-6) !important;
       display: flex;
@@ -680,7 +681,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: flex;
       align-items: center;
       gap: 8px;
-      padding-left: 2px !important;
+      padding-left: 4px !important;
     }
     #x-header-title {
       font-size: 1.25rem !important;
