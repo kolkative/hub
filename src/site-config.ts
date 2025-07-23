@@ -172,24 +172,26 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     h2 {
       color: var(--link) !important;
-      font-family: var(--font-monospace-code) !important;
-      letter-spacing: -1px !important;
+      font-family: var(--font-industrial) !important;
+      letter-spacing: var(--font-letterspacing-1) !important;
       text-transform: uppercase !important;
-      font-size: 45px !important;
-      margin-top: -8px !important;
-      margin-bottom: -8px !important;
+      font-size: var(--font-size-fluid-3) !important;
+      font-weight: var(--font-weight-9) !important;
+      margin-top: -10px !important;
+      margin-bottom: -10px !important;
       padding: 0 !important;
       gap: 0 !important;
     }
     
     h3 {
       color: var(--brand) !important;
-      font-family: var(--font-monospace-code) !important;
-      letter-spacing: -1px !important;
+      font-family: var(--font-industrial) !important;
+      letter-spacing: var(--font-letterspacing-1) !important;
       text-transform: uppercase !important;
-      font-size: 45px !important;
-      margin-top: -8px !important;
-      margin-bottom: -8px !important;
+      font-size: var(--font-size-fluid-3) !important;
+      font-weight: var(--font-weight-9) !important;
+      margin-top: -10px !important;
+      margin-bottom: -10px !important;
       padding: 0 !important;
       gap: 0 !important;
     }
@@ -381,16 +383,14 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       height: 0 !important;
     }
     
-    svg.viewTable,
-    svg.dragHandle,
-    .notion-search .resultsPane::-webkit-scrollbar {
-      display: none;
-    }
 
+    .notion-search .resultsPane::-webkit-scrollbar,
     div[role="button"][aria-label="Filter"],
     div[role="button"][aria-label="Sort"],
     div[role="button"][aria-label="View options"],
-    div[role="button"][aria-label="Layout settings"] {
+    div[role="button"][aria-label="Layout settings"],
+    .notion-gallery-view .notion-selectable.notion-collection_view-block div + [role="button"],
+    .notion-gallery-view .notion-selectable.notion-collection_view_page-block div + [role="button"] {
       display: none !important;
       visibility: hidden !important;
       pointer-events: none !important;
@@ -409,11 +409,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-table-view div[style *="min-height: 32px;"] .notion-record-icon[style*="margin-bottom: -1px; margin-right: 4px;"] {
       display: none !important;
       pointer-events: none !important;
-    }
-      
-    .notion-gallery-view .notion-selectable.notion-collection_view-block div + [role="button"],
-    .notion-gallery-view .notion-selectable.notion-collection_view_page-block div + [role="button"] {
-      display: none !important;
     }
 
     /* --- Disable Tooltips --- */
@@ -822,21 +817,18 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
        COLLECTION VIEW TAB & TABLE HEADER THEME
     ========================== */
     .notion-collection-view-tab-button {
-      background: transparent !important;
+      background: var(--bg-2) !important;
       color: var(--text-1) !important;
       border: none !important;
       font-size: 13px !important;
       font-weight: 500 !important;
-      border-radius: 8px !important;
-      margin: 0 2px !important;
-      padding: 6px 12px !important;
       transition: background 0.2s, color 0.2s;
     }
 
     .notion-collection-view-tab-button > div > div {
       color: var(--text-1) !important;
     }
-      
+
     .notion-collection-view-tab-button[aria-selected="true"] > div > div {
       color: #fff !important;
     }
@@ -857,6 +849,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-weight: 600 !important;
       font-size: 14px !important;
       box-shadow: none !important;
+    }
+
+    .notion-collection-view-tab-button svg,
+    .notion-table-view-header-row svg {
+      display: none !important;
     }
 
   `,
