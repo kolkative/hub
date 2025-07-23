@@ -533,7 +533,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     #x-toggle {
       position: fixed;
-      top: 18px;
+      top: 20px;
       right: 20px;
       z-index: var(--layer-6) !important;
       display: flex;
@@ -623,7 +623,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
     #x-sidebar .sidebar-section {
       gap: 10px;
-      margin: 12px 24px 12px 24px;
+      margin: 16px 24px 12px 24px;
       font-size: 0.93rem;
       color: var(--text-2);
       letter-spacing: 1px;
