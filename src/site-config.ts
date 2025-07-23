@@ -189,9 +189,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-family: var(--font-neo-grotesque) !important;
       letter-spacing: -3px !important;
       text-transform: uppercase !important;
-      font-size: 45px !important;
+      font-size: 40px !important;
       font-weight: var(--font-weight-9) !important;
-      margin-top: -20px !important;
+      margin-top: -45px !important;
       margin-bottom: -10px !important;
       padding-top: 10px !important;
       padding-bottom: 10px !important;
