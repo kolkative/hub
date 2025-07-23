@@ -155,6 +155,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       color: var(--text-1) !important;
       font-size: 85px !important;
       gap: 0 !important;
+      padding: 0 !important;
     }
 
     
@@ -396,6 +397,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     /* --- Disable Tooltips --- */
+    [role="tooltip"],
+    .notion-tooltip,
+    .notion-link-tooltip,
     div.notion-tooltip,
     div[role="tooltip"],
     .notion-link-tooltip,
@@ -575,7 +579,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
     #x-sidebar ul {
       list-style: none;
-      padding: 0 8px 0 8px;
+      padding: 0 10px 0 10px;
       margin: 0;
       gap: 0;
     }
