@@ -400,3 +400,14 @@ new MutationObserver(() => {
 // x-burger logic moved to window.onload for consistent timing with x-toggle
 
 // Responsive handling sudah ditangani di dalam injectBurgerAndOverlay()
+
+// Inject Google Fonts Bebas Neue for h2
+(function() {
+  if (!document.getElementById('bebas-neue-font')) {
+    var link = document.createElement('link');
+    link.id = 'bebas-neue-font';
+    link.rel = 'stylesheet';
+    link.href = 'https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap';
+    document.head.appendChild(link);
+  }
+})();

@@ -157,6 +157,17 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-size: 85px !important;
       margin-top: 0 !important;
       margin-bottom: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      gap: 0 !important;
+    }
+    .notion-header-block,
+    .notion-selectable.notion-header-block,
+    .notion-header-block > div,
+    .notion-header-block > h2 {
+      margin: 0 !important;
+      padding: 0 !important;
+      gap: 0 !important;
     }
 
     
