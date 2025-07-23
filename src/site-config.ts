@@ -231,6 +231,15 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
         display: none !important;
         pointer-events: none !important;
       }
+
+      #x-toggle {
+        width: 36px !important;
+        height: 36px !important;
+      }
+      #x-toggle svg {
+        width: 24px !important;
+        height: 24px !important;
+      }
     }
 
     .notion-search .resultsPane {
@@ -521,13 +530,15 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       border-bottom: var(--border-size-1) solid var(--border);
       transition: background 0.2s;
     }
+    /* =======================
+       X-HEADER LOGO THEME SWITCH
+    ========================== */
     #x-header-logo {
-      width: 24px;
-      height: 24px;
-      color: var(--text-1);
-      object-fit: contain;
-      display: inline-block;
-      vertical-align: middle;
+      content: url('https://hub.kolkative.my.id/image/attachment%3A05bc55da-f638-4604-8c1a-9b4ad5d9f159%3AKolkative_Hub_White.png?table=block&id=239db40e-66ea-80e5-8770-fb82b100069d&spaceId=9c898b20-1510-47e1-a570-a3c00e5d8916&width=580&userId=&cache=v2');
+    }
+    html.light #x-header-logo,
+    body.light #x-header-logo {
+      content: url('https://hub.kolkative.my.id/image/attachment%3Ab4133deb-17d0-46b9-8423-5d09dac4916f%3AKolkative_Hub_Black.png?table=block&id=239db40e-66ea-80b5-a864-d20c286d89ca&spaceId=9c898b20-1510-47e1-a570-a3c00e5d8916&width=580&userId=&cache=v2');
     }
     #x-header-title {
       font-size: 14px;
@@ -580,6 +591,31 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       pointer-events: auto !important;
     }
 
+    /* =======================
+       CUSTOM: INVERTED CALLOUT BLOCK
+    ========================== */
+    .notion-callout-block[data-block-id="239db40e-66ea-8000-97f9-ccda366a839a"] [role="note"] > div,
+    .notion-callout-block[data-block-id="239db40e-66ea-807d-9931-d5de044db88d"] [role="note"] > div,
+    .notion-callout-block[data-block-id="239db40e-66ea-8029-b50d-e68c1434a141"] [role="note"] > div,
+    .notion-callout-block[data-block-id="239db40e-66ea-8026-afbd-c3d587b4d208"] [role="note"] > div {
+      background: #fff !important;
+      color: #111 !important;
+      border: var(--border-size-1) solid var(--border) !important;
+      border-radius: var(--radius-conditional-3) !important;
+      box-shadow: 2px 2px 0 #00000011 !important;
+      transition: all 0.15s ease-in-out !important;
+    }
+    html.light .notion-callout-block[data-block-id="239db40e-66ea-8000-97f9-ccda366a839a"] [role="note"] > div,
+    body.light .notion-callout-block[data-block-id="239db40e-66ea-8000-97f9-ccda366a839a"] [role="note"] > div,
+    html.light .notion-callout-block[data-block-id="239db40e-66ea-807d-9931-d5de044db88d"] [role="note"] > div,
+    body.light .notion-callout-block[data-block-id="239db40e-66ea-807d-9931-d5de044db88d"] [role="note"] > div,
+    html.light .notion-callout-block[data-block-id="239db40e-66ea-8029-b50d-e68c1434a141"] [role="note"] > div,
+    body.light .notion-callout-block[data-block-id="239db40e-66ea-8029-b50d-e68c1434a141"] [role="note"] > div,
+    html.light .notion-callout-block[data-block-id="239db40e-66ea-8026-afbd-c3d587b4d208"] [role="note"] > div,
+    body.light .notion-callout-block[data-block-id="239db40e-66ea-8026-afbd-c3d587b4d208"] [role="note"] > div {
+      background: #111 !important;
+      color: #fff !important;
+    }
   `,
   customHeadJS: googleTag(GOOGLE_TAG_ID),
   customBodyJS: PAGE_SCRIPT_JS_STRING,
