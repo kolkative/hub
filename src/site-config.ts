@@ -401,25 +401,25 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
+      width: 36px !important;
+      height: 36px !important;
+      background: none !important;
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
       cursor: pointer;
-      background: var(--bg-2) !important;
-      border: none;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-      transition: background-color 0.3s ease;
+      transition: none;
     }
-
     #x-toggle svg {
-      width: 24px;
-      height: 24px;
+      width: 24px !important;
+      height: 24px !important;
       display: block;
+      transition: filter 0.2s, fill 0.2s;
     }
-  
-    #x-toggle:hover {
-      color: var(--link);
-      background: var(--hover) !important;
+    #x-toggle:hover svg {
+      filter: brightness(1.3) drop-shadow(0 0 2px var(--link));
+      /* atau bisa juga ubah fill jika SVG pakai fill="currentColor" */
+      /* fill: var(--link); */
     }
 
     /* =======================
@@ -536,10 +536,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
        X-HEADER LOGO THEME SWITCH
     ========================== */
     #x-header-logo {
-      width: 32px;
-      height: 32px;
+      width: 24px;
+      height: 24px;
       max-width: 100%;
-      max-height: 40px;
+      max-height: 24px;
       object-fit: contain;
       display: inline-block;
       vertical-align: middle;
