@@ -817,9 +817,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
        COLLECTION VIEW TAB & TABLE HEADER THEME
     ========================== */
     .notion-collection-view-tab-button {
-      background-color: var(--bg-2) !important;
+      background-color: var(--bg-3) !important;
       color: var(--text-1) !important;
       border-radius: 20px !important;
+      padding-inline: 12px !important;
       font-size: 13px !important;
       font-weight: 500 !important;
       transition: background 0.2s, color 0.2s;
@@ -829,11 +830,13 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background-color: var(--hover) !important;
       color: var(--text-1) !important;
       border: 1px solid var(--border) !important;
+      padding-inline: 12px !important;
     }
 
     .notion-collection-view-tab-button > div > div {
       color: var(--text-1) !important;
-      background-color: var(--bg-2) !important;
+      background-color: var(--bg-3) !important;
+      padding-inline: 12px !important;
     }
 
 
