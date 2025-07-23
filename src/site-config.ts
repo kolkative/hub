@@ -173,11 +173,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     h2 {
       color: var(--link) !important;
       font-family: var(--font-neo-grotesque) !important;
-      letter-spacing: -2px !important;
+      letter-spacing: -3px !important;
       text-transform: uppercase !important;
       font-size: 40px !important;
       font-weight: var(--font-weight-9) !important;
-      margin-top: -20px !important;
+      margin-top: -45px !important;
       margin-bottom: -10px !important;
       padding-top: 10px !important;
       padding-bottom: 10px !important;
@@ -187,9 +187,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     h3 {
       color: var(--brand) !important;
       font-family: var(--font-neo-grotesque) !important;
-      letter-spacing: -2px !important;
+      letter-spacing: -3px !important;
       text-transform: uppercase !important;
-      font-size: 40px !important;
+      font-size: 45px !important;
       font-weight: var(--font-weight-9) !important;
       margin-top: -20px !important;
       margin-bottom: -10px !important;
@@ -824,6 +824,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       color: var(--text-1) !important;
       border-radius: 20px !important;
       padding-inline: 12px !important;
+      padding: 6px 12px 6px 12px !important;
       font-size: 13px !important;
       font-weight: 500 !important;
       transition: background 0.2s, color 0.2s;
@@ -834,12 +835,14 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       color: var(--text-1) !important;
       border: 1px solid var(--border) !important;
       padding-inline: 12px !important;
+      padding: 6px 12px 6px 12px !important;
     }
 
     .notion-collection-view-tab-button > div > div {
       color: var(--text-1) !important;
       background-color: var(--bg-3) !important;
       padding-inline: 12px !important;
+      padding: 6px 12px 6px 12px !important;
     }
 
 
