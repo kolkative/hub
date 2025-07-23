@@ -552,6 +552,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     /* =======================
        X-HEADER TITLE STYLE
     ========================== */
+    #x-header-title, #x-header-title .kolkative, #x-header-title .hub {
+      color: var(--text-1) !important;
+    }
     .header-logo {
       text-decoration: none !important;
       display: flex;
