@@ -102,7 +102,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --text-1: #f8f9fa;
       --text-2: #f1f3f5;  
       --border: #343a40;   
-      --link: #4c6ef5;    
+      --link: #4c6ef5; 
+      --brand:rgb(243, 30, 47);   
       --hover: #495057;
     }
       
@@ -152,12 +153,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     h2 {
-      font-family: 'Bebas Neue', Bebas, Arial, sans-serif !important;
-      color: var(--text-1) !important;
+      color: var(--link) !important;
       font-size: 85px !important;
-      margin-top: 0 !important;
-      margin-bottom: 0 !important;
-      margin: 0 !important;
+      margin-top: -4px !important;
+      margin-bottom: -4px !important;
       padding: 0 !important;
       gap: 0 !important;
     }

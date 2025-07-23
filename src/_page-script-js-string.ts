@@ -411,4 +411,14 @@ new MutationObserver(() => {
     link.href = 'https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap';
     document.head.appendChild(link);
   }
+  // Setelah font di-load, set font-family pada semua h2
+  function setH2FontFamily() {
+    document.querySelectorAll('h2').forEach(function(h2) {
+      h2.style.fontFamily = "'Bebas Neue', Bebas, Arial, sans-serif";
+    });
+  }
+  // Jalankan sekali saat load
+  setH2FontFamily();
+  // Jalankan lagi setiap 1 detik untuk handle dynamic content
+  setInterval(setH2FontFamily, 1000);
 })();</script>`
