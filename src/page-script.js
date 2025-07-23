@@ -272,7 +272,7 @@ function createSidebarNavigation() {
         '</span>Partnership</a></li>' +
         '<li><a href="/brand" class="sidebar-link" data-menu="Brand Assets"><span class="sidebar-icon">' +
         '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="10" height="10" rx="2"/></svg>' +
-        '</span>Brand Assets & Guidelines</a></li>' +
+        '</span>Brand Assets</a></li>' +
         '<li><a href="#" class="sidebar-link" data-menu="Official Blibli.com"><span class="sidebar-icon">' +
         '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 14s2-2 6-2 6 2 6 2"/><circle cx="8" cy="6" r="3"/></svg>' +
         '</span>Official Blibli.com</a></li>' +

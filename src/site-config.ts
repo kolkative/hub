@@ -151,6 +151,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       transition: all 0.15s ease-in-out !important;
     }
 
+    h2 {
+      color: var(--text-1) !important;
+      font-size: 85px !important;
+      gap: 0 !important;
+    }
+
     
     h1 {
       position: fixed !important;
@@ -178,6 +184,106 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-collection-view-tabs span,
     .notion-collection-view-tabs div {
       font-size: 13px !important;
+    }
+
+    /* --- Style for standard Text Links (Refined Navy) --- */
+    .notion-page-content a.notion-link-token {
+      display: inline-flex !important;
+      align-items: center !important;
+      text-decoration: none !important;
+      color: var(--link) !important;
+      padding: 0 20px !important;
+      margin: 2px 4px !important;
+      min-height: 30px !important;
+      background-color: var(--hover) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: var(--radius-conditional-3) !important;
+      transition: all 0.2s ease-out !important;
+    }
+
+    .notion-page-content a.notion-link-token:hover {
+      transform: translateY(-2px) scale(1.03) !important;
+      box-shadow: 2px 2px 0 #000000 !important;
+      background-color: var(--hover) !important;
+      border-color: var(--border) !important;
+    }
+
+    .notion-page-content a.notion-link-token span {
+      border-bottom: none !important;
+    }
+
+    /* --- Style for Highlighted Text Spans --- */
+    span.notion-enable-hover {
+      display: inline-flex !important;
+      align-items: center !important;
+      padding: 0 15px !important;
+      margin: 2px !important;
+      min-height: 30px !important;
+      color: var(--link) !important;
+      background-color: var(--hover) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: var(--radius-conditional-3) !important;
+      transition: all 0.2s ease-out !important;
+    }
+
+    span.notion-enable-hover:hover {
+      transform: translateY(-2px) scale(1.03) !important;
+      box-shadow: 2px 2px 0 #000000 !important;
+      background-color: var(--hover) !important;
+      border-color: var(--border) !important;
+    }
+
+    /* --- List View: V4 (Compact & Refined Navy) --- */
+    body .notion-list-view .notion-selectable.notion-page-block.notion-collection-item {
+        margin-bottom: 5px !important;
+        padding: 0 !important;
+    }
+
+    /* Target the actual link, make it a flex container */
+    body .notion-list-view .notion-selectable.notion-page-block.notion-collection-item a {
+      display: flex !important;
+      align-items: center !important;
+      padding: 0.5rem 1.1rem !important;
+      text-decoration: none !important;
+      font-size: 13px !important;
+      background-color: var(--hover) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: var(--radius-conditional-3) !important;
+      transition: all 0.2s ease-out !important;
+      width: 100% !important;
+      min-height: 34px;
+    }
+
+    body .notion-list-view .notion-selectable.notion-page-block.notion-collection-item:hover a {
+      transform: translateY(-2px);
+      box-shadow: 2px 2px 0 #000000 !important;
+      background-color: var(--hover) !important;
+      border-color: var(--border) !important;
+    }
+
+    body .notion-list-view .notion-selectable.notion-page-block.notion-collection-item a .notion-collection-row-property {
+      display: none !important;
+    }
+
+    body .notion-list-view .notion-selectable.notion-page-block.notion-collection-item a .notion-collection-row-property-title {
+      display: block !important;
+      width: 100% !important;
+    }
+
+    body .notion-list-view .notion-selectable.notion-page-block.notion-collection-item a .notion-property-title div {
+      color: var(--link) !important;
+      font-size: 12px !important;
+      padding: 0 !important;
+      white-space: nowrap !important;
+      text-overflow: ellipsis !important;
+    }
+
+    /* --- Table View: Capsule Styling --- */
+    .notion-table-view-cell:hover > div > div {
+      transform: translateY(-2px) scale(1.02) !important;
+      box-shadow: 2px 2px 0 #000000 !important;
+      background-color: var(--hover) !important;
+      border-color: var(--border) !important;
     }
 
 
@@ -273,12 +379,15 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .toggle-mode,
     .notion-page-controls,
     .notion-topbar,
+    .notion-header,
+    .notion-topbar-mobile,
     header.notion-topbar-mobile,
     .pageLinkIndicator,
     .notion-callout-block [role="note"] > div:empty,
     div[style*="min-height: 44px"],
     .notion-table-view div[style *="min-height: 32px;"] .notion-record-icon[style*="margin-bottom: -1px; margin-right: 4px;"] {
       display: none !important;
+      pointer-events: none !important;
     }
       
     .notion-gallery-view .notion-selectable.notion-collection_view-block div + [role="button"],
@@ -292,7 +401,22 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-link-tooltip,
     .notion-hoverable-token,
     .notion-page-link-indicator,
-    .notion-mention-token [role="tooltip"] {
+    .notion-mention-token [role="tooltip"],
+    a.notion-link-token + div[role="tooltip"],
+    a.notion-link-token:hover + div[role="tooltip"],
+    span.notion-enable-hover + div[role="tooltip"],
+    span.notion-enable-hover:hover + div[role="tooltip"],
+    div[role="button"][aria-label="Open in side peek"],
+    div[aria-label="Open in side peek"],
+    div[style*="Open in side peek"],
+    div[style*="uppercase"],
+    [aria-label="Open page"],
+    .notion-hoverable-token,
+    .notion-collection-item.notion-selectable [aria-haspopup="true"],
+    .notion-collection-item.notion-selectable [role="button"],
+    .notion-collection-item.notion-selectable div[style*="pointer-events"][style*="z-index"],
+    .ellipsisSmall,
+    .notion-selectable.notion-image-block [role="button"] {
       display: none !important;
       visibility: hidden !important;
       opacity: 0 !important;
@@ -451,7 +575,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
     #x-sidebar ul {
       list-style: none;
-      padding: 0 6px 0 6px;
+      padding: 0 8px 0 8px;
       margin: 0;
       gap: 0;
     }
