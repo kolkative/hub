@@ -172,28 +172,28 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     h2 {
       color: var(--link) !important;
-      font-family: var(--font-industrial) !important;
-      letter-spacing: var(--font-letterspacing-1) !important;
+      font-family: var(--font-neo-grotesque) !important;
+      letter-spacing: -2px !important;
       text-transform: uppercase !important;
       font-size: var(--font-size-fluid-3) !important;
       font-weight: var(--font-weight-9) !important;
       margin-top: -10px !important;
       margin-bottom: -10px !important;
-      padding: 0 !important;
-      gap: 0 !important;
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
     }
     
     h3 {
       color: var(--brand) !important;
-      font-family: var(--font-industrial) !important;
-      letter-spacing: var(--font-letterspacing-1) !important;
+      font-family: var(--font-neo-grotesque) !important;
+      letter-spacing: -2px !important;
       text-transform: uppercase !important;
       font-size: var(--font-size-fluid-3) !important;
       font-weight: var(--font-weight-9) !important;
       margin-top: -10px !important;
       margin-bottom: -10px !important;
-      padding: 0 !important;
-      gap: 0 !important;
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
     }
 
     .notion-header-block,
