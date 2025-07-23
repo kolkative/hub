@@ -177,7 +177,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       text-transform: uppercase !important;
       font-size: 40px !important;
       font-weight: var(--font-weight-9) !important;
-      margin-top: -45px !important;
+      margin-top: -25px !important;
       margin-bottom: -10px !important;
       padding-top: 10px !important;
       padding-bottom: 10px !important;
@@ -822,16 +822,19 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-collection-view-tab-button {
       background-color: var(--bg-3) !important;
       color: var(--text-1) !important;
+      border-radius: 20px !important;
     }
 
     .notion-collection-view-tab-button:hover   {
       background-color: var(--hover) !important;
       color: var(--text-1) !important;
+      border-radius: 20px !important;
     }
 
     .notion-collection-view-tab-button > div > div {
       color: var(--text-1) !important;
       background-color: var(--bg-3) !important;
+      border-radius: 20px !important;
     }
 
 
