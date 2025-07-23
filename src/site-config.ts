@@ -832,14 +832,15 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       padding: 6px 12px !important;
       transition: background 0.2s, color 0.2s;
     }
-    .notion-collection-view-tab-button[aria-selected="true"] {
-      background: var(--link) !important;
-      color: #fff !important;
-    }
-    .notion-collection-view-tab-button:hover {
-      background: var(--hover) !important;
+
+    .notion-collection-view-tab-button > div > div {
       color: var(--text-1) !important;
     }
+      
+    .notion-collection-view-tab-button[aria-selected="true"] > div > div {
+      color: #fff !important;
+    }
+
     /* Table view header row */
     .notion-table-view-header-row {
       background: var(--bg-2) !important;
