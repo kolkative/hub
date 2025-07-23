@@ -153,10 +153,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     h2 {
-      color: var(--link) !important;
-      font-size: 40px !important;
-      margin-top: -10px !important;
-      margin-bottom: -10px !important;
+      font-family: var(--font-mono, monospace) !important;
+      font-size: 50px !important;
+      margin-top: -8px !important;
+      margin-bottom: -8px !important;
       padding: 0 !important;
       gap: 0 !important;
     }
@@ -346,12 +346,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       }
 
       #x-toggle {
-        width: 24px !important;
-        height: 24px !important;
+        width: 20px !important;
+        height: 20px !important;
       }
       #x-toggle svg {
-        width: 24px !important;
-        height: 24px !important;
+        width: 20px !important;
+        height: 20px !important;
       }
     }
 
@@ -522,14 +522,14 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     #x-toggle {
       position: fixed;
-      top: 15px;
-      right: 18px;
+      top: 16px;
+      right: 20px;
       z-index: var(--layer-6) !important;
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 24px !important;
-      height: 24px !important;
+      width: 20px !important;
+      height: 20px !important;
       background: none !important;
       border: none !important;
       border-radius: 0 !important;
@@ -538,12 +538,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       transition: none;
     }
     #x-toggle svg {
-      width: 24px !important;
-      height: 24px !important;
-      min-width: 24px !important;
-      min-height: 24px !important;
-      max-width: 24px !important;
-      max-height: 24px !important;
+      width: 20px !important;
+      height: 20px !important;
+      min-width: 20px !important;
+      min-height: 20px !important;
+      max-width: 20px !important;
+      max-height: 20px !important;
       display: block !important;
       transition: filter 0.2s, fill 0.2s;
     }
@@ -691,7 +691,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: flex;
       align-items: center;
       gap: 8px;
-      padding-left: 4px !important;
+      padding-left: 10px !important;
     }
     #x-header-title {
       font-size: 1.25rem !important;

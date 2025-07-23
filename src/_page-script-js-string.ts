@@ -397,28 +397,4 @@ new MutationObserver(() => {
   }
 }).observe(document, {subtree: true, childList: true});
 
-
-// x-burger logic moved to window.onload for consistent timing with x-toggle
-
-// Responsive handling sudah ditangani di dalam injectBurgerAndOverlay()
-
-// Inject Google Fonts Bebas Neue for h2
-(function() {
-  if (!document.getElementById('bebas-neue-font')) {
-    var link = document.createElement('link');
-    link.id = 'bebas-neue-font';
-    link.rel = 'stylesheet';
-    link.href = 'https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap';
-    document.head.appendChild(link);
-  }
-  // Setelah font di-load, set font-family pada semua h2 dengan !important
-  function setH2FontFamily() {
-    document.querySelectorAll('h2').forEach(function(h2) {
-      h2.style.setProperty('font-family', "'Bebas Neue', Bebas, Arial, sans-serif", 'important');
-    });
-  }
-  // Jalankan sekali saat load
-  setH2FontFamily();
-  // Jalankan lagi setiap 1 detik untuk handle dynamic content
-  setInterval(setH2FontFamily, 1000);
-})();</script>`
+</script>`
