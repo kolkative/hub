@@ -818,18 +818,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     /* =======================
-       COLLECTION VIEW TABLIST & TABLE HEADER THEME
+       COLLECTION VIEW TAB & TABLE HEADER THEME
     ========================== */
-    .notion-collection-view-tabs,
-    .notion-collection-view-tabs [role="tablist"] {
-      background: var(--bg-2) !important;
-      color: var(--text-1) !important;
-      border-radius: 12px !important;
-      border: 1px solid var(--border) !important;
-      box-shadow: none !important;
-      padding: 4px 8px !important;
-    }
-    .notion-collection-view-tabs [role="tab"] {
+    .notion-collection-view-tab-button {
       background: transparent !important;
       color: var(--text-1) !important;
       border: none !important;
@@ -840,15 +831,23 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       padding: 6px 12px !important;
       transition: background 0.2s, color 0.2s;
     }
-    .notion-collection-view-tabs [role="tab"][aria-selected="true"] {
+    .notion-collection-view-tab-button[aria-selected="true"] {
       background: var(--link) !important;
       color: #fff !important;
     }
-    .notion-collection-view-tabs [role="tab"]:hover {
+    .notion-collection-view-tab-button:hover {
       background: var(--hover) !important;
       color: var(--text-1) !important;
     }
-    /* Table view header cell */
+    /* Table view header row */
+    .notion-table-view-header-row {
+      background: var(--bg-2) !important;
+      color: var(--text-1) !important;
+      border-bottom: 2px solid var(--border) !important;
+      font-weight: 600 !important;
+      font-size: 14px !important;
+      box-shadow: none !important;
+    }
     .notion-table-view-header-cell {
       background: var(--bg-2) !important;
       color: var(--text-1) !important;
