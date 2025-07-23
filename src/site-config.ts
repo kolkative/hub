@@ -626,12 +626,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-callout-block[data-block-id="239db40e-66ea-8029-b50d-e68c1434a141"] [role="note"] > div,
     .notion-callout-block[data-block-id="239db40e-66ea-809c-b445-d1dfc445b9e8"] [role="note"] > div,
     .notion-callout-block[data-block-id="239db40e-66ea-8026-afbd-c3d587b4d208"] [role="note"] > div {
-      background: #fff !important;
-      color: #111 !important;
-      border: var(--border-size-1) solid var(--border) !important;
-      border-radius: var(--radius-conditional-3) !important;
-      box-shadow: 2px 2px 0 #00000011 !important;
-      transition: all 0.15s ease-in-out !important;
+      background: --gray-3 !important;
+      color: --gray-10 !important;
     }
     html.light .notion-callout-block[data-block-id="239db40e-66ea-8004-abef-e909b19c8663"] [role="note"] > div,
     body.light .notion-callout-block[data-block-id="239db40e-66ea-8004-abef-e909b19c8663"] [role="note"] > div,
@@ -649,21 +645,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     body.light .notion-callout-block[data-block-id="239db40e-66ea-80b2-a092-d31288abc5cd"] [role="note"] > div,
     html.light .notion-callout-block[data-block-id="239db40e-66ea-801e-af96-f155a60e86af"] [role="note"] > div,
     body.light .notion-callout-block[data-block-id="239db40e-66ea-801e-af96-f155a60e86af"] [role="note"] > div {
-      background: #111 !important;
-      color: #fff !important;
+      background: --gray-10 !important;
+      color: --gray-3 !important;
     }
 
-    /* =======================
-       IMAGE CAPTION THEME COLOR
-    ========================== */
-    .notion-page-content [role="figure"] [role="textbox"] {
-      color: rgba(255,255,255,0.7) !important;
-      background: none !important;
-    }
-    html.light .notion-page-content [role="figure"] [role="textbox"],
-    body.light .notion-page-content [role="figure"] [role="textbox"] {
-      color: rgba(0,0,0,0.7) !important;
-    }
   `,
   customHeadJS: googleTag(GOOGLE_TAG_ID),
   customBodyJS: PAGE_SCRIPT_JS_STRING,
