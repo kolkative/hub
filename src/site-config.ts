@@ -627,7 +627,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-callout-block[data-block-id="239db40e-66ea-8000-97f9-ccda366a839a"] [role="note"] > div,
     .notion-callout-block[data-block-id="239db40e-66ea-807d-9931-d5de044db88d"] [role="note"] > div,
     .notion-callout-block[data-block-id="239db40e-66ea-8029-b50d-e68c1434a141"] [role="note"] > div,
-    .notion-callout-block[data-block-id="239db40e-66ea-809c-b445-d1dfc445b9e8"] [role="note"] > div,
+    .notion-callout-block[data-block-id="239db40e-66ea-8000-9f99-ccda366a839a"] [role="note"] > div,
     .notion-callout-block[data-block-id="239db40e-66ea-8026-afbd-c3d587b4d208"] [role="note"] > div {
       background: #f8f9fa !important;
       color: #16191d !important;
@@ -636,16 +636,17 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       box-shadow: 2px 2px 0 #00000011 !important;
       transition: all 0.15s ease-in-out !important;
     }
-    html.light .notion-callout-block[data-block-id="239db40e-66ea-8004-abef-e909b19c8663"] [role="note"] > div,
-    body.light .notion-callout-block[data-block-id="239db40e-66ea-8004-abef-e909b19c8663"] [role="note"] > div,
+    
     html.light .notion-callout-block[data-block-id="239db40e-66ea-8085-9160-c82da34c81a7"] [role="note"] > div,
     body.light .notion-callout-block[data-block-id="239db40e-66ea-8085-9160-c82da34c81a7"] [role="note"] > div,
     html.light .notion-callout-block[data-block-id="239db40e-66ea-8088-9bdf-c87dc76453ea"] [role="note"] > div,
     body.light .notion-callout-block[data-block-id="239db40e-66ea-8088-9bdf-c87dc76453ea"] [role="note"] > div,
-    html.light .notion-callout-block[data-block-id="239db40e-66ea-800c-b644-db1467df4f4d"] [role="note"] > div,
-    body.light .notion-callout-block[data-block-id="239db40e-66ea-800c-b644-db1467df4f4d"] [role="note"] > div,
-    html.light .notion-callout-block[data-block-id="239db40e-66ea-8004-bd97-dcbf738e45e1"] [role="note"] > div,
-    body.light .notion-callout-block[data-block-id="239db40e-66ea-8004-bd97-dcbf738e45e1"] [role="note"] > div,
+    html.light .notion-callout-block[data-block-id="239db40e-66ea-8048-be78-f2e996482907"] [role="note"] > div,
+    body.light .notion-callout-block[data-block-id="239db40e-66ea-8048-be78-f2e996482907"] [role="note"] > div,
+    html.light .notion-callout-block[data-block-id="239db40e-66ea-8088-9bdf-c87dc76453ea"] [role="note"] > div,
+    body.light .notion-callout-block[data-block-id="239db40e-66ea-8088-9bdf-c87dc76453ea"] [role="note"] > div,
+    html.light .notion-callout-block[data-block-id="239db40e-66ea-8012-b52d-c6c9bbdecfc7"] [role="note"] > div,
+    body.light .notion-callout-block[data-block-id="239db40e-66ea-8012-b52d-c6c9bbdecfc7"] [role="note"] > div,
     html.light .notion-callout-block[data-block-id="239db40e-66ea-806e-959a-d76e8c5e8ee8"] [role="note"] > div,
     body.light .notion-callout-block[data-block-id="239db40e-66ea-806e-959a-d76e8c5e8ee8"] [role="note"] > div,
     html.light .notion-callout-block[data-block-id="239db40e-66ea-80b2-a092-d31288abc5cd"] [role="note"] > div,
