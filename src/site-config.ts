@@ -175,9 +175,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-family: var(--font-neo-grotesque) !important;
       letter-spacing: -2px !important;
       text-transform: uppercase !important;
-      font-size: var(--font-size-fluid-3) !important;
+      font-size: 40px !important;
       font-weight: var(--font-weight-9) !important;
-      margin-top: -10px !important;
+      margin-top: -20px !important;
       margin-bottom: -10px !important;
       padding-top: 10px !important;
       padding-bottom: 10px !important;
@@ -188,9 +188,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-family: var(--font-neo-grotesque) !important;
       letter-spacing: -2px !important;
       text-transform: uppercase !important;
-      font-size: var(--font-size-fluid-3) !important;
+      font-size: 40px !important;
       font-weight: var(--font-weight-9) !important;
-      margin-top: -10px !important;
+      margin-top: -20px !important;
       margin-bottom: -10px !important;
       padding-top: 10px !important;
       padding-bottom: 10px !important;
@@ -199,7 +199,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-header-block,
     .notion-selectable.notion-header-block,
     .notion-header-block > div,
-    .notion-header-block > h2 {
+    .notion-header-block > h2,
+    .notion-header-block > h3  {
       margin: 0 !important;
       padding: 0 !important;
       gap: 0 !important;
