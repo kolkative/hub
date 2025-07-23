@@ -290,16 +290,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     div.notion-tooltip,
     div[role="tooltip"],
     .notion-link-tooltip,
-    .notion-link-token[aria-label],
-    .notion-link-token[role="tooltip"],
-    .notion-link-token[tabindex],
-    .notion-link-token[aria-describedby],
-    [data-tooltip],
-    [aria-label][tabindex],
-    [aria-describedby][tabindex],
     .notion-hoverable-token,
     .notion-page-link-indicator,
-    .notion-mention-token a[aria-label],
     .notion-mention-token [role="tooltip"] {
       display: none !important;
       visibility: hidden !important;
@@ -416,7 +408,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     #x-toggle svg {
       width: 24px !important;
       height: 24px !important;
-      display: block;
+      min-width: 24px !important;
+      min-height: 24px !important;
+      max-width: 24px !important;
+      max-height: 24px !important;
+      display: block !important;
       transition: filter 0.2s, fill 0.2s;
     }
     #x-toggle:hover svg {
