@@ -289,25 +289,28 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     /* --- Disable Tooltips --- */
     div.notion-tooltip,
     div[role="tooltip"],
-    div[role="button"][aria-label="Open in side peek"],
-    div[aria-label="Open in side peek"],
-    div[style*="Open in side peek"],
-    div[style*="uppercase"],
-    [aria-label="Open page"],
+    .notion-link-tooltip,
+    .notion-link-token[aria-label],
+    .notion-link-token[role="tooltip"],
+    .notion-link-token[tabindex],
+    .notion-link-token[aria-describedby],
+    [data-tooltip],
+    [aria-label][tabindex],
+    [aria-describedby][tabindex],
     .notion-hoverable-token,
-    .notion-collection-item.notion-selectable [aria-haspopup="true"],
-    .notion-collection-item.notion-selectable [role="button"],
-    .notion-collection-item.notion-selectable div[style*="pointer-events"][style*="z-index"],
-    .ellipsisSmall,
-    .notion-selectable.notion-image-block [role="button"] {
+    .notion-page-link-indicator,
+    .notion-mention-token a[aria-label],
+    .notion-mention-token [role="tooltip"] {
       display: none !important;
       visibility: hidden !important;
       opacity: 0 !important;
       pointer-events: none !important;
       height: 0 !important;
       width: 0 !important;
-      transform: none !important;
-      filter: none !important;
+      max-width: 0 !important;
+      max-height: 0 !important;
+      position: absolute !important;
+      z-index: -1 !important;
     }
 
     /* Sembunyikan banner promosi Notion di atas halaman (CSS spesifik) */
@@ -661,6 +664,14 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     body.light .notion-callout-block[data-block-id="239db40e-66ea-801e-af96-f155a60e86af"] [role="note"] > div {
       background: #16191d !important;
       color:rgba(255,255,255,0.7) !important; !important;
+    }
+
+    /* =======================
+       NOTION DIVIDER BLOCK THEME COLOR
+    ========================== */
+    .notion-divider-block {
+      border-color: var(--border) !important;
+      background: var(--border) !important;
     }
 
 
