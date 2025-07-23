@@ -84,7 +84,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --gray-9: #212529;
       --gray-10: #16191d;
       --gray-11: #0d0f12;
-      --indigo-6: #4c6ef5;
       --border-size-1: 1px;
       --radius-conditional-3: 6px;
       --layer-2: 2;
@@ -102,8 +101,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --text-1: #f8f9fa;
       --text-2: #f1f3f5;  
       --border: #343a40;   
-      --link: #4c6ef5; 
-      --brand:rgb(243, 30, 47);   
+      --link:rgb(17, 60, 231); 
+      --brand:rgb(192, 11, 26);   
       --hover: #495057;
     }
       
@@ -114,7 +113,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --text-1: #16191d;
       --text-2: #212529;   
       --border: #343a40;   
-      --link: #4c6ef5;    
+      --link:rgb(17, 60, 231); 
+      --brand:rgb(192, 11, 26); 
       --hover: #dee2e6; 
     }
 
@@ -152,33 +152,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       transition: all 0.15s ease-in-out !important;
     }
 
-    h2,
-    h3 {
-      font-family: var(--font-neo-grotesque) !important;
-      font-size: 45px !important;
-      margin-top: 0 !important;
-      margin-bottom: 0 !important;
-      padding: 0 !important;
-      gap: 0 !important;
-    }
-    .notion-header-block,
-    .notion-selectable.notion-header-block,
-    .notion-header-block > div,
-    .notion-header-block > h2 {
-      margin: 0 !important;
-      padding: 0 !important;
-      gap: 0 !important;
-    }
-
-    h2 {
-      color: var(--brand) !important;
-    }
-
-    h3 {
-      color: var(--link) !important;
-    }
-
-    
     h1 {
       position: fixed !important;
       color: var(--text-1) !important;
@@ -195,6 +168,39 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       padding: 18px 0px 18px 24px !important;
       border-bottom: var(--border-size-1) solid var(--border);
       box-sizing: border-box !important;
+    }
+
+    h2 {
+      color: var(--link) !important;
+      font-family: var(--font-rounded-sans) !important;
+      letter-spacing: -1px !important;
+      text-transform: uppercase !important;
+      font-size: 45px !important;
+      margin-top: -8px !important;
+      margin-bottom: -8px !important;
+      padding: 0 !important;
+      gap: 0 !important;
+    }
+    
+    h3 {
+      color: var(--brand) !important;
+      font-family: var(--font-rounded-sans) !important;
+      letter-spacing: -1px !important;
+      text-transform: uppercase !important;
+      font-size: 45px !important;
+      margin-top: -8px !important;
+      margin-bottom: -8px !important;
+      padding: 0 !important;
+      gap: 0 !important;
+    }
+
+    .notion-header-block,
+    .notion-selectable.notion-header-block,
+    .notion-header-block > div,
+    .notion-header-block > h2 {
+      margin: 0 !important;
+      padding: 0 !important;
+      gap: 0 !important;
     }
 
     /* Paksa font-size 13px untuk semua text di tab list */
@@ -531,7 +537,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     #x-toggle {
       position: fixed;
-      top: 16px;
+      top: 18px;
       right: 20px;
       z-index: var(--layer-6) !important;
       display: flex;
@@ -629,13 +635,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-weight: 300;
     }
     #x-sidebar .sidebar-icon {
-      width: 24px;
-      height: 24px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 2px;
-      opacity: 0.7;
+      width: 22px !important;
+      height: 22px !important;
+      min-width: 22px !important;
+      min-height: 22px !important;
+      max-width: 22px !important;
+      max-height: 22px !important;
     }
 
     #x-sidebar-overlay {
