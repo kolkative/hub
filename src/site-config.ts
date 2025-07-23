@@ -196,7 +196,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       padding: 0 20px !important;
       margin: 2px 4px !important;
       min-height: 30px !important;
-      background-color: var(--hover) !important;
       border: 1px solid var(--border) !important;
       border-radius: var(--radius-conditional-3) !important;
       transition: all 0.2s ease-out !important;
@@ -205,7 +204,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-page-content a.notion-link-token:hover {
       transform: translateY(-2px) scale(1.03) !important;
       box-shadow: 2px 2px 0 #000000 !important;
-      background-color: var(--hover) !important;
       border-color: var(--border) !important;
     }
 
@@ -221,7 +219,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       margin: 2px !important;
       min-height: 30px !important;
       color: var(--link) !important;
-      background-color: var(--hover) !important;
       border: 1px solid var(--border) !important;
       border-radius: var(--radius-conditional-3) !important;
       transition: all 0.2s ease-out !important;
@@ -230,7 +227,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     span.notion-enable-hover:hover {
       transform: translateY(-2px) scale(1.03) !important;
       box-shadow: 2px 2px 0 #000000 !important;
-      background-color: var(--hover) !important;
       border-color: var(--border) !important;
     }
 
@@ -247,7 +243,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       padding: 0.5rem 1.1rem !important;
       text-decoration: none !important;
       font-size: 13px !important;
-      background-color: var(--hover) !important;
       border: 1px solid var(--border) !important;
       border-radius: var(--radius-conditional-3) !important;
       transition: all 0.2s ease-out !important;
@@ -258,7 +253,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     body .notion-list-view .notion-selectable.notion-page-block.notion-collection-item:hover a {
       transform: translateY(-2px);
       box-shadow: 2px 2px 0 #000000 !important;
-      background-color: var(--hover) !important;
       border-color: var(--border) !important;
     }
 
@@ -283,7 +277,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-table-view-cell:hover > div > div {
       transform: translateY(-2px) scale(1.02) !important;
       box-shadow: 2px 2px 0 #000000 !important;
-      background-color: var(--hover) !important;
       border-color: var(--border) !important;
     }
 
@@ -342,8 +335,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       }
 
       #x-toggle {
-        width: 36px !important;
-        height: 36px !important;
+        width: 24px !important;
+        height: 24px !important;
       }
       #x-toggle svg {
         width: 24px !important;
@@ -518,14 +511,14 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     #x-toggle {
       position: fixed;
-      top: 16px;
-      right: 16px;
+      top: 14px;
+      right: 18px;
       z-index: var(--layer-6) !important;
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 36px !important;
-      height: 36px !important;
+      width: 24px !important;
+      height: 24px !important;
       background: none !important;
       border: none !important;
       border-radius: 0 !important;
@@ -687,6 +680,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: flex;
       align-items: center;
       gap: 8px;
+      padding-left: 2px !important;
     }
     #x-header-title {
       font-size: 1.25rem !important;
@@ -793,7 +787,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     /* =======================
        NOTION DIVIDER THEME COLOR
     ========================== */
-    .notion-divider-block > hr {
+    hr {
       border-color: var(--border) !important;
       background: var(--border) !important;
     }
