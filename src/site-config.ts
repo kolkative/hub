@@ -589,8 +589,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: none !important;
     }
     #x-sidebar nav {
-      padding: 70px 10px 10px 10px;
-      width: 100%;
+      margin-bottom: 32px !important;
     }
     #x-sidebar ul {
       list-style: none;
@@ -817,27 +816,30 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
        COLLECTION VIEW TAB & TABLE HEADER THEME
     ========================== */
     .notion-collection-view-tab-button {
-      background: var(--bg-2) !important;
+      background-color: var(--bg-2) !important;
       color: var(--text-1) !important;
-      border: none !important;
+      border-radius: 20px !important;
       font-size: 13px !important;
       font-weight: 500 !important;
       transition: background 0.2s, color 0.2s;
     }
 
-    .notion-collection-view-tab-button > div > div {
+    .notion-collection-view-tab-button:hover   {
+      background-color: var(--hover) !important;
       color: var(--text-1) !important;
+      border: 1px solid var(--border) !important;
     }
 
-    .notion-collection-view-tab-button[aria-selected="true"] > div > div {
-      color: #fff !important;
+    .notion-collection-view-tab-button > div > div {
+      color: var(--text-1) !important;
+      background-color: var(--bg-2) !important;
     }
+
 
     /* Table view header row */
     .notion-table-view-header-row {
       background: var(--bg-2) !important;
       color: var(--text-1) !important;
-      border-bottom: 2px solid var(--border) !important;
       font-weight: 600 !important;
       font-size: 14px !important;
       box-shadow: none !important;
@@ -845,7 +847,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-table-view-header-cell {
       background: var(--bg-2) !important;
       color: var(--text-1) !important;
-      border-bottom: 2px solid var(--border) !important;
       font-weight: 600 !important;
       font-size: 14px !important;
       box-shadow: none !important;
