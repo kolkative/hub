@@ -549,13 +549,31 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     body.light #x-header-logo {
       content: var(--logo-black);
     }
+    /* =======================
+       X-HEADER TITLE STYLE
+    ========================== */
+    .header-logo {
+      text-decoration: none !important;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
     #x-header-title {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--text-1);
-      letter-spacing: 0.01em;
-      margin-left: 8px;
-      vertical-align: middle;
+      font-size: 1.35rem !important;
+      display: flex;
+      align-items: baseline;
+      letter-spacing: -1px;
+      font-weight: 400;
+      gap: 4px;
+    }
+    #x-header-title .kolkative {
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-right: 2px;
+    }
+    #x-header-title .hub {
+      font-weight: 400;
+      letter-spacing: -1px;
     }
 
 
