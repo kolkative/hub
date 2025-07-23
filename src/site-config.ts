@@ -181,6 +181,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       margin-bottom: -10px !important;
       padding-top: 10px !important;
       padding-bottom: 10px !important;
+      padding-inline: 0 !important;
     }
     
     h3 {
@@ -194,10 +195,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       margin-bottom: -10px !important;
       padding-top: 10px !important;
       padding-bottom: 10px !important;
+      padding-inline: 0 !important;
     }
 
     .notion-header-block,
     .notion-selectable.notion-header-block,
+    .notion-selectable notion-sub_header-block,
     .notion-header-block > div,
     .notion-header-block > h2,
     .notion-header-block > h3  {
@@ -577,7 +580,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background: var(--bg-2) !important;
       color: var(--text-1) !important;
       z-index: var(--layer-4);
-      padding: 10px 0 10px 0;
+      padding: 70px 0 10px 0;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
