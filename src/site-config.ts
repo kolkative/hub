@@ -381,7 +381,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       height: 0 !important;
     }
     
-    /* Hide scrollbar for Chrome, Safari and Opera */
+    svg.viewTable,
+    svg.dragHandle,
     .notion-search .resultsPane::-webkit-scrollbar {
       display: none;
     }
