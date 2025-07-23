@@ -172,7 +172,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     h2 {
       color: var(--link) !important;
-      font-family: var(--font-rounded-sans) !important;
+      font-family: var(--font-monospace-code) !important;
       letter-spacing: -1px !important;
       text-transform: uppercase !important;
       font-size: 45px !important;
@@ -184,7 +184,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     
     h3 {
       color: var(--brand) !important;
-      font-family: var(--font-rounded-sans) !important;
+      font-family: var(--font-monospace-code) !important;
       letter-spacing: -1px !important;
       text-transform: uppercase !important;
       font-size: 45px !important;
@@ -213,7 +213,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-size: 13px !important;
     }
 
-    /* --- Style for standard Text Links (Refined Navy) --- */
+    /* --- Style for standard Text Links --- */
     .notion-page-content a.notion-link-token {
       display: inline-flex !important;
       align-items: center !important;
