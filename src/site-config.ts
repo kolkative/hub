@@ -31,7 +31,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     team: "208db40e66ea80199338dadddde8ebb4",
     player: "211db40e66ea80739783ffc4a44671e5",
     event: "211db40e66ea808e8ce0cfe0a9d415de",
-    karya: "217db40e66ea80019ed8d59fc830c005",
+    kabaret: "217db40e66ea80019ed8d59fc830c005",
     brand: "239db40e66ea802eacb2f022e2c19859",
     // individual teams
     epigonen: "208db40e66ea80a185c7d0c381e72752",
@@ -562,7 +562,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       gap: 8px;
     }
     #x-header-title {
-      font-size: 1.35rem !important;
+      font-size: 1.25rem !important;
       display: flex;
       align-items: baseline;
       letter-spacing: -1px;
@@ -632,7 +632,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-callout-block[data-block-id="239db40e-66ea-8094-88c6-f64cd0043f25"] [role="note"] > div,
     .notion-callout-block[data-block-id="239db40e-66ea-80e3-a644-caab898cbc5f"] [role="note"] > div {
       background: #f8f9fa !important;
-      color: #16191d !important;
+      color:rgba(0,0,0,0.7) !important;
     }
     
     html.light .notion-callout-block[data-block-id="239db40e-66ea-8085-9160-c82da34c81a7"] [role="note"] > div,
@@ -660,8 +660,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     html.light .notion-callout-block[data-block-id="239db40e-66ea-801e-af96-f155a60e86af"] [role="note"] > div,
     body.light .notion-callout-block[data-block-id="239db40e-66ea-801e-af96-f155a60e86af"] [role="note"] > div {
       background: #16191d !important;
-      color: #f8f9fa !important;
+      color:rgba(255,255,255,0.7) !important; !important;
     }
+
 
   `,
   customHeadJS: googleTag(GOOGLE_TAG_ID),
