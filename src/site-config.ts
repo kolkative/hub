@@ -455,7 +455,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
     #x-sidebar ul {
       list-style: none;
-      padding: 0 4px 0 4px;
+      padding: 0 6px 0 6px;
       margin: 0;
       gap: 0;
     }
@@ -635,7 +635,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-callout-block[data-block-id="239db40e-66ea-8094-88c6-f64cd0043f25"] [role="note"] > div,
     .notion-callout-block[data-block-id="239db40e-66ea-80e3-a644-caab898cbc5f"] [role="note"] > div {
       background: #f8f9fa !important;
-      color:rgba(0,0,0,0.7) !important;
+      color: #16191d !important;
     }
     
     html.light .notion-callout-block[data-block-id="239db40e-66ea-8085-9160-c82da34c81a7"] [role="note"] > div,
@@ -663,13 +663,13 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     html.light .notion-callout-block[data-block-id="239db40e-66ea-801e-af96-f155a60e86af"] [role="note"] > div,
     body.light .notion-callout-block[data-block-id="239db40e-66ea-801e-af96-f155a60e86af"] [role="note"] > div {
       background: #16191d !important;
-      color:rgba(255,255,255,0.7) !important; !important;
+      color: #f8f9fa !important;
     }
 
     /* =======================
-       NOTION DIVIDER BLOCK THEME COLOR
+       NOTION DIVIDER THEME COLOR
     ========================== */
-    .notion-divider-block {
+    .notion-divider-block > hr {
       border-color: var(--border) !important;
       background: var(--border) !important;
     }
