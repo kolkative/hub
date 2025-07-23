@@ -154,9 +154,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     h2 {
       color: var(--link) !important;
-      font-size: 85px !important;
-      margin-top: -4px !important;
-      margin-bottom: -4px !important;
+      font-size: 40px !important;
+      margin-top: -10px !important;
+      margin-bottom: -10px !important;
       padding: 0 !important;
       gap: 0 !important;
     }
