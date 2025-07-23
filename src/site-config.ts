@@ -823,6 +823,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background-color: var(--bg-3) !important;
       color: var(--text-1) !important;
       border-radius: 20px !important;
+      -webkit-user-select: none !important;
+      user-select: none !important;
+      /* pointer-events: auto agar tetap bisa klik kiri, tapi klik kanan dihandle JS */
     }
 
     .notion-collection-view-tab-button:hover   {
@@ -835,6 +838,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       color: var(--text-1) !important;
       background-color: var(--bg-3) !important;
       border-radius: 20px !important;
+      -webkit-user-select: none !important;
+      user-select: none !important;
     }
 
 
