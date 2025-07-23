@@ -31,7 +31,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     team: "208db40e66ea80199338dadddde8ebb4",
     player: "211db40e66ea80739783ffc4a44671e5",
     event: "211db40e66ea808e8ce0cfe0a9d415de",
-    kabaret: "217db40e66ea80019ed8d59fc830c005",
+    karya: "217db40e66ea80019ed8d59fc830c005",
+    brand: "239db40e66ea802eacb2f022e2c19859",
     // individual teams
     epigonen: "208db40e66ea80a185c7d0c381e72752",
   },
@@ -167,59 +168,17 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       box-sizing: border-box !important;
     }
 
-    /* Wrapper table */
-    .notion-page-content .notion-table-view {
-      max-width: 708px !important;
-      margin: 0 auto !important;
-      overflow-x: auto !important;
-      background: rgba(255, 255, 255, 0.05) !important; /* bisa disesuaikan */
-      border-radius: 12px !important;
-      padding: 12px !important;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
-    }
-
-    /* Biar kolom table gak lebar banget */
-    .notion-table-view th,
-    .notion-table-view td {
-      min-width: 100px !important;
-      white-space: nowrap !important;
-    }
-
-    /* Kontainer cover gallery card */
-    .notion-collection-card-cover {
-      position: relative !important;
-      width: 100% !important;
-      padding-top: 125% !important;  /* 4:5 aspect ratio */
-      height: 0 !important;
-      overflow: hidden !important;
-    }
-
-    /* Layer background image (div dengan inline background-image) */
-    .notion-collection-card-cover > div {
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
-      background-size: cover !important;
-      background-position: center center !important;
-    }
-
-    /* Hilangkan inline height keras kepala */
-    .notion-collection-card-cover > div[style*="background-image"] {
-      height: 100% !important;
-    }
-
-    .notion-collection_view-grid {
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)) !important;
+    /* Paksa font-size 13px untuk semua text di tab list */
+    body .notion-list-view .notion-selectable.notion-page-block.notion-collection-item a *,
+    .notion-collection-view-tabs [role="tab"], 
+    .notion-collection-view-tabs [role="tab"] *, 
+    .notion-selectable.notion-collection_view-block,
+    .notion-collection-view-tabs span,
+    .notion-collection-view-tabs div {
+      font-size: 13px !important;
     }
 
 
-
-
-
-
-    
 
     /* =====================
     RESPONSIVE: MOBILE VIEW
@@ -279,6 +238,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       -ms-overflow-style: none; /* IE and Edge */
       scrollbar-width: none; /* Firefox */
     }
+
+    ::-webkit-scrollbar {
+      width: 0 !important;
+      height: 0 !important;
+    }
     
     /* Hide scrollbar for Chrome, Safari and Opera */
     .notion-search .resultsPane::-webkit-scrollbar {
@@ -305,18 +269,114 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-table-view div[style *="min-height: 32px;"] .notion-record-icon[style*="margin-bottom: -1px; margin-right: 4px;"] {
       display: none !important;
     }
-
-    .notion-gallery-view
-      .notion-selectable.notion-collection_view-block
-      div
-      + [role="button"],
-    .notion-gallery-view
-      .notion-selectable.notion-collection_view_page-block
-      div
-      + [role="button"] {
+      
+    .notion-gallery-view .notion-selectable.notion-collection_view-block div + [role="button"],
+    .notion-gallery-view .notion-selectable.notion-collection_view_page-block div + [role="button"] {
       display: none !important;
     }
+
+    /* --- Disable Tooltips --- */
+    div.notion-tooltip,
+    div[role="tooltip"],
+    div[role="button"][aria-label="Open in side peek"],
+    div[aria-label="Open in side peek"],
+    div[style*="Open in side peek"],
+    div[style*="uppercase"],
+    [aria-label="Open page"],
+    .notion-hoverable-token,
+    .notion-collection-item.notion-selectable [aria-haspopup="true"],
+    .notion-collection-item.notion-selectable [role="button"],
+    .notion-collection-item.notion-selectable div[style*="pointer-events"][style*="z-index"],
+    .ellipsisSmall,
+    .notion-selectable.notion-image-block [role="button"] {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      height: 0 !important;
+      width: 0 !important;
+      transform: none !important;
+      filter: none !important;
+    }
+
+    /* Sembunyikan banner promosi Notion di atas halaman (CSS spesifik) */
+    div.autolayout-row.autolayout-fill-width.autolayout-center.autolayout-space {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      height: 0 !important;
+      min-height: 0 !important;
+      max-height: 0 !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+
+    /* --- DATABASE INTERACTION CONTROL --- */
+    /* Allow pointer events on collection items for hover, but keep cursor default */
+    .notion-collection-item.notion-selectable {
+      pointer-events: auto !important;
+      cursor: default !important;
+    }
+
+    /* Disable navigation links */
+    .notion-collection-item.notion-selectable {
+      pointer-events: auto !important;
+      cursor: default !important;
+    }
+      
+    /* Disable navigation links */
+    .notion-collection-item.notion-selectable a[href^="/"],
+    .notion-property-relation a,
+    .notion-page-link,
+    .notion-page-content a[href^="https://www.notion.so/"],
+    .notion-mention-token a,
+    .notion-collection-item.notion-selectable a {
+      pointer-events: none !important;
+      cursor: default !important;
+    }
+
+    /* ✅ Sembunyikan elemen di kanan tablist */
+    [class*="filter"],
+    [class*="sort"],
+    [class*="dropdown"],
+    [data-testid*="filter"],
+    [data-testid*="sort"],
+    [data-testid*="view"],
+    [aria-label*="Filter"],
+    [aria-label*="Sort"],
+    [aria-label*="View"],
+    [aria-label*="Options"],
+    [aria-label*="filter"],
+    [aria-label*="sort"],
+    [aria-label*="view"],
+    [aria-label*="options"],
+    .notion-collection-view-tabs [role="listbox"],
+    .notion-collection-view-tabs [aria-expanded],
+    .notion-collection-view-tabs [aria-haspopup],
+    .notion-collection-view-tabs [aria-controls],
+    .notion-collection-view-tabs button {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      height: 0 !important;
+      width: 0 !important;
+      max-height: 0 !important;
+      max-width: 0 !important;
+      transform: none !important;
+      position: absolute !important;
+      z-index: -1 !important;
+    }
+
+    /* --- BLOCK DATABASE PAGE LINKS: Prevent access to Notion page links inside collections --- */
+    .notion-collection-item.notion-selectable a[href^="/"],
+    .notion-collection-item.notion-selectable a {
+      pointer-events: none !important;
+      cursor: default !important;
+    }
     
+
 
     /* =======================
       X-TOGGLE
