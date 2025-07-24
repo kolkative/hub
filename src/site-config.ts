@@ -101,8 +101,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --text-1: #f8f9fa;
       --text-2: #f1f3f5;  
       --border: #343a40;   
-      --link:rgb(17, 60, 231); 
-      --brand:rgb(192, 11, 26);   
+      --link:rgb(40, 61, 147); 
+      --brand:rgb(195, 47, 60);   
       --hover: #495057;
     }
       
@@ -113,8 +113,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --text-1: #16191d;
       --text-2: #212529;   
       --border: #343a40;   
-      --link:rgb(17, 60, 231); 
-      --brand:rgb(192, 11, 26); 
+      --link:rgb(40, 61, 147); 
+      --brand:rgb(195, 47, 60);
       --hover: #dee2e6; 
     }
 
@@ -175,7 +175,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-family: var(--font-neo-grotesque) !important;
       letter-spacing: -3px !important;
       text-transform: uppercase !important;
-      font-size: 40px !important;
+      font-size: 30px !important;
       font-weight: var(--font-weight-9) !important;
       margin-top: -25px !important;
       margin-bottom: -10px !important;
@@ -825,7 +825,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       border-radius: 20px !important;
       -webkit-user-select: none !important;
       user-select: none !important;
-      /* pointer-events: auto agar tetap bisa klik kiri, tapi klik kanan dihandle JS */
+      pointer-events: auto !important;
     }
 
     .notion-collection-view-tab-button:hover   {
@@ -834,13 +834,13 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       border-radius: 20px !important;
     }
 
-    .notion-collection-view-tab-button > div > div {
+    /* .notion-collection-view-tab-button > div > div {
       color: var(--text-1) !important;
       background-color: var(--bg-3) !important;
       border-radius: 20px !important;
       -webkit-user-select: none !important;
       user-select: none !important;
-    }
+    } */
 
 
     /* Table view header row */

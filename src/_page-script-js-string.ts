@@ -397,11 +397,14 @@ new MutationObserver(() => {
   }
 }).observe(document, {subtree: true, childList: true});
 
-// Disable right click on Notion collection view tab buttons
+// Disable right click on Notion collection view tab buttons (agresif, klik kiri tetap berfungsi)
 (function() {
   function disableTabButtonContextMenu() {
     document.querySelectorAll('.notion-collection-view-tab-button').forEach(function(btn) {
-      btn.oncontextmenu = function(e) { e.preventDefault(); return false; };
+      btn.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+      }, {capture: true});
     });
   }
   disableTabButtonContextMenu();
