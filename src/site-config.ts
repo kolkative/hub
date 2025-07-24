@@ -829,10 +829,30 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       pointer-events: auto !important;
     }
 
+    .notion-collection-view-tab-button[aria-selected],
+    .notion-collection-view-tab-button:hover,
+    .notion-collection-view-tab-button:focus {
+      user-select: none !important;
+    }
+    .notion-collection-view-tab-button[aria-selected] [role="tooltip"],
+    .notion-collection-view-tab-button:hover [role="tooltip"],
+    .notion-collection-view-tab-button:focus [role="tooltip"],
+    .notion-collection-view-tab-button [role="tooltip"] {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      height: 0 !important;
+      width: 0 !important;
+      max-width: 0 !important;
+      max-height: 0 !important;
+      position: absolute !important;
+      z-index: -1 !important;
+    }
+
     .notion-collection-view-tab-button:hover   {
       background-color: var(--hover) !important;
       color: var(--text-1) !important;
-      border-radius: 20px !important;
     }
 
     .notion-collection-view-tab-button > div > div {
