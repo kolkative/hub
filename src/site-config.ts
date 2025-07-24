@@ -593,7 +593,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: none !important;
     }
     #x-sidebar nav {
-      margin-bottom: 32px !important;
+      margin: 32px 10px 32px 10px;
+      padding-bottom: 32px !important;
     }
     #x-sidebar ul {
       list-style: none;
