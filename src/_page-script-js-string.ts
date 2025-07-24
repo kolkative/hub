@@ -411,4 +411,18 @@ new MutationObserver(() => {
   setInterval(disableTabButtonContextMenu, 1000);
 })();
 
+// Disable right click on Notion collection view tab buttons and all its children (super aggressive)
+(function() {
+  function isTabButtonOrChild(el) {
+    return el && (el.classList?.contains('notion-collection-view-tab-button') ||
+      (typeof el.closest === 'function' && el.closest('.notion-collection-view-tab-button')));
+  }
+  document.addEventListener('contextmenu', function(e) {
+    if (isTabButtonOrChild(e.target)) {
+      e.preventDefault();
+      return false;
+    }
+  }, {capture: true});
+})();
+
 </script>`

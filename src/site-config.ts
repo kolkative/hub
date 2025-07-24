@@ -102,7 +102,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --text-2: #f1f3f5;  
       --border: #343a40;   
       --link:rgb(40, 61, 147); 
-      --brand:rgb(195, 47, 60);   
+      --brand:rgb(193, 34, 47);  
       --hover: #495057;
     }
       
@@ -114,7 +114,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --text-2: #212529;   
       --border: #343a40;   
       --link:rgb(40, 61, 147); 
-      --brand:rgb(195, 47, 60);
+      --brand:rgb(193, 34, 47);
       --hover: #dee2e6; 
     }
 
@@ -175,7 +175,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-family: var(--font-neo-grotesque) !important;
       letter-spacing: -3px !important;
       text-transform: uppercase !important;
-      font-size: 30px !important;
+      font-size: 35px !important;
       font-weight: var(--font-weight-9) !important;
       margin-top: -25px !important;
       margin-bottom: -10px !important;
@@ -189,7 +189,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-family: var(--font-neo-grotesque) !important;
       letter-spacing: -3px !important;
       text-transform: uppercase !important;
-      font-size: 40px !important;
+      font-size: 35px !important;
       font-weight: var(--font-weight-9) !important;
       margin-top: -45px !important;
       margin-bottom: -10px !important;
@@ -593,12 +593,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: none !important;
     }
     #x-sidebar nav {
-      margin: 32px 10px 32px 10px;
+      margin: 10px 10px 36px 10px;
       padding-bottom: 32px !important;
     }
     #x-sidebar ul {
       list-style: none;
-      padding: 0 10px 0 10px;
+      padding: 0 20px 0 20px;
       margin: 0;
       gap: 0;
     }
@@ -821,7 +821,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
        COLLECTION VIEW TAB & TABLE HEADER THEME
     ========================== */
     .notion-collection-view-tab-button {
-      background-color: var(--bg-3) !important;
+      background-color: transparent !important;
       color: var(--text-1) !important;
       border-radius: 20px !important;
       -webkit-user-select: none !important;
@@ -835,13 +835,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       border-radius: 20px !important;
     }
 
-    /* .notion-collection-view-tab-button > div > div {
+    .notion-collection-view-tab-button > div > div {
       color: var(--text-1) !important;
-      background-color: var(--bg-3) !important;
-      border-radius: 20px !important;
       -webkit-user-select: none !important;
       user-select: none !important;
-    } */
+    }
 
 
     /* Table view header row */
