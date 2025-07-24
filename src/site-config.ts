@@ -883,6 +883,42 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: none !important;
     }
 
+    /* =======================
+       FORCE DISABLE TOOLTIP & RIGHT CLICK ON NOTION TABS
+    ========================== */
+    /* Nonaktifkan semua tooltip di tab dan global */
+    [role="tooltip"],
+    .notion-tooltip,
+    .notion-collection-view-tab-button [role="tooltip"],
+    .notion-collection-view-tab-button + [role="tooltip"],
+    .notion-collection-view-tab-button * [role="tooltip"] {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      height: 0 !important;
+      width: 0 !important;
+      max-width: 0 !important;
+      max-height: 0 !important;
+      position: absolute !important;
+      z-index: -1 !important;
+    }
+    /* Nonaktifkan user-select di semua layer tab */
+    .notion-collection-view-tab-button,
+    .notion-collection-view-tab-button *,
+    .notion-collection-view-tab-button > * {
+      user-select: none !important;
+      -webkit-user-select: none !important;
+    }
+
+    .notion-selectable.notion-page-block.notion-collection-item {
+      background: var(--bg-2) !important;
+      transition: background 0.2s;
+    }
+    html.light .notion-selectable.notion-page-block.notion-collection-item,
+    body.light .notion-selectable.notion-page-block.notion-collection-item {
+      background: var(--bg-3) !important;
+    }
   `,
   customHeadJS: googleTag(GOOGLE_TAG_ID),
   customBodyJS: PAGE_SCRIPT_JS_STRING,
