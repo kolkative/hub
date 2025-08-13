@@ -29,10 +29,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   slugToPage: {
     "": "208db40e66ea8001b35af735e91f0e0c",
     team: "208db40e66ea80199338dadddde8ebb4",
-    player: "211db40e66ea80739783ffc4a44671e5",
+    leaderboard: "211db40e66ea80739783ffc4a44671e5",
     event: "211db40e66ea808e8ce0cfe0a9d415de",
     kabaret: "217db40e66ea80019ed8d59fc830c005",
     brand: "239db40e66ea802eacb2f022e2c19859",
+    job: "24edb40e66ea80e7b790c204d257ddd8",
     // individual teams
     epigonen: "208db40e66ea80a185c7d0c381e72752",
   },

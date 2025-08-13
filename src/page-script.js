@@ -237,7 +237,7 @@ function createSidebarNavigation() {
       '</ul>' +
       '<div class="sidebar-section">Community</div>' +
       '<ul>' +
-        '<li><a href="/support" class="sidebar-link" data-menu="Support"><span class="sidebar-icon">' +
+        '<li><a href="https://kolkative.myr.id/support" class="sidebar-link" data-menu="Support"><span class="sidebar-icon">' +
         '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="7"/></svg>' +
         '</span>Support</a></li>' +
         '<li><a href="/academy" class="sidebar-link" data-menu="Academy"><span class="sidebar-icon">' +
@@ -245,8 +245,8 @@ function createSidebarNavigation() {
         '</span>Academy</a></li>' +
         '<li><a href="/job" class="sidebar-link" data-menu="Jobs"><span class="sidebar-icon">' +
         '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 14s2-2 6-2 6 2 6 2"/><circle cx="8" cy="6" r="3"/></svg>' +
-        '</span>Jobs</a></li>' +
-        '<li><a href="/form" class="sidebar-link" data-menu="Kritik & Saran"><span class="sidebar-icon">' +
+        '</span>Jobs & Volunteering</a></li>' +
+        '<li><a href="https://kolkative.notion.site/1f4db40e66ea814887e2f12ccc4d854e?pvs=105" class="sidebar-link" data-menu="Kritik & Saran"><span class="sidebar-icon">' +
         '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="12" height="10" rx="2"/><path d="M2 8h12"/></svg>' +
         '</span>Kritik & Saran</a></li>' +
       '</ul>' +
@@ -254,7 +254,7 @@ function createSidebarNavigation() {
       '<ul>' +
         '<li><a href="#" class="sidebar-link" data-menu="Tickets"><span class="sidebar-icon">' +
         '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="7"/></svg>' +
-        '</span>Tickets</a></li>' +
+        '</span>Kabaret Academy</a></li>' +
         '<li><a href="#" class="sidebar-link" data-menu="Mixing Templates"><span class="sidebar-icon">' +
         '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="10" height="10" rx="2"/></svg>' +
         '</span>Mixing Templates</a></li>' +
@@ -263,7 +263,7 @@ function createSidebarNavigation() {
         '</span>SFX Collections</a></li>' +
         '<li><a href="#" class="sidebar-link" data-menu="Merch"><span class="sidebar-icon">' +
         '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="12" height="10" rx="2"/><path d="M2 8h12"/></svg>' +
-        '</span>Merch</a></li>' +
+        '</span>Coaching & Production</a></li>' +
       '</ul>' +
       '<div class="sidebar-section">Links</div>' +
       '<ul>' +
