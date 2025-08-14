@@ -702,6 +702,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%) !important;
     }
 
+    /* Force warna biru untuk Start Here */
+    #x-sidebar .start-here-logo {
+      filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%) !important;
+    }
+
     /* Icon Announcements dengan warna biru */
     #x-sidebar .sidebar-link[data-menu="Announcements"] .sidebar-icon svg {
       color: var(--logo) !important;
@@ -746,10 +751,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
        X-HEADER LOGO THEME SWITCH
     ========================== */
     #x-header-logo {
-      width: 24px;
-      height: 24px;
+      width: 18px;
+      height: 18px;
       max-width: 100%;
-      max-height: 24px;
+      max-height: 18px;
       object-fit: contain;
       display: inline-block;
       vertical-align: middle;
@@ -773,7 +778,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       padding-left: 10px !important;
     }
     #x-header-title {
-      font-size: 1.25rem !important;
+      font-size: 1rem !important;
       display: flex;
       align-items: baseline;
       letter-spacing: -1px;
@@ -805,8 +810,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background: none;
       border: none;
       cursor: pointer;
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
       padding: 0;
       z-index: var(--layer-6);
       color: var(--text-1);
@@ -820,8 +825,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     #x-burger svg {
-      width: 24px;
-      height: 24px;
+      width: 18px;
+      height: 18px;
       display: block;
       opacity: 1;
       visibility: visible;
