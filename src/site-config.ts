@@ -74,6 +74,15 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
        THEME & STYLE
     ========================== */
     
+    /* Hide text decoration untuk semua link */
+    a, a:link, a:visited, a:hover, a:active {
+      text-decoration: none !important;
+      text-decoration-line: none !important;
+      text-decoration-style: none !important;
+      text-decoration-color: none !important;
+      text-decoration-thickness: none !important;
+    }
+    
     /* CSS Variables untuk Theme */
     :root {
       --gray-0: #f8f9fa;
@@ -525,7 +534,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       cursor: default !important;
     }
 
-    /* ✅ Sembunyikan elemen di kanan tablist */
+    /* Sembunyikan elemen di kanan tablist */
     [class*="filter"],
     [class*="sort"],
     [class*="dropdown"],
@@ -702,8 +711,13 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%) !important;
     }
 
-    /* Force warna biru untuk Start Here */
+    /* Force warna biru untuk Start Here - Override semua filter lain */
     #x-sidebar .start-here-logo {
+      filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%) !important;
+    }
+
+    /* Tambahan force untuk memastikan warna biru */
+    #x-sidebar .sidebar-link[data-menu="Start Here"] .start-here-logo {
       filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%) !important;
     }
 
