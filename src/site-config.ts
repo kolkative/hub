@@ -651,12 +651,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: flex;
       align-items: center;
       gap: 6px;
-      padding: 6px 8px 6px 8px;
+      padding: 7px 8px 7px 8px;
       color: var(--text-1);
       text-decoration: none;
       border-radius: 6px;
       transition: background 0.15s, color 0.15s;
-      font-size: 1rem;
+      font-size: 0.65rem;
       cursor: pointer;
       margin-bottom: 2px;
       min-height: 20px;
@@ -674,18 +674,18 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     #x-sidebar .sidebar-section {
       gap: 6px;
       margin: 16px 20px 8px 20px;
-      font-size: 1.2rem;
+      font-size: 0.8rem;
       color: var(--text-2);
       letter-spacing: 0.3px;
       font-weight: 600;
     }
     #x-sidebar .sidebar-icon {
-      width: 19px !important;
-      height: 19px !important;
-      min-width: 19px !important;
-      min-height: 19px !important;
-      max-width: 19px !important;
-      max-height: 19px !important;
+      width: 20px !important;
+      height: 20px !important;
+      min-width: 20px !important;
+      min-height: 20px !important;
+      max-width: 20px !important;
+      max-height: 20px !important;
     }
 
     /* Logo brand untuk Start Here */
@@ -815,7 +815,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       
     #x-burger {
       position: fixed;
-      top: 5px;
+      top: 4px;
       left: 5px;
       display: none;
       align-items: center;
@@ -823,8 +823,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background: none;
       border: none;
       cursor: pointer;
-      width: 55px;
-      height: 55px;
+      width: 58px;
+      height: 58px;
       padding: 0;
       z-index: var(--layer-6);
       color: var(--text-1);
