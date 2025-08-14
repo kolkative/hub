@@ -65,7 +65,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   },
 
   // Google Font name, you can choose from https://fonts.google.com
-  googleFont: "",
+  googleFont: "Space Grotesk",
 
   // Custom JS for head and body of a Notion page
   customHeadCSS: `
@@ -93,16 +93,14 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --layer-6: 6;
       --logo-white: url('https://hub.kolkative.my.id/image/attachment%3A05bc55da-f638-4604-8c1a-9b4ad5d9f159%3AKolkative_Hub_White.png?table=block&id=239db40e-66ea-80e5-8770-fb82b100069d&spaceId=9c898b20-1510-47e1-a570-a3c00e5d8916&width=580&userId=&cache=v2');
       --logo-black: url('https://hub.kolkative.my.id/image/attachment%3Ab4133deb-17d0-46b9-8423-5d09dac4916f%3AKolkative_Hub_Black.png?table=block&id=239db40e-66ea-80b5-a864-d20c286d89ca&spaceId=9c898b20-1510-47e1-a570-a3c00e5d8916&width=580&userId=&cache=v2');
-    }
-    
-    html, body {
+      /* Dark theme defaults */
       --bg-1: #0d0f12;   
       --bg-2: #16191d;
       --bg-3: #212529;     
       --text-1: #f8f9fa;
       --text-2: #f1f3f5;  
       --border: #343a40;   
-      --link:rgb(40, 61, 147); 
+      --link: #0099FF; 
       --brand:rgb(193, 34, 47);  
       --hover: #495057;
     }
@@ -114,7 +112,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --text-1: #16191d;
       --text-2: #212529;   
       --border: #343a40;   
-      --link:rgb(40, 61, 147); 
+      --link: #0099FF; 
       --brand:rgb(193, 34, 47);
       --hover: #dee2e6; 
     }
@@ -227,8 +225,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       text-decoration: none !important;
       color: var(--link) !important;
       padding: 0 20px !important;
-      margin: 2px 4px !important;
-      min-height: 30px !important;
+      margin: 1px 4px !important;
+      min-height: 24px !important;
       border: 1px solid var(--border) !important;
       border-radius: var(--radius-conditional-3) !important;
       transition: all 0.2s ease-out !important;
@@ -249,8 +247,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: inline-flex !important;
       align-items: center !important;
       padding: 0 15px !important;
-      margin: 2px !important;
-      min-height: 30px !important;
+      margin: 1px !important;
+      min-height: 24px !important;
       color: var(--link) !important;
       border: 1px solid var(--border) !important;
       border-radius: var(--radius-conditional-3) !important;
@@ -273,14 +271,14 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     body .notion-list-view .notion-selectable.notion-page-block.notion-collection-item a {
       display: flex !important;
       align-items: center !important;
-      padding: 0.5rem 1.1rem !important;
+      padding: 0.3rem 1.1rem !important;
       text-decoration: none !important;
       font-size: 13px !important;
       border: 1px solid var(--border) !important;
       border-radius: var(--radius-conditional-3) !important;
       transition: all 0.2s ease-out !important;
       width: 100% !important;
-      min-height: 34px;
+      min-height: 28px;
     }
 
     body .notion-list-view .notion-selectable.notion-page-block.notion-collection-item:hover a {
@@ -353,7 +351,43 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
         visibility: visible !important;
       }
 
-  
+      /* ==================
+      TABLE VIEW MOBILE OPTIMIZATION
+      ===================== */
+      
+      /* Pastikan table view tetap muncul di mobile */
+      .notion-table-view,
+      .notion-table-view .notion-collection-view,
+      .notion-table-view .notion-collection-view-content,
+      .notion-table-view .notion-collection-view-table,
+      .notion-table-view .notion-table-view-header-row,
+      .notion-table-view .notion-table-view-header-cell,
+      .notion-table-view .notion-table-view-row,
+      .notion-table-view .notion-table-view-cell {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        height: auto !important;
+        width: auto !important;
+        max-width: none !important;
+        max-height: none !important;
+        position: static !important;
+        z-index: auto !important;
+      }
+
+      /* Responsive table untuk mobile */
+      .notion-table-view .notion-collection-view-table {
+        overflow-x: auto !important;
+        max-width: 100vw !important;
+      }
+
+      .notion-table-view .notion-table-view-header-cell,
+      .notion-table-view .notion-table-view-cell {
+        min-width: 120px !important;
+        padding: 8px 12px !important;
+        font-size: 12px !important;
+      }
 
       /* ==================
       HIDE & REMOVED
@@ -607,7 +641,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: flex;
       align-items: center;
       gap: 4px;
-      padding: 4px 10px 4px 10px;
+      padding: 2px 10px 2px 10px;
       color: var(--text-1);
       text-decoration: none;
       border-radius: 10px;
@@ -615,7 +649,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-size: 0.93rem;
       cursor: pointer;
       margin-bottom: 1px;
-      min-height: 24px;
+      min-height: 20px;
       line-height: 1.2;
     }
     #x-sidebar .sidebar-link.selected {
@@ -642,6 +676,28 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       min-height: 22px !important;
       max-width: 22px !important;
       max-height: 22px !important;
+    }
+
+    /* Logo brand untuk Start Here */
+    #x-sidebar .start-here-logo {
+      width: 22px !important;
+      height: 22px !important;
+      min-width: 22px !important;
+      min-height: 22px !important;
+      max-width: 22px !important;
+      max-height: 22px !important;
+      background-image: var(--logo-white) !important;
+      background-size: contain !important;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
+      display: block !important;
+      filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%) !important;
+    }
+
+    html.light #x-sidebar .start-here-logo,
+    body.light #x-sidebar .start-here-logo {
+      background-image: var(--logo-black) !important;
+      filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%) !important;
     }
 
     #x-sidebar-overlay {
@@ -816,6 +872,20 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     div[role="separator"] {
       border-bottom: 1px solid var(--border) !important;
       background: none !important;
+    }
+
+    /* =======================
+       LAYOUT WIDE MARGIN FIX
+    ========================== */
+    div.layout-layout-wide {
+      margin-bottom: 0px !important;
+    }
+
+    /* =======================
+       LAYOUT PHONE MARGIN FIX
+    ========================== */
+    div.layout.layout-phone {
+      margin-bottom: 0px !important;
     }
 
     /* =======================

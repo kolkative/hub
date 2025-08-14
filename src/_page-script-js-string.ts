@@ -155,7 +155,7 @@ window.onload = function () {
   burgerButton.id = "x-burger";
   burgerButton.setAttribute("aria-label", "Open sidebar");
   burgerButton.innerHTML =
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="currentColor" fill="none"><path d="M4 8.5L20 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4 15.5L20 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
+    '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128ZM40,76H216a12,12,0,0,0,0-24H40a12,12,0,0,0,0,24ZM216,180H40a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Z"></path></svg>';
   document.body.appendChild(burgerButton);
 
   // Create overlay for sidebar
@@ -236,9 +236,17 @@ function createSidebarNavigation() {
         '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="10" width="3" height="4"/><rect x="7" y="6" width="3" height="8"/><rect x="12" y="2" width="3" height="12"/></svg>' +
         '</span>Leaderboard</a></li>' +
       '</ul>' +
+      '<div class="sidebar-section">Welcome</div>' +
+      '<ul>' +
+        '<li><a href="/start" class="sidebar-link" data-menu="Start Here"><span class="sidebar-icon start-here-logo">' +
+        '</span>Start Here</a></li>' +
+        '<li><a href="/info" class="sidebar-link" data-menu="Announcements"><span class="sidebar-icon">' +
+        '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>' +
+        '</span>Announcements</a></li>' +
+      '</ul>' +
       '<div class="sidebar-section">Community</div>' +
       '<ul>' +
-        '<li><a href="/support" class="sidebar-link" data-menu="Support"><span class="sidebar-icon">' +
+        '<li><a href="https://kolkative.myr.id/support" class="sidebar-link" data-menu="Support"><span class="sidebar-icon">' +
         '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="7"/></svg>' +
         '</span>Support</a></li>' +
         '<li><a href="/academy" class="sidebar-link" data-menu="Academy"><span class="sidebar-icon">' +
@@ -246,8 +254,8 @@ function createSidebarNavigation() {
         '</span>Academy</a></li>' +
         '<li><a href="/job" class="sidebar-link" data-menu="Jobs"><span class="sidebar-icon">' +
         '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 14s2-2 6-2 6 2 6 2"/><circle cx="8" cy="6" r="3"/></svg>' +
-        '</span>Jobs</a></li>' +
-        '<li><a href="/form" class="sidebar-link" data-menu="Kritik & Saran"><span class="sidebar-icon">' +
+        '</span>Jobs & Volunteering</a></li>' +
+        '<li><a href="https://kolkative.notion.site/1f4db40e66ea814887e2f12ccc4d854e?pvs=105" class="sidebar-link" data-menu="Kritik & Saran"><span class="sidebar-icon">' +
         '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="12" height="10" rx="2"/><path d="M2 8h12"/></svg>' +
         '</span>Kritik & Saran</a></li>' +
       '</ul>' +
@@ -255,7 +263,7 @@ function createSidebarNavigation() {
       '<ul>' +
         '<li><a href="#" class="sidebar-link" data-menu="Tickets"><span class="sidebar-icon">' +
         '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="7"/></svg>' +
-        '</span>Tickets</a></li>' +
+        '</span>Kabaret Academy</a></li>' +
         '<li><a href="#" class="sidebar-link" data-menu="Mixing Templates"><span class="sidebar-icon">' +
         '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="10" height="10" rx="2"/></svg>' +
         '</span>Mixing Templates</a></li>' +
@@ -264,7 +272,7 @@ function createSidebarNavigation() {
         '</span>SFX Collections</a></li>' +
         '<li><a href="#" class="sidebar-link" data-menu="Merch"><span class="sidebar-icon">' +
         '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="12" height="10" rx="2"/><path d="M2 8h12"/></svg>' +
-        '</span>Merch</a></li>' +
+        '</span>Coaching & Production</a></li>' +
       '</ul>' +
       '<div class="sidebar-section">Links</div>' +
       '<ul>' +
@@ -396,33 +404,5 @@ new MutationObserver(() => {
     ensureThemeConsistency();
   }
 }).observe(document, {subtree: true, childList: true});
-
-// Disable right click on Notion collection view tab buttons (agresif, klik kiri tetap berfungsi)
-(function() {
-  function disableTabButtonContextMenu() {
-    document.querySelectorAll('.notion-collection-view-tab-button').forEach(function(btn) {
-      btn.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-        return false;
-      }, {capture: true});
-    });
-  }
-  disableTabButtonContextMenu();
-  setInterval(disableTabButtonContextMenu, 1000);
-})();
-
-// Disable right click on Notion collection view tab buttons and all its children (super aggressive)
-(function() {
-  function isTabButtonOrChild(el) {
-    return el && (el.classList?.contains('notion-collection-view-tab-button') ||
-      (typeof el.closest === 'function' && el.closest('.notion-collection-view-tab-button')));
-  }
-  document.addEventListener('contextmenu', function(e) {
-    if (isTabButtonOrChild(e.target)) {
-      e.preventDefault();
-      return false;
-    }
-  }, {capture: true});
-})();
 
 </script>`
