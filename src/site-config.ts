@@ -656,7 +656,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       text-decoration: none;
       border-radius: 6px;
       transition: background 0.15s, color 0.15s;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       cursor: pointer;
       margin-bottom: 2px;
       min-height: 20px;
@@ -677,7 +677,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-size: 0.95rem;
       color: var(--text-2);
       letter-spacing: 0.3px;
-      font-weight: 600;
+      font-weight: 500;
     }
     #x-sidebar .sidebar-icon {
       width: 21px !important;
@@ -690,34 +690,17 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     /* Logo brand untuk Start Here */
     #x-sidebar .start-here-logo {
-      width: 18px !important;
-      height: 18px !important;
-      min-width: 18px !important;
-      min-height: 18px !important;
-      max-width: 18px !important;
-      max-height: 18px !important;
+      width: 17px !important;
+      height: 17px !important;
+      min-width: 17px !important;
+      min-height: 17px !important;
+      max-width: 17px !important;
+      max-height: 17px !important;
       background-image: var(--logo-white) !important;
       background-size: contain !important;
       background-repeat: no-repeat !important;
       background-position: center !important;
       display: block !important;
-      filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%) !important;
-    }
-
-    html.light #x-sidebar .start-here-logo,
-    body.light #x-sidebar .start-here-logo {
-      background-image: var(--logo-black) !important;
-      filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%) !important;
-    }
-
-    /* Force warna biru untuk Start Here - Override semua filter lain */
-    #x-sidebar .start-here-logo {
-      filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%) !important;
-    }
-
-    /* Tambahan force untuk memastikan warna biru */
-    #x-sidebar .sidebar-link[data-menu="Start Here"] .start-here-logo {
-      filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%) !important;
     }
 
     /* Icon Announcements dengan warna biru */
@@ -815,7 +798,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       
     #x-burger {
       position: fixed;
-      top: 6px;
+      top: 3px;
       left: 5px;
       display: none;
       align-items: center;
