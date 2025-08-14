@@ -625,7 +625,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background: var(--bg-2) !important;
       color: var(--text-1) !important;
       z-index: var(--layer-4);
-      padding: 60px 0 20px 0;
+      padding: 70px 0 20px 0;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
@@ -690,23 +690,17 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     /* Logo brand untuk Start Here */
     #x-sidebar .start-here-logo {
-      width: 16px !important;
-      height: 16px !important;
-      min-width: 16px !important;
-      min-height: 16px !important;
-      max-width: 16px !important;
-      max-height: 16px !important;
+      width: 17px !important;
+      height: 17px !important;
+      min-width: 17px !important;
+      min-height: 17px !important;
+      max-width: 17px !important;
+      max-height: 17px !important;
       background-image: var(--logo-white) !important;
       background-size: contain !important;
       background-repeat: no-repeat !important;
       background-position: center !important;
       display: block !important;
-    }
-
-    /* Icon Announcements dengan warna biru */
-    #x-sidebar .sidebar-link[data-menu="Announcements"] .sidebar-icon svg {
-      color: var(--logo) !important;
-      fill: var(--logo) !important;
     }
 
     #x-sidebar-overlay {
