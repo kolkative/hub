@@ -611,16 +611,16 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       position: fixed;
       left: 0;
       top: 0;
-      width: 250px;
+      width: 240px;
       height: 100vh;
       background: var(--bg-2) !important;
       color: var(--text-1) !important;
       z-index: var(--layer-4);
-      padding: 70px 0 10px 0;
+      padding: 60px 0 20px 0;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 2px;
       border-right: var(--border-size-1) solid var(--border);
       scrollbar-width: none;
       -ms-overflow-style: none;
@@ -629,29 +629,29 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: none !important;
     }
     #x-sidebar nav {
-      margin: 10px 10px 36px 10px;
-      padding-bottom: 32px !important;
+      margin: 8px 12px 24px 12px;
+      padding-bottom: 24px !important;
     }
     #x-sidebar ul {
       list-style: none;
-      padding: 0 20px 0 20px;
+      padding: 0 16px 0 16px;
       margin: 0;
       gap: 0;
     }
     #x-sidebar .sidebar-link {
       display: flex;
       align-items: center;
-      gap: 4px;
-      padding: 1px 8px 1px 8px;
+      gap: 6px;
+      padding: 6px 8px 6px 8px;
       color: var(--text-1);
       text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.18s, color 0.18s;
-      font-size: 0.75rem;
+      border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+      font-size: 0.8rem;
       cursor: pointer;
-      margin-bottom: 1px;
-      min-height: 16px;
-      line-height: 1.1;
+      margin-bottom: 2px;
+      min-height: 20px;
+      line-height: 1.2;
     }
     #x-sidebar .sidebar-link.selected {
       background: var(--bg-3);
@@ -663,31 +663,31 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       color: var(--text-1);
     }
     #x-sidebar .sidebar-section {
-      gap: 8px;
-      margin: 12px 20px 8px 20px;
-      font-size: 0.7rem;
+      gap: 6px;
+      margin: 16px 20px 8px 20px;
+      font-size: 0.65rem;
       color: var(--text-2);
-      letter-spacing: 0.5px;
-      font-weight: 500;
+      letter-spacing: 0.3px;
+      font-weight: 600;
       text-transform: uppercase;
     }
     #x-sidebar .sidebar-icon {
-      width: 16px !important;
-      height: 16px !important;
-      min-width: 16px !important;
-      min-height: 16px !important;
-      max-width: 16px !important;
-      max-height: 16px !important;
+      width: 18px !important;
+      height: 18px !important;
+      min-width: 18px !important;
+      min-height: 18px !important;
+      max-width: 18px !important;
+      max-height: 18px !important;
     }
 
     /* Logo brand untuk Start Here */
     #x-sidebar .start-here-logo {
-      width: 16px !important;
-      height: 16px !important;
-      min-width: 16px !important;
-      min-height: 16px !important;
-      max-width: 16px !important;
-      max-height: 16px !important;
+      width: 18px !important;
+      height: 18px !important;
+      min-width: 18px !important;
+      min-height: 18px !important;
+      max-width: 18px !important;
+      max-height: 18px !important;
       background-image: var(--logo-white) !important;
       background-size: contain !important;
       background-repeat: no-repeat !important;
@@ -702,9 +702,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%) !important;
     }
 
-    /* Logo Start Here dengan warna biru #0099FF */
-    #x-sidebar .start-here-logo {
-      filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%) !important;
+    /* Icon Announcements dengan warna biru */
+    #x-sidebar .sidebar-link[data-menu="Announcements"] .sidebar-icon svg {
+      color: var(--logo) !important;
+      fill: var(--logo) !important;
     }
 
     #x-sidebar-overlay {
