@@ -678,7 +678,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       color: var(--text-2);
       letter-spacing: 0.3px;
       font-weight: 600;
-      text-transform: uppercase;
     }
     #x-sidebar .sidebar-icon {
       width: 18px !important;
@@ -824,8 +823,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background: none;
       border: none;
       cursor: pointer;
-      width: 50px;
-      height: 50px;
+      width: 55px;
+      height: 55px;
       padding: 0;
       z-index: var(--layer-6);
       color: var(--text-1);
@@ -904,13 +903,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     /* =======================
        LAYOUT WIDE MARGIN FIX
     ========================== */
-    div.layout-layout-wide {
-      margin-bottom: 0px !important;
-    }
-
-    /* =======================
-       LAYOUT PHONE MARGIN FIX
-    ========================== */
+    div.layout,
+    div.layout-layout-wide,
     div.layout.layout-phone {
       margin-bottom: 0px !important;
     }
