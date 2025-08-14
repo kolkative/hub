@@ -690,12 +690,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     /* Logo brand untuk Start Here */
     #x-sidebar .start-here-logo {
-      width: 17px !important;
-      height: 17px !important;
-      min-width: 17px !important;
-      min-height: 17px !important;
-      max-width: 17px !important;
-      max-height: 17px !important;
+      width: 16px !important;
+      height: 16px !important;
+      min-width: 16px !important;
+      min-height: 16px !important;
+      max-width: 16px !important;
+      max-height: 16px !important;
       background-image: var(--logo-white) !important;
       background-size: contain !important;
       background-repeat: no-repeat !important;
