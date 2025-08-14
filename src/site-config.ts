@@ -93,6 +93,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --layer-6: 6;
       --logo-white: url('https://hub.kolkative.my.id/image/attachment%3A05bc55da-f638-4604-8c1a-9b4ad5d9f159%3AKolkative_Hub_White.png?table=block&id=239db40e-66ea-80e5-8770-fb82b100069d&spaceId=9c898b20-1510-47e1-a570-a3c00e5d8916&width=580&userId=&cache=v2');
       --logo-black: url('https://hub.kolkative.my.id/image/attachment%3Ab4133deb-17d0-46b9-8423-5d09dac4916f%3AKolkative_Hub_Black.png?table=block&id=239db40e-66ea-80b5-a864-d20c286d89ca&spaceId=9c898b20-1510-47e1-a570-a3c00e5d8916&width=580&userId=&cache=v2');
+      --logo: #0099FF;
       /* Dark theme defaults */
       --bg-1: #0d0f12;   
       --bg-2: #16191d;
@@ -100,7 +101,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --text-1: #f8f9fa;
       --text-2: #f1f3f5;  
       --border: #343a40;   
-      --link: #0099FF; 
+      --link: #0055FF; 
       --brand:rgb(193, 34, 47);  
       --hover: #495057;
     }
@@ -112,7 +113,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --text-1: #16191d;
       --text-2: #212529;   
       --border: #343a40;   
-      --link: #0099FF; 
+      --link: #0055FF; 
       --brand:rgb(193, 34, 47);
       --hover: #dee2e6; 
     }
@@ -233,8 +234,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     .notion-page-content a.notion-link-token:hover {
-      transform: translateY(-2px) scale(1.03) !important;
-      box-shadow: 2px 2px 0 #000000 !important;
+      transform: translateY(-1px) scale(1.01) !important;
+      box-shadow: 1px 1px 0 #000000 !important;
       border-color: var(--border) !important;
     }
 
@@ -256,8 +257,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     span.notion-enable-hover:hover {
-      transform: translateY(-2px) scale(1.03) !important;
-      box-shadow: 2px 2px 0 #000000 !important;
+      transform: translateY(-1px) scale(1.01) !important;
+      box-shadow: 1px 1px 0 #000000 !important;
       border-color: var(--border) !important;
     }
 
@@ -282,8 +283,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     body .notion-list-view .notion-selectable.notion-page-block.notion-collection-item:hover a {
-      transform: translateY(-2px);
-      box-shadow: 2px 2px 0 #000000 !important;
+      transform: translateY(-1px);
+      box-shadow: 1px 1px 0 #000000 !important;
       border-color: var(--border) !important;
     }
 
@@ -306,8 +307,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     /* --- Table View: Capsule Styling --- */
     .notion-table-view-cell:hover > div > div {
-      transform: translateY(-2px) scale(1.02) !important;
-      box-shadow: 2px 2px 0 #000000 !important;
+      transform: translateY(-1px) scale(1.01) !important;
+      box-shadow: 1px 1px 0 #000000 !important;
       border-color: var(--border) !important;
     }
 
@@ -641,16 +642,16 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: flex;
       align-items: center;
       gap: 4px;
-      padding: 2px 10px 2px 10px;
+      padding: 1px 8px 1px 8px;
       color: var(--text-1);
       text-decoration: none;
-      border-radius: 10px;
+      border-radius: 8px;
       transition: background 0.18s, color 0.18s;
-      font-size: 0.93rem;
+      font-size: 0.75rem;
       cursor: pointer;
       margin-bottom: 1px;
-      min-height: 20px;
-      line-height: 1.2;
+      min-height: 16px;
+      line-height: 1.1;
     }
     #x-sidebar .sidebar-link.selected {
       background: var(--bg-3);
@@ -662,30 +663,31 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       color: var(--text-1);
     }
     #x-sidebar .sidebar-section {
-      gap: 10px;
-      margin: 16px 24px 12px 24px;
-      font-size: 0.93rem;
+      gap: 8px;
+      margin: 12px 20px 8px 20px;
+      font-size: 0.7rem;
       color: var(--text-2);
-      letter-spacing: 1px;
-      font-weight: 300;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+      text-transform: uppercase;
     }
     #x-sidebar .sidebar-icon {
-      width: 22px !important;
-      height: 22px !important;
-      min-width: 22px !important;
-      min-height: 22px !important;
-      max-width: 22px !important;
-      max-height: 22px !important;
+      width: 16px !important;
+      height: 16px !important;
+      min-width: 16px !important;
+      min-height: 16px !important;
+      max-width: 16px !important;
+      max-height: 16px !important;
     }
 
     /* Logo brand untuk Start Here */
     #x-sidebar .start-here-logo {
-      width: 22px !important;
-      height: 22px !important;
-      min-width: 22px !important;
-      min-height: 22px !important;
-      max-width: 22px !important;
-      max-height: 22px !important;
+      width: 16px !important;
+      height: 16px !important;
+      min-width: 16px !important;
+      min-height: 16px !important;
+      max-width: 16px !important;
+      max-height: 16px !important;
       background-image: var(--logo-white) !important;
       background-size: contain !important;
       background-repeat: no-repeat !important;
@@ -697,6 +699,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     html.light #x-sidebar .start-here-logo,
     body.light #x-sidebar .start-here-logo {
       background-image: var(--logo-black) !important;
+      filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%) !important;
+    }
+
+    /* Logo Start Here dengan warna biru #0099FF */
+    #x-sidebar .start-here-logo {
       filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%) !important;
     }
 
