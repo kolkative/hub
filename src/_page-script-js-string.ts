@@ -235,7 +235,7 @@ function createSidebarNavigation() {
       '</ul>' +
       '<div class="sidebar-section">Welcome</div>' +
       '<ul>' +
-        '<li><a href="/start" class="sidebar-link" data-menu="Start Here"><span class="sidebar-icon">' +
+        '<li><a href="/start" class="sidebar-link" data-menu="Start Here"><span class="sidebar-icon start-here-logo">' +
         '<img src="/public/icon-color.svg" alt="kolIcon">' +
         '</span>Start Here</a></li>' +
         '<li><a href="/info" class="sidebar-link" data-menu="Announcements"><span class="sidebar-icon">' +

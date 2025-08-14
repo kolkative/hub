@@ -696,11 +696,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       min-height: 17px !important;
       max-width: 17px !important;
       max-height: 17px !important;
-      background-image: var(--logo-white) !important;
-      background-size: contain !important;
-      background-repeat: no-repeat !important;
-      background-position: center !important;
-      display: block !important;
     }
 
     #x-sidebar-overlay {
