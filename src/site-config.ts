@@ -391,6 +391,36 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
         pointer-events: auto !important;
       }
 
+      /* =========================================
+         FIX: adaptive color pakai root var(--text-1) & var(--text-2)
+         ========================================= */
+      
+      /* Header table pakai warna teks utama */
+      .notion-table-view-header-cell,
+      .notion-table-view-header-cell * {
+        color: var(--text-1) !important;
+      }
+      
+      /* Isi sel tabel (opsional kalau mau beda warna) */
+      .notion-table-view-cell,
+      .notion-table-view-cell * {
+        color: var(--text-2) !important;
+      }
+      
+      /* Tombol pilihan view */
+      div[role="button"][aria-label="View options"],
+      div[role="button"][aria-label="Layout settings"],
+      .notion-collection-view-menu,
+      .notion-collection-view-menu * {
+        color: var(--text-1) !important;
+      }
+      
+      /* Label nama view (misal 'Kabaret') */
+      .notion-collection-view-selector,
+      .notion-collection-view-selector * {
+        color: var(--text-1) !important;
+      }
+
       /* ==================
       HIDE & REMOVED
       ===================== */
