@@ -321,41 +321,24 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       border-color: var(--border) !important;
     }
 
-    /* =========================================
-       1) GLOBAL: Adaptive color untuk teks & ikon di semua view
-       ========================================= */
-    
-    /* Header table text */
-    .notion-table-view-header-cell,
-    .notion-table-view-header-cell * {
-      color: var(--text-1) !important;
-    }
-    
-    /* Isi sel tabel */
-    .notion-table-view-cell,
-    .notion-table-view-cell * {
-      color: var(--text-2) !important;
-    }
-    
-    /* Icon di header table (misalnya Sigma, bintang) */
-    .notion-table-view-header-cell svg {
-      fill: var(--text-1) !important;
-      stroke: var(--text-1) !important;
-    }
-    
-    /* Selector nama view di table view */
-    .viewTable .notion-selectable.notion-collection_view-block,
-    .viewTable .notion-selectable.notion-collection_view-block * {
+    /* Teks nama view di dropdown selector (mobile mode) */
+    .notion-collection_view-menu,
+    .notion-collection_view-menu * {
       color: var(--text-1) !important;
     }
 
-    /* Icon dalam selector nama view */
-    .viewTable .notion-selectable.notion-collection_view-block svg {
+    /* Item di dalam dropdown view selector */
+    .notion-collection_view-menu .notion-selectable,
+    .notion-collection_view-menu .notion-selectable * {
+      color: var(--text-1) !important;
+    }
+
+    /* Ikon di dropdown view selector */
+    .notion-collection_view-menu svg,
+    .notion-collection_view-menu svg * {
       fill: var(--text-1) !important;
       stroke: var(--text-1) !important;
     }
-
-
 
 
     /* =====================
@@ -697,8 +680,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       color: var(--text-1);
     }
     #x-sidebar .sidebar-section {
-      gap: 10px;
-      margin: 0px 10px 10px 30px;
+      margin: 30px 0px 10px 15px;
       font-size: 0.95rem;
       color: var(--text-2);
       letter-spacing: 0.3px;
@@ -734,7 +716,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     ========================== */
     #x-header {
       position: fixed;
-      top: 0px;
+      top: 0;
       left: 0;
       width: 100vw;
       height: 60px;
@@ -751,7 +733,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
        X-HEADER LOGO THEME SWITCH
     ========================== */
     #x-header-logo {
-      top: 10px;
       width: 18px;
       height: 18px;
       max-width: 100%;
@@ -780,7 +761,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       padding-top: 10px !important;
     }
     #x-header-title {
-      padding-top: 10px !important;
       font-size: 1rem !important;
       display: flex;
       align-items: baseline;
