@@ -360,7 +360,29 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
         opacity: 1 !important;
         visibility: visible !important;
       }
-
+  
+      .notion-table-view .notion-collection-row-property,
+      .notion-table-view .notion-collection-row-property-title,
+      .notion-table-view .notion-table-view-cell,
+      .notion-table-view .notion-table-view-header-cell {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        height: auto !important;
+        width: auto !important;
+        max-height: none !important;
+        max-width: none !important;
+        overflow: visible !important;
+        pointer-events: auto !important;
+      }
+    
+      /* Hapus efek display:none yang tak perlu di mobile */
+      div[style*="min-height: 44px"],
+      .notion-table-view div[style*="min-height: 32px;"] {
+        display: block !important;
+        min-height: auto !important;
+      }
+    
 
       /* ==================
       HIDE & REMOVED
