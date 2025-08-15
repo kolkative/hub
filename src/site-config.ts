@@ -608,9 +608,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       transition: filter 0.2s, fill 0.2s;
     }
     #x-toggle:hover svg {
-      filter: brightness(1.3) drop-shadow(0 0 2px var(--link));
+      filter: brightness(1.3) drop-shadow(0 0 2px var(--logo));
       /* atau bisa juga ubah fill jika SVG pakai fill="currentColor" */
-      /* fill: var(--link); */
+      /* fill: var(--logo); */
     }
 
     /* =======================
@@ -673,15 +673,15 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
     #x-sidebar .sidebar-section {
       gap: 6px;
-      margin: 16px 20px 8px 20px;
+      margin: 16px 20px 8px 30px;
       font-size: 0.95rem;
       color: var(--text-2);
       letter-spacing: 0.3px;
-      font-weight: 500;
+      font-weight: 600;
     }
     #x-sidebar .sidebar-icon {
       width: 20px !important;
-      height: 29px !important;
+      height: 20px !important;
       min-width: 20px !important;
       min-height: 20px !important;
       max-width: 20px !important;
@@ -753,7 +753,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       padding-left: 10px !important;
     }
     #x-header-title {
-      font-size: 1.1rem !important;
+      font-size: 1rem !important;
       display: flex;
       align-items: baseline;
       letter-spacing: -0.5px;
@@ -785,8 +785,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background: none;
       border: none;
       cursor: pointer;
-      width: 58px;
-      height: 58px;
+      width: 60px;
+      height: 60px;
       padding: 0;
       z-index: var(--layer-6);
       color: var(--text-1);
@@ -796,7 +796,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     #x-burger:hover {
-      color: var(--link);
+      color: var(--logo);
     }
 
     #x-burger svg {
