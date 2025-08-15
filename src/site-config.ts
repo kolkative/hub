@@ -186,7 +186,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       text-transform: uppercase !important;
       font-size: 30px !important;
       font-weight: var(--font-weight-9) !important;
-      margin-top: -25px !important;
+      margin-top: -20px !important;
       margin-bottom: -10px !important;
       padding-top: 8px !important;
       padding-bottom: 10px !important;
@@ -200,7 +200,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       text-transform: uppercase !important;
       font-size: 30px !important;
       font-weight: var(--font-weight-9) !important;
-      margin-top: -45px !important;
+      margin-top: -40px !important;
       margin-bottom: -10px !important;
       padding-top: 8px !important;
       padding-bottom: 10px !important;

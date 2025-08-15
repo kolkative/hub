@@ -235,7 +235,7 @@ function createSidebarNavigation() {
       '<div class="sidebar-section">Welcome</div>' +
       '<ul>' +
         '<li><a href="/start" class="sidebar-link" data-menu="Start Here"><span class="sidebar-icon">' +
-        '<img src="/icon-color.svg" width="20" height="20" alt="Start Here Icon">' +
+        '<svg width="20" height="20" viewBox="0 0 1820 1820" fill="currentColor"><path d="M911,64v420.75L1333.75,64v421.75h422.75l-422.68,423.39,422.68,424.11h-423.25l-421.24,421.26-3,1.49v-421.75l-422.75,421.75v-422.75H64.5l421.68-424.11L63.5,485.75h424.25L907.99,65.49l3-1.49ZM1330.75,908.5l-421.25-421.75h-420.25l1.49,3,418.76,418.75h421.25ZM1330.75,1332.25l-1.49-3-418.76-418.75h-421.25l421.25,421.75h420.25Z"/></svg>' +
         '</span>Start Here</a></li>' +
         '<li><a href="/" class="sidebar-link" data-menu="Announcements"><span class="sidebar-icon">' +
         '<svg width="20" height="20" fill="#0099FF" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"></path></svg>' +
