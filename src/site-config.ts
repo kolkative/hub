@@ -111,7 +111,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --text-2: #f1f3f5;  
       --border: #343a40;   
       --link: #0055FF; 
-      --brand:rgb(193, 34, 47);  
+      --brand: #FF0000;  
       --hover: #495057;
     }
       
@@ -123,7 +123,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --text-2: #212529;   
       --border: #343a40;   
       --link: #0055FF; 
-      --brand:rgb(193, 34, 47);
+      --brand: #FF0000;
       --hover: #dee2e6; 
     }
 
@@ -763,21 +763,21 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       padding-left: 10px !important;
     }
     #x-header-title {
-      font-size: 1rem !important;
+      font-size: 1.1rem !important;
       display: flex;
       align-items: baseline;
-      letter-spacing: -1px;
+      letter-spacing: -0.5px;
       font-weight: 400;
       gap: 4px;
     }
     #x-header-title .kolkative {
       font-weight: 700;
-      letter-spacing: -1px;
+      letter-spacing: -0.5px;
       margin-right: 2px;
     }
     #x-header-title .hub {
       font-weight: 400;
-      letter-spacing: -1px;
+      letter-spacing: -0.5px;
     }
 
 
