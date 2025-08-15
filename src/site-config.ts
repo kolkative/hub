@@ -361,43 +361,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
         visibility: visible !important;
       }
 
-      /* ==================
-      TABLE VIEW MOBILE OPTIMIZATION
-      ===================== */
-      
-      /* Pastikan table view tetap muncul di mobile */
-      .notion-table-view,
-      .notion-table-view .notion-collection-view,
-      .notion-table-view .notion-collection-view-content,
-      .notion-table-view .notion-collection-view-table,
-      .notion-table-view .notion-table-view-header-row,
-      .notion-table-view .notion-table-view-header-cell,
-      .notion-table-view .notion-table-view-row,
-      .notion-table-view .notion-table-view-cell {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        pointer-events: auto !important;
-        height: auto !important;
-        width: auto !important;
-        max-width: none !important;
-        max-height: none !important;
-        position: static !important;
-        z-index: auto !important;
-      }
-
-      /* Responsive table untuk mobile */
-      .notion-table-view .notion-collection-view-table {
-        overflow-x: auto !important;
-        max-width: 100vw !important;
-      }
-
-      .notion-table-view .notion-table-view-header-cell,
-      .notion-table-view .notion-table-view-cell {
-        min-width: 120px !important;
-        padding: 8px 12px !important;
-        font-size: 12px !important;
-      }
 
       /* ==================
       HIDE & REMOVED
@@ -436,8 +399,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-search .resultsPane::-webkit-scrollbar,
     div[role="button"][aria-label="Filter"],
     div[role="button"][aria-label="Sort"],
-    div[role="button"][aria-label="View options"],
-    div[role="button"][aria-label="Layout settings"],
     .notion-gallery-view .notion-selectable.notion-collection_view-block div + [role="button"],
     .notion-gallery-view .notion-selectable.notion-collection_view_page-block div + [role="button"] {
       display: none !important;
