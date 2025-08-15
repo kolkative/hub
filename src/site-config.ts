@@ -364,59 +364,25 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       /* =========================================
      MOBILE TABLE VIEW FIX — paste at the very end
      ========================================= */
- 
-    
-      /* 1) Batalkan rule global yang menyembunyikan row tabel */
-      .notion-table-view div[style*="min-height: 44px"],
-      .notion-collection-view div[style*="min-height: 44px"] {
-        display: block !important;
-        min-height: auto !important;
-        pointer-events: auto !important;
-        opacity: 1 !important;
-      }
-    
-      /* 2) Jangan paksa komponen tabel jadi block — pulihkan semantik tabel */
+
+      /* Hapus semua aturan custom untuk tabel dan biarkan default Notion */
       .notion-table-view,
       .notion-table-view .notion-collection-view,
-      .notion-table-view .notion-collection-view-content {
-        overflow-x: auto !important;   /* biar bisa scroll horizontal */
-      }
-    
-      .notion-table-view .notion-collection-view-table {
-        display: table !important;
-        width: max-content !important; /* biar kolom gak kepotong */
-        min-width: 100% !important;
-        border-collapse: separate !important;
-      }
-    
+      .notion-table-view .notion-collection-view-content,
+      .notion-table-view .notion-collection-view-table,
       .notion-table-view .notion-table-view-header-row,
-      .notion-table-view .notion-table-view-row {
-        display: table-row !important;
-      }
-    
+      .notion-table-view .notion-table-view-row,
       .notion-table-view .notion-table-view-header-cell,
-      .notion-table-view .notion-table-view-cell {
-        display: table-cell !important;
-        vertical-align: middle !important;
-        padding: 8px 12px !important;
-        font-size: 12px !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-      }
-    
-      /* 3) Pastikan konten property di dalam sel terlihat */
+      .notion-table-view .notion-table-view-cell,
       .notion-table-view .notion-collection-row-property,
       .notion-table-view .notion-collection-row-property-title,
-      .notion-table-view .notion-property,
-      .notion-table-view .notion-property * {
-        display: inline !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        height: auto !important;
-        width: auto !important;
-        max-height: none !important;
-        max-width: none !important;
-        pointer-events: auto !important;
+      .notion-table-view .notion-property {
+        all: unset !important;
+      }
+    
+      /* Pastikan tabel tetap bisa discroll horizontal jika terlalu lebar */
+      .notion-table-view {
+        overflow-x: auto !important;
       }
 
       /* ==================
