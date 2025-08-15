@@ -35,6 +35,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     brand: "239db40e66ea802eacb2f022e2c19859",
     job: "24edb40e66ea80e7b790c204d257ddd8",
     help: "250db40e66ea80e08011d887d304fb36",
+    store: "24ddb40e66ea80ccbdbacd583113dde4"
     // individual teams
     epigonen: "208db40e66ea80a185c7d0c381e72752",
   },
