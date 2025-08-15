@@ -673,7 +673,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
     #x-sidebar .sidebar-section {
       gap: 10px;
-      margin: 8px 30px 8px 30px;
+      margin: 0px 50px 8px 30px;
       font-size: 0.95rem;
       color: var(--text-2);
       letter-spacing: 0.3px;
