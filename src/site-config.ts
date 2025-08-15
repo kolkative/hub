@@ -322,7 +322,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     /* =========================================
-       1) GLOBAL: Adaptive color di semua resolusi
+       1) GLOBAL: Adaptive color untuk teks & ikon di semua view
        ========================================= */
     
     /* Header table text */
@@ -331,13 +331,19 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       color: var(--text-1) !important;
     }
     
-    /* Isi sel tabel (opsional jika mau beda warna) */
+    /* Isi sel tabel */
     .notion-table-view-cell,
     .notion-table-view-cell * {
       color: var(--text-2) !important;
     }
     
-    /* Semua selector nama view di semua layout */
+    /* Icon di header table (misalnya Sigma, bintang) */
+    .notion-table-view-header-cell svg {
+      fill: var(--text-1) !important;
+      stroke: var(--text-1) !important;
+    }
+    
+    /* Selector nama view di semua layout */
     .notion-collection-view-selector,
     .notion-collection-view-selector *,
     .notion-collection_view_dropdown,
@@ -347,17 +353,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       color: var(--text-1) !important;
     }
     
-    /* Ikon dalam selector view */
+    /* Icon dalam selector view (dropdown nama view) */
     .notion-collection-view-selector svg,
     .notion-collection_view_dropdown svg {
-      fill: var(--text-1) !important;
-      stroke: var(--text-1) !important;
-    }
-    
-    /* Notion record icon adaptif */
-    .notion-record-icon,
-    .notion-record-icon * {
-      color: var(--text-1) !important;
       fill: var(--text-1) !important;
       stroke: var(--text-1) !important;
     }
@@ -704,7 +702,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
     #x-sidebar .sidebar-section {
       gap: 10px;
-      margin: 0px 50px 8px 30px;
+      margin: 8px 10px 8px 30px;
       font-size: 0.95rem;
       color: var(--text-2);
       letter-spacing: 0.3px;
@@ -778,15 +776,15 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       color: var(--text-1) !important;
     }
     .header-logo {
-      top: 10px;
       text-decoration: none !important;
       display: flex;
       align-items: center;
       gap: 8px;
       padding-left: 10px !important;
+      padding-top: 10px !important;
     }
     #x-header-title {
-      top: 10px;
+      padding-top: 10px !important;
       font-size: 1rem !important;
       display: flex;
       align-items: baseline;
@@ -798,10 +796,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-weight: 700;
       letter-spacing: -0.5px;
       margin-right: 1px;
+      padding-top: 10px !important;
     }
     #x-header-title .hub {
       font-weight: 400;
       letter-spacing: -0.5px;
+      padding-top: 10px !important;
     }
 
 
