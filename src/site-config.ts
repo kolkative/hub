@@ -343,22 +343,18 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       stroke: var(--text-1) !important;
     }
     
-    /* Selector nama view di semua layout */
-    .notion-collection-view-selector,
-    .notion-collection-view-selector *,
-    .notion-collection_view_dropdown,
-    .notion-collection_view_dropdown *,
-    div[role="listbox"] .notion-selectable,
-    div[role="listbox"] .notion-selectable * {
+    /* Selector nama view di table view */
+    .viewTable .notion-selectable.notion-collection_view-block,
+    .viewTable .notion-selectable.notion-collection_view-block * {
       color: var(--text-1) !important;
     }
-    
-    /* Icon dalam selector view (dropdown nama view) */
-    .notion-collection-view-selector svg,
-    .notion-collection_view_dropdown svg {
+
+    /* Icon dalam selector nama view */
+    .viewTable .notion-selectable.notion-collection_view-block svg {
       fill: var(--text-1) !important;
       stroke: var(--text-1) !important;
     }
+
 
 
 
@@ -702,7 +698,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
     #x-sidebar .sidebar-section {
       gap: 10px;
-      margin: 8px 10px 8px 30px;
+      margin: 0px 10px 10px 30px;
       font-size: 0.95rem;
       color: var(--text-2);
       letter-spacing: 0.3px;
@@ -796,12 +792,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-weight: 700;
       letter-spacing: -0.5px;
       margin-right: 1px;
-      padding-top: 10px !important;
     }
     #x-header-title .hub {
       font-weight: 400;
       letter-spacing: -0.5px;
-      padding-top: 10px !important;
     }
 
 
