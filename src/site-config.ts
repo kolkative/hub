@@ -361,28 +361,63 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
         visibility: visible !important;
       }
   
+      /* =========================================
+     MOBILE TABLE VIEW FIX — paste at the very end
+     ========================================= */
+ 
+    
+      /* 1) Batalkan rule global yang menyembunyikan row tabel */
+      .notion-table-view div[style*="min-height: 44px"],
+      .notion-collection-view div[style*="min-height: 44px"] {
+        display: block !important;
+        min-height: auto !important;
+        pointer-events: auto !important;
+        opacity: 1 !important;
+      }
+    
+      /* 2) Jangan paksa komponen tabel jadi block — pulihkan semantik tabel */
+      .notion-table-view,
+      .notion-table-view .notion-collection-view,
+      .notion-table-view .notion-collection-view-content {
+        overflow-x: auto !important;   /* biar bisa scroll horizontal */
+      }
+    
+      .notion-table-view .notion-collection-view-table {
+        display: table !important;
+        width: max-content !important; /* biar kolom gak kepotong */
+        min-width: 100% !important;
+        border-collapse: separate !important;
+      }
+    
+      .notion-table-view .notion-table-view-header-row,
+      .notion-table-view .notion-table-view-row {
+        display: table-row !important;
+      }
+    
+      .notion-table-view .notion-table-view-header-cell,
+      .notion-table-view .notion-table-view-cell {
+        display: table-cell !important;
+        vertical-align: middle !important;
+        padding: 8px 12px !important;
+        font-size: 12px !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+    
+      /* 3) Pastikan konten property di dalam sel terlihat */
       .notion-table-view .notion-collection-row-property,
       .notion-table-view .notion-collection-row-property-title,
-      .notion-table-view .notion-table-view-cell,
-      .notion-table-view .notion-table-view-header-cell {
-        display: block !important;
+      .notion-table-view .notion-property,
+      .notion-table-view .notion-property * {
+        display: inline !important;
         visibility: visible !important;
         opacity: 1 !important;
         height: auto !important;
         width: auto !important;
         max-height: none !important;
         max-width: none !important;
-        overflow: visible !important;
         pointer-events: auto !important;
       }
-    
-      /* Hapus efek display:none yang tak perlu di mobile */
-      div[style*="min-height: 44px"],
-      .notion-table-view div[style*="min-height: 32px;"] {
-        display: block !important;
-        min-height: auto !important;
-      }
-    
 
       /* ==================
       HIDE & REMOVED
@@ -692,7 +727,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     ========================== */
     #x-header {
       position: fixed;
-      top: 0;
+      top: 10px;
       left: 0;
       width: 100vw;
       height: 60px;
@@ -746,7 +781,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     #x-header-title .kolkative {
       font-weight: 700;
       letter-spacing: -0.5px;
-      margin-right: 2px;
+      margin-right: 1px;
     }
     #x-header-title .hub {
       font-weight: 400;
