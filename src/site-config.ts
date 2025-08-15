@@ -184,7 +184,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-family: var(--font-neo-grotesque) !important;
       letter-spacing: -3px !important;
       text-transform: uppercase !important;
-      font-size: 35px !important;
+      font-size: 30px !important;
       font-weight: var(--font-weight-9) !important;
       margin-top: -25px !important;
       margin-bottom: -10px !important;
@@ -198,7 +198,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-family: var(--font-neo-grotesque) !important;
       letter-spacing: -3px !important;
       text-transform: uppercase !important;
-      font-size: 35px !important;
+      font-size: 30px !important;
       font-weight: var(--font-weight-9) !important;
       margin-top: -45px !important;
       margin-bottom: -10px !important;
@@ -625,7 +625,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background: var(--bg-2) !important;
       color: var(--text-1) !important;
       z-index: var(--layer-4);
-      padding: 70px 0 20px 0;
+      padding: 65px 0 20px 0;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
