@@ -693,7 +693,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     ========================== */
     #x-header {
       position: fixed;
-      top: 10px;
+      top: 0px;
       left: 0;
       width: 100vw;
       height: 60px;
@@ -710,6 +710,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
        X-HEADER LOGO THEME SWITCH
     ========================== */
     #x-header-logo {
+      top: 10px;
       width: 18px;
       height: 18px;
       max-width: 100%;
@@ -730,6 +731,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       color: var(--text-1) !important;
     }
     .header-logo {
+      top: 10px;
       text-decoration: none !important;
       display: flex;
       align-items: center;
@@ -737,6 +739,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       padding-left: 10px !important;
     }
     #x-header-title {
+      top: 10px;
       font-size: 1rem !important;
       display: flex;
       align-items: baseline;
