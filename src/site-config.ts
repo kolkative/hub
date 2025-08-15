@@ -672,8 +672,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       color: var(--text-1);
     }
     #x-sidebar .sidebar-section {
-      gap: 6px;
-      margin: 15px 30px 5px 30px;
+      gap: 10px;
+      margin: 8px 30px 8px 30px;
       font-size: 0.95rem;
       color: var(--text-2);
       letter-spacing: 0.3px;
