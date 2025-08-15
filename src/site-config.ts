@@ -188,7 +188,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-weight: var(--font-weight-9) !important;
       margin-top: -25px !important;
       margin-bottom: -10px !important;
-      padding-top: 10px !important;
+      padding-top: 8px !important;
       padding-bottom: 10px !important;
       padding-inline: 0 !important;
     }
@@ -202,7 +202,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-weight: var(--font-weight-9) !important;
       margin-top: -45px !important;
       margin-bottom: -10px !important;
-      padding-top: 10px !important;
+      padding-top: 8px !important;
       padding-bottom: 10px !important;
       padding-inline: 0 !important;
     }
@@ -680,22 +680,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-weight: 500;
     }
     #x-sidebar .sidebar-icon {
-      width: 21px !important;
-      height: 21px !important;
-      min-width: 21px !important;
-      min-height: 21px !important;
-      max-width: 21px !important;
-      max-height: 21px !important;
-    }
-
-    /* Logo brand untuk Start Here */
-    #x-sidebar .start-here-logo {
-      width: 17px !important;
-      height: 17px !important;
-      min-width: 17px !important;
-      min-height: 17px !important;
-      max-width: 17px !important;
-      max-height: 17px !important;
+      width: 20px !important;
+      height: 29px !important;
+      min-width: 20px !important;
+      min-height: 20px !important;
+      max-width: 20px !important;
+      max-height: 20px !important;
     }
 
     #x-sidebar-overlay {
