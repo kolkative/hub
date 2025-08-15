@@ -362,27 +362,33 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       }
   
       /* =========================================
-     MOBILE TABLE VIEW FIX — paste at the very end
+     MINIMAL FIX: SHOW TABLE VIEW ON MOBILE
+     tanpa ubah style default
      ========================================= */
 
-      /* Hapus semua aturan custom untuk tabel dan biarkan default Notion */
-      .notion-table-view,
-      .notion-table-view .notion-collection-view,
-      .notion-table-view .notion-collection-view-content,
-      .notion-table-view .notion-collection-view-table,
-      .notion-table-view .notion-table-view-header-row,
-      .notion-table-view .notion-table-view-row,
-      .notion-table-view .notion-table-view-header-cell,
-      .notion-table-view .notion-table-view-cell,
+      /* Batalin aturan yang nyembunyiin row tabel */
+      .notion-table-view div[style*="min-height: 44px"],
+      .notion-collection-view div[style*="min-height: 44px"] {
+        display: block !important;
+        min-height: auto !important;
+        pointer-events: auto !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+    
+      /* Batalin aturan yang nyembunyiin isi sel */
       .notion-table-view .notion-collection-row-property,
       .notion-table-view .notion-collection-row-property-title,
       .notion-table-view .notion-property {
-        all: unset !important;
-      }
-    
-      /* Pastikan tabel tetap bisa discroll horizontal jika terlalu lebar */
-      .notion-table-view {
-        overflow-x: auto !important;
+        display: inline !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        height: auto !important;
+        width: auto !important;
+        max-height: none !important;
+        max-width: none !important;
+        overflow: visible !important;
+        pointer-events: auto !important;
       }
 
       /* ==================
