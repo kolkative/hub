@@ -234,9 +234,8 @@ function createSidebarNavigation() {
       '</ul>' +
       '<div class="sidebar-section">Welcome</div>' +
       '<ul>' +
-        '<li><a href="/start" class="sidebar-link" data-menu="Start Here">' +
-        '<span class="sidebar-icon start-here-logo">' +
-        '<img width="20" height="20" fill="#0099FF" viewBox="0 0 256 256"><path d="M240,128a15.79,15.79,0,0,1-10.5,15l-63.44,23.07L143,229.5a16,16,0,0,1-30,0L89.94,166.06,26.5,143a16,16,0,0,1,0-30L89.94,89.94,113,26.5a16,16,0,0,1,30,0l23.07,63.44L229.5,113A15.79,15.79,0,0,1,240,128Z"></path></svg>on-color.svg" alt="Start Here Icon" style="width: 20px; height: 20px;">' +
+        '<li><a href="/start" class="sidebar-link" data-menu="Start Here"><span class="sidebar-icon start-here-logo">' +
+        '<svg width="20" height="20" fill="#2999ff" viewBox="0 0 256 256"><path d="M240,128a15.79,15.79,0,0,1-10.5,15l-63.44,23.07L143,229.5a16,16,0,0,1-30,0L89.94,166.06,26.5,143a16,16,0,0,1,0-30L89.94,89.94,113,26.5a16,16,0,0,1,30,0l23.07,63.44L229.5,113A15.79,15.79,0,0,1,240,128Z"></path></svg>' +
         '</span>Start Here</a></li>' +
         '<li><a href="/" class="sidebar-link" data-menu="Announcements"><span class="sidebar-icon">' +
         '<svg width="20" height="20" fill="#0099FF" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"></path></svg>' +
