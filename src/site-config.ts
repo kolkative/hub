@@ -303,12 +303,16 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       align-items: center !important;
       padding: 0.3rem 1.1rem !important;
       text-decoration: none !important;
+      color: var(--text-1) !important;
       font-size: 13px !important;
       border: 1px solid var(--border) !important;
       border-radius: var(--radius-conditional-3) !important;
       transition: all 0.2s ease-out !important;
       width: 100% !important;
       min-height: 28px;
+    }
+    body .notion-list-view .notion-selectable.notion-page-block.notion-collection-item a * {
+      color: inherit !important;
     }
 
     body .notion-list-view .notion-selectable.notion-page-block.notion-collection-item:hover a {
@@ -938,7 +942,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       color: var(--text-1) !important;
       box-shadow: none !important;
       border-radius: 0 !important;
-      border-bottom: 1px solid var(--border) !important; /* subtle highlight line */
     }
 
     .notion-collection-view-tab-button > div > div {
@@ -966,6 +969,14 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     /* Make collection table body transparent */
     .notion-table-view-cell > div > div,
     .notion-table-view-row > div > div {
+      background: transparent !important;
+    }
+    .notion-table-view .notion-collection-item,
+    .notion-table-view .notion-collection-item > div,
+    .notion-table-view .notion-table-view-row,
+    .notion-table-view .notion-table-view-row > div,
+    .notion-table-view .notion-table-view-cell,
+    .notion-table-view .notion-table-view-cell > div {
       background: transparent !important;
     }
 
