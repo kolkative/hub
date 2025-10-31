@@ -258,23 +258,16 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       border-bottom: none !important;
     }
 
-    /* --- Style for Highlighted Text Spans --- */
-    span.notion-enable-hover {
-      display: inline-flex !important;
-      align-items: center !important;
-      padding: 0 15px !important;
-      margin: 1px !important;
-      min-height: 24px !important;
-      color: var(--link) !important;
-      border: 1px solid var(--border) !important;
-      border-radius: var(--radius-conditional-3) !important;
-      transition: all 0.2s ease-out !important;
-    }
-
-    span.notion-enable-hover:hover {
-      transform: translateY(-1px) scale(1.01) !important;
-      box-shadow: 1px 1px 0 #000000 !important;
-      border-color: var(--border) !important;
+    /* Reset italic/emphasis to normal italic, no capsule */
+    em, i, span[style*="italic"], span[style*="font-style: italic"] {
+      font-style: italic !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      background: none !important;
+      color: inherit !important;
     }
 
     /* --- List View: V4 (Compact & Refined Navy) --- */
