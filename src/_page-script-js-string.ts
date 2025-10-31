@@ -238,7 +238,7 @@ function createSidebarNavigation() {
       '</ul>' +
       '<div class="sidebar-section">Welcome</div>' +
       '<ul>' +
-        '<li><a href="/start" class="sidebar-link" data-menu="Start Here"><span class="sidebar-icon">' +
+        '<li><a href="/starthere" class="sidebar-link" data-menu="Start Here"><span class="sidebar-icon">' +
         '<svg width="19" height="19" viewBox="0 0 1820 1820" fill="#0099FF"><path d="M911,64v420.75L1333.75,64v421.75h422.75l-422.68,423.39,422.68,424.11h-423.25l-421.24,421.26-3,1.49v-421.75l-422.75,421.75v-422.75H64.5l421.68-424.11L63.5,485.75h424.25L907.99,65.49l3-1.49ZM1330.75,908.5l-421.25-421.75h-420.25l1.49,3,418.76,418.75h421.25ZM1330.75,1332.25l-1.49-3-418.76-418.75h-421.25l421.25,421.75h420.25Z"/></svg>' +
         '</span>Start Here</a></li>' +
         '<li><a href="/" class="sidebar-link" data-menu="Announcements"><span class="sidebar-icon">' +
