@@ -185,7 +185,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       z-index: var(--layer-2);
       font-size: 20px !important;
       font-weight: 600 !important;
-      letter-spacing: 0.2px !important;
+      letter-spacing: -2px !important;
       padding: 18px 0px 18px 24px !important;
       border-bottom: var(--border-size-1) solid var(--border);
       box-sizing: border-box !important;
@@ -194,7 +194,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     h2 {
       color: var(--link) !important;
       font-family: var(--font-neo-grotesque) !important;
-      letter-spacing: 0.2px !important;
+      letter-spacing: -2px !important;
       text-transform: uppercase !important;
       font-size: 30px !important;
       font-weight: 600 !important;
@@ -208,7 +208,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     h3 {
       color: var(--brand) !important;
       font-family: var(--font-neo-grotesque) !important;
-      letter-spacing: 0.2px !important;
+      letter-spacing: -2px !important;
       text-transform: uppercase !important;
       font-size: 30px !important;
       font-weight: var(--font-weight-9) !important;
@@ -327,7 +327,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     body .notion-list-view .notion-selectable.notion-page-block.notion-collection-item a .notion-property-title div {
-      color: var(--link) !important;
+      color: var(--text-1) !important; /* keep list titles not blue */
       font-size: 12px !important;
       padding: 0 !important;
       white-space: nowrap !important;
@@ -937,6 +937,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background-color: transparent !important; /* no hover capsule */
       color: var(--text-1) !important;
       box-shadow: none !important;
+      border-radius: 0 !important;
+      border-bottom: 1px solid var(--border) !important; /* subtle highlight line */
     }
 
     .notion-collection-view-tab-button > div > div {
@@ -948,18 +950,23 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     /* Table view header row */
     .notion-table-view-header-row {
-      background: var(--bg-2) !important;
+      background: transparent !important;
       color: var(--text-1) !important;
       font-weight: 600 !important;
       font-size: 14px !important;
       box-shadow: none !important;
     }
     .notion-table-view-header-cell {
-      background: var(--bg-2) !important;
+      background: transparent !important;
       color: var(--text-1) !important;
       font-weight: 600 !important;
       font-size: 14px !important;
       box-shadow: none !important;
+    }
+    /* Make collection table body transparent */
+    .notion-table-view-cell > div > div,
+    .notion-table-view-row > div > div {
+      background: transparent !important;
     }
 
     .notion-collection-view-tab-button svg,
