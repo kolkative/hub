@@ -88,6 +88,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       text-decoration-color: none !important;
       text-decoration-thickness: none !important;
     }
+    /* Boldkan teks link di area konten */
+    .notion-page-content a {
+      font-weight: 600 !important;
+    }
     
     /* CSS Variables untuk Theme */
     :root {
@@ -180,6 +184,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background-clip: padding-box !important;
       z-index: var(--layer-2);
       font-size: 20px !important;
+      font-weight: 600 !important;
       padding: 18px 0px 18px 24px !important;
       border-bottom: var(--border-size-1) solid var(--border);
       box-sizing: border-box !important;
@@ -191,7 +196,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       letter-spacing: -3px !important;
       text-transform: uppercase !important;
       font-size: 30px !important;
-      font-weight: var(--font-weight-9) !important;
+      font-weight: 600 !important;
       margin-top: -18px !important;
       margin-bottom: -10px !important;
       padding-top: 6px !important;
@@ -261,6 +266,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     /* Reset italic/emphasis to normal italic, no capsule */
     em, i, span[style*="italic"], span[style*="font-style: italic"] {
       font-style: italic !important;
+      font-weight: 700 !important; /* italic-bold */
       padding: 0 !important;
       margin: 0 !important;
       border: none !important;
