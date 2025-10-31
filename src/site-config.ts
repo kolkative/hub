@@ -255,13 +255,27 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     .notion-page-content a.notion-link-token:hover {
-      transform: translateY(-1px) scale(1.01) !important;
-      box-shadow: 1px 1px 0 #000000 !important;
+      /* Matikan efek dim/underline/hover */
+      transform: none !important;
+      box-shadow: none !important;
       border-color: var(--border) !important;
     }
 
     .notion-page-content a.notion-link-token span {
       border-bottom: none !important;
+    }
+    /* Global: nonaktifkan underline dan dim pada semua link di konten */
+    .notion-page-content a,
+    .notion-page-content a:link,
+    .notion-page-content a:visited,
+    .notion-page-content a:hover,
+    .notion-page-content a:active {
+      text-decoration: none !important;
+      text-decoration-line: none !important;
+      border-bottom: none !important;
+      opacity: 1 !important;
+      filter: none !important;
+      color: var(--link) !important;
     }
 
     /* Reset italic/emphasis to normal italic, no capsule */
@@ -891,10 +905,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-collection-view-tab-button {
       background-color: transparent !important;
       color: var(--text-1) !important;
-      border-radius: 20px !important;
+      border-radius: 0 !important; /* no capsule */
       -webkit-user-select: none !important;
       user-select: none !important;
       pointer-events: auto !important;
+      cursor: default !important; /* keep default cursor */
     }
 
     .notion-collection-view-tab-button[aria-selected],
@@ -919,8 +934,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     .notion-collection-view-tab-button:hover   {
-      background-color: var(--hover) !important;
+      background-color: transparent !important; /* no hover capsule */
       color: var(--text-1) !important;
+      box-shadow: none !important;
     }
 
     .notion-collection-view-tab-button > div > div {
