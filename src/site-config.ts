@@ -38,6 +38,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     store: "24ddb40e66ea80ccbdbacd583113dde4",
     support: "25cdb40e66ea80b48150c92743ae07df",
     showpeace: "268db40e66ea80899571f4b790567c30",
+    start: "254db40e66ea80708fd4f809e2203bb8",
+    crew: "297db40e66ea809a898ffbf2ac5cee18",
     // individual teams
     epigonen: "208db40e66ea80a185c7d0c381e72752",
   },
@@ -114,8 +116,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --text-1: #f8f9fa;
       --text-2: #f1f3f5;  
       --border: #343a40;   
-      --link: #0055FF; 
-      --brand: #FF0000;  
+      --link: #0099FF; 
+      --brand: #FF3366;  
       --hover: #495057;
     }
       
@@ -126,8 +128,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --text-1: #16191d;
       --text-2: #212529;   
       --border: #343a40;   
-      --link: #0055FF; 
-      --brand: #FF0000;
+      --link: #0099FF; 
+      --brand: #FF3366;
       --hover: #dee2e6; 
     }
 
