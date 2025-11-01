@@ -958,7 +958,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-weight: 600 !important;
       font-size: 14px !important;
       box-shadow: none !important;
-      border-bottom: var(--border-size-1) solid var(--border) !important;
       border-color: var(--border) !important;
     }
     .notion-table-view-header-cell {
@@ -967,12 +966,20 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-weight: 600 !important;
       font-size: 14px !important;
       box-shadow: none !important;
-      border-right: var(--border-size-1) solid var(--border) !important;
-      border-bottom: var(--border-size-1) solid var(--border) !important;
       border-color: var(--border) !important;
     }
-    .notion-table-view-header-cell:last-child {
-      border-right: none !important;
+    /* Fix overflow/sticky header background agar adaptive */
+    .notion-table-view .sticky-portal-target,
+    .notion-table-view .sticky-portal-target > div,
+    .notion-table-view [style*="clip-path"],
+    .notion-table-view [style*="margin-inline"],
+    .notion-table-view [style*="background: var(--c-bacPri)"],
+    .notion-table-view [style*="background:var(--c-bacPri)"] {
+      background: var(--bg-2) !important;
+    }
+    /* Override Notion's CSS variable untuk header overflow */
+    .notion-table-view [style*="padding-inline"] {
+      background: var(--bg-2) !important;
     }
     /* Adaptive table borders untuk light/dark mode */
     .notion-table-view-cell,
