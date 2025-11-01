@@ -968,19 +968,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       box-shadow: none !important;
       border-color: var(--border) !important;
     }
-    /* Fix overflow/sticky header background agar adaptive */
-    .notion-table-view .sticky-portal-target,
-    .notion-table-view .sticky-portal-target > div,
-    .notion-table-view [style*="clip-path"],
-    .notion-table-view [style*="margin-inline"],
-    .notion-table-view [style*="background: var(--c-bacPri)"],
-    .notion-table-view [style*="background:var(--c-bacPri)"] {
-      background: var(--bg-2) !important;
-    }
-    /* Override Notion's CSS variable untuk header overflow */
-    .notion-table-view [style*="padding-inline"] {
-      background: var(--bg-2) !important;
-    }
     /* Adaptive table borders untuk light/dark mode */
     .notion-table-view-cell,
     .notion-table-view-cell > div,
