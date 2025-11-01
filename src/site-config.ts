@@ -958,6 +958,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-weight: 600 !important;
       font-size: 14px !important;
       box-shadow: none !important;
+      border-color: var(--border) !important;
     }
     .notion-table-view-header-cell {
       background: var(--bg-2) !important;
@@ -965,6 +966,14 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-weight: 600 !important;
       font-size: 14px !important;
       box-shadow: none !important;
+      border-color: var(--border) !important;
+    }
+    /* Adaptive table borders untuk light/dark mode */
+    .notion-table-view-cell,
+    .notion-table-view-cell > div,
+    .notion-table-view-row,
+    .notion-table-view-row > div {
+      border-color: var(--border) !important;
     }
 
     .notion-collection-view-tab-button svg,
