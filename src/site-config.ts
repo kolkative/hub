@@ -953,7 +953,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     /* Table view header row */
     .notion-table-view-header-row {
-      background: var(--bg-2) !important;
+      background: transparent !important;
       color: var(--text-1) !important;
       font-weight: 600 !important;
       font-size: 14px !important;
@@ -961,7 +961,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       border-color: var(--border) !important;
     }
     .notion-table-view-header-cell {
-      background: var(--bg-2) !important;
+      background: transparent !important;
       color: var(--text-1) !important;
       font-weight: 600 !important;
       font-size: 14px !important;
