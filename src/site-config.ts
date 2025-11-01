@@ -953,31 +953,18 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     /* Table view header row */
     .notion-table-view-header-row {
-      background: transparent !important;
+      background: var(--bg-2) !important;
       color: var(--text-1) !important;
       font-weight: 600 !important;
       font-size: 14px !important;
       box-shadow: none !important;
     }
     .notion-table-view-header-cell {
-      background: transparent !important;
+      background: var(--bg-2) !important;
       color: var(--text-1) !important;
       font-weight: 600 !important;
       font-size: 14px !important;
       box-shadow: none !important;
-    }
-    /* Make collection table body transparent */
-    .notion-table-view-cell > div > div,
-    .notion-table-view-row > div > div {
-      background: transparent !important;
-    }
-    .notion-table-view .notion-collection-item,
-    .notion-table-view .notion-collection-item > div,
-    .notion-table-view .notion-table-view-row,
-    .notion-table-view .notion-table-view-row > div,
-    .notion-table-view .notion-table-view-cell,
-    .notion-table-view .notion-table-view-cell > div {
-      background: transparent !important;
     }
 
     .notion-collection-view-tab-button svg,
