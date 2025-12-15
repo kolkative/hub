@@ -40,6 +40,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     showpeace: "268db40e66ea80899571f4b790567c30",
     starthere: "254db40e66ea80708fd4f809e2203bb8",
     crew: "297db40e66ea809a898ffbf2ac5cee18",
+    koty: "2cadb40e66ea804e90c2ce067d4f0966",
     // individual teams
     epigonen: "208db40e66ea80a185c7d0c381e72752",
   },
