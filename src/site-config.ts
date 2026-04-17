@@ -63,10 +63,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     www: {
       redirect: "https://hub.kolktive.my.id",
     },
-    nccf: {
-      redirect: "https://hub.kolktive.my.id/nccf",
-    },
-  }
+  },
 
   // The 404 (not found) page is optional
   // If you don't have one, the default 404 page will be used
