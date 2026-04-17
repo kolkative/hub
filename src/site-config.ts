@@ -43,7 +43,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     koty: "2cadb40e66ea804e90c2ce067d4f0966",
     nccf: "345db40e66ea80b88e5dda20dc5decf4",
     // individual teams
-    epigonen: "208db40e66ea80a185c7d0c381e72752",
+    // epigonen: "208db40e66ea80a185c7d0c381e72752"
   },
 
   // Rewrite meta tags for specific pages

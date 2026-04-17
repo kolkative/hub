@@ -8,28 +8,34 @@ window.onload = function () {
     // === DESKTOP ===
     document
       .querySelectorAll('div[style*="position: absolute; top: 4px;"]')
-      ?.forEach((el) => (el.style.display = 'none'))
+      ?.forEach((el) => (el.style.display = "none"));
 
     // Remove hidden properties dropdown (desktop)
-    const propertiesDropdown = document.querySelector('div[aria-label="Page properties"]')?.nextElementSibling
+    const propertiesDropdown = document.querySelector(
+      'div[aria-label="Page properties"]',
+    )?.nextElementSibling;
     if (propertiesDropdown) {
-      propertiesDropdown.style.display = 'none'
+      propertiesDropdown.style.display = "none";
     }
 
     // === MOBILE ===
-    const mobilePropertiesBtn = document.querySelector('.notion-mobile [aria-label="Page properties"]')
-    const mobilePropertiesDropdown = mobilePropertiesBtn?.nextElementSibling
+    const mobilePropertiesBtn = document.querySelector(
+      '.notion-mobile [aria-label="Page properties"]',
+    );
+    const mobilePropertiesDropdown = mobilePropertiesBtn?.nextElementSibling;
     if (mobilePropertiesDropdown) {
-      mobilePropertiesDropdown.style.display = 'none'
+      mobilePropertiesDropdown.style.display = "none";
     }
-  }, 1000)
+  }, 1000);
 
   // --- Adaptive Theme Management (v4 - Persistent Poller) ---
   const THEME_KEY = "theme";
   const NOTION_DARK_CLASS = "notion-dark-theme";
-  
-  const sunIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="#ffffff" viewBox="0 0 256 256"><path d="M184,128a56,56,0,1,1-56-56A56,56,0,0,1,184,128Z" opacity="0.2"></path><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"></path></svg>';
-  const moonIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="#000000" viewBox="0 0 256 256"><path d="M227.89,147.89A96,96,0,1,1,108.11,28.11,96.09,96.09,0,0,0,227.89,147.89Z" opacity="0.2"></path><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"></path></svg>';
+
+  const sunIcon =
+    '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="#ffffff" viewBox="0 0 256 256"><path d="M184,128a56,56,0,1,1-56-56A56,56,0,0,1,184,128Z" opacity="0.2"></path><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"></path></svg>';
+  const moonIcon =
+    '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="#000000" viewBox="0 0 256 256"><path d="M227.89,147.89A96,96,0,1,1,108.11,28.11,96.09,96.09,0,0,0,227.89,147.89Z" opacity="0.2"></path><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"></path></svg>';
 
   let currentTheme;
 
@@ -72,7 +78,10 @@ window.onload = function () {
   // Sinkronisasi toggle NoteHost <-> custom theme
   function syncThemeFromBody(mutations) {
     mutations.forEach((mutation) => {
-      if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+      if (
+        mutation.type === "attributes" &&
+        mutation.attributeName === "class"
+      ) {
         // Observer hanya sync class, tidak update script theme-data
       }
     });
@@ -80,12 +89,12 @@ window.onload = function () {
 
   // Fungsi untuk sinkronisasi theme Notion
   function syncNotionTheme(theme) {
-    const notionApp = document.querySelector('.notion-app-inner');
+    const notionApp = document.querySelector(".notion-app-inner");
     if (notionApp) {
-      if (theme === 'dark') {
-        notionApp.classList.add('notion-dark-theme');
+      if (theme === "dark") {
+        notionApp.classList.add("notion-dark-theme");
       } else {
-        notionApp.classList.remove('notion-dark-theme');
+        notionApp.classList.remove("notion-dark-theme");
       }
     }
   }
@@ -101,7 +110,7 @@ window.onload = function () {
   function setTheme(theme) {
     const html = document.documentElement;
     const body = document.body;
-    const themeScript = document.getElementById('theme-data');
+    const themeScript = document.getElementById("theme-data");
 
     // Pastikan theme valid
     if (theme !== "dark" && theme !== "light") {
@@ -111,14 +120,14 @@ window.onload = function () {
     if (theme === "light") {
       html.classList.add("light");
       body.classList.add("light");
-      if (themeScript && themeScript.tagName === 'SCRIPT') {
-        themeScript.textContent = JSON.stringify({ mode: 'light' });
+      if (themeScript && themeScript.tagName === "SCRIPT") {
+        themeScript.textContent = JSON.stringify({ mode: "light" });
       }
     } else {
       html.classList.remove("light");
       body.classList.remove("light");
-      if (themeScript && themeScript.tagName === 'SCRIPT') {
-        themeScript.textContent = JSON.stringify({ mode: 'system' });
+      if (themeScript && themeScript.tagName === "SCRIPT") {
+        themeScript.textContent = JSON.stringify({ mode: "system" });
       }
     }
 
@@ -201,12 +210,10 @@ window.onload = function () {
 };
 
 function addOpenPropsLinks() {
-  var openPropsLinks = [
-    'https://unpkg.com/open-props'
-  ];
-  openPropsLinks.forEach(function(href) {
-    var link = document.createElement('link');
-    link.rel = 'stylesheet';
+  var openPropsLinks = ["https://unpkg.com/open-props"];
+  openPropsLinks.forEach(function (href) {
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
     link.href = href;
     document.head.appendChild(link);
   });
@@ -219,69 +226,72 @@ function createSidebarNavigation() {
   sidebar.id = "x-sidebar";
   sidebar.innerHTML =
     '<nav class="sidebar-nav">' +
-      '<ul>' +
-        '<li><a href="/kabaret" class="sidebar-link" data-menu="Karya"><span class="sidebar-icon">' +
-        '<svg width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M40,128h88v88H48a8,8,0,0,1-8-8ZM208,40H128v88h88V48A8,8,0,0,0,208,40Z" opacity="0.2"></path><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,88H136V48h72ZM120,48v72H48V48ZM48,136h72v72H48Zm160,72H136V136h72v72Z"></path></svg>' +
-        '</span>Karya</a></li>' +
-        '<li><a href="/team" class="sidebar-link" data-menu="Teams"><span class="sidebar-icon">' +
-        '<svg width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M216,56v56c0,96-88,120-88,120S40,208,40,112V56a8,8,0,0,1,8-8H208A8,8,0,0,1,216,56Z" opacity="0.2"></path><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.27,47,25.53a8,8,0,0,0,4.2,0c1-.26,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0Z"></path></svg>' +
-        '</span>Teams</a></li>' +
-        '<li><a href="/crew" class="sidebar-link" data-menu="Cast & Crew"><span class="sidebar-icon">' +
-        '<svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor"><path d="M104,180a28,28,0,1,1-28-28A28,28,0,0,1,104,180Zm76-28a28,28,0,1,0,28,28A28,28,0,0,0,180,152ZM166.11,51.29a8,8,0,0,0-12.7-.29L140.47,66a16,16,0,0,1-24.94,0L102.59,51a8,8,0,0,0-12.7.29L40,120H216Z" opacity="0.2"></path><path d="M248,112H220.08l-47.5-65.41a16,16,0,0,0-25.31-.72l-12.85,14.9-.2.23a7.95,7.95,0,0,1-12.44,0l-.2-.23-12.85-14.9a16,16,0,0,0-25.31.72L35.92,112H8a8,8,0,0,0,0,16H248a8,8,0,0,0,0-16ZM96.34,56l.19.24,12.85,14.89a24,24,0,0,0,37.24,0l12.85-14.89c.06-.08.1-.16.17-.24l40.66,56H55.69ZM180,144a36,36,0,0,0-35.77,32H111.77a36,36,0,1,0-1.83,16h36.12A36,36,0,1,0,180,144ZM76,200a20,20,0,1,1,20-20A20,20,0,0,1,76,200Zm104,0a20,20,0,1,1,20-20A20,20,0,0,1,180,200Z"></path></svg>' +
-        '</span>Cast & Crew</a></li>' +
-        '<li><a href="/event" class="sidebar-link" data-menu="Cast & Crew"><span class="sidebar-icon">' +
-        '<svg width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M216,48V88H40V48a8,8,0,0,1,8-8H208A8,8,0,0,1,216,48Z" opacity="0.2"></path><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"></path></svg>' +
-        '</span>Events</a></li>' +
-        '<li><a href="/leaderboard" class="sidebar-link" data-menu="Leaderboard"><span class="sidebar-icon">' +
-        '<svg width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M208,40V208H152V40Z" opacity="0.2"></path><path d="M224,200h-8V40a8,8,0,0,0-8-8H152a8,8,0,0,0-8,8V80H96a8,8,0,0,0-8,8v40H48a8,8,0,0,0-8,8v64H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16ZM160,48h40V200H160ZM104,96h40V200H104ZM56,144H88v56H56Z"></path></svg>' +
-        '</span>Leaderboard</a></li>' +
-      '</ul>' +
-      '<div class="sidebar-section">Welcome</div>' +
-      '<ul>' +
-        '<li><a href="/starthere" class="sidebar-link" data-menu="Start Here"><span class="sidebar-icon">' +
-        '<svg width="19" height="19" viewBox="0 0 1820 1820" fill="#0099FF"><path d="M911,64v420.75L1333.75,64v421.75h422.75l-422.68,423.39,422.68,424.11h-423.25l-421.24,421.26-3,1.49v-421.75l-422.75,421.75v-422.75H64.5l421.68-424.11L63.5,485.75h424.25L907.99,65.49l3-1.49ZM1330.75,908.5l-421.25-421.75h-420.25l1.49,3,418.76,418.75h421.25ZM1330.75,1332.25l-1.49-3-418.76-418.75h-421.25l421.25,421.75h420.25Z"/></svg>' +
-        '</span>Start Here</a></li>' +
-        '<li><a href="/" class="sidebar-link" data-menu="Announcements"><span class="sidebar-icon">' +
-        '<svg width="20" height="20" fill="#0099FF" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"></path></svg>' +
-        '</span>Announcements</a></li>' +
-      '</ul>' +
-      '<div class="sidebar-section">Help</div>' +
-      '<ul>' +
-        '<li><a href="/support" class="sidebar-link" data-menu="Support"><span class="sidebar-icon">' +
-        '<svg width="20" height="20" fill="#0099FF" viewBox="0 0 256 256"><path d="M240,102c0,70-103.79,126.66-108.21,129a8,8,0,0,1-7.58,0C119.79,228.66,16,172,16,102A62.07,62.07,0,0,1,78,40c20.65,0,38.73,8.88,50,23.89C139.27,48.88,157.35,40,178,40A62.07,62.07,0,0,1,240,102Z"></path></svg>' +
-        '</span>Community Support</a></li>' +
-        '<li><a href="/job" class="sidebar-link" data-menu="Jobs"><span class="sidebar-icon">' +
-        '<svg width="20" height="20" fill="#0099FF" viewBox="0 0 256 256"><path d="M216,64H176a48,48,0,0,0-96,0H40A16,16,0,0,0,24,80V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V80A16,16,0,0,0,216,64ZM128,32a32,32,0,0,1,32,32H96A32,32,0,0,1,128,32Z"></path></svg>' +
-        '</span>Jobs & Volunteering</a></li>' +
-        '<li><a href="/help" class="sidebar-link" data-menu="Kritik & Saran"><span class="sidebar-icon">' +
-        '<svg width="20" height="20" fill="#0099FF" viewBox="0 0 256 256"><path d="M176,232a8,8,0,0,1-8,8H88a8,8,0,0,1,0-16h80A8,8,0,0,1,176,232Zm40-128a87.55,87.55,0,0,1-33.64,69.21A16.24,16.24,0,0,0,176,186v6a16,16,0,0,1-16,16H96a16,16,0,0,1-16-16v-6a16,16,0,0,0-6.23-12.66A87.59,87.59,0,0,1,40,104.49C39.74,56.83,78.26,17.14,125.88,16A88,88,0,0,1,216,104Zm-32.11-9.34a57.6,57.6,0,0,0-46.56-46.55,8,8,0,0,0-2.66,15.78c16.57,2.79,30.63,16.85,33.44,33.45A8,8,0,0,0,176,104a9,9,0,0,0,1.35-.11A8,8,0,0,0,183.89,94.66Z"></path></svg>' +
-        '</span>Kritik & Saran</a></li>' +
-      '</ul>' +
-      '<div class="sidebar-section">Community</div>' +
-      '<ul>' +
-        '<li><a href="/academy" class="sidebar-link" data-menu="Tickets"><span class="sidebar-icon">' +
-        '<svg width="20" height="20" fill="#0099FF" viewBox="0 0 256 256"><path d="M176,207.24a119,119,0,0,0,16-7.73V240a8,8,0,0,1-16,0Zm11.76-88.43-56-29.87a8,8,0,0,0-7.52,14.12L171,128l17-9.06Zm64-29.87-120-64a8,8,0,0,0-7.52,0l-120,64a8,8,0,0,0,0,14.12L32,117.87v48.42a15.91,15.91,0,0,0,4.06,10.65C49.16,191.53,78.51,216,128,216a130,130,0,0,0,48-8.76V130.67L171,128l-43,22.93L43.83,106l0,0L25,96,128,41.07,231,96l-18.78,10-.06,0L188,118.94a8,8,0,0,1,4,6.93v73.64a115.63,115.63,0,0,0,27.94-22.57A15.91,15.91,0,0,0,224,166.29V117.87l27.76-14.81a8,8,0,0,0,0-14.12Z"></path></svg>' +
-        '</span>Academy</a></li>' +
-        '<li><a href="/resources" class="sidebar-link" data-menu="Resources"><span class="sidebar-icon">' +
-        '<svg width="20" height="20" fill="#0099FF" viewBox="0 0 256 256"><path d="M220,169.09l-92,53.65L36,169.09A8,8,0,0,0,28,182.91l96,56a8,8,0,0,0,8.06,0l96-56A8,8,0,1,0,220,169.09Z"></path><path d="M220,121.09l-92,53.65L36,121.09A8,8,0,0,0,28,134.91l96,56a8,8,0,0,0,8.06,0l96-56A8,8,0,1,0,220,121.09Z"></path><path d="M28,86.91l96,56a8,8,0,0,0,8.06,0l96-56a8,8,0,0,0,0-13.82l-96-56a8,8,0,0,0-8.06,0l-96,56a8,8,0,0,0,0,13.82Z"></path></svg>' +
-        '</span>Resources</a></li>' +
-        '<li><a href="/store" class="sidebar-link" data-menu="Store"><span class="sidebar-icon">' +
-        '<svg width="20" height="20" fill="#0099FF" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM128,160a48.05,48.05,0,0,1-48-48,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0A48.05,48.05,0,0,1,128,160ZM40,72V56H216V72Z"></path></svg>' +
-        '</span>Store</a></li>' +
-      '</ul>' +
-      '<div class="sidebar-section">Links</div>' +
-      '<ul>' +
-        '<li><a href="/partner" class="sidebar-link" data-menu="Partnership"><span class="sidebar-icon">' +
-        '<svg width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>' +
-        '</span>Partnership</a></li>' +
-        '<li><a href="/brand" class="sidebar-link" data-menu="Brand Assets"><span class="sidebar-icon">' +
-        '<svg width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>' +
-        '</span>Brand Assets</a></li>' +
-        '<li><a href="/social" class="sidebar-link" data-menu="Official Blibli.com"><span class="sidebar-icon">' +
-        '<svg width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>' +
-        '</span>Contact Us</a></li>' +
-      '</ul>' +
-    '</nav>';
+    "<ul>" +
+    '<li><a href="/kabaret" class="sidebar-link" data-menu="Karya"><span class="sidebar-icon">' +
+    '<svg width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M40,128h88v88H48a8,8,0,0,1-8-8ZM208,40H128v88h88V48A8,8,0,0,0,208,40Z" opacity="0.2"></path><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,88H136V48h72ZM120,48v72H48V48ZM48,136h72v72H48Zm160,72H136V136h72v72Z"></path></svg>' +
+    "</span>Karya</a></li>" +
+    '<li><a href="/team" class="sidebar-link" data-menu="Teams"><span class="sidebar-icon">' +
+    '<svg width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M216,56v56c0,96-88,120-88,120S40,208,40,112V56a8,8,0,0,1,8-8H208A8,8,0,0,1,216,56Z" opacity="0.2"></path><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.27,47,25.53a8,8,0,0,0,4.2,0c1-.26,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0Z"></path></svg>' +
+    "</span>Teams</a></li>" +
+    '<li><a href="/crew" class="sidebar-link" data-menu="Cast & Crew"><span class="sidebar-icon">' +
+    '<svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor"><path d="M104,180a28,28,0,1,1-28-28A28,28,0,0,1,104,180Zm76-28a28,28,0,1,0,28,28A28,28,0,0,0,180,152ZM166.11,51.29a8,8,0,0,0-12.7-.29L140.47,66a16,16,0,0,1-24.94,0L102.59,51a8,8,0,0,0-12.7.29L40,120H216Z" opacity="0.2"></path><path d="M248,112H220.08l-47.5-65.41a16,16,0,0,0-25.31-.72l-12.85,14.9-.2.23a7.95,7.95,0,0,1-12.44,0l-.2-.23-12.85-14.9a16,16,0,0,0-25.31.72L35.92,112H8a8,8,0,0,0,0,16H248a8,8,0,0,0,0-16ZM96.34,56l.19.24,12.85,14.89a24,24,0,0,0,37.24,0l12.85-14.89c.06-.08.1-.16.17-.24l40.66,56H55.69ZM180,144a36,36,0,0,0-35.77,32H111.77a36,36,0,1,0-1.83,16h36.12A36,36,0,1,0,180,144ZM76,200a20,20,0,1,1,20-20A20,20,0,0,1,76,200Zm104,0a20,20,0,1,1,20-20A20,20,0,0,1,180,200Z"></path></svg>' +
+    "</span>Cast & Crew</a></li>" +
+    '<li><a href="/event" class="sidebar-link" data-menu="Cast & Crew"><span class="sidebar-icon">' +
+    '<svg width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M216,48V88H40V48a8,8,0,0,1,8-8H208A8,8,0,0,1,216,48Z" opacity="0.2"></path><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"></path></svg>' +
+    "</span>Events</a></li>" +
+    '<li><a href="/leaderboard" class="sidebar-link" data-menu="Leaderboard"><span class="sidebar-icon">' +
+    '<svg width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M208,40V208H152V40Z" opacity="0.2"></path><path d="M224,200h-8V40a8,8,0,0,0-8-8H152a8,8,0,0,0-8,8V80H96a8,8,0,0,0-8,8v40H48a8,8,0,0,0-8,8v64H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16ZM160,48h40V200H160ZM104,96h40V200H104ZM56,144H88v56H56Z"></path></svg>' +
+    "</span>Leaderboard</a></li>" +
+    "</ul>" +
+    '<div class="sidebar-section">Welcome</div>' +
+    "<ul>" +
+    '<li><a href="/starthere" class="sidebar-link" data-menu="Start Here"><span class="sidebar-icon">' +
+    '<svg width="19" height="19" viewBox="0 0 1820 1820" fill="#0099FF"><path d="M911,64v420.75L1333.75,64v421.75h422.75l-422.68,423.39,422.68,424.11h-423.25l-421.24,421.26-3,1.49v-421.75l-422.75,421.75v-422.75H64.5l421.68-424.11L63.5,485.75h424.25L907.99,65.49l3-1.49ZM1330.75,908.5l-421.25-421.75h-420.25l1.49,3,418.76,418.75h421.25ZM1330.75,1332.25l-1.49-3-418.76-418.75h-421.25l421.25,421.75h420.25Z"/></svg>' +
+    "</span>Start Here</a></li>" +
+    '<li><a href="/" class="sidebar-link" data-menu="Announcements"><span class="sidebar-icon">' +
+    '<svg width="20" height="20" fill="#0099FF" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"></path></svg>' +
+    "</span>Announcements</a></li>" +
+    "</ul>" +
+    '<div class="sidebar-section">Help</div>' +
+    "<ul>" +
+    '<li><a href="/support" class="sidebar-link" data-menu="Support"><span class="sidebar-icon">' +
+    '<svg width="20" height="20" fill="#0099FF" viewBox="0 0 256 256"><path d="M240,102c0,70-103.79,126.66-108.21,129a8,8,0,0,1-7.58,0C119.79,228.66,16,172,16,102A62.07,62.07,0,0,1,78,40c20.65,0,38.73,8.88,50,23.89C139.27,48.88,157.35,40,178,40A62.07,62.07,0,0,1,240,102Z"></path></svg>' +
+    "</span>Community Support</a></li>" +
+    '<li><a href="/job" class="sidebar-link" data-menu="Jobs"><span class="sidebar-icon">' +
+    '<svg width="20" height="20" fill="#0099FF" viewBox="0 0 256 256"><path d="M216,64H176a48,48,0,0,0-96,0H40A16,16,0,0,0,24,80V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V80A16,16,0,0,0,216,64ZM128,32a32,32,0,0,1,32,32H96A32,32,0,0,1,128,32Z"></path></svg>' +
+    "</span>Jobs & Volunteering</a></li>" +
+    '<li><a href="/help" class="sidebar-link" data-menu="Kritik & Saran"><span class="sidebar-icon">' +
+    '<svg width="20" height="20" fill="#0099FF" viewBox="0 0 256 256"><path d="M176,232a8,8,0,0,1-8,8H88a8,8,0,0,1,0-16h80A8,8,0,0,1,176,232Zm40-128a87.55,87.55,0,0,1-33.64,69.21A16.24,16.24,0,0,0,176,186v6a16,16,0,0,1-16,16H96a16,16,0,0,1-16-16v-6a16,16,0,0,0-6.23-12.66A87.59,87.59,0,0,1,40,104.49C39.74,56.83,78.26,17.14,125.88,16A88,88,0,0,1,216,104Zm-32.11-9.34a57.6,57.6,0,0,0-46.56-46.55,8,8,0,0,0-2.66,15.78c16.57,2.79,30.63,16.85,33.44,33.45A8,8,0,0,0,176,104a9,9,0,0,0,1.35-.11A8,8,0,0,0,183.89,94.66Z"></path></svg>' +
+    "</span>Kritik & Saran</a></li>" +
+    "</ul>" +
+    '<div class="sidebar-section">Community</div>' +
+    "<ul>" +
+    '<li><a href="/academy" class="sidebar-link" data-menu="Tickets"><span class="sidebar-icon">' +
+    '<svg width="20" height="20" fill="#0099FF" viewBox="0 0 256 256"><path d="M176,207.24a119,119,0,0,0,16-7.73V240a8,8,0,0,1-16,0Zm11.76-88.43-56-29.87a8,8,0,0,0-7.52,14.12L171,128l17-9.06Zm64-29.87-120-64a8,8,0,0,0-7.52,0l-120,64a8,8,0,0,0,0,14.12L32,117.87v48.42a15.91,15.91,0,0,0,4.06,10.65C49.16,191.53,78.51,216,128,216a130,130,0,0,0,48-8.76V130.67L171,128l-43,22.93L43.83,106l0,0L25,96,128,41.07,231,96l-18.78,10-.06,0L188,118.94a8,8,0,0,1,4,6.93v73.64a115.63,115.63,0,0,0,27.94-22.57A15.91,15.91,0,0,0,224,166.29V117.87l27.76-14.81a8,8,0,0,0,0-14.12Z"></path></svg>' +
+    "</span>Academy</a></li>" +
+    '<li><a href="/resources" class="sidebar-link" data-menu="Resources"><span class="sidebar-icon">' +
+    '<svg width="20" height="20" fill="#0099FF" viewBox="0 0 256 256"><path d="M220,169.09l-92,53.65L36,169.09A8,8,0,0,0,28,182.91l96,56a8,8,0,0,0,8.06,0l96-56A8,8,0,1,0,220,169.09Z"></path><path d="M220,121.09l-92,53.65L36,121.09A8,8,0,0,0,28,134.91l96,56a8,8,0,0,0,8.06,0l96-56A8,8,0,1,0,220,121.09Z"></path><path d="M28,86.91l96,56a8,8,0,0,0,8.06,0l96-56a8,8,0,0,0,0-13.82l-96-56a8,8,0,0,0-8.06,0l-96,56a8,8,0,0,0,0,13.82Z"></path></svg>' +
+    "</span>Resources</a></li>" +
+    '<li><a href="/store" class="sidebar-link" data-menu="Store"><span class="sidebar-icon">' +
+    '<svg width="20" height="20" fill="#0099FF" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM128,160a48.05,48.05,0,0,1-48-48,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0A48.05,48.05,0,0,1,128,160ZM40,72V56H216V72Z"></path></svg>' +
+    "</span>Store</a></li>" +
+    "</ul>" +
+    '<div class="sidebar-section">Links</div>' +
+    "<ul>" +
+    '<li><a href="/nccf" class="sidebar-link" data-menu="Partnership"><span class="sidebar-icon">' +
+    '<svg width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>' +
+    "</span>NCCF 4.0</a></li>" +
+    '<li><a href="/partner" class="sidebar-link" data-menu="Partnership"><span class="sidebar-icon">' +
+    '<svg width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>' +
+    "</span>Partnership</a></li>" +
+    '<li><a href="/brand" class="sidebar-link" data-menu="Brand Assets"><span class="sidebar-icon">' +
+    '<svg width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>' +
+    "</span>Brand Assets</a></li>" +
+    '<li><a href="/social" class="sidebar-link" data-menu="Official Blibli.com"><span class="sidebar-icon">' +
+    '<svg width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>' +
+    "</span>Contact Us</a></li>" +
+    "</ul>" +
+    "</nav>";
   document.body.appendChild(sidebar);
   // document.body.classList.add('sidebar-enabled'); // Hapus seluruh manipulasi class sidebar-enabled pada body
 
@@ -313,14 +323,11 @@ function createSidebarNavigation() {
       localStorage.setItem("sidebar-selected", this.getAttribute("href"));
       const href = this.getAttribute("href");
       if (href && href !== window.location.pathname) {
-
         showContentLoadingOverlay();
 
-        history.pushState({}, '', href);
-        
+        history.pushState({}, "", href);
 
         setTimeout(() => {
-
           window.location.href = href;
         }, 300);
       }
@@ -342,28 +349,31 @@ function createXHeader() {
     '<a href="https://hub.kolkative.my.id" class="header-logo" target="_self">' +
     '<img id="x-header-logo">' +
     '<span id="x-header-title"><span class="kolkative">Kolkative</span> <span class="hub">Hub</span></span>' +
-    '</a>';
+    "</a>";
   document.body.appendChild(header);
 }
 
 // Tambahkan fungsi overlay spinner/blur
 function showContentLoadingOverlay() {
-  let overlay = document.getElementById('content-loading-overlay');
+  let overlay = document.getElementById("content-loading-overlay");
   if (!overlay) {
-    overlay = document.createElement('div');
-    overlay.id = 'content-loading-overlay';
-    overlay.style = 'display:flex;position:fixed;inset:0;z-index:var(--layer-2);background:rgba(25,25,25,0.7);backdrop-filter:blur(2px);align-items:center;justify-content:center;';
-    overlay.innerHTML = '<div class="content-spinner" style="width:48px;height:48px;border:4px solid #444;border-top:4px solid #fff;border-radius:50%;animation:content-spin 1s linear infinite;"></div>';
+    overlay = document.createElement("div");
+    overlay.id = "content-loading-overlay";
+    overlay.style =
+      "display:flex;position:fixed;inset:0;z-index:var(--layer-2);background:rgba(25,25,25,0.7);backdrop-filter:blur(2px);align-items:center;justify-content:center;";
+    overlay.innerHTML =
+      '<div class="content-spinner" style="width:48px;height:48px;border:4px solid #444;border-top:4px solid #fff;border-radius:50%;animation:content-spin 1s linear infinite;"></div>';
     document.body.appendChild(overlay);
     // Inject keyframes jika belum ada
-    if (!document.getElementById('content-spinner-style')) {
-      var style = document.createElement('style');
-      style.id = 'content-spinner-style';
-      style.textContent = '@keyframes content-spin { to { transform: rotate(360deg); } }';
+    if (!document.getElementById("content-spinner-style")) {
+      var style = document.createElement("style");
+      style.id = "content-spinner-style";
+      style.textContent =
+        "@keyframes content-spin { to { transform: rotate(360deg); } }";
       document.head.appendChild(style);
     }
   } else {
-    overlay.style.display = 'flex';
+    overlay.style.display = "flex";
   }
 }
 
@@ -384,7 +394,7 @@ function ensureThemeConsistency() {
 ensureThemeConsistency();
 
 // Sinkronisasi Notion theme saat popstate dan url berubah
-window.addEventListener('popstate', function() {
+window.addEventListener("popstate", function () {
   ensureThemeConsistency();
 });
 
@@ -395,6 +405,5 @@ new MutationObserver(() => {
     lastUrl = url;
     ensureThemeConsistency();
   }
-}).observe(document, {subtree: true, childList: true});
-
+}).observe(document, { subtree: true, childList: true });
 </script>`
