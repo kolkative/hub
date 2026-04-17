@@ -41,6 +41,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     starthere: "254db40e66ea80708fd4f809e2203bb8",
     crew: "297db40e66ea809a898ffbf2ac5cee18",
     koty: "2cadb40e66ea804e90c2ce067d4f0966",
+    nccf: "345db40e66ea80b88e5dda20dc5decf4"
     // individual teams
     epigonen: "208db40e66ea80a185c7d0c381e72752",
   },
@@ -80,7 +81,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     /* =======================
        THEME & STYLE
     ========================== */
-    
+
     /* Hide text decoration untuk semua link */
     a, a:link, a:visited, a:hover, a:active {
       text-decoration: none !important;
@@ -93,7 +94,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-page-content a {
       font-weight: 600 !important;
     }
-    
+
     /* CSS Variables untuk Theme */
     :root {
       --gray-0: #f8f9fa;
@@ -115,27 +116,27 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --logo-black: url('https://hub.kolkative.my.id/image/attachment%3Ab4133deb-17d0-46b9-8423-5d09dac4916f%3AKolkative_Hub_Black.png?table=block&id=239db40e-66ea-80b5-a864-d20c286d89ca&spaceId=9c898b20-1510-47e1-a570-a3c00e5d8916&width=580&userId=&cache=v2');
       --logo: #0099FF;
       /* Dark theme defaults */
-      --bg-1: #0d0f12;   
+      --bg-1: #0d0f12;
       --bg-2: #16191d;
-      --bg-3: #212529;     
+      --bg-3: #212529;
       --text-1: #f8f9fa;
-      --text-2: #f1f3f5;  
-      --border: #343a40;   
-      --link: #0099FF; 
-      --brand: #FF3366;  
+      --text-2: #f1f3f5;
+      --border: #343a40;
+      --link: #0099FF;
+      --brand: #FF3366;
       --hover: #495057;
     }
-      
+
     html.light, body.light {
-      --bg-1: #f8f9fa;   
+      --bg-1: #f8f9fa;
       --bg-2: #f1f3f5;
-      --bg-3: #e9ecef;     
+      --bg-3: #e9ecef;
       --text-1: #16191d;
-      --text-2: #212529;   
-      --border: #343a40;   
-      --link: #0099FF; 
+      --text-2: #212529;
+      --border: #343a40;
+      --link: #0099FF;
       --brand: #FF3366;
-      --hover: #dee2e6; 
+      --hover: #dee2e6;
     }
 
     .notion-app,
@@ -147,21 +148,21 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-frame {
       background: var(--bg-1) !important;
       color: var(--text-1) !important;
-      padding-left: 250px !important; 
+      padding-left: 250px !important;
       transition: padding 0.3s ease;
     }
-    
+
 
     body,
     .notion-page-content {
-      margin-top: 60px !important; 
+      margin-top: 60px !important;
       color: var(--text-1) !important;
       background: var(--bg-1) !important;
       z-index: var(--layer-2) !important;
       padding: 0 0 0 0 !important;
     }
 
-    
+
     .notion-callout-block [role="note"] > div {
       background: var(--bg-2) !important;
       color: var(--text-1) !important;
@@ -205,7 +206,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       padding-bottom: 10px !important;
       padding-inline: 0 !important;
     }
-    
+
     h3 {
       color: var(--brand) !important;
       font-family: var(--font-neo-grotesque) !important;
@@ -233,8 +234,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     /* Paksa font-size 13px untuk semua text di tab list */
     body .notion-list-view .notion-selectable.notion-page-block.notion-collection-item a *,
-    .notion-collection-view-tabs [role="tab"], 
-    .notion-collection-view-tabs [role="tab"] *, 
+    .notion-collection-view-tabs [role="tab"],
+    .notion-collection-view-tabs [role="tab"] *,
     .notion-selectable.notion-collection_view-block,
     .notion-collection-view-tabs span,
     .notion-collection-view-tabs div {
@@ -369,7 +370,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     /* =====================
     RESPONSIVE: MOBILE VIEW
     ===================== */
-    
+
     @media (max-width: 900px) {
 
       #x-sidebar {
@@ -379,14 +380,14 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       }
 
       .notion-frame {
-        padding-left: unset !important; 
+        padding-left: unset !important;
       }
 
       body.sidebar-open .notion-frame {
-        margin-left: 250px !important; 
+        margin-left: 250px !important;
         transition: padding 0.3s ease;
       }
-      
+
       body.sidebar-open #x-sidebar {
         display: block !important;
         transform: translateX(0) !important;
@@ -403,7 +404,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
         opacity: 1 !important;
         visibility: visible !important;
       }
-  
+
       /* =========================================
      MINIMAL FIX: SHOW TABLE VIEW ON MOBILE
      tanpa ubah style default
@@ -418,7 +419,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
         opacity: 1 !important;
         visibility: visible !important;
       }
-    
+
       /* Batalin aturan yang nyembunyiin isi sel */
       .notion-table-view .notion-collection-row-property,
       .notion-table-view .notion-collection-row-property-title,
@@ -437,7 +438,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       /* ==================
       HIDE & REMOVED
       ===================== */
-      
+
       .notion-header,
       .notion-topbar,
       .notion-topbar-mobile
@@ -466,7 +467,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       width: 0 !important;
       height: 0 !important;
     }
-    
+
 
     .notion-search .resultsPane::-webkit-scrollbar,
     div[role="button"][aria-label="Filter"],
@@ -555,7 +556,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       pointer-events: auto !important;
       cursor: default !important;
     }
-      
+
     /* Disable navigation links */
     .notion-collection-item.notion-selectable a[href^="/"],
     .notion-property-relation a,
@@ -606,7 +607,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       pointer-events: none !important;
       cursor: default !important;
     }
-    
+
 
 
     /* =======================
@@ -807,7 +808,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     /* =====================
       X-BURGER
     ===================== */
-      
+
     #x-burger {
       position: fixed;
       top: 3px;
@@ -858,7 +859,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background: #f8f9fa !important;
       color: #16191d !important;
     }
-    
+
     html.light .notion-callout-block[data-block-id="239db40e-66ea-8085-9160-c82da34c81a7"] [role="note"] > div,
     body.light .notion-callout-block[data-block-id="239db40e-66ea-8085-9160-c82da34c81a7"] [role="note"] > div,
     html.light .notion-callout-block[data-block-id="239db40e-66ea-807d-acca-e893ffa1523e"] [role="note"] > div,
