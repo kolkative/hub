@@ -5,7 +5,7 @@ import { PAGE_SCRIPT_JS_STRING } from "./_page-script-js-string";
 const GOOGLE_TAG_ID = "G-2FG5VHBYH1";
 
 export const SITE_CONFIG: NoteHostSiteConfig = {
-  domain: "hub.kolkative.my.id",
+  domain: "hub.kolkative.com",
 
   // Metatags, optional
   // For main page link preview
@@ -61,7 +61,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   // But it is recommended to have one for www
   subDomains: {
     www: {
-      redirect: "https://hub.kolktive.my.id",
+      redirect: "https://hub.kolktive.com",
     },
   },
 
@@ -112,8 +112,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --layer-4: 4;
       --layer-5: 5;
       --layer-6: 6;
-      --logo-white: url('https://hub.kolkative.my.id/image/attachment%3A05bc55da-f638-4604-8c1a-9b4ad5d9f159%3AKolkative_Hub_White.png?table=block&id=239db40e-66ea-80e5-8770-fb82b100069d&spaceId=9c898b20-1510-47e1-a570-a3c00e5d8916&width=580&userId=&cache=v2');
-      --logo-black: url('https://hub.kolkative.my.id/image/attachment%3Ab4133deb-17d0-46b9-8423-5d09dac4916f%3AKolkative_Hub_Black.png?table=block&id=239db40e-66ea-80b5-a864-d20c286d89ca&spaceId=9c898b20-1510-47e1-a570-a3c00e5d8916&width=580&userId=&cache=v2');
+      --logo-white: url('https://hub.kolkative.com/image/attachment%3A05bc55da-f638-4604-8c1a-9b4ad5d9f159%3AKolkative_Hub_White.png?table=block&id=239db40e-66ea-80e5-8770-fb82b100069d&spaceId=9c898b20-1510-47e1-a570-a3c00e5d8916&width=580&userId=&cache=v2');
+      --logo-black: url('https://hub.kolkative.com/image/attachment%3Ab4133deb-17d0-46b9-8423-5d09dac4916f%3AKolkative_Hub_Black.png?table=block&id=239db40e-66ea-80b5-a864-d20c286d89ca&spaceId=9c898b20-1510-47e1-a570-a3c00e5d8916&width=580&userId=&cache=v2');
       --logo: #0099FF;
       /* Dark theme defaults */
       --bg-1: #0d0f12;
