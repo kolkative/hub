@@ -42,6 +42,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     crew: "297db40e66ea809a898ffbf2ac5cee18",
     koty: "2cadb40e66ea804e90c2ce067d4f0966",
     nccf: "345db40e66ea80b88e5dda20dc5decf4",
+    gyfest: "373db40e66ea809ba792ecec0b9808a1",
+    tnc: "373db40e66ea8046b899e46a0d3d0b79",
     // individual teams
     // epigonen: "208db40e66ea80a185c7d0c381e72752"
   },
