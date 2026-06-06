@@ -62,22 +62,23 @@ window.onload = function () {
   if (!document.getElementById(styleId)) {
     const style = document.createElement("style");
     style.id = styleId;
-    style.textContent =
-      ".notion-page-content a," +
-      ".notion-page-content a:link," +
-      ".notion-page-content a:visited," +
-      ".notion-page-content a:hover," +
-      ".notion-page-content a:active," +
-      ".notion-page-content a:focus {" +
-      "text-decoration: none !important;" +
-      "text-decoration-line: none !important;" +
-      "text-decoration-color: transparent !important;" +
-      "text-decoration-skip-ink: none !important;" +
-      "border-bottom: none !important;" +
-      "box-shadow: none !important;" +
-      "outline: none !important;" +
-      "color: inherit !important;" +
-      "}";
+    style.textContent = `
+      .notion-page-content a,
+      .notion-page-content a:link,
+      .notion-page-content a:visited,
+      .notion-page-content a:hover,
+      .notion-page-content a:active,
+      .notion-page-content a:focus {
+        text-decoration: none !important;
+        text-decoration-line: none !important;
+        text-decoration-color: transparent !important;
+        text-decoration-skip-ink: none !important;
+        border-bottom: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+        color: inherit !important;
+      }
+    `;
     document.head.appendChild(style);
   }
 
@@ -93,10 +94,6 @@ window.onload = function () {
     if (propertiesDropdown) {
       propertiesDropdown.style.display = "none";
     }
-
-    document.querySelectorAll('.notion-page-content a[title]').forEach((anchor) => {
-      anchor.removeAttribute('title');
-    });
 
     // === MOBILE ===
     const mobilePropertiesBtn = document.querySelector(
@@ -300,6 +297,9 @@ function createSidebarNavigation() {
     "</ul>" +
     '<div class="sidebar-section">Links</div>' +
     "<ul>" +
+    '<li><a href="/nccf" class="sidebar-link" data-menu="Partnership"><span class="sidebar-icon">' +
+    '<svg width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>' +
+    "</span>NCCF 4.0</a></li>" +
     '<li><a href="/partner" class="sidebar-link" data-menu="Partnership"><span class="sidebar-icon">' +
     '<svg width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>' +
     "</span>Partnership</a></li>" +
