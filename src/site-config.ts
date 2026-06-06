@@ -273,13 +273,18 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .notion-page-content a:link,
     .notion-page-content a:visited,
     .notion-page-content a:hover,
-    .notion-page-content a:active {
+    .notion-page-content a:active,
+    .notion-page-content a:focus {
       text-decoration: none !important;
       text-decoration-line: none !important;
+      text-decoration-color: transparent !important;
+      text-decoration-skip-ink: none !important;
       border-bottom: none !important;
+      box-shadow: none !important;
       opacity: 1 !important;
       filter: none !important;
       color: var(--link) !important;
+      outline: none !important;
     }
 
     /* Reset italic/emphasis to normal italic, no capsule */
