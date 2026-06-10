@@ -7,23 +7,22 @@ window.onload = function () {
   if (!document.getElementById(styleId)) {
     const style = document.createElement("style");
     style.id = styleId;
-    style.textContent = `
-      .notion-page-content a,
-      .notion-page-content a:link,
-      .notion-page-content a:visited,
-      .notion-page-content a:hover,
-      .notion-page-content a:active,
-      .notion-page-content a:focus {
-        text-decoration: none !important;
-        text-decoration-line: none !important;
-        text-decoration-color: transparent !important;
-        text-decoration-skip-ink: none !important;
-        border-bottom: none !important;
-        box-shadow: none !important;
-        outline: none !important;
-        color: inherit !important;
-      }
-    `;
+    style.textContent =
+      ".notion-page-content a," +
+      ".notion-page-content a:link," +
+      ".notion-page-content a:visited," +
+      ".notion-page-content a:hover," +
+      ".notion-page-content a:active," +
+      ".notion-page-content a:focus {" +
+      "text-decoration: none !important;" +
+      "text-decoration-line: none !important;" +
+      "text-decoration-color: transparent !important;" +
+      "text-decoration-skip-ink: none !important;" +
+      "border-bottom: none !important;" +
+      "box-shadow: none !important;" +
+      "outline: none !important;" +
+      "color: inherit !important;" +
+      "}";
     document.head.appendChild(style);
   }
 
