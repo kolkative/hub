@@ -3,27 +3,81 @@ export const PAGE_SCRIPT_JS_STRING = `<script>
 /* eslint-disable no-return-assign */
 /* eslint-disable no-param-reassign */
 
+// ============================================================
+// THEME FUNCTIONS (global scope, accessible from anywhere)
+// ============================================================
+
+let currentTheme;
+
+function syncNotionTheme(theme) {
+  const notionApp = document.querySelector(".notion-app-inner");
+  if (notionApp) {
+    if (theme === "dark") {
+      notionApp.classList.add("notion-dark-theme");
+    } else {
+      notionApp.classList.remove("notion-dark-theme");
+    }
+  }
+}
+
+function setTheme(theme) {
+  const html = document.documentElement;
+  const body = document.body;
+  const themeScript = document.getElementById("theme-data");
+
+  if (theme !== "dark" && theme !== "light") {
+    theme = "dark";
+  }
+
+  if (theme === "light") {
+    html.classList.add("light");
+    body.classList.add("light");
+    if (themeScript && themeScript.tagName === "SCRIPT") {
+      themeScript.textContent = JSON.stringify({ mode: "light" });
+    }
+  } else {
+    html.classList.remove("light");
+    body.classList.remove("light");
+    if (themeScript && themeScript.tagName === "SCRIPT") {
+      themeScript.textContent = JSON.stringify({ mode: "system" });
+    }
+  }
+
+  localStorage.setItem("theme", theme);
+  currentTheme = theme;
+  syncNotionTheme(theme);
+}
+
+function ensureThemeConsistency() {
+  const savedTheme = localStorage.getItem("theme");
+  setTheme(savedTheme || "dark");
+}
+
+// ============================================================
+// WINDOW.ONLOAD
+// ============================================================
+
 window.onload = function () {
   const styleId = "no-tooltip-underline-links";
   if (!document.getElementById(styleId)) {
     const style = document.createElement("style");
     style.id = styleId;
     style.textContent =
-          ".notion-page-content a," +
-          ".notion-page-content a:link," +
-          ".notion-page-content a:visited," +
-          ".notion-page-content a:hover," +
-          ".notion-page-content a:active," +
-          ".notion-page-content a:focus {" +
-          "text-decoration: none !important;" +
-          "text-decoration-line: none !important;" +
-          "text-decoration-color: transparent !important;" +
-          "text-decoration-skip-ink: none !important;" +
-          "border-bottom: none !important;" +
-          "box-shadow: none !important;" +
-          "outline: none !important;" +
-          "color: inherit !important;" +
-          "}";
+      ".notion-page-content a," +
+      ".notion-page-content a:link," +
+      ".notion-page-content a:visited," +
+      ".notion-page-content a:hover," +
+      ".notion-page-content a:active," +
+      ".notion-page-content a:focus {" +
+      "text-decoration: none !important;" +
+      "text-decoration-line: none !important;" +
+      "text-decoration-color: transparent !important;" +
+      "text-decoration-skip-ink: none !important;" +
+      "border-bottom: none !important;" +
+      "box-shadow: none !important;" +
+      "outline: none !important;" +
+      "color: inherit !important;" +
+      "}";
     document.head.appendChild(style);
   }
 
@@ -33,7 +87,6 @@ window.onload = function () {
       .querySelectorAll('div[style*="position: absolute; top: 4px;"]')
       ?.forEach((el) => (el.style.display = "none"));
 
-    // Remove hidden properties dropdown (desktop)
     const propertiesDropdown = document.querySelector(
       'div[aria-label="Page properties"]',
     )?.nextElementSibling;
@@ -55,20 +108,15 @@ window.onload = function () {
     }
   }, 1000);
 
-  // --- Adaptive Theme Management (v4 - Persistent Poller) ---
+  // --- Adaptive Theme Management ---
   const THEME_KEY = "theme";
-  const NOTION_DARK_CLASS = "notion-dark-theme";
 
   const sunIcon =
     '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="#ffffff" viewBox="0 0 256 256"><path d="M184,128a56,56,0,1,1-56-56A56,56,0,0,1,184,128Z" opacity="0.2"></path><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"></path></svg>';
   const moonIcon =
     '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="#000000" viewBox="0 0 256 256"><path d="M227.89,147.89A96,96,0,1,1,108.11,28.11,96.09,96.09,0,0,0,227.89,147.89Z" opacity="0.2"></path><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"></path></svg>';
 
-  let currentTheme;
-
-  // This function is our watchdog. It constantly enforces our desired theme.
   function forceTheme(theme) {
-    // 1. Set our custom theme class on the root <html> and <body> element
     if (theme === "light") {
       document.documentElement.classList.add("light");
       document.body.classList.add("light");
@@ -76,8 +124,6 @@ window.onload = function () {
       document.documentElement.classList.remove("light");
       document.body.classList.remove("light");
     }
-    // Tidak pernah update <script id='theme-data'> di sini
-    // 2. Force Notion's internal theme to match our state
     const notionApp = document.querySelector(".notion-app-inner");
     if (notionApp) {
       if (theme === "dark") {
@@ -96,81 +142,27 @@ window.onload = function () {
     }
   }
 
-  function getInitialTheme() {
-    const savedTheme = localStorage.getItem(THEME_KEY);
-    // If a theme is saved in localStorage, use it. Otherwise, default to dark.
-    return savedTheme || "dark";
-  }
+  // Set initial theme
+  currentTheme = localStorage.getItem(THEME_KEY) || "dark";
+  setTheme(currentTheme);
 
-  // Sinkronisasi toggle NoteHost <-> custom theme
-  function syncThemeFromBody(mutations) {
+  // Watchdog poller
+  setInterval(() => forceTheme(currentTheme), 250);
+
+  // MutationObserver untuk sync theme
+  const themeObserver = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
-      if (
-        mutation.type === "attributes" &&
-        mutation.attributeName === "class"
-      ) {
-        // Observer hanya sync class, tidak update script theme-data
+      if (mutation.type === "attributes" && mutation.attributeName === "class") {
+        // Observer hanya sync class
       }
     });
-  }
-
-  // Fungsi untuk sinkronisasi theme Notion
-  function syncNotionTheme(theme) {
-    const notionApp = document.querySelector(".notion-app-inner");
-    if (notionApp) {
-      if (theme === "dark") {
-        notionApp.classList.add("notion-dark-theme");
-      } else {
-        notionApp.classList.remove("notion-dark-theme");
-      }
-    }
-  }
-
-  // Pantau perubahan class pada body (toggle NoteHost)
-  const themeObserver = new MutationObserver(syncThemeFromBody);
+  });
   themeObserver.observe(document.body, {
     attributes: true,
     attributeFilter: ["class"],
   });
 
-  // Saat toggle custom diklik, update juga class body
-  function setTheme(theme) {
-    const html = document.documentElement;
-    const body = document.body;
-    const themeScript = document.getElementById("theme-data");
-
-    // Pastikan theme valid
-    if (theme !== "dark" && theme !== "light") {
-      theme = "dark"; // Default ke dark jika invalid
-    }
-
-    if (theme === "light") {
-      html.classList.add("light");
-      body.classList.add("light");
-      if (themeScript && themeScript.tagName === "SCRIPT") {
-        themeScript.textContent = JSON.stringify({ mode: "light" });
-      }
-    } else {
-      html.classList.remove("light");
-      body.classList.remove("light");
-      if (themeScript && themeScript.tagName === "SCRIPT") {
-        themeScript.textContent = JSON.stringify({ mode: "system" });
-      }
-    }
-
-    localStorage.setItem("theme", theme);
-    currentTheme = theme;
-    syncNotionTheme(theme);
-  }
-
-  // --- Main Execution ---
-  currentTheme = getInitialTheme();
-  setTheme(currentTheme); // Set awal agar sinkron
-
-  // Start the persistent poller (our "watchdog")
-  setInterval(() => forceTheme(currentTheme), 250);
-
-  // Create the button once the page is fully loaded
+  // Create toggle button
   if (document.getElementById("x-toggle")) return;
 
   const toggleButton = document.createElement("button");
@@ -184,7 +176,7 @@ window.onload = function () {
     updateButtonIcon(toggleButton, newTheme);
   });
 
-  // Create x-burger button with same logic as x-toggle
+  // Create burger button
   if (document.getElementById("x-burger")) return;
 
   const burgerButton = document.createElement("button");
@@ -194,14 +186,12 @@ window.onload = function () {
     '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128ZM40,76H216a12,12,0,0,0,0-24H40a12,12,0,0,0,0,24ZM216,180H40a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Z"></path></svg>';
   document.body.appendChild(burgerButton);
 
-  // Create overlay for sidebar
   if (!document.getElementById("x-sidebar-overlay")) {
     const overlay = document.createElement("div");
     overlay.id = "x-sidebar-overlay";
     document.body.appendChild(overlay);
   }
 
-  // Responsive show/hide for burger
   function updateBurgerDisplay() {
     if (window.innerWidth < 900) {
       burgerButton.style.display = "flex";
@@ -211,11 +201,9 @@ window.onload = function () {
     }
   }
 
-  // Initial setup
   updateBurgerDisplay();
   window.addEventListener("resize", updateBurgerDisplay);
 
-  // Burger click: toggle sidebar
   burgerButton.addEventListener("click", () => {
     if (window.innerWidth < 900) {
       const isOpen = document.body.classList.toggle("sidebar-open");
@@ -226,7 +214,6 @@ window.onload = function () {
     }
   });
 
-  // Overlay click: close sidebar
   const overlay = document.getElementById("x-sidebar-overlay");
   if (overlay) {
     overlay.addEventListener("click", () => {
@@ -235,6 +222,10 @@ window.onload = function () {
     });
   }
 };
+
+// ============================================================
+// OPEN PROPS
+// ============================================================
 
 function addOpenPropsLinks() {
   var openPropsLinks = ["https://unpkg.com/open-props"];
@@ -246,6 +237,10 @@ function addOpenPropsLinks() {
   });
 }
 addOpenPropsLinks();
+
+// ============================================================
+// SIDEBAR
+// ============================================================
 
 function createSidebarNavigation() {
   if (document.getElementById("x-sidebar")) return;
@@ -263,7 +258,7 @@ function createSidebarNavigation() {
     '<li><a href="/crew" class="sidebar-link" data-menu="Cast & Crew"><span class="sidebar-icon">' +
     '<svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor"><path d="M104,180a28,28,0,1,1-28-28A28,28,0,0,1,104,180Zm76-28a28,28,0,1,0,28,28A28,28,0,0,0,180,152ZM166.11,51.29a8,8,0,0,0-12.7-.29L140.47,66a16,16,0,0,1-24.94,0L102.59,51a8,8,0,0,0-12.7.29L40,120H216Z" opacity="0.2"></path><path d="M248,112H220.08l-47.5-65.41a16,16,0,0,0-25.31-.72l-12.85,14.9-.2.23a7.95,7.95,0,0,1-12.44,0l-.2-.23-12.85-14.9a16,16,0,0,0-25.31.72L35.92,112H8a8,8,0,0,0,0,16H248a8,8,0,0,0,0-16ZM96.34,56l.19.24,12.85,14.89a24,24,0,0,0,37.24,0l12.85-14.89c.06-.08.1-.16.17-.24l40.66,56H55.69ZM180,144a36,36,0,0,0-35.77,32H111.77a36,36,0,1,0-1.83,16h36.12A36,36,0,1,0,180,144ZM76,200a20,20,0,1,1,20-20A20,20,0,0,1,76,200Zm104,0a20,20,0,1,1,20-20A20,20,0,0,1,180,200Z"></path></svg>' +
     "</span>Cast & Crew</a></li>" +
-    '<li><a href="/event" class="sidebar-link" data-menu="Cast & Crew"><span class="sidebar-icon">' +
+    '<li><a href="/event" class="sidebar-link" data-menu="Events"><span class="sidebar-icon">' +
     '<svg width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M216,48V88H40V48a8,8,0,0,1,8-8H208A8,8,0,0,1,216,48Z" opacity="0.2"></path><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"></path></svg>' +
     "</span>Events</a></li>" +
     '<li><a href="/leaderboard" class="sidebar-link" data-menu="Leaderboard"><span class="sidebar-icon">' +
@@ -293,7 +288,7 @@ function createSidebarNavigation() {
     "</ul>" +
     '<div class="sidebar-section">Community</div>' +
     "<ul>" +
-    '<li><a href="/academy" class="sidebar-link" data-menu="Tickets"><span class="sidebar-icon">' +
+    '<li><a href="/academy" class="sidebar-link" data-menu="Academy"><span class="sidebar-icon">' +
     '<svg width="20" height="20" fill="#0099FF" viewBox="0 0 256 256"><path d="M176,207.24a119,119,0,0,0,16-7.73V240a8,8,0,0,1-16,0Zm11.76-88.43-56-29.87a8,8,0,0,0-7.52,14.12L171,128l17-9.06Zm64-29.87-120-64a8,8,0,0,0-7.52,0l-120,64a8,8,0,0,0,0,14.12L32,117.87v48.42a15.91,15.91,0,0,0,4.06,10.65C49.16,191.53,78.51,216,128,216a130,130,0,0,0,48-8.76V130.67L171,128l-43,22.93L43.83,106l0,0L25,96,128,41.07,231,96l-18.78,10-.06,0L188,118.94a8,8,0,0,1,4,6.93v73.64a115.63,115.63,0,0,0,27.94-22.57A15.91,15.91,0,0,0,224,166.29V117.87l27.76-14.81a8,8,0,0,0,0-14.12Z"></path></svg>' +
     "</span>Academy</a></li>" +
     '<li><a href="/resources" class="sidebar-link" data-menu="Resources"><span class="sidebar-icon">' +
@@ -311,13 +306,12 @@ function createSidebarNavigation() {
     '<li><a href="/brand" class="sidebar-link" data-menu="Brand Assets"><span class="sidebar-icon">' +
     '<svg width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>' +
     "</span>Brand Assets</a></li>" +
-    '<li><a href="/social" class="sidebar-link" data-menu="Official Blibli.com"><span class="sidebar-icon">' +
+    '<li><a href="/social" class="sidebar-link" data-menu="Contact Us"><span class="sidebar-icon">' +
     '<svg width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>' +
     "</span>Contact Us</a></li>" +
     "</ul>" +
     "</nav>";
   document.body.appendChild(sidebar);
-  // document.body.classList.add('sidebar-enabled'); // Hapus seluruh manipulasi class sidebar-enabled pada body
 
   const lastMenu = localStorage.getItem("sidebar-selected");
   let highlighted = false;
@@ -348,9 +342,7 @@ function createSidebarNavigation() {
       const href = this.getAttribute("href");
       if (href && href !== window.location.pathname) {
         showContentLoadingOverlay();
-
         history.pushState({}, "", href);
-
         setTimeout(() => {
           window.location.href = href;
         }, 300);
@@ -365,19 +357,26 @@ function createSidebarNavigation() {
   }
 }
 
+// ============================================================
+// HEADER
+// ============================================================
+
 function createXHeader() {
   if (document.getElementById("x-header")) return;
   const header = document.createElement("header");
   header.id = "x-header";
   header.innerHTML =
-    '<a href="https://hub.kolkative.my.id" class="header-logo" target="_self">' +
+    '<a href="https://hub.kolkative.com" class="header-logo" target="_self">' +
     '<img id="x-header-logo">' +
     '<span id="x-header-title"><span class="kolkative">Kolkative</span> <span class="hub">Hub</span></span>' +
     "</a>";
   document.body.appendChild(header);
 }
 
-// Tambahkan fungsi overlay spinner/blur
+// ============================================================
+// LOADING OVERLAY
+// ============================================================
+
 function showContentLoadingOverlay() {
   let overlay = document.getElementById("content-loading-overlay");
   if (!overlay) {
@@ -388,7 +387,6 @@ function showContentLoadingOverlay() {
     overlay.innerHTML =
       '<div class="content-spinner" style="width:48px;height:48px;border:4px solid #444;border-top:4px solid #fff;border-radius:50%;animation:content-spin 1s linear infinite;"></div>';
     document.body.appendChild(overlay);
-    // Inject keyframes jika belum ada
     if (!document.getElementById("content-spinner-style")) {
       var style = document.createElement("style");
       style.id = "content-spinner-style";
@@ -401,23 +399,14 @@ function showContentLoadingOverlay() {
   }
 }
 
+// ============================================================
+// INIT
+// ============================================================
+
 createSidebarNavigation();
 createXHeader();
-
-// Fungsi untuk memastikan theme di-load dengan benar
-function ensureThemeConsistency() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme) {
-    setTheme(savedTheme);
-  } else {
-    setTheme("dark"); // Default ke dark
-  }
-}
-
-// Panggil saat halaman dimuat
 ensureThemeConsistency();
 
-// Sinkronisasi Notion theme saat popstate dan url berubah
 window.addEventListener("popstate", function () {
   ensureThemeConsistency();
 });
