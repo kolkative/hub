@@ -50,29 +50,29 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
   // Rewrite meta tags for specific pages
   // Use the Notion page ID as the key
-  pageMetadata: {
-    "208db40e66ea8001b35af735e91f0e0c": {
-      title: "Kolkative Hub",
-      description: "The Largest Kabaret Databases",
-      image: "https://imgur.com/q0QXC8F",
-      author: "Kolkative Compound",
-    },
-  },
+  // pageMetadata: {
+  //   'NOTION_PAGE_ID': {
+  //     title: 'My Custom Page Title',
+  //     description: 'My custom page description',
+  //     image: 'https://imagehosting.com/images/page_preview.jpg',
+  //     author: 'My Name',
+  //   },
+  // },
 
   // Subdomain redirects are optional
   // But it is recommended to have one for www
-  subDomains: {
-    www: {
-      redirect: "https://hub.kolkative.com",
-    },
-  },
+  // subDomains: {
+  //  www: {
+  //    redirect: 'https://<%= domainName %>',
+  //   },
+  // },
 
   // The 404 (not found) page is optional
   // If you don't have one, the default 404 page will be used
-  fof: {
-    page: "250db40e66ea80f2ae1ff4274a3e9e99",
-    slug: "404",
-  },
+  // fof: {
+  //   page: "NOTION_PAGE_ID",
+  //   slug: "404", // default
+  // },
 
   // Google Font name, you can choose from https://fonts.google.com
   googleFont: "Space Grotesk",
