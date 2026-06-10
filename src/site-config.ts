@@ -22,7 +22,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
   // Additional safety: avoid serving extraneous Notion content from your website
   // Use the value from your Notion settings => Workspace => Settings => Domain
-  notionDomain: "kolkative",
+  notionDomain: "kolkative.notion.site",
 
   // Map slugs (short page names) to Notion page IDs
   // Empty slug is your main page
@@ -35,7 +35,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     brand: "239db40e66ea802eacb2f022e2c19859",
     job: "24edb40e66ea80e7b790c204d257ddd8",
     help: "250db40e66ea80e08011d887d304fb36",
-    store: "24ddb40e66ea80ccbdbacd583113dde4",
+    "/store": "/24ddb40e66ea80ccbdbacd583113dde4",
     support: "25cdb40e66ea80b48150c92743ae07df",
     showpeace: "268db40e66ea80899571f4b790567c30",
     starthere: "254db40e66ea80708fd4f809e2203bb8",
@@ -50,29 +50,29 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
   // Rewrite meta tags for specific pages
   // Use the Notion page ID as the key
-  // pageMetadata: {
-  //   'NOTION_PAGE_ID': {
-  //     title: 'My Custom Page Title',
-  //     description: 'My custom page description',
-  //     image: 'https://imagehosting.com/images/page_preview.jpg',
-  //     author: 'My Name',
-  //   },
-  // },
+  pageMetadata: {
+    "208db40e66ea8001b35af735e91f0e0c": {
+      title: "Kolkative Hub",
+      description: "The Largest Kabaret Databases",
+      image: "https://imgur.com/q0QXC8F",
+      author: "Kolkative Compound",
+    },
+  },
 
   // Subdomain redirects are optional
   // But it is recommended to have one for www
-  // subDomains: {
-  //  www: {
-  //    redirect: 'https://<%= domainName %>',
-  //   },
-  // },
+  subDomains: {
+    www: {
+      redirect: "https://hub.kolkative.com",
+    },
+  },
 
   // The 404 (not found) page is optional
   // If you don't have one, the default 404 page will be used
-  // fof: {
-  //   page: "NOTION_PAGE_ID",
-  //   slug: "404", // default
-  // },
+  fof: {
+    page: "250db40e66ea80f2ae1ff4274a3e9e99",
+    slug: "404",
+  },
 
   // Google Font name, you can choose from https://fonts.google.com
   googleFont: "Space Grotesk",
