@@ -11,7 +11,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   // For main page link preview
   siteName: "Kolkative Hub",
   siteDescription: "Media Informasi dan Apresiasi",
-  siteImage: "https://imgur.com/q0QXC8F",
+  siteImage: "https://iili.io/CBP95S2.png",
 
   // Twitter handle, optional
   // twitterHandle: '',
@@ -73,7 +73,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   },
 
   // Google Font name, you can choose from https://fonts.google.com
-  googleFont: "Space Grotesk",
+  // googleFont: "Space Grotesk",
 
   // Custom JS for head and body of a Notion page
   customHeadCSS: `
