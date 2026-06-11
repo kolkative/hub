@@ -246,8 +246,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     /* --- Style for standard Text Links --- */
     a.notion-link-token {
       display: inline !important;
-      text-decoration: none !important;
-      text-decoration-line: none !important;
       text-decoration-color: transparent !important;
       color: var(--link) !important;
       padding: 4px 12px !important;
