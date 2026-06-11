@@ -42,8 +42,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     koty: "2cadb40e66ea804e90c2ce067d4f0966",
     gyfest: "373db40e66ea809ba792ecec0b9808a1",
     tnc: "373db40e66ea8046b899e46a0d3d0b79",
+    bitan: "214db40e66ea80cb91acd7aac2eeacb4",
+    boss: "37cdb40e66ea8046af51f90f46cbb1f1",
     // individual teams
-    // epigonen: "208db40e66ea80a185c7d0c381e72752"
   },
 
   // Rewrite meta tags for specific pages
