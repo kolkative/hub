@@ -268,16 +268,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       border-bottom: none !important;
     }
     
-    /* Matikan tooltip link */
-    a.notion-link-token + [role="tooltip"],
-    a.notion-link-token ~ [role="tooltip"],
-    .notion-link-tooltip {
-      display: none !important;
-      visibility: hidden !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-    }
-    
     /* Global: nonaktifkan underline dan dim pada semua link di konten */
     .notion-page-content a,
     .notion-page-content a:link,
@@ -512,41 +502,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     /* --- Disable Tooltips --- */
-    [role="tooltip"],
-    .notion-tooltip,
-    .notion-link-tooltip,
-    div.notion-tooltip,
-    div[role="tooltip"],
-    .notion-link-tooltip,
-    .notion-hoverable-token,
-    .notion-page-link-indicator,
-    .notion-mention-token [role="tooltip"],
-    a.notion-link-token + div[role="tooltip"],
-    a.notion-link-token:hover + div[role="tooltip"],
-    span.notion-enable-hover + div[role="tooltip"],
-    span.notion-enable-hover:hover + div[role="tooltip"],
-    div[role="button"][aria-label="Open in side peek"],
-    div[aria-label="Open in side peek"],
-    div[style*="Open in side peek"],
-    div[style*="uppercase"],
-    [aria-label="Open page"],
-    .notion-hoverable-token,
-    .notion-collection-item.notion-selectable [aria-haspopup="true"],
-    .notion-collection-item.notion-selectable [role="button"],
-    .notion-collection-item.notion-selectable div[style*="pointer-events"][style*="z-index"],
-    .ellipsisSmall,
-    .notion-selectable.notion-image-block [role="button"] {
-      display: none !important;
-      visibility: hidden !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-      height: 0 !important;
-      width: 0 !important;
-      max-width: 0 !important;
-      max-height: 0 !important;
-      position: absolute !important;
-      z-index: -1 !important;
-    }
+   
 
     /* Sembunyikan banner promosi Notion di atas halaman (CSS spesifik) */
     div.autolayout-row.autolayout-fill-width.autolayout-center.autolayout-space {
