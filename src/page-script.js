@@ -398,14 +398,33 @@ function showContentLoadingOverlay() {
   }
 }
 
+// ============================================================
 // Matikan tooltip Notion via MutationObserver
+// ============================================================
+
 const killTooltips = () => {
   const observer = new MutationObserver(() => {
     document.querySelectorAll('[data-portal="true"]').forEach(el => {
-      el.style.setProperty('display', 'none', 'important');
-      el.style.setProperty('opacity', '0', 'important');
-      el.style.setProperty('pointer-events', 'none', 'important');
-      el.style.setProperty('visibility', 'hidden', 'important');
+      // Skip dropdown/modal/overlay - jangan dimatiin
+      if (
+        el.classList.contains('notion-default-overlay-container') ||
+        el.querySelector('.notion-default-overlay-container') ||
+        el.querySelector('[role="menu"]') ||
+        el.querySelector('[role="listbox"]') ||
+        el.querySelector('[role="dialog"]')
+      ) return;
+
+      // Hanya matikan kalau isinya tooltip
+      if (
+        el.querySelector('[role="tooltip"]') ||
+        el.children.length === 0 ||
+        el.querySelector('.notion-link-tooltip')
+      ) {
+        el.style.setProperty('display', 'none', 'important');
+        el.style.setProperty('opacity', '0', 'important');
+        el.style.setProperty('pointer-events', 'none', 'important');
+        el.style.setProperty('visibility', 'hidden', 'important');
+      }
     });
   });
   observer.observe(document.body, { childList: true, subtree: true });
