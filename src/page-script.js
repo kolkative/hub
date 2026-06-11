@@ -407,14 +407,6 @@ const killTooltips = () => {
     mutations.forEach(mutation => {
       mutation.addedNodes.forEach(node => {
         if (node.nodeType !== 1) return;
-        
-        // Skip kalau ada overlay/dropdown/menu di dalamnya
-        if (
-          node.classList?.contains('notion-default-overlay-container') ||
-          node.querySelector?.('.notion-default-overlay-container, [role="menu"], [role="listbox"], [role="dialog"]')
-        ) return;
-
-        // Kalau data-portal dan bukan dropdown, langsung kill
         if (node.dataset?.portal === 'true') {
           node.style.setProperty('display', 'none', 'important');
           node.style.setProperty('visibility', 'hidden', 'important');
