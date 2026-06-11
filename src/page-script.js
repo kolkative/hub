@@ -403,31 +403,28 @@ function showContentLoadingOverlay() {
 // ============================================================
 
 const killTooltips = () => {
-  const observer = new MutationObserver(() => {
-    document.querySelectorAll('[data-portal="true"]').forEach(el => {
-      // Skip dropdown/modal/overlay - jangan dimatiin
-      if (
-        el.classList.contains('notion-default-overlay-container') ||
-        el.querySelector('.notion-default-overlay-container') ||
-        el.querySelector('[role="menu"]') ||
-        el.querySelector('[role="listbox"]') ||
-        el.querySelector('[role="dialog"]')
-      ) return;
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach(mutation => {
+      mutation.addedNodes.forEach(node => {
+        if (node.nodeType !== 1) return;
+        
+        // Skip kalau ada overlay/dropdown/menu di dalamnya
+        if (
+          node.classList?.contains('notion-default-overlay-container') ||
+          node.querySelector?.('.notion-default-overlay-container, [role="menu"], [role="listbox"], [role="dialog"]')
+        ) return;
 
-      // Hanya matikan kalau isinya tooltip
-      if (
-        el.querySelector('[role="tooltip"]') ||
-        el.children.length === 0 ||
-        el.querySelector('.notion-link-tooltip')
-      ) {
-        el.style.setProperty('display', 'none', 'important');
-        el.style.setProperty('opacity', '0', 'important');
-        el.style.setProperty('pointer-events', 'none', 'important');
-        el.style.setProperty('visibility', 'hidden', 'important');
-      }
+        // Kalau data-portal dan bukan dropdown, langsung kill
+        if (node.dataset?.portal === 'true') {
+          node.style.setProperty('display', 'none', 'important');
+          node.style.setProperty('visibility', 'hidden', 'important');
+          node.style.setProperty('opacity', '0', 'important');
+          node.style.setProperty('pointer-events', 'none', 'important');
+        }
+      });
     });
   });
-  observer.observe(document.body, { childList: true, subtree: true });
+  observer.observe(document.body, { childList: true, subtree: false });
 };
 
 if (document.readyState === 'loading') {
