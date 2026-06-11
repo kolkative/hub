@@ -245,14 +245,20 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     /* --- Style for standard Text Links --- */
     a.notion-link-token {
-      display: inline !important;
+      display: inline-flex !important;
+      align-items: center !important;
       text-decoration: none !important;
       text-decoration-line: none !important;
       text-decoration-color: transparent !important;
       color: var(--link) !important;
-      padding: 2px 12px !important;
-      margin: 0 2px !important;
+      padding: 4px 12px !important;
+      margin: 3px 2px !important;
       min-height: unset !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      white-space: normal !important;
+      word-break: break-word !important;
+      vertical-align: middle !important;
       border: 1px solid var(--border) !important;
       border-radius: 999px !important;
       background: var(--bg-2) !important;
@@ -474,6 +480,28 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       #x-toggle svg {
         width: 20px !important;
         height: 20px !important;
+      }
+
+      /* === MOBILE: Link capsule fix === */
+      a.notion-link-token {
+        display: inline-flex !important;
+        max-width: calc(100% - 8px) !important;
+        margin: 4px 2px !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+      }
+
+      /* Beri breathing room antar capsule di paragraph */
+      .notion-page-content p,
+      .notion-text-block {
+        line-height: 2.2 !important;
+      }
+
+      /* Pastikan callout block tidak overflow */
+      .notion-callout-block [role="note"] > div {
+        overflow: hidden !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
       }
     }
 
