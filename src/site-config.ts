@@ -251,7 +251,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       text-decoration: none !important;
       text-decoration-line: none !important;
       text-decoration-color: transparent !important;
-      padding: 2px 12px !important;
+      padding: 1px 11px !important;
       margin: 0 2px !important;
       border-radius: 10px !important;
       border: 1px solid var(--border) !important;
@@ -263,6 +263,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     a.notion-link-token:hover .notion-enable-hover span {
       background: rgba(0, 153, 255, 0.15) !important;
       border-color: var(--link) !important;
+      color: var(--link) !important;
     }
     
     /* Global: nonaktifkan underline dan dim pada semua link di konten */
