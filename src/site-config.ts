@@ -175,7 +175,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     h1 {
-  //    position: fixed !important;
+      position: fixed !important;
       color: var(--text-1) !important;
       top: 0 !important;
       left: 0 !important;
@@ -245,28 +245,37 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     /* --- Style for standard Text Links --- */
     .notion-page-content a.notion-link-token {
-      display: inline-flex !important;
-      align-items: center !important;
+      display: inline !important;
       text-decoration: none !important;
       color: var(--link) !important;
-      padding: 0 4px !important;
-      margin: 0 1px !important;
+      padding: 0 !important;
+      margin: 0 !important;
       min-height: unset !important;
       border: none !important;
-      border-radius: 3px !important;
-      background: rgba(0, 153, 255, 0.12) !important;
-      transition: background 0.2s ease !important;
+      border-radius: 0 !important;
+      background: none !important;
+      transition: color 0.15s ease !important;
     }
     
     .notion-page-content a.notion-link-token:hover {
-      background: rgba(0, 153, 255, 0.22) !important;
+      color: #66ccff !important;
+      background: none !important;
       transform: none !important;
       box-shadow: none !important;
-      border-color: transparent !important;
     }
     
     .notion-page-content a.notion-link-token span {
       border-bottom: none !important;
+    }
+    
+    /* Matikan tooltip link */
+    a.notion-link-token + [role="tooltip"],
+    a.notion-link-token ~ [role="tooltip"],
+    .notion-link-tooltip {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
     }
     
     /* Global: nonaktifkan underline dan dim pada semua link di konten */
@@ -505,8 +514,38 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     /* --- Disable Tooltips --- */
     [role="tooltip"],
     .notion-tooltip,
-    .notion-link-tooltip {
+    .notion-link-tooltip,
+    div.notion-tooltip,
+    div[role="tooltip"],
+    .notion-link-tooltip,
+    .notion-hoverable-token,
+    .notion-page-link-indicator,
+    .notion-mention-token [role="tooltip"],
+    a.notion-link-token + div[role="tooltip"],
+    a.notion-link-token:hover + div[role="tooltip"],
+    span.notion-enable-hover + div[role="tooltip"],
+    span.notion-enable-hover:hover + div[role="tooltip"],
+    div[role="button"][aria-label="Open in side peek"],
+    div[aria-label="Open in side peek"],
+    div[style*="Open in side peek"],
+    div[style*="uppercase"],
+    [aria-label="Open page"],
+    .notion-hoverable-token,
+    .notion-collection-item.notion-selectable [aria-haspopup="true"],
+    .notion-collection-item.notion-selectable [role="button"],
+    .notion-collection-item.notion-selectable div[style*="pointer-events"][style*="z-index"],
+    .ellipsisSmall,
+    .notion-selectable.notion-image-block [role="button"] {
       display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      height: 0 !important;
+      width: 0 !important;
+      max-width: 0 !important;
+      max-height: 0 !important;
+      position: absolute !important;
+      z-index: -1 !important;
     }
 
     /* Sembunyikan banner promosi Notion di atas halaman (CSS spesifik) */
