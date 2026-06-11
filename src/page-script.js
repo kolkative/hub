@@ -398,6 +398,24 @@ function showContentLoadingOverlay() {
   }
 }
 
+// Matikan tooltip Notion via MutationObserver
+const killTooltips = () => {
+  const observer = new MutationObserver(() => {
+    document.querySelectorAll('[role="tooltip"], .notion-link-tooltip, .notion-tooltip').forEach(el => {
+      el.style.setProperty('display', 'none', 'important');
+      el.style.setProperty('opacity', '0', 'important');
+      el.style.setProperty('pointer-events', 'none', 'important');
+    });
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', killTooltips);
+} else {
+  killTooltips();
+}
+
 // ============================================================
 // INIT
 // ============================================================
@@ -418,21 +436,3 @@ new MutationObserver(() => {
     ensureThemeConsistency();
   }
 }).observe(document, { subtree: true, childList: true });
-
-// Matikan tooltip Notion via MutationObserver
-const killTooltips = () => {
-  const observer = new MutationObserver(() => {
-    document.querySelectorAll('[role="tooltip"], .notion-link-tooltip, .notion-tooltip').forEach(el => {
-      el.style.setProperty('display', 'none', 'important');
-      el.style.setProperty('opacity', '0', 'important');
-      el.style.setProperty('pointer-events', 'none', 'important');
-    });
-  });
-  observer.observe(document.body, { childList: true, subtree: true });
-};
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', killTooltips);
-} else {
-  killTooltips();
-}
