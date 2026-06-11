@@ -400,6 +400,31 @@ function showContentLoadingOverlay() {
 }
 
 // ============================================================
+// TOOLTIPS
+// ============================================================
+
+const killTooltips = () => {
+  const observer = new MutationObserver(() => {
+    document.querySelectorAll('[data-portal="true"]').forEach(el => {
+      // Skip kalau ada popup/dropdown di dalamnya
+      if (el.querySelector('[data-popup-origin="true"], [role="menu"], [role="listbox"], [role="dialog"]')) return;
+      
+      el.style.setProperty('display', 'none', 'important');
+      el.style.setProperty('opacity', '0', 'important');
+      el.style.setProperty('pointer-events', 'none', 'important');
+      el.style.setProperty('visibility', 'hidden', 'important');
+    });
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', killTooltips);
+} else {
+  killTooltips();
+}
+
+// ============================================================
 // INIT
 // ============================================================
 
