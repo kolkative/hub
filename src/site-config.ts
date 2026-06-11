@@ -256,26 +256,13 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       border: 1px solid var(--border) !important;
       border-radius: 10px !important;
       background: var(--bg-2) !important;
-      transition: background 0.15s ease !important;
-    }
-    
-    a.notion-link-token span,
-    a.notion-link-token .notion-enable-hover span,
-    span.link-annotation {
-      display: inline !important;
-      text-decoration: none !important;
-      text-decoration-line: none !important;
-      text-decoration-color: transparent !important;
-      color: var(--link) !important;
-      padding: 0 !important;
-      margin: 0 !important;
-      border: none !important;
-      border-radius: 0 !important;
-      background: none !important;
+      box-shadow: 2px 2px 0 #000000 !important;
+      transition: background 0.15s ease, box-shadow 0.15s ease !important;
     }
     
     a.notion-link-token:hover {
       background: rgba(0, 153, 255, 0.12) !important;
+      box-shadow: 1px 1px 0 #000000 !important;
     }
     
     /* Global: nonaktifkan underline dan dim pada semua link di konten */
