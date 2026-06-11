@@ -244,7 +244,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     /* --- Style for standard Text Links --- */
-    .notion-page-content a.notion-link-token {
+    a.notion-link-token span,
+    a.notion-link-token .notion-enable-hover span,
+    .notion-page-content a.notion-link-token
+    span.link-annotation {
       display: inline !important;
       text-decoration: none !important;
       color: var(--link) !important;
@@ -255,6 +258,9 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       border-radius: 0 !important;
       background: none !important;
       transition: color 0.15s ease !important;
+      text-decoration-line: none !important;
+      text-decoration-color: transparent !important;
+      border-bottom: none !important;
     }
     
     .notion-page-content a.notion-link-token:hover {
