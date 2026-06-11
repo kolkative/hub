@@ -272,11 +272,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       text-decoration: none !important;
       text-decoration-line: none !important;
       text-decoration-color: transparent !important;
-      color: var(--link) !important;
       padding: 0 !important;
       margin: 0 !important;
-      border: none !important;
-      background: none !important;
+      border: 1px solid var(--border) !important;
+      background: rgba(0, 153, 255, 0.12) !important;
     }
     
     /* Global: nonaktifkan underline dan dim pada semua link di konten */
