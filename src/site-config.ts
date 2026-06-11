@@ -175,7 +175,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     h1 {
-      position: fixed !important;
+  //    position: fixed !important;
       color: var(--text-1) !important;
       top: 0 !important;
       left: 0 !important;
@@ -249,24 +249,26 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       align-items: center !important;
       text-decoration: none !important;
       color: var(--link) !important;
-      padding: 0 20px !important;
-      margin: 1px 4px !important;
-      min-height: 24px !important;
-      border: 1px solid var(--border) !important;
-      border-radius: var(--radius-conditional-3) !important;
-      transition: all 0.2s ease-out !important;
+      padding: 0 4px !important;
+      margin: 0 1px !important;
+      min-height: unset !important;
+      border: none !important;
+      border-radius: 3px !important;
+      background: rgba(0, 153, 255, 0.12) !important;
+      transition: background 0.2s ease !important;
     }
-
+    
     .notion-page-content a.notion-link-token:hover {
-      /* Matikan efek dim/underline/hover */
+      background: rgba(0, 153, 255, 0.22) !important;
       transform: none !important;
       box-shadow: none !important;
-      border-color: var(--border) !important;
+      border-color: transparent !important;
     }
-
+    
     .notion-page-content a.notion-link-token span {
       border-bottom: none !important;
     }
+    
     /* Global: nonaktifkan underline dan dim pada semua link di konten */
     .notion-page-content a,
     .notion-page-content a:link,
@@ -417,14 +419,14 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
      ========================================= */
 
       /* Batalin aturan yang nyembunyiin row tabel */
-      .notion-table-view div[style*="min-height: 44px"],
-      .notion-collection-view div[style*="min-height: 44px"] {
-        display: block !important;
-        min-height: auto !important;
-        pointer-events: auto !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-      }
+    //  .notion-table-view div[style*="min-height: 44px"],
+    //  .notion-collection-view div[style*="min-height: 44px"] {
+    //    display: block !important;
+    //    min-height: auto !important;
+    //    pointer-events: auto !important;
+    //    opacity: 1 !important;
+    //    visibility: visible !important;
+    //  }
 
       /* Batalin aturan yang nyembunyiin isi sel */
       .notion-table-view .notion-collection-row-property,
@@ -503,38 +505,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     /* --- Disable Tooltips --- */
     [role="tooltip"],
     .notion-tooltip,
-    .notion-link-tooltip,
-    div.notion-tooltip,
-    div[role="tooltip"],
-    .notion-link-tooltip,
-    .notion-hoverable-token,
-    .notion-page-link-indicator,
-    .notion-mention-token [role="tooltip"],
-    a.notion-link-token + div[role="tooltip"],
-    a.notion-link-token:hover + div[role="tooltip"],
-    span.notion-enable-hover + div[role="tooltip"],
-    span.notion-enable-hover:hover + div[role="tooltip"],
-    div[role="button"][aria-label="Open in side peek"],
-    div[aria-label="Open in side peek"],
-    div[style*="Open in side peek"],
-    div[style*="uppercase"],
-    [aria-label="Open page"],
-    .notion-hoverable-token,
-    .notion-collection-item.notion-selectable [aria-haspopup="true"],
-    .notion-collection-item.notion-selectable [role="button"],
-    .notion-collection-item.notion-selectable div[style*="pointer-events"][style*="z-index"],
-    .ellipsisSmall,
-    .notion-selectable.notion-image-block [role="button"] {
+    .notion-link-tooltip {
       display: none !important;
-      visibility: hidden !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-      height: 0 !important;
-      width: 0 !important;
-      max-width: 0 !important;
-      max-height: 0 !important;
-      position: absolute !important;
-      z-index: -1 !important;
     }
 
     /* Sembunyikan banner promosi Notion di atas halaman (CSS spesifik) */
