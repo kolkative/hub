@@ -246,15 +246,24 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     /* --- Style for standard Text Links --- */
     a.notion-link-token {
       display: inline !important;
+      text-decoration: none !important;
+      text-decoration-line: none !important;
       text-decoration-color: transparent !important;
       color: var(--link) !important;
-      padding: 4px 12px !important;
-      margin: 0 6px !important;
+      padding: 2px 12px !important;
+      margin: 0 2px !important;
       min-height: unset !important;
-      border: 1px solid var(--border) !important;
-      border-radius: 999px !important;
-      background: none !important;
-      transition: background 0.15s ease !important;
+      border: var(--border-size-1) solid var(--border) !important;
+      border-radius: var(--radius-conditional-3) !important;
+      background: var(--bg-2) !important;
+      box-shadow: 2px 2px 0 #000000 !important;
+      transition: all 0.15s ease-in-out !important;
+    }
+    
+    a.notion-link-token:hover {
+      background: rgba(0, 153, 255, 0.12) !important;
+      box-shadow: 1px 2px 0 #000000 !important;
+      transform: translateY(1px) !important;
     }
     
     a.notion-link-token span,
@@ -272,9 +281,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       background: none !important;
     }
     
-    a.notion-link-token:hover {
-      background: rgba(0, 153, 255, 0.12) !important;
-    }
     
     /* Global: nonaktifkan underline dan dim pada semua link di konten */
     .notion-page-content a,
