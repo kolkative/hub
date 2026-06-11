@@ -915,6 +915,18 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       box-shadow: none !important;
       border-radius: 0 !important;
     }
+    
+    html.light .notion-collection-view-tab-button:hover,
+    body.light .notion-collection-view-tab-button:hover {
+      background-color: var(--hover) !important;
+      border-radius: 4px !important;
+    }
+    
+    html.light .notion-collection-view-tab-button[aria-selected="true"],
+    body.light .notion-collection-view-tab-button[aria-selected="true"] {
+      background-color: var(--bg-3) !important;
+      border-radius: 4px !important;
+    }
 
     .notion-collection-view-tab-button > div > div {
       color: var(--text-1) !important;
