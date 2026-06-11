@@ -250,17 +250,17 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       text-decoration-line: none !important;
       text-decoration-color: transparent !important;
       color: var(--link) !important;
-      padding: 2px 12px !important;
-      margin: 0 2px !important;
+      padding: none !important;
+      margin: none !important;
       min-height: unset !important;
-      border: 1px solid var(--border) !important;
-      border-radius: 10px !important;
-      background: var(--bg-2) !important;
+      border: none !important;
+      border-radius: none !important;
+      background: none !important;
       box-shadow: 2px 2px 0 #000000 !important;
-      transition: background 0.15s ease, box-shadow 0.15s ease !important;
     }
     
-    a.notion-link-token:hover {
+    a.notion-link-token span :hover
+    a.notion-link-token :hover {
       background: rgba(0, 153, 255, 0.12) !important;
       box-shadow: 1px 1px 0 #000000 !important;
     }
@@ -277,6 +277,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       border-radius: 10px !important;
       border: 1px solid var(--border) !important;
       background: var(--bg-2) !important;
+      transition: background 0.15s ease, box-shadow 0.15s ease !important;
     }
     
     /* Global: nonaktifkan underline dan dim pada semua link di konten */
