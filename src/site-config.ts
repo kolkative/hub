@@ -35,13 +35,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     brand: "239db40e66ea802eacb2f022e2c19859",
     job: "24edb40e66ea80e7b790c204d257ddd8",
     help: "250db40e66ea80e08011d887d304fb36",
-    "/store": "/24ddb40e66ea80ccbdbacd583113dde4",
+    store: "/24ddb40e66ea80ccbdbacd583113dde4",
     support: "25cdb40e66ea80b48150c92743ae07df",
-    showpeace: "268db40e66ea80899571f4b790567c30",
     starthere: "254db40e66ea80708fd4f809e2203bb8",
     crew: "297db40e66ea809a898ffbf2ac5cee18",
     koty: "2cadb40e66ea804e90c2ce067d4f0966",
-    nccf: "345db40e66ea80b88e5dda20dc5decf4",
     gyfest: "373db40e66ea809ba792ecec0b9808a1",
     tnc: "373db40e66ea8046b899e46a0d3d0b79",
     // individual teams
@@ -50,14 +48,14 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
   // Rewrite meta tags for specific pages
   // Use the Notion page ID as the key
-  pageMetadata: {
-    "208db40e66ea8001b35af735e91f0e0c": {
-      title: "Kolkative Hub",
-      description: "The Largest Kabaret Databases",
-      image: "https://imgur.com/q0QXC8F",
-      author: "Kolkative Compound",
-    },
-  },
+  // pageMetadata: {
+  // "208db40e66ea8001b35af735e91f0e0c": {
+  //    title: "Kolkative Hub",
+  //    description: "The Largest Kabaret Databases",
+  //     image: "https://imgur.com/q0QXC8F",
+  //   author: "Kolkative Compound",
+  //  },
+  // },
 
   // Subdomain redirects are optional
   // But it is recommended to have one for www
@@ -448,7 +446,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
       .notion-header,
       .notion-topbar,
-      .notion-topbar-mobile
+      .notion-topbar-mobile,
       div[role="toolbar"] {
         display: none !important;
         pointer-events: none !important;
@@ -496,7 +494,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     .pageLinkIndicator,
     .notion-callout-block [role="note"] > div:empty,
     div[style*="min-height: 44px"],
-    .notion-table-view div[style *="min-height: 32px;"] .notion-record-icon[style*="margin-bottom: -1px; margin-right: 4px;"] {
+    .notion-table-view div[style*="min-height: 32px;"] .notion-record-icon[style*="margin-bottom: -1px; margin-right: 4px;"] {
       display: none !important;
       pointer-events: none !important;
     }
