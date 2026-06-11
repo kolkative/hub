@@ -245,30 +245,22 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     /* --- Style for standard Text Links --- */
     a.notion-link-token {
-      display: inline-flex !important;
-      align-items: center !important;
+      display: inline !important;
       text-decoration: none !important;
       text-decoration-line: none !important;
       text-decoration-color: transparent !important;
       color: var(--link) !important;
-      padding: 4px 12px !important;
-      margin: 3px 2px !important;
+      padding: 0 2px !important;
+      margin: 0 !important;
       min-height: unset !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-      white-space: normal !important;
-      word-break: break-word !important;
-      vertical-align: middle !important;
-      border: 1px solid var(--border) !important;
-      border-radius: 999px !important;
-      background: var(--bg-2) !important;
-      box-shadow: 2px 2px 0 #000000 !important;
-      transition: background 0.15s ease, box-shadow 0.15s ease !important;
+      border: none !important;
+      border-radius: 2px !important;
+      background: rgba(0, 153, 255, 0.2) !important;
+      transition: background 0.15s ease !important;
     }
     
     a.notion-link-token:hover {
-      background: rgba(0, 153, 255, 0.12) !important;
-      box-shadow: 1px 1px 0 #000000 !important;
+      background: rgba(0, 153, 255, 0.35) !important;
     }
     
     a.notion-link-token span,
@@ -282,10 +274,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       padding: 0 !important;
       margin: 0 !important;
       border: none !important;
-      border-radius: 0 !important;
       background: none !important;
     }
-    
     
     /* Global: nonaktifkan underline dan dim pada semua link di konten */
     .notion-page-content a,
