@@ -22,7 +22,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
   // Additional safety: avoid serving extraneous Notion content from your website
   // Use the value from your Notion settings => Workspace => Settings => Domain
-  notionDomain: "kolkative.notion.site",
+  notionDomain: "kolkative",
 
   // Map slugs (short page names) to Notion page IDs
   // Empty slug is your main page
@@ -48,14 +48,14 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
   // Rewrite meta tags for specific pages
   // Use the Notion page ID as the key
-  // pageMetadata: {
-  // "208db40e66ea8001b35af735e91f0e0c": {
-  //    title: "Kolkative Hub",
-  //    description: "The Largest Kabaret Databases",
-  //     image: "https://imgur.com/q0QXC8F",
-  //   author: "Kolkative Compound",
-  //  },
-  // },
+  pageMetadata: {
+   "208db40e66ea8001b35af735e91f0e0c": {
+      title: "Kolkative Hub",
+      description: "The Largest Kabaret Databases",
+      image: "https://iili.io/CBP95S2.png",
+      author: "Kolkative Compound",
+    },
+   },
 
   // Subdomain redirects are optional
   // But it is recommended to have one for www
