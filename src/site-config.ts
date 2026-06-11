@@ -254,19 +254,18 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       text-decoration-line: none !important;
       text-decoration-color: transparent !important;
       color: var(--link) !important;
-      padding: 0 !important;
-      margin: 0 !important;
+      padding: 1px 10px !important;
+      margin: 0 2px !important;
       min-height: unset !important;
-      border: none !important;
-      border-radius: 0 !important;
+      border: 1px solid var(--border) !important;
+      border-radius: 999px !important;
       background: none !important;
-      transition: color 0.15s ease, background 0.15s ease !important;
+      transition: background 0.15s ease !important;
     }
     
     a.notion-link-token:hover {
       background: rgba(0, 153, 255, 0.12) !important;
-      border-radius: 4px !important;
-      padding: 1px 6px !important;
+      border-radius: 999px !important;
     }
     
     a.notion-link-token:hover span {
@@ -926,13 +925,13 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     html.light .notion-collection-view-tab-button:hover,
     body.light .notion-collection-view-tab-button:hover {
       background-color: var(--hover) !important;
-      border-radius: 4px !important;
+      border-radius: 999px !important;
     }
     
     html.light .notion-collection-view-tab-button[aria-selected="true"],
     body.light .notion-collection-view-tab-button[aria-selected="true"] {
       background-color: var(--bg-3) !important;
-      border-radius: 4px !important;
+      border-radius: 999px !important;
     }
 
     .notion-collection-view-tab-button > div > div {
