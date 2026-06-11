@@ -251,7 +251,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       text-decoration: none !important;
       text-decoration-line: none !important;
       text-decoration-color: transparent !important;
-      color: var(--link) !important;
       padding: 2px 12px !important;
       margin: 0 2px !important;
       border-radius: 10px !important;
