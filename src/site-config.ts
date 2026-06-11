@@ -250,20 +250,32 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       text-decoration-line: none !important;
       text-decoration-color: transparent !important;
       color: var(--link) !important;
-      padding: 2px 12px !important;
+      padding: 1px 10px !important;
       margin: 0 2px !important;
       min-height: unset !important;
-      border: var(--border-size-1) solid var(--border) !important;
-      border-radius: var(--radius-conditional-3) !important;
-      background: var(--bg-2) !important;
-      box-shadow: 2px 2px 0 #000000 !important;
-      transition: all 0.15s ease-in-out !important;
+      border: 1px solid var(--border) !important;
+      border-radius: 999px !important;
+      background: none !important;
+      transition: background 0.15s ease !important;
+    }
+    
+    a.notion-link-token span,
+    a.notion-link-token .notion-enable-hover span,
+    span.link-annotation {
+      display: inline !important;
+      text-decoration: none !important;
+      text-decoration-line: none !important;
+      text-decoration-color: transparent !important;
+      color: var(--link) !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      border: none !important;
+      border-radius: 0 !important;
+      background: none !important;
     }
     
     a.notion-link-token:hover {
       background: rgba(0, 153, 255, 0.12) !important;
-      box-shadow: 1px 1px 0 #000000 !important;
-      transform: translateY(1px) !important;
     }
     
     /* Global: nonaktifkan underline dan dim pada semua link di konten */
