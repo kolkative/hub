@@ -253,17 +253,16 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       padding: 2px 12px !important;
       margin: 0 2px !important;
       min-height: unset !important;
-      border: var(--border-size-1) solid var(--border) !important;
-      border-radius: var(--radius-conditional-3) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: 999px !important;
       background: var(--bg-2) !important;
       box-shadow: 2px 2px 0 #000000 !important;
-      transition: all 0.15s ease-in-out !important;
+      transition: background 0.15s ease, box-shadow 0.15s ease !important;
     }
     
     a.notion-link-token:hover {
       background: rgba(0, 153, 255, 0.12) !important;
-      box-shadow: 1px 2px 0 #000000 !important;
-      transform: translateY(1px) !important;
+      box-shadow: 1px 1px 0 #000000 !important;
     }
     
     a.notion-link-token span,
