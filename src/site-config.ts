@@ -500,29 +500,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: none !important;
       pointer-events: none !important;
     }
-
-    /* --- Disable Tooltips --- */
-    [data-portal="true"] {
-      display: none !important;
-      visibility: hidden !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-    }
-    
-    /* Tapi aktifkan kembali kalau ada data-popup-origin di dalamnya (dropdown) */
-    [data-popup-origin="true"],
-    [data-portal="true"]:has([data-popup-origin="true"]),
-    [data-portal="true"]:has([aria-expanded]),
-    [data-portal="true"]:has([role="menu"]),
-    [data-portal="true"]:has([role="listbox"]),
-    [data-portal="true"]:has([role="dialog"]) {
-      display: block !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-      pointer-events: auto !important;
-    }
    
-
     /* Sembunyikan banner promosi Notion di atas halaman (CSS spesifik) */
     div.autolayout-row.autolayout-fill-width.autolayout-center.autolayout-space {
       display: none !important;
