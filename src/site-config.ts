@@ -44,6 +44,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     tnc: "373db40e66ea8046b899e46a0d3d0b79",
     bitan: "214db40e66ea80cb91acd7aac2eeacb4",
     boss: "37cdb40e66ea8046af51f90f46cbb1f1",
+    goalpara: "37cdb40e66ea80e28abeebfff4763e82",
     // individual teams
   },
 
