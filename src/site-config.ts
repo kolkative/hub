@@ -148,7 +148,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     .notion-frame {
+      background: var(--bg-1) !important;
+      color: var(--text-1) !important;
       padding-left: 250px !important;
+      transition: padding 0.3s ease;
     }
 
 
@@ -380,24 +383,28 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
         transform: translateX(-100%) !important;
         transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
       }
-
-    @media (max-width: 900px) {
+    
       .notion-frame {
         padding-left: unset !important;
-        transform: translateX(0);
-        transition: transform 0.3s ease;
+        transition: margin-left 0.3s ease;   /* ← ditambahin biar transisi jalan dua arah */
       }
     
       body.sidebar-open .notion-frame {
-        transform: translateX(250px);
+        margin-left: 250px !important;
+        transition: margin-left 0.3s ease;   /* ← ini yang tadinya "padding", dibenerin jadi "margin-left" */
       }
-
+    
+      body.sidebar-open #x-sidebar {
+        display: block !important;
+        transform: translateX(0) !important;
+      }
+    
       #x-header,
       #x-header-inner {
         justify-content: center !important;
         align-items: center;
       }
-
+    
       #x-burger {
         display: flex !important;
         opacity: 1 !important;
