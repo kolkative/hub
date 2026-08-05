@@ -35,7 +35,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     brand: "239db40e66ea802eacb2f022e2c19859",
     job: "24edb40e66ea80e7b790c204d257ddd8",
     help: "250db40e66ea80e08011d887d304fb36",
-    store: "/24ddb40e66ea80ccbdbacd583113dde4",
+    store: "24ddb40e66ea80ccbdbacd583113dde4",
     support: "25cdb40e66ea80b48150c92743ae07df",
     starthere: "254db40e66ea80708fd4f809e2203bb8",
     crew: "297db40e66ea809a898ffbf2ac5cee18",
@@ -75,7 +75,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   },
 
   // Google Font name, you can choose from https://fonts.google.com
-  // googleFont: "Space Grotesk",
+  googleFont: "Space Grotesk",
 
   // Custom JS for head and body of a Notion page
   customHeadCSS: `
@@ -412,18 +412,16 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
       /* =========================================
      MINIMAL FIX: SHOW TABLE VIEW ON MOBILE
-     tanpa ubah style default
      ========================================= */
 
-      /* Batalin aturan yang nyembunyiin row tabel */
-    //  .notion-table-view div[style*="min-height: 44px"],
-    //  .notion-collection-view div[style*="min-height: 44px"] {
-    //    display: block !important;
-    //    min-height: auto !important;
-    //    pointer-events: auto !important;
-    //    opacity: 1 !important;
-    //    visibility: visible !important;
-    //  }
+      .notion-table-view div[style*="min-height: 44px"],
+      .notion-collection-view div[style*="min-height: 44px"] {
+        display: block !important;
+        min-height: auto !important;
+        pointer-events: auto !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
 
       /* Batalin aturan yang nyembunyiin isi sel */
       .notion-table-view .notion-collection-row-property,
