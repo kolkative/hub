@@ -18,7 +18,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
   // URL to custom favicon.ico
   siteIcon:
-    "https://raw.githubusercontent.com/kolkative/web/refs/heads/main/public/kolkative-hub-logo.svg",
+    "https://cdn.jsdelivr.net/gh/kolkative/web@main/public/kolkative-hub-logo.svg",
 
   // Additional safety: avoid serving extraneous Notion content from your website
   // Use the value from your Notion settings => Workspace => Settings => Domain
@@ -114,8 +114,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --layer-4: 4;
       --layer-5: 5;
       --layer-6: 6;
-      --logo-white: url('https://raw.githubusercontent.com/kolkative/web/refs/heads/main/public/kolkative-hub-logo.svg');
-      --logo-black: url('https://raw.githubusercontent.com/kolkative/web/refs/heads/main/public/kolkative-hub-logo.svg');
+      --logo-white: url('https://cdn.jsdelivr.net/gh/kolkative/web@main/public/kolkative-hub-logo.svg');
+      --logo-black: url('https://cdn.jsdelivr.net/gh/kolkative/web@main/public/kolkative-hub-logo.svg');
       --logo: #0099FF;
       /* Dark theme defaults */
       --bg-1: #0d0f12;
@@ -172,7 +172,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       border-radius: var(--radius-conditional-3) !important;
       text-decoration: none !important;
       box-shadow: 2px 2px 0 #000000 !important;
-      transition: all 0.15s ease-in-out !important;
+      transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-color 0.15s ease-in-out !important;
     }
 
     h1 {
@@ -314,7 +314,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       font-size: 13px !important;
       border: 1px solid var(--border) !important;
       border-radius: var(--radius-conditional-3) !important;
-      transition: all 0.2s ease-out !important;
+      transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-color 0.15s ease-in-out !important;
       width: 100% !important;
       min-height: 28px;
     }
@@ -533,12 +533,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
 
     /* --- DATABASE INTERACTION CONTROL --- */
-    /* Allow pointer events on collection items for hover, but keep cursor default */
-    .notion-collection-item.notion-selectable {
-      pointer-events: auto !important;
-      cursor: default !important;
-    }
-
     /* Disable navigation links */
     .notion-collection-item.notion-selectable {
       pointer-events: auto !important;
@@ -557,20 +551,13 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     /* Sembunyikan elemen di kanan tablist */
-    [class*="filter"],
-    [class*="sort"],
-    [class*="dropdown"],
-    [data-testid*="filter"],
-    [data-testid*="sort"],
-    [data-testid*="view"],
-    [aria-label*="Filter"],
-    [aria-label*="Sort"],
-    [aria-label*="View"],
-    [aria-label*="Options"],
-    [aria-label*="filter"],
-    [aria-label*="sort"],
-    [aria-label*="view"],
-    [aria-label*="options"],
+    .notion-collection-view-tabs [class*="filter"],
+    .notion-collection-view-tabs [class*="sort"],
+    .notion-collection-view-tabs [data-testid*="filter"],
+    .notion-collection-view-tabs [aria-label*="Filter"],
+    .notion-collection-view-tabs [aria-label*="Sort"],
+    .notion-collection-view-tabs [aria-label*="View"],
+    .notion-collection-view-tabs [aria-label*="Options"],
     .notion-collection-view-tabs [role="listbox"],
     .notion-collection-view-tabs [aria-expanded],
     .notion-collection-view-tabs [aria-haspopup],
@@ -837,44 +824,44 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     /* =======================
     CUSTOM: INVERTED CALLOUT BLOCK
     ========================== */
-    .notion-callout-block[data-block-id="239db40e-66ea-8000-97f9-ccda366a839a"] [role="note"] > div,
-    .notion-callout-block[data-block-id="239db40e-66ea-807d-9931-d5de044db88d"] [role="note"] > div,
-    .notion-callout-block[data-block-id="239db40e-66ea-8029-b50d-e68c1434a141"] [role="note"] > div,
-    .notion-callout-block[data-block-id="239db40e-66ea-8000-9f99-ccda366a839a"] [role="note"] > div,
-    .notion-callout-block[data-block-id="239db40e-66ea-8026-afbd-c3d587b4d208"] [role="note"] > div,
-    .notion-callout-block[data-block-id="239db40e-66ea-8094-88c6-f64cd0043f25"] [role="note"] > div,
-    .notion-callout-block[data-block-id="239db40e-66ea-80e3-a644-caab898cbc5f"] [role="note"] > div {
-      background: #f8f9fa !important;
-      color: #16191d !important;
-    }
+    // .notion-callout-block[data-block-id="239db40e-66ea-8000-97f9-ccda366a839a"] [role="note"] > div,
+    // .notion-callout-block[data-block-id="239db40e-66ea-807d-9931-d5de044db88d"] [role="note"] > div,
+    // .notion-callout-block[data-block-id="239db40e-66ea-8029-b50d-e68c1434a141"] [role="note"] > div,
+    // .notion-callout-block[data-block-id="239db40e-66ea-8000-9f99-ccda366a839a"] [role="note"] > div,
+    // .notion-callout-block[data-block-id="239db40e-66ea-8026-afbd-c3d587b4d208"] [role="note"] > div,
+    // .notion-callout-block[data-block-id="239db40e-66ea-8094-88c6-f64cd0043f25"] [role="note"] > div,
+    // .notion-callout-block[data-block-id="239db40e-66ea-80e3-a644-caab898cbc5f"] [role="note"] > div {
+    //   background: #f8f9fa !important;
+    //   color: #16191d !important;
+    // }
 
-    html.light .notion-callout-block[data-block-id="239db40e-66ea-8085-9160-c82da34c81a7"] [role="note"] > div,
-    body.light .notion-callout-block[data-block-id="239db40e-66ea-8085-9160-c82da34c81a7"] [role="note"] > div,
-    html.light .notion-callout-block[data-block-id="239db40e-66ea-807d-acca-e893ffa1523e"] [role="note"] > div,
-    body.light .notion-callout-block[data-block-id="239db40e-66ea-807d-acca-e893ffa1523e"] [role="note"] > div,
-    html.light .notion-callout-block[data-block-id="239db40e-66ea-807d-acca-e893ffa1523e"] [role="note"] > div,
-    body.light .notion-callout-block[data-block-id="239db40e-66ea-807d-acca-e893ffa1523e"] [role="note"] > div,
-    html.light .notion-callout-block[data-block-id="239db40e-66ea-8088-9bdf-c87dc76453ea"] [role="note"] > div,
-    body.light .notion-callout-block[data-block-id="239db40e-66ea-8088-9bdf-c87dc76453ea"] [role="note"] > div,
-    html.light .notion-callout-block[data-block-id="239db40e-66ea-8048-be78-f2e996482907"] [role="note"] > div,
-    body.light .notion-callout-block[data-block-id="239db40e-66ea-8048-be78-f2e996482907"] [role="note"] > div,
-    html.light .notion-callout-block[data-block-id="239db40e-66ea-8088-9bdf-c87dc76453ea"] [role="note"] > div,
-    body.light .notion-callout-block[data-block-id="239db40e-66ea-8088-9bdf-c87dc76453ea"] [role="note"] > div,
-    html.light .notion-callout-block[data-block-id="239db40e-66ea-8046-899c-f77bd569f6db"] [role="note"] > div,
-    body.light .notion-callout-block[data-block-id="239db40e-66ea-8046-899c-f77bd569f6db"] [role="note"] > div,
-    html.light .notion-callout-block[data-block-id="239db40e-66ea-8067-848a-d57e396eacf0"] [role="note"] > div,
-    body.light .notion-callout-block[data-block-id="239db40e-66ea-8067-848a-d57e396eacf0"] [role="note"] > div,
-    html.light .notion-callout-block[data-block-id="239db40e-66ea-8012-b52d-c6c9bbdecfc7"] [role="note"] > div,
-    body.light .notion-callout-block[data-block-id="239db40e-66ea-8012-b52d-c6c9bbdecfc7"] [role="note"] > div,
-    html.light .notion-callout-block[data-block-id="239db40e-66ea-806e-959a-d76e8c5e8ee8"] [role="note"] > div,
-    body.light .notion-callout-block[data-block-id="239db40e-66ea-806e-959a-d76e8c5e8ee8"] [role="note"] > div,
-    html.light .notion-callout-block[data-block-id="239db40e-66ea-80b2-a092-d31288abc5cd"] [role="note"] > div,
-    body.light .notion-callout-block[data-block-id="239db40e-66ea-80b2-a092-d31288abc5cd"] [role="note"] > div,
-    html.light .notion-callout-block[data-block-id="239db40e-66ea-801e-af96-f155a60e86af"] [role="note"] > div,
-    body.light .notion-callout-block[data-block-id="239db40e-66ea-801e-af96-f155a60e86af"] [role="note"] > div {
-      background: #16191d !important;
-      color: #f8f9fa !important;
-    }
+    // html.light .notion-callout-block[data-block-id="239db40e-66ea-8085-9160-c82da34c81a7"] [role="note"] > div,
+    // body.light .notion-callout-block[data-block-id="239db40e-66ea-8085-9160-c82da34c81a7"] [role="note"] > div,
+    // html.light .notion-callout-block[data-block-id="239db40e-66ea-807d-acca-e893ffa1523e"] [role="note"] > div,
+    // body.light .notion-callout-block[data-block-id="239db40e-66ea-807d-acca-e893ffa1523e"] [role="note"] > div,
+    // html.light .notion-callout-block[data-block-id="239db40e-66ea-807d-acca-e893ffa1523e"] [role="note"] > div,
+    // body.light .notion-callout-block[data-block-id="239db40e-66ea-807d-acca-e893ffa1523e"] [role="note"] > div,
+    // html.light .notion-callout-block[data-block-id="239db40e-66ea-8088-9bdf-c87dc76453ea"] [role="note"] > div,
+    // body.light .notion-callout-block[data-block-id="239db40e-66ea-8088-9bdf-c87dc76453ea"] [role="note"] > div,
+    // html.light .notion-callout-block[data-block-id="239db40e-66ea-8048-be78-f2e996482907"] [role="note"] > div,
+    // body.light .notion-callout-block[data-block-id="239db40e-66ea-8048-be78-f2e996482907"] [role="note"] > div,
+    // html.light .notion-callout-block[data-block-id="239db40e-66ea-8088-9bdf-c87dc76453ea"] [role="note"] > div,
+    // body.light .notion-callout-block[data-block-id="239db40e-66ea-8088-9bdf-c87dc76453ea"] [role="note"] > div,
+    // html.light .notion-callout-block[data-block-id="239db40e-66ea-8046-899c-f77bd569f6db"] [role="note"] > div,
+    // body.light .notion-callout-block[data-block-id="239db40e-66ea-8046-899c-f77bd569f6db"] [role="note"] > div,
+    // html.light .notion-callout-block[data-block-id="239db40e-66ea-8067-848a-d57e396eacf0"] [role="note"] > div,
+    // body.light .notion-callout-block[data-block-id="239db40e-66ea-8067-848a-d57e396eacf0"] [role="note"] > div,
+    // html.light .notion-callout-block[data-block-id="239db40e-66ea-8012-b52d-c6c9bbdecfc7"] [role="note"] > div,
+    // body.light .notion-callout-block[data-block-id="239db40e-66ea-8012-b52d-c6c9bbdecfc7"] [role="note"] > div,
+    // html.light .notion-callout-block[data-block-id="239db40e-66ea-806e-959a-d76e8c5e8ee8"] [role="note"] > div,
+    // body.light .notion-callout-block[data-block-id="239db40e-66ea-806e-959a-d76e8c5e8ee8"] [role="note"] > div,
+    // html.light .notion-callout-block[data-block-id="239db40e-66ea-80b2-a092-d31288abc5cd"] [role="note"] > div,
+    // body.light .notion-callout-block[data-block-id="239db40e-66ea-80b2-a092-d31288abc5cd"] [role="note"] > div,
+    // html.light .notion-callout-block[data-block-id="239db40e-66ea-801e-af96-f155a60e86af"] [role="note"] > div,
+    // body.light .notion-callout-block[data-block-id="239db40e-66ea-801e-af96-f155a60e86af"] [role="note"] > div {
+    //   background: #16191d !important;
+    //   color: #f8f9fa !important;
+    // }
 
     /* =======================
        NOTION DIVIDER/SEPARATOR THEME COLOR
