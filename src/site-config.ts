@@ -171,7 +171,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       border: var(--border-size-1) solid var(--border) !important;
       border-radius: var(--radius-conditional-3) !important;
       text-decoration: none !important;
-      box-shadow: 2px 2px 0 #000000 !important;
+      box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.12) !important;
       transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-color 0.15s ease-in-out !important;
     }
 
@@ -324,7 +324,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     body .notion-list-view .notion-selectable.notion-page-block.notion-collection-item:hover a {
       transform: translateY(-1px);
-      box-shadow: 1px 1px 0 #000000 !important;
+      box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12) !important;
       border-color: var(--border) !important;
     }
 
@@ -347,8 +347,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     /* --- Table View: Capsule Styling --- */
     .notion-table-view-cell:hover > div > div {
-      transform: translateY(-1px) scale(1.01) !important;
-      box-shadow: 1px 1px 0 #000000 !important;
+      transform: translateY(-1px) !important;
+      box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12) !important;
       border-color: var(--border) !important;
     }
 
@@ -472,7 +472,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       /* Beri breathing room antar capsule di paragraph */
       .notion-page-content p,
       .notion-text-block {
-        line-height: 2.2 !important;
+        line-height: 1.7 !important;
       }
 
       /* Pastikan callout block tidak overflow */
@@ -490,8 +490,17 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     }
 
     ::-webkit-scrollbar {
-      width: 0 !important;
-      height: 0 !important;
+      width: 6px !important;
+      height: 6px !important;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--border) !important;
+      border-radius: 999px !important;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent !important;
     }
 
 
@@ -821,48 +830,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     #x-burger {
       pointer-events: auto !important;
     }
-
-    /* =======================
-    CUSTOM: INVERTED CALLOUT BLOCK
-    ========================== */
-    // .notion-callout-block[data-block-id="239db40e-66ea-8000-97f9-ccda366a839a"] [role="note"] > div,
-    // .notion-callout-block[data-block-id="239db40e-66ea-807d-9931-d5de044db88d"] [role="note"] > div,
-    // .notion-callout-block[data-block-id="239db40e-66ea-8029-b50d-e68c1434a141"] [role="note"] > div,
-    // .notion-callout-block[data-block-id="239db40e-66ea-8000-9f99-ccda366a839a"] [role="note"] > div,
-    // .notion-callout-block[data-block-id="239db40e-66ea-8026-afbd-c3d587b4d208"] [role="note"] > div,
-    // .notion-callout-block[data-block-id="239db40e-66ea-8094-88c6-f64cd0043f25"] [role="note"] > div,
-    // .notion-callout-block[data-block-id="239db40e-66ea-80e3-a644-caab898cbc5f"] [role="note"] > div {
-    //   background: #f8f9fa !important;
-    //   color: #16191d !important;
-    // }
-
-    // html.light .notion-callout-block[data-block-id="239db40e-66ea-8085-9160-c82da34c81a7"] [role="note"] > div,
-    // body.light .notion-callout-block[data-block-id="239db40e-66ea-8085-9160-c82da34c81a7"] [role="note"] > div,
-    // html.light .notion-callout-block[data-block-id="239db40e-66ea-807d-acca-e893ffa1523e"] [role="note"] > div,
-    // body.light .notion-callout-block[data-block-id="239db40e-66ea-807d-acca-e893ffa1523e"] [role="note"] > div,
-    // html.light .notion-callout-block[data-block-id="239db40e-66ea-807d-acca-e893ffa1523e"] [role="note"] > div,
-    // body.light .notion-callout-block[data-block-id="239db40e-66ea-807d-acca-e893ffa1523e"] [role="note"] > div,
-    // html.light .notion-callout-block[data-block-id="239db40e-66ea-8088-9bdf-c87dc76453ea"] [role="note"] > div,
-    // body.light .notion-callout-block[data-block-id="239db40e-66ea-8088-9bdf-c87dc76453ea"] [role="note"] > div,
-    // html.light .notion-callout-block[data-block-id="239db40e-66ea-8048-be78-f2e996482907"] [role="note"] > div,
-    // body.light .notion-callout-block[data-block-id="239db40e-66ea-8048-be78-f2e996482907"] [role="note"] > div,
-    // html.light .notion-callout-block[data-block-id="239db40e-66ea-8088-9bdf-c87dc76453ea"] [role="note"] > div,
-    // body.light .notion-callout-block[data-block-id="239db40e-66ea-8088-9bdf-c87dc76453ea"] [role="note"] > div,
-    // html.light .notion-callout-block[data-block-id="239db40e-66ea-8046-899c-f77bd569f6db"] [role="note"] > div,
-    // body.light .notion-callout-block[data-block-id="239db40e-66ea-8046-899c-f77bd569f6db"] [role="note"] > div,
-    // html.light .notion-callout-block[data-block-id="239db40e-66ea-8067-848a-d57e396eacf0"] [role="note"] > div,
-    // body.light .notion-callout-block[data-block-id="239db40e-66ea-8067-848a-d57e396eacf0"] [role="note"] > div,
-    // html.light .notion-callout-block[data-block-id="239db40e-66ea-8012-b52d-c6c9bbdecfc7"] [role="note"] > div,
-    // body.light .notion-callout-block[data-block-id="239db40e-66ea-8012-b52d-c6c9bbdecfc7"] [role="note"] > div,
-    // html.light .notion-callout-block[data-block-id="239db40e-66ea-806e-959a-d76e8c5e8ee8"] [role="note"] > div,
-    // body.light .notion-callout-block[data-block-id="239db40e-66ea-806e-959a-d76e8c5e8ee8"] [role="note"] > div,
-    // html.light .notion-callout-block[data-block-id="239db40e-66ea-80b2-a092-d31288abc5cd"] [role="note"] > div,
-    // body.light .notion-callout-block[data-block-id="239db40e-66ea-80b2-a092-d31288abc5cd"] [role="note"] > div,
-    // html.light .notion-callout-block[data-block-id="239db40e-66ea-801e-af96-f155a60e86af"] [role="note"] > div,
-    // body.light .notion-callout-block[data-block-id="239db40e-66ea-801e-af96-f155a60e86af"] [role="note"] > div {
-    //   background: #16191d !important;
-    //   color: #f8f9fa !important;
-    // }
 
     /* =======================
        NOTION DIVIDER/SEPARATOR THEME COLOR
