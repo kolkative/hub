@@ -18,7 +18,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
   // URL to custom favicon.ico
   siteIcon:
-    "https://cdn.jsdelivr.net/gh/kolkative/web@main/public/kolkative-hub-logo.svg",
+    "https://raw.githubusercontent.com/kolkative/hub/35eaec46dbfa0317c353b50e7f47d71b04331ec4/public/icon-color.svg",
 
   // Additional safety: avoid serving extraneous Notion content from your website
   // Use the value from your Notion settings => Workspace => Settings => Domain
@@ -53,7 +53,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   pageMetadata: {
    "208db40e66ea8001b35af735e91f0e0c": {
       title: "Kolkative Hub",
-      description: "The Largest Kabaret Databases",
+      description: "Media Informasi dan Apresiasi Seni Petunjukan",
       image: "https://iili.io/CBP95S2.png",
       author: "Kolkative Compound",
     },
