@@ -9,7 +9,7 @@ function updateSiteTitle() {
     .trim()
 
   if (pageTitle) {
-    const siteTitle = `${pageTitle} | Kolkative Hub`
+    const siteTitle = pageTitle + ' | Kolkative Hub'
 
     if (document.title !== siteTitle) {
       document.title = siteTitle
