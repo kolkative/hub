@@ -367,7 +367,7 @@ function createXHeader() {
   header.id = "x-header";
   header.innerHTML =
     '<a href="https://hub.kolkative.com" class="header-logo" target="_self">' +
-    '<img id="x-header-logo">' +
+    '<img id="x-header-logo" src="/images/favicon.ico" alt="Kolkative">' +
     '<span id="x-header-title"><span class="kolkative">Kolkative</span> <span class="hub">Hub</span></span>' +
     "</a>";
   document.body.appendChild(header);

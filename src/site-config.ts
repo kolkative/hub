@@ -114,9 +114,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --layer-4: 4;
       --layer-5: 5;
       --layer-6: 6;
-      --logo-white: url('https://cdn.jsdelivr.net/gh/kolkative/web@main/public/kolkative-hub-logo.svg');
-      --logo-black: url('https://cdn.jsdelivr.net/gh/kolkative/web@main/public/kolkative-hub-logo.svg');
-      --logo: #0099FF;
       /* Dark theme defaults */
       --bg-1: #0d0f12;
       --bg-2: #16191d;
@@ -741,7 +738,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       transition: background 0.2s;
     }
     /* =======================
-       X-HEADER LOGO THEME SWITCH
+       X-HEADER LOGO
     ========================== */
     #x-header-logo {
       width: 18px;
@@ -751,11 +748,6 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       object-fit: contain;
       display: inline-block;
       vertical-align: middle;
-      content: var(--logo-white);
-    }
-    html.light #x-header-logo,
-    body.light #x-header-logo {
-      content: var(--logo-black);
     }
     /* =======================
        X-HEADER TITLE STYLE
