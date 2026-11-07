@@ -122,10 +122,10 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     #x-toggle svg {
       display: block;
       flex: none;
-      width: 30px !important;
-      min-width: 30px;
-      height: 30px !important;
-      min-height: 30px;
+      width: 20px !important;
+      min-width: 20px;
+      height: 20px !important;
+      min-height: 20px;
       transition: filter 0.2s, fill 0.2s;
     }
 
@@ -307,6 +307,8 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       border: none;
       cursor: pointer;
       transition: color 0.2s ease;
+      opacity: 1;
+      visibility: visible;
     }
 
     #x-burger:hover {
@@ -317,6 +319,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       display: block;
       width: 18px;
       height: 18px;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #x-burger {
+      pointer-events: auto !important;
     }
 
     @media (max-width: 900px) {
