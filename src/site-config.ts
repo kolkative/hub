@@ -121,6 +121,17 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --content-border: #dee2e6;
     }
 
+    html,
+    body,
+    #notion-app,
+    .notion-app,
+    .notion-app-inner,
+    .notion-frame,
+    .notion-page-content {
+      color: var(--content-text) !important;
+      background-color: var(--content-bg) !important;
+    }
+
     a,
     a:link,
     a:visited,
