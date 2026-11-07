@@ -78,10 +78,24 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
 
   // Google Font name, you can choose from https://fonts.google.com
-  googleFont: 'Roboto',
+  // googleFont: 'Roboto',
 
   // Custom JS for head and body of a Notion page
-  customHeadCSS: ``,
+  customHeadCSS: `
+    .toggle-mode [title="Change to Light Mode"] > div > div {
+      background-color: #4b5563;
+    }
+
+    .toggle-mode [title="Change to Light Mode"] > div > div > div,
+    .toggle-mode [title="Change to Dark Mode"] > div > div > div {
+      background: #fff !important;
+      box-shadow: 0 1px 3px rgb(0 0 0 / 30%);
+    }
+
+    .toggle-mode [title="Change to Dark Mode"] > div > div {
+      background-color: #d1d5db;
+    }
+  `,
   customHeadJS: googleTag(GOOGLE_TAG_ID),
   customBodyJS: PAGE_SCRIPT_JS_STRING,
 }
