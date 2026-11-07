@@ -1,6 +1,27 @@
 /* eslint-disable func-names */
 /* eslint-disable no-return-assign */
 /* eslint-disable no-param-reassign */
+
+function updateSiteTitle() {
+  const pageTitle = document.title
+    .replace(/\s*\|\s*(?:Built with )?Notion\s*$/i, '')
+    .replace(/\s*\|\s*Kolkative Hub\s*$/i, '')
+    .trim()
+
+  if (pageTitle) {
+    const siteTitle = `${pageTitle} | Kolkative Hub`
+
+    if (document.title !== siteTitle) {
+      document.title = siteTitle
+    }
+  }
+}
+
+updateSiteTitle()
+
+const siteTitleObserver = new MutationObserver(updateSiteTitle)
+siteTitleObserver.observe(document.head, { childList: true, subtree: true, characterData: true })
+
 function removeThemeToggle() {
   document.querySelectorAll('.toggle-mode').forEach((toggle) => toggle.remove())
 }
