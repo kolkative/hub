@@ -4,8 +4,7 @@
 
 function updateSiteTitle() {
   const pageTitle = document.title
-    .replace(/\s*\|\s*(?:Built with )?Notion\s*$/i, '')
-    .replace(/\s*\|\s*Kolkative Hub\s*$/i, '')
+    .replace(/(?:\s*\|\s*(?:Built with )?Notion|\s*\|\s*Kolkative Hub)+\s*$/gi, '')
     .trim()
 
   if (pageTitle) {
@@ -18,9 +17,6 @@ function updateSiteTitle() {
 }
 
 updateSiteTitle()
-
-const siteTitleObserver = new MutationObserver(updateSiteTitle)
-siteTitleObserver.observe(document.head, { childList: true, subtree: true, characterData: true })
 
 function removeThemeToggle() {
   document.querySelectorAll('.toggle-mode').forEach((toggle) => toggle.remove())
@@ -480,5 +476,6 @@ new MutationObserver(() => {
   if (url !== lastUrl) {
     lastUrl = url;
     ensureThemeConsistency();
+    window.setTimeout(updateSiteTitle, 0);
   }
 }).observe(document, { subtree: true, childList: true });
