@@ -104,6 +104,158 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --nav-border: #ced4da;
     }
 
+    :root {
+      --content-text: #f0efed;
+      --content-bg: #191919;
+      --content-bg-raised: #252525;
+      --content-border: #333333;
+      --content-link: #0099ff;
+      --content-accent: #ff3366;
+    }
+
+    html.light,
+    body.light {
+      --content-text: #16191d;
+      --content-bg: #f8f9fa;
+      --content-bg-raised: #f1f3f5;
+      --content-border: #dee2e6;
+    }
+
+    a,
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+      text-decoration: none !important;
+    }
+
+    .notion-page-content a {
+      font-weight: 600 !important;
+    }
+
+    h1 {
+      position: fixed !important;
+      z-index: 2;
+      top: 0 !important;
+      right: 0 !important;
+      left: 0 !important;
+      box-sizing: border-box !important;
+      width: 100vw !important;
+      min-width: 100vw !important;
+      max-width: 100vw !important;
+      padding: 18px 0 18px 24px !important;
+      color: var(--content-text) !important;
+      background: var(--content-bg) !important;
+      background-clip: padding-box !important;
+      border-bottom: 1px solid var(--content-border);
+      font-size: 20px !important;
+      font-weight: 600 !important;
+      letter-spacing: -2px !important;
+    }
+
+    h2,
+    h3 {
+      padding: 6px 0 10px !important;
+      font-family: var(--font-neo-grotesque) !important;
+      letter-spacing: -2px !important;
+      text-transform: uppercase !important;
+    }
+
+    h2 {
+      margin-top: -18px !important;
+      margin-bottom: -10px !important;
+      color: var(--content-link) !important;
+      font-size: 30px !important;
+      font-weight: 600 !important;
+    }
+
+    h3 {
+      margin-top: -38px !important;
+      margin-bottom: -10px !important;
+      color: var(--content-accent) !important;
+      font-size: 30px !important;
+      font-weight: 700 !important;
+    }
+
+    h4 {
+      margin-block: 0.75em !important;
+      color: var(--content-text) !important;
+      font-size: 1.25rem !important;
+      font-weight: 600 !important;
+    }
+
+    .notion-header-block,
+    .notion-selectable.notion-header-block,
+    .notion-selectable.notion-sub_header-block,
+    .notion-header-block > div,
+    .notion-header-block > h2,
+    .notion-header-block > h3,
+    .notion-header-block > h4 {
+      margin: 0 !important;
+      padding: 0 !important;
+      gap: 0 !important;
+    }
+
+    body .notion-list-view .notion-selectable.notion-page-block.notion-collection-item a *,
+    .notion-collection-view-tabs [role="tab"],
+    .notion-collection-view-tabs [role="tab"] *,
+    .notion-selectable.notion-collection_view-block,
+    .notion-collection-view-tabs span,
+    .notion-collection-view-tabs div {
+      font-size: 13px !important;
+    }
+
+    a.notion-link-token span,
+    a.notion-link-token .notion-enable-hover span,
+    span.link-annotation {
+      display: inline !important;
+      padding: 1px 6px !important;
+      color: inherit;
+      text-decoration: none !important;
+      border: 1px solid var(--content-border) !important;
+      border-radius: 10px !important;
+      background: var(--content-bg-raised) !important;
+      transition: background 0.15s ease, border-color 0.15s ease !important;
+    }
+
+    a.notion-link-token:hover span,
+    a.notion-link-token:hover .notion-enable-hover span {
+      color: var(--content-link) !important;
+      border-color: var(--content-link) !important;
+      background: rgba(0, 153, 255, 0.15) !important;
+    }
+
+    .notion-page-content a,
+    .notion-page-content a:link,
+    .notion-page-content a:visited,
+    .notion-page-content a:hover,
+    .notion-page-content a:active,
+    .notion-page-content a:focus {
+      color: var(--content-link) !important;
+      text-decoration: none !important;
+      text-decoration-skip-ink: none !important;
+      border-bottom: none !important;
+      box-shadow: none !important;
+      opacity: 1 !important;
+      filter: none !important;
+      outline: none !important;
+    }
+
+    em,
+    i,
+    span[style*="italic"],
+    span[style*="font-style: italic"] {
+      margin: 0 !important;
+      padding: 0 !important;
+      color: inherit !important;
+      background: none !important;
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      font-style: italic !important;
+      font-weight: 700 !important;
+    }
+
     #x-toggle {
       position: fixed;
       z-index: 6;
