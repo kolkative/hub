@@ -11,7 +11,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   // For main page link preview
   siteName: 'Kolkative Hub',
   siteDescription: 'Media Inspirasi &amp; Apresiasi',
-  siteImage: 'https://iili.io/CBP95S2.png',
+  siteImage: 'https://raw.githubusercontent.com/kolkative/hub/main/public/site-preview.png',
 
   // Twitter handle, optional
   // twitterHandle: '',
@@ -102,6 +102,32 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       --nav-hover: #dee2e6;
       --nav-selected: #e9ecef;
       --nav-border: #ced4da;
+    }
+
+    #x-toggle {
+      position: fixed;
+      z-index: 6;
+      top: 22px;
+      right: 20px;
+      display: flex;
+      width: 20px;
+      height: 20px;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: 0;
+      cursor: pointer;
+    }
+
+    #x-toggle svg {
+      display: block;
+      width: 20px;
+      height: 20px;
+      transition: filter 0.2s, fill 0.2s;
+    }
+
+    #x-toggle:hover svg {
+      filter: brightness(1.3) drop-shadow(0 0 2px #0099ff);
     }
 
     .notion-frame {
