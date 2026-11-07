@@ -454,7 +454,7 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
       align-items: center;
       justify-content: center;
       padding: 0;
-      color: var(--nav-text);
+      color: var(--content-text);
       background: none;
       border: none;
       cursor: pointer;
