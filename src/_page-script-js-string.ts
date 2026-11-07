@@ -5,12 +5,13 @@ export const PAGE_SCRIPT_JS_STRING = `<script>
 
 function updateSiteTitle() {
   const pageTitle = document.title
-    .replace(/\s*\|\s*(?:Built with )?Notion\s*$/i, '')
-    .replace(/\s*\|\s*Kolkative Hub\s*$/i, '')
-    .trim()
+    .split('|')
+    .map((part) => part.trim())
+    .filter((part) => part && !/^(?:Built with )?Notion$/i.test(part) && !/^Kolkative Hub$/i.test(part))
+    .join(' | ')
 
   if (pageTitle) {
-    const siteTitle = `${pageTitle} | Kolkative Hub`
+    const siteTitle = pageTitle + ' | Kolkative Hub'
 
     if (document.title !== siteTitle) {
       document.title = siteTitle
@@ -19,9 +20,6 @@ function updateSiteTitle() {
 }
 
 updateSiteTitle()
-
-const siteTitleObserver = new MutationObserver(updateSiteTitle)
-siteTitleObserver.observe(document.head, { childList: true, subtree: true, characterData: true })
 
 function removeThemeToggle() {
   document.querySelectorAll('.toggle-mode').forEach((toggle) => toggle.remove())
@@ -481,6 +479,7 @@ new MutationObserver(() => {
   if (url !== lastUrl) {
     lastUrl = url;
     ensureThemeConsistency();
+    window.setTimeout(updateSiteTitle, 0);
   }
 }).observe(document, { subtree: true, childList: true });
 </script>`

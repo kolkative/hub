@@ -4,8 +4,10 @@
 
 function updateSiteTitle() {
   const pageTitle = document.title
-    .replace(/(?:\s*\|\s*(?:Built with )?Notion|\s*\|\s*Kolkative Hub)+\s*$/gi, '')
-    .trim()
+    .split('|')
+    .map((part) => part.trim())
+    .filter((part) => part && !/^(?:Built with )?Notion$/i.test(part) && !/^Kolkative Hub$/i.test(part))
+    .join(' | ')
 
   if (pageTitle) {
     const siteTitle = pageTitle + ' | Kolkative Hub'
