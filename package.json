@@ -10,11 +10,7 @@
     "logs": "npx --yes wrangler@latest tail"
   },
   "dependencies": {
-    "@hugeicons/static": "^0.1.5",
-    "bootstrap": "^5.3.7",
-    "notehost": "^1.0.33",
-    "open-props": "^1.7.15",
-    "svelte": "^5.35.5"
+    "notehost": "^1.0.4"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20231218.0"

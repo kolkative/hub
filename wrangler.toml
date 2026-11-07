@@ -1,4 +1,4 @@
-name = "hub"
+name = "hub-kolkative-com-notion-proxy"
 main = "src/index.ts"
 compatibility_date = "2024-01-08"
 workers_dev = true
@@ -7,7 +7,3 @@ routes = [
 	{ pattern = "hub.kolkative.com", custom_domain = true },
 	{ pattern = "www.hub.kolkative.com", custom_domain = true }
 ]
-
-# wrangler.toml (wrangler v3.88.0^)
-[observability.logs]
-enabled = true
