@@ -5,6 +5,24 @@ initializeReverseProxy(SITE_CONFIG);
 
 export default {
   async fetch(request: Request, env: any, ctx: ExecutionContext): Promise<Response> {
+    const requestUrl = new URL(request.url);
+    if (requestUrl.pathname === "/f/refresh") {
+      requestUrl.protocol = "https:";
+      requestUrl.hostname = SITE_CONFIG.notionDomain
+        ? `${SITE_CONFIG.notionDomain}.notion.site`
+        : "www.notion.so";
+      requestUrl.port = "";
+
+      return fetch(requestUrl.toString(), {
+        method: request.method,
+        headers: request.headers,
+        body:
+          request.method === "GET" || request.method === "HEAD"
+            ? undefined
+            : request.body,
+      });
+    }
+
     const cache = caches.default;
     const cached = await cache.match(request);
     if (cached) return cached;
