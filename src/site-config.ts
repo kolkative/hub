@@ -84,12 +84,12 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
   customHeadCSS: `
     #x-sidebar,
     #x-header {
-      --nav-bg: #16191d;
-      --nav-text: #f8f9fa;
-      --nav-subtle-text: #f1f3f5;
-      --nav-hover: #495057;
-      --nav-selected: #212529;
-      --nav-border: #343a40;
+      --nav-bg: #191919;
+      --nav-text: #f0efed;
+      --nav-subtle-text: #f0efed;
+      --nav-hover: #252525;
+      --nav-selected: #2f2f2f;
+      --nav-border: #333333;
     }
 
     html.light #x-sidebar,
@@ -107,11 +107,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
     #x-toggle {
       position: fixed;
       z-index: 6;
-      top: 22px;
-      right: 20px;
+      top: 10px;
+      right: 14px;
       display: flex;
-      width: 20px;
-      height: 20px;
+      width: 40px;
+      height: 40px;
       align-items: center;
       justify-content: center;
       background: none;
@@ -121,8 +121,11 @@ export const SITE_CONFIG: NoteHostSiteConfig = {
 
     #x-toggle svg {
       display: block;
-      width: 20px;
-      height: 20px;
+      flex: none;
+      width: 30px !important;
+      min-width: 30px;
+      height: 30px !important;
+      min-height: 30px;
       transition: filter 0.2s, fill 0.2s;
     }
 
